@@ -508,7 +508,7 @@ def tokyolife():
     except requests.exceptions.RequestException:
         print("TOKYOLIFE | TRẠNG THÁI : THẤT BẠI")
 
-def vion():
+def vieon():
     headers = {
         'accept': 'application/json, text/plain, */*',
         'accept-language': 'vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5',
@@ -545,9 +545,9 @@ def vion():
     try:
         response = requests.post('https://api.vieon.vn/backend/user/v2/register', params=params, headers=headers, json=json_data)
         response.raise_for_status()  # Raise an exception for HTTP errors
-        print("VION | TRẠNG THÁI : THÀNH CÔNG")
+        print("VIEON | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("VION | TRẠNG THÁI : THẤT BẠI")
+        print("VIEON | TRẠNG THÁI : THẤT BẠI")
 
 def fptreg():
     headers = {
@@ -2630,7 +2630,7 @@ medicare()
 time.sleep(0.3)
 tokyolife()
 time.sleep(0.3)
-vion()
+vieon()
 time.sleep(0.3)
 fptreg()
 time.sleep(0.3)
