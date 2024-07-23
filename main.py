@@ -1,0 +1,156 @@
+import discord
+from discord.ext import commands
+import datetime
+import sqlite3
+import subprocess
+import os
+import asyncio
+
+intents = discord.Intents.default()
+intents.message_content = True
+intents.guilds = True
+intents.members = True
+
+bot = commands.Bot(command_prefix='/', intents=intents, help_command=None)
+
+# Thay thế 'your_token_here' bằng biến môi trường để bảo mật
+TOKEN = 'MTA4MTI1MTM2ODk4MDk3MTYzMg.GmXaEC.XL0wipByqsLfPXST8J1UHn4TSWLzVVpzBTWkzU'
+
+# IDs của server và kênh
+ALLOWED_CHANNEL_ID = 1264975987934761121
+ALLOWED_GUILD_ID = 1264973683877744798
+TEMP_ROLE_ID = 1264997863079940170
+ROLE_ID = 1264975463672057907
+
+# Database setup
+try:
+    connection = sqlite3.connect('user_data.db')
+    cursor = connection.cursor()
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS users (
+            user_id INTEGER PRIMARY KEY,
+            expiration_time TEXT
+        )
+    ''')
+    connection.commit()
+except sqlite3.Error as e:
+    print(f"Lỗi kết nối cơ sở dữ liệu: {e}")
+
+# Lưu trữ trạng thái chờ
+user_waiting = {}
+processes = []  # Danh sách tiến trình
+
+def TimeStamp():
+    now = datetime.datetime.now()
+    return now.strftime('%Y-%m-%d %H:%M:%S')
+
+@bot.event
+async def on_ready():
+    print(f'Kết nối thành công với {bot.user.name}')
+
+def has_required_role(member):
+    role = discord.utils.get(member.guild.roles, id=ROLE_ID)
+    return role in member.roles
+
+async def add_and_remove_role(member):
+    guild = member.guild
+    temp_role = discord.utils.get(guild.roles, id=TEMP_ROLE_ID)
+    if temp_role:
+        await member.add_roles(temp_role)
+        await asyncio.sleep(75)  # Chờ 75 giây
+        await member.remove_roles(temp_role)
+        channel = bot.get_channel(ALLOWED_CHANNEL_ID)
+        if channel:
+            ping_message = await channel.send(f'{member.mention}')
+            await asyncio.sleep(1)
+            await ping_message.delete()
+            embed = discord.Embed(
+                title="⏳ Thời gian chờ đã kết thúc!",
+                description=f"{member.mention} có thể sử dụng tiếp lệnh /sms .",
+                color=discord.Color.red()
+            )
+            embed.set_footer(text="Made by Th1nK")
+            await channel.send(embed=embed)
+
+def check_permissions(ctx):
+    if ctx.guild.id != ALLOWED_GUILD_ID:
+        return False, f'Bot chỉ hoạt động tại server Al1nK SMS.'
+    if ctx.channel.id != ALLOWED_CHANNEL_ID:
+        return False, f'Bot chỉ hoạt động tại kênh <#{ALLOWED_CHANNEL_ID}>.'
+    if not has_required_role(ctx.author):
+        return False, f'Tuổi gì dùng lệnh?'
+    return True, None
+
+@bot.command()
+async def sms(ctx, phone_number: str):
+    is_allowed, message = check_permissions(ctx)
+    if not is_allowed:
+        await ctx.send(message)
+        return
+
+    if not phone_number.isnumeric() or phone_number in ['113', '911', '114', '115']:
+        await ctx.send('Số không hợp lệ hoặc không được phép.')
+        return
+
+    file_path = os.path.join(os.getcwd(), "sms.py")
+    proc = await asyncio.create_subprocess_exec("python", file_path, phone_number, "120")
+    processes.append(proc)
+
+    embed = discord.Embed(
+        title="✨ Yêu cầu tấn công thành công! ✨",
+        color=0xf78a8a
+    )
+    embed.add_field(
+        name="Thông tin yêu cầu",
+        value=(
+            f"📞 **Số điện thoại:** {phone_number}\n"
+            f"🔗 **Số API:** 64\n"
+            f"⏳ **Thời gian chờ:** **75 giây**"
+        ),
+        inline=False
+    )
+    embed.set_footer(text=f"Thời gian : {TimeStamp()}")
+    embed.set_image(url="https://c.tenor.com/LmJ_S8wzHlkAAAAd/tenor.gif")
+
+    await ctx.send(embed=embed)
+    await add_and_remove_role(ctx.author)
+
+@bot.command()
+async def help(ctx):
+    is_allowed, message = check_permissions(ctx)
+    if not is_allowed:
+        await ctx.send(message)
+        return
+
+    embed = discord.Embed(
+        title="Danh Sách Lệnh",
+        color=0xf78a8a
+    )
+    embed.add_field(name="/sms {số điện thoại}", value="Gửi tin nhắn SMS. (Phải có quyền sử dụng lệnh)", inline=False)
+    embed.set_footer(text="Made by Th1nK")
+
+    await ctx.send(embed=embed)
+
+@bot.event
+async def on_message(message):
+    if message.author == bot.user:
+        return
+
+    if message.guild and message.guild.id != ALLOWED_GUILD_ID:
+        return
+
+    if message.content.startswith('/'):
+        if message.channel.id != ALLOWED_CHANNEL_ID:
+            await message.channel.send(f'Bot chỉ hoạt động tại kênh <#{ALLOWED_CHANNEL_ID}>.')
+            return
+
+        if message.content.startswith('/sms') or message.content.startswith('/help'):
+            await bot.process_commands(message)
+        else:
+            await message.channel.send('Lệnh không xác định, sử dụng lệnh /help để hiện danh sách lệnh.')
+    elif isinstance(message.channel, discord.DMChannel):
+        await message.channel.send('Bot chỉ hoạt động tại server Al1nK SMS.')
+    else:
+        return
+
+bot.run(TOKEN)
