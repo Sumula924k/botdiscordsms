@@ -14,7 +14,7 @@ intents.members = True
 bot = commands.Bot(command_prefix='/', intents=intents, help_command=None)
 
 # Thay thế 'your_token_here' bằng biến môi trường để bảo mật
-TOKEN = os.getenv('DISCORD_BOT_TOKEN')
+TOKEN = os.getenv('DISCORD_TOKEN')
 
 # IDs của server và kênh
 ALLOWED_CHANNEL_ID = 1264975987934761121
@@ -92,28 +92,31 @@ async def sms(ctx, phone_number: str):
         await ctx.send('Số không hợp lệ hoặc không được phép.')
         return
 
-    file_path = os.path.join(os.getcwd(), "sms.py")
-    proc = await asyncio.create_subprocess_exec("python", file_path, phone_number, "120")
-    processes.append(proc)
+    try:
+        file_path = os.path.join(os.getcwd(), "sms.py")
+        proc = await asyncio.create_subprocess_exec("python", file_path, phone_number, "120")
+        processes.append(proc)
 
-    embed = discord.Embed(
-        title="✨ Yêu cầu tấn công thành công! ✨",
-        color=0xf78a8a
-    )
-    embed.add_field(
-        name="Thông tin yêu cầu",
-        value=(
-            f"📞 **Số điện thoại:** {phone_number}\n"
-            f"🔗 **Số API:** 64\n"
-            f"⏳ **Thời gian chờ:** **75 giây**"
-        ),
-        inline=False
-    )
-    embed.set_footer(text=f"Thời gian : {TimeStamp()}")
-    embed.set_image(url="https://c.tenor.com/LmJ_S8wzHlkAAAAd/tenor.gif")
+        embed = discord.Embed(
+            title="✨ Yêu cầu tấn công thành công! ✨",
+            color=0xf78a8a
+        )
+        embed.add_field(
+            name="Thông tin yêu cầu",
+            value=(
+                f"📞 **Số điện thoại:** {phone_number}\n"
+                f"🔗 **Số API:** 64\n"
+                f"⏳ **Thời gian chờ:** **75 giây**"
+            ),
+            inline=False
+        )
+        embed.set_footer(text=f"Thời gian : {TimeStamp()}")
+        embed.set_image(url="https://c.tenor.com/LmJ_S8wzHlkAAAAd/tenor.gif")
 
-    await ctx.send(embed=embed)
-    await add_and_remove_role(ctx.author)
+        await ctx.send(embed=embed)
+        await add_and_remove_role(ctx.author)
+    except Exception as e:
+        await ctx.send(f'Đã xảy ra lỗi khi xử lý lệnh: {e}')
 
 @bot.command()
 async def help(ctx):
