@@ -57,7 +57,7 @@ async def add_and_remove_role(member):
     temp_role = discord.utils.get(guild.roles, id=TEMP_ROLE_ID)
     if temp_role:
         await member.add_roles(temp_role)
-        await asyncio.sleep(75)  # Chờ 75 giây
+        await asyncio.sleep(120)  # Chờ 120 giây
         await member.remove_roles(temp_role)
         channel = bot.get_channel(ALLOWED_CHANNEL_ID)
         if channel:
@@ -106,7 +106,7 @@ async def sms(ctx, phone_number: str):
             value=(
                 f"📞 **Số điện thoại:** {phone_number}\n"
                 f"🔗 **Số API:** 75\n"
-                f"⏳ **Thời gian chờ:** **75 giây**"
+                f"⏳ **Thời gian chờ:** **120 giây**"
             ),
             inline=False
         )
