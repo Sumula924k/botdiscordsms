@@ -14,7 +14,7 @@ intents.members = True
 bot = commands.Bot(command_prefix='/', intents=intents, help_command=None)
 
 # Thay thế 'your_token_here' bằng biến môi trường để bảo mật
-TOKEN = os.getenv('DISCORD_TOK.EN')
+TOKEN = os.getenv('DISCORD_TOKEN')
 
 # IDs của server và kênh
 ALLOWED_CHANNEL_ID = 1264975987934761121
