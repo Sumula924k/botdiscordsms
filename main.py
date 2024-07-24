@@ -88,7 +88,7 @@ async def sms(ctx, phone_number: str):
         await ctx.send(message)
         return
 
-    if not phone_number.isnumeric() or phone_number in ['113', '911', '114', '115', '84357156328', '0357156328]:
+    if not phone_number.isnumeric() or phone_number in ['113', '911', '114', '115', '84357156328', '0357156328']:
         await ctx.send('Số không hợp lệ hoặc không được phép.')
         return
 
