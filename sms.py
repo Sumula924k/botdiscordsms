@@ -552,7 +552,7 @@ def vieon():
 def fptreg():
     headers = {
         'accept': 'application/json, text/plain, */*',
-        'accept-language': 'vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
         'content-type': 'application/json; charset=UTF-8',
         'origin': 'https://fptplay.vn',
         'priority': 'u=1, i',
@@ -575,19 +575,19 @@ def fptreg():
 
     try:
         response = requests.post(
-            'https://api.fptplay.net/api/v7.1_w/user/otp/register_otp?st=EtZ0F4nqKi0D0l5lvM5Vlw&e=1721529198&device=Opera(version%253A112.0.0.0)&drm=1',
+            'https://api.fptplay.net/api/v7.1_w/user/otp/register_otp?st=6j5x6nett8jkCfcK_qAYHg&e=1721803584&device=Opera(version%253A112.0.0.0)&drm=1',
             headers=headers,
             json=json_data,
         )
         response.raise_for_status()  # Raise an exception for HTTP errors
-        print("FPTREG | TRẠNG THÁI : THÀNH CÔNG");print(response.text)
+        print("FPTREG | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
         print("FPTREG | TRẠNG THÁI : THẤT BẠI")
 
 def fptreset():
     headers = {
         'accept': 'application/json, text/plain, */*',
-        'accept-language': 'vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
         'content-type': 'application/json; charset=UTF-8',
         'origin': 'https://fptplay.vn',
         'priority': 'u=1, i',
@@ -610,7 +610,7 @@ def fptreset():
 
     try:
         response = requests.post(
-            'https://api.fptplay.net/api/v7.1_w/user/otp/reset_password_otp?st=Mp8U7wZGJe0SNpw7eyiZ4g&e=1721529690&device=Opera(version%253A112.0.0.0)&drm=1',
+            'https://api.fptplay.net/api/v7.1_w/user/otp/reset_password_otp?st=oIfVfDi61oLPs9G1htsfEw&e=1721803775&device=Opera(version%253A112.0.0.0)&drm=1',
             headers=headers,
             json=json_data,
         )
@@ -622,7 +622,7 @@ def fptreset():
 def fptresend():
     headers = {
         'accept': 'application/json, text/plain, */*',
-        'accept-language': 'vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
         'content-type': 'application/json; charset=UTF-8',
         'origin': 'https://fptplay.vn',
         'priority': 'u=1, i',
@@ -646,7 +646,7 @@ def fptresend():
 
     try:
         response = requests.post(
-            'https://api.fptplay.net/api/v7.1_w/user/otp/resend_otp?st=q-xLREdlNXduE2Bt-ILubw&e=1721530087&device=Opera(version%253A112.0.0.0)&drm=1',
+            'https://api.fptplay.net/api/v7.1_w/user/otp/resend_otp?st=f8BaG8rdfwZq825-0vCokg&e=1721803855&device=Opera(version%253A112.0.0.0)&drm=1',
             headers=headers,
             json=json_data,
         )
