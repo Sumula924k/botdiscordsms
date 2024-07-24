@@ -1829,7 +1829,7 @@ def vexere():
     headers = {
         'accept': 'application/json, text/plain, */*',
         'accept-language': 'vi-VN',
-        'authorization': 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXAiOjIsInVzciI6ImZlIiwiY2lkIjoiYTRlYWM1MDAtMzYyNC0xMWU1LWFjOWUtMDkxMjRjNjAxMDEzIiwiZXhwIjoxNzIxNjI0Njc0fQ.7eTAJ_3NCXVZqzRrjJkIzzuyfAygDx2XSQGMxtPRSLY',
+        'authorization': 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXAiOjIsInVzciI6ImZlIiwiY2lkIjoiYTRlYWM1MDAtMzYyNC0xMWU1LWFjOWUtMDkxMjRjNjAxMDEzIiwiZXhwIjoxNzIxODAxOTQ0fQ.f5G-W3dbA-rcY3JAF1WShz-6-Nl32TNXKFpFimceF1g',
         'content-type': 'application/json',
         'origin': 'https://vexere.com',
         'priority': 'u=1, i',
