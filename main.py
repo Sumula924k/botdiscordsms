@@ -105,7 +105,7 @@ async def sms(ctx, phone_number: str):
             name="Thông tin yêu cầu",
             value=(
                 f"📞 **Số điện thoại:** {phone_number}\n"
-                f"🔗 **Số API:** 64\n"
+                f"🔗 **Số API:** 75\n"
                 f"⏳ **Thời gian chờ:** **75 giây**"
             ),
             inline=False
