@@ -1844,7 +1844,7 @@ def vexere():
     }
 
     json_data = {
-        'phone': sdt_chuyen_doi,
+        'phone': f'+84{sdt}',
         'lang': 'vi-VN',
     }
 
