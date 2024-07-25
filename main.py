@@ -6,6 +6,7 @@ import subprocess
 import os
 import asyncio
 import pytz
+import random
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -48,6 +49,12 @@ def TimeStamp():
     vn_time = now + datetime.timedelta(hours=7)
     return vn_time.strftime('%Y-%m-%d %I:%M:%S %p')  # %I sử dụng 12-hour clock và %p để thêm AM/PM
 
+VIDEO_URLS = [
+    "https://www.tiktok.com/@vucter26/video/7217365913509563674",
+    "https://www.tiktok.com/@mheditofficial/video/7336212691989662983",
+    "https://www.tiktok.com/@vutrugaixinh68/video/7376687949632589074",
+    "https://www.tiktok.com/@tamsoiking/video/7355784087006727442"
+]
 @bot.event
 async def on_ready():
     print(f'Kết nối thành công với {bot.user.name}')
@@ -115,7 +122,7 @@ async def sms(ctx, phone_number: str):
             inline=False
         )
         embed.set_footer(text=f"Thời gian : {TimeStamp()}")
-        embed.set_image(url="https://c.tenor.com/LmJ_S8wzHlkAAAAd/tenor.gif")
+        embed.set_image(video_url = random.choice(VIDEO_URLS))
 
         await ctx.send(embed=embed)
         await add_and_remove_role(ctx.author)
