@@ -49,12 +49,8 @@ def TimeStamp():
     vn_time = now + datetime.timedelta(hours=7)
     return vn_time.strftime('%Y-%m-%d %I:%M:%S %p')  # %I sử dụng 12-hour clock và %p để thêm AM/PM
 
-VIDEO_URLS = [
-    "https://www.tiktok.com/@vucter26/video/7217365913509563674",
-    "https://www.tiktok.com/@mheditofficial/video/7336212691989662983",
-    "https://www.tiktok.com/@vutrugaixinh68/video/7376687949632589074",
-    "https://www.tiktok.com/@tamsoiking/video/7355784087006727442"
-]
+VIDEO_FOLDER = 'video_folder'  # Đường dẫn đến thư mục chứa video của bạn
+
 @bot.event
 async def on_ready():
     print(f'Kết nối thành công với {bot.user.name}')
@@ -104,9 +100,13 @@ async def sms(ctx, phone_number: str):
         return
 
     try:
-        file_path = os.path.join(os.getcwd(), "sms.py")
-        proc = await asyncio.create_subprocess_exec("python", file_path, phone_number, "120")
-        processes.append(proc)
+        video_files = [f for f in os.listdir(VIDEO_FOLDER) if f.endswith(('.mp4', '.mov', '.avi'))]  # Danh sách các video
+        if not video_files:
+            await ctx.send('Không tìm thấy video trong thư mục.')
+            return
+
+        chosen_video = random.choice(video_files)  # Chọn ngẫu nhiên một video
+        file_path = os.path.join(VIDEO_FOLDER, chosen_video)
 
         embed = discord.Embed(
             title="✨ Yêu cầu tấn công thành công! ✨",
@@ -122,9 +122,14 @@ async def sms(ctx, phone_number: str):
             inline=False
         )
         embed.set_footer(text=f"Thời gian : {TimeStamp()}")
-        embed.set_image(url=random.choice(VIDEO_URLS))
 
+        # Gửi embed
         await ctx.send(embed=embed)
+
+        # Gửi video như một tệp đính kèm
+        file = discord.File(file_path, filename=chosen_video)
+        await ctx.send(file=file)
+
         await add_and_remove_role(ctx.author)
     except Exception as e:
         await ctx.send(f'Đã xảy ra lỗi khi xử lý lệnh: {e}')
