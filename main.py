@@ -5,6 +5,7 @@ import sqlite3
 import subprocess
 import os
 import asyncio
+import pytz
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -41,7 +42,10 @@ user_waiting = {}
 processes = []  # Danh sách tiến trình
 
 def TimeStamp():
-    now = datetime.datetime.now()
+    # Thiết lập múi giờ Việt Nam
+    vn_tz = pytz.timezone('Asia/Ho_Chi_Minh')
+    # Lấy thời gian hiện tại và chuyển đổi sang múi giờ Việt Nam
+    now = datetime.datetime.now(vn_tz)
     return now.strftime('%Y-%m-%d %H:%M:%S')
 
 @bot.event
