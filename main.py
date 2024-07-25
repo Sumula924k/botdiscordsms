@@ -6,6 +6,7 @@ import subprocess
 import os
 import asyncio
 import pytz
+import randomrandom
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -47,6 +48,34 @@ def TimeStamp():
     # Chuyển đổi sang giờ Việt Nam (UTC+7)
     vn_time = now + datetime.timedelta(hours=7)
     return vn_time.strftime('%Y-%m-%d %I:%M:%S %p')  # %I sử dụng 12-hour clock và %p để thêm AM/PM
+
+GIF_URLS = [
+    "https://c.tenor.com/LmJ_S8wzHlkAAAAd/tenor.gif",
+    "https://c.tenor.com/yOV-KR0BbeQAAAAC/tenor.gif",
+    "https://c.tenor.com/xI0XnNDDUHAAAAAC/tenor.gif",
+    "https://c.tenor.com/_zPDmll9gtYAAAAC/tenor.gif",
+    "https://c.tenor.com/LSqjYCXh020AAAAC/tenor.gif",
+    "https://c.tenor.com/5eOY_XtahDoAAAAC/tenor.gif",
+    "https://c.tenor.com/GgnredE6o7YAAAAd/tenor.gif",
+    "https://c.tenor.com/mkFCJfFodToAAAAd/tenor.gif",
+    "https://c.tenor.com/btBDlEIT5xUAAAAd/tenor.gif",
+    "https://c.tenor.com/7plyfBPAR3AAAAAd/tenor.gif",
+    "https://c.tenor.com/ejdvSGj5kCYAAAAC/tenor.gif",
+    "https://c.tenor.com/xD5CN6oj8ysAAAAC/tenor.gif",
+    "https://c.tenor.com/VITnpu9B2ScAAAAC/tenor.gif",
+    "https://c.tenor.com/M3w8zJYTc9AAAAAC/tenor.gif",
+    "https://c.tenor.com/6Myx4MF6DjIAAAAC/tenor.gif",
+    "https://c.tenor.com/2BmAiarixGAAAAAC/tenor.gif",
+    "https://c.tenor.com/D6aDhu6CBT8AAAAC/tenor.gif",
+    "https://c.tenor.com/1nwkeOg8j48AAAAd/tenor.gif",
+    "https://c.tenor.com/qHL-pMgQ1D8AAAAd/tenor.gif",
+    "https://c.tenor.com/5wn9MtW_PYUAAAAd/tenor.gif",
+    "https://c.tenor.com/L6bKFEaUkp0AAAAC/tenor.gif",
+]
+
+def get_random_gif_url():
+    return random.choice(GIF_URLS)
+
 
 @bot.event
 async def on_ready():
@@ -115,7 +144,7 @@ async def sms(ctx, phone_number: str):
             inline=False
         )
         embed.set_footer(text=f"Thời gian : {TimeStamp()}")
-        embed.set_image(url="https://c.tenor.com/LmJ_S8wzHlkAAAAd/tenor.gif")
+        embed.set_image(url=get_random_gif_url())
 
         await ctx.send(embed=embed)
         await add_and_remove_role(ctx.author)
