@@ -6,7 +6,7 @@ import subprocess
 import os
 import asyncio
 import pytz
-import randomrandom
+import random
 
 intents = discord.Intents.default()
 intents.message_content = True
