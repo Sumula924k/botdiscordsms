@@ -122,7 +122,7 @@ async def sms(ctx, phone_number: str):
             inline=False
         )
         embed.set_footer(text=f"Thời gian : {TimeStamp()}")
-        embed.set_image(video_url = random.choice(VIDEO_URLS))
+        embed.set_image(url=random.choice(VIDEO_URLS))
 
         await ctx.send(embed=embed)
         await add_and_remove_role(ctx.author)
