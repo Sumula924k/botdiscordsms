@@ -6,7 +6,6 @@ import subprocess
 import os
 import asyncio
 import pytz
-import random
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -48,8 +47,6 @@ def TimeStamp():
     # Chuyển đổi sang giờ Việt Nam (UTC+7)
     vn_time = now + datetime.timedelta(hours=7)
     return vn_time.strftime('%Y-%m-%d %I:%M:%S %p')  # %I sử dụng 12-hour clock và %p để thêm AM/PM
-
-VIDEO_FOLDER = 'video_folder'  # Đường dẫn đến thư mục chứa video của bạn
 
 @bot.event
 async def on_ready():
@@ -100,13 +97,9 @@ async def sms(ctx, phone_number: str):
         return
 
     try:
-        video_files = [f for f in os.listdir(VIDEO_FOLDER) if f.endswith(('.mp4', '.mov', '.avi'))]  # Danh sách các video
-        if not video_files:
-            await ctx.send('Không tìm thấy video trong thư mục.')
-            return
-
-        chosen_video = random.choice(video_files)  # Chọn ngẫu nhiên một video
-        file_path = os.path.join(VIDEO_FOLDER, chosen_video)
+        file_path = os.path.join(os.getcwd(), "sms.py")
+        proc = await asyncio.create_subprocess_exec("python", file_path, phone_number, "120")
+        processes.append(proc)
 
         embed = discord.Embed(
             title="✨ Yêu cầu tấn công thành công! ✨",
@@ -122,14 +115,9 @@ async def sms(ctx, phone_number: str):
             inline=False
         )
         embed.set_footer(text=f"Thời gian : {TimeStamp()}")
+        embed.set_image(url="https://c.tenor.com/LmJ_S8wzHlkAAAAd/tenor.gif")
 
-        # Gửi embed
         await ctx.send(embed=embed)
-
-        # Gửi video như một tệp đính kèm
-        file = discord.File(file_path, filename=chosen_video)
-        await ctx.send(file=file)
-
         await add_and_remove_role(ctx.author)
     except Exception as e:
         await ctx.send(f'Đã xảy ra lỗi khi xử lý lệnh: {e}')
