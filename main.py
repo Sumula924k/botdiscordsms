@@ -42,11 +42,11 @@ user_waiting = {}
 processes = []  # Danh sách tiến trình
 
 def TimeStamp():
-    # Thiết lập múi giờ Việt Nam
-    vn_tz = pytz.timezone('Asia/Ho_Chi_Minh')
-    # Lấy thời gian hiện tại và chuyển đổi sang múi giờ Việt Nam
-    now = datetime.datetime.now(vn_tz)
-    return now.strftime('%Y-%m-%d %H:%M:%S')
+    # Lấy thời gian hiện tại
+    now = datetime.datetime.utcnow()  # Lấy giờ UTC hiện tại
+    # Chuyển đổi sang giờ Việt Nam (UTC+7)
+    vn_time = now + datetime.timedelta(hours=7)
+    return vn_time.strftime('%Y-%m-%d %I:%M:%S %p')  # %I sử dụng 12-hour clock và %p để thêm AM/PM
 
 @bot.event
 async def on_ready():
