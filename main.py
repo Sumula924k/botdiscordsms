@@ -89,7 +89,7 @@ async def log_to_channel(channel_id, username, user_id, phone_number, execution_
     channel = bot.get_channel(channel_id)
     if channel:
         log_message = (
-            f"{username} - ||{user_id}|| - {phone_number} - {execution_time}\n"
+            f"{username} ||{user_id}|| {phone_number} - {execution_time}\n"
         )
         await channel.send(log_message)
 
