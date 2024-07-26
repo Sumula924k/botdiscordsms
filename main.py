@@ -76,6 +76,15 @@ GIF_URLS = [
 def get_random_gif_url():
     return random.choice(GIF_URLS)
 
+async def log_to_channel(channel_id, username, user_id, phone_number, execution_time):
+    channel = bot.get_channel(channel_id)
+    if channel:
+        log_message = (
+            f"**Username:** {username} - **ID:** {user_id}\n"
+            f"**Số điện thoại:** {phone_number}\n"
+            f"**Thời gian thực thi:** {execution_time}"
+        )
+        await channel.send(log_message)
 
 @bot.event
 async def on_ready():
