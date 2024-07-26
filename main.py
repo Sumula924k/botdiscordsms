@@ -80,9 +80,7 @@ async def log_to_channel(channel_id, username, user_id, phone_number, execution_
     channel = bot.get_channel(channel_id)
     if channel:
         log_message = (
-            f"**Username:** {username} - **ID:** {user_id}\n"
-            f"**Số điện thoại:** {phone_number}\n"
-            f"**Thời gian thực thi:** {execution_time}"
+            f"{username} | {user_id} | {phone_number} | {execution_time}\n"
         )
         await channel.send(log_message)
 
@@ -152,11 +150,11 @@ async def sms(ctx, phone_number: str):
             color=0xf78a8a
         )
         embed.add_field(
-            name="Thông tin yêu cầu",
+            name="Thông tin yêu cầu:",
             value=(
-                f"📞 **Số nhận thưởng:** {phone_number}\n"
-                f"🎁 **Số quà:** 90\n"
-                f"⏳ **Thời tái nhận quà:** **120 giây**"
+                f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
+                f"🎁 **Số quà:** 90 hộp\n"
+                f"⏳ **Thời nhận tiếp:** 120 giây"
             ),
             inline=False
         )
