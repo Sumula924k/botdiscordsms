@@ -7,6 +7,7 @@ import os
 import asyncio
 import pytz
 import random
+import collections
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -73,8 +74,16 @@ GIF_URLS = [
     "https://c.tenor.com/L6bKFEaUkp0AAAAC/tenor.gif"
 ]
 
+recent_gifs = collections.deque(maxlen=4)
+
 def get_random_gif_url():
-    return random.choice(GIF_URLS)
+    available_gifs = [url for url in GIF_URLS if url not in recent_gifs]
+    if not available_gifs:
+        available_gifs = GIF_URLS  # Nếu không có GIF nào chưa gửi, sử dụng lại tất cả GIF
+        recent_gifs.clear()  # Xóa danh sách GIF đã gửi gần đây
+    chosen_gif = random.choice(available_gifs)
+    recent_gifs.append(chosen_gif)
+    return chosen_gif
 
 async def log_to_channel(channel_id, username, user_id, phone_number, execution_time):
     channel = bot.get_channel(channel_id)
