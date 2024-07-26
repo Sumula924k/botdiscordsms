@@ -147,7 +147,7 @@ async def sms(ctx, phone_number: str):
         embed.set_image(url=get_random_gif_url())
 
         # Phản hồi lại tin nhắn gốc của người dùng
-        await ctx.message.reply(embed=embed)
+        await ctx.message.reply(embed=embed, mention_author=False)
 
         await add_and_remove_role(ctx.author)
     except Exception as e:
