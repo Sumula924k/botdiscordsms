@@ -70,7 +70,7 @@ GIF_URLS = [
     "https://c.tenor.com/1nwkeOg8j48AAAAd/tenor.gif",
     "https://c.tenor.com/qHL-pMgQ1D8AAAAd/tenor.gif",
     "https://c.tenor.com/5wn9MtW_PYUAAAAd/tenor.gif",
-    "https://c.tenor.com/L6bKFEaUkp0AAAAC/tenor.gif",
+    "https://c.tenor.com/L6bKFEaUkp0AAAAC/tenor.gif"
 ]
 
 def get_random_gif_url():
