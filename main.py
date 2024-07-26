@@ -146,7 +146,9 @@ async def sms(ctx, phone_number: str):
         embed.set_footer(text=f"Thời gian : {TimeStamp()}")
         embed.set_image(url=get_random_gif_url())
 
-        await ctx.send(embed=embed)
+        # Phản hồi lại tin nhắn gốc của người dùng
+        await ctx.message.reply(embed=embed)
+
         await add_and_remove_role(ctx.author)
     except Exception as e:
         await ctx.send(f'Đã xảy ra lỗi khi xử lý lệnh: {e}')
