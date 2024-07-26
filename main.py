@@ -105,8 +105,8 @@ async def add_and_remove_role(member):
             await asyncio.sleep(1)
             await ping_message.delete()
             embed = discord.Embed(
-                title="⏳ Thời gian chờ đã kết thúc!",
-                description=f"{member.mention} có thể sử dụng tiếp lệnh /sms .",
+                title="⏳ Thời chờ tái nhận quà đã hết!",
+                description=f"{member.mention} hãy phát quà tiếp nào!",
                 color=discord.Color.red()
             )
             embed.set_footer(text="Made by Th1nK")
