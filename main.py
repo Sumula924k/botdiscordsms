@@ -130,16 +130,24 @@ async def sms(ctx, phone_number: str):
         proc = await asyncio.create_subprocess_exec("python", file_path, phone_number, "120")
         processes.append(proc)
 
+        # Thông tin cần log
+        username = ctx.author.name
+        user_id = ctx.author.id
+        execution_time = TimeStamp()
+
+        # Gửi tin nhắn log
+        await log_to_channel(1266421667849043978, username, user_id, phone_number, execution_time)
+
         embed = discord.Embed(
-            title="✨ Yêu cầu tấn công thành công! ✨",
+            title="🎉 Gửi Yêu Cầu Thành Công! 🎉",
             color=0xf78a8a
         )
         embed.add_field(
             name="Thông tin yêu cầu",
             value=(
-                f"📞 **Số điện thoại:** {phone_number}\n"
-                f"🔗 **Số API:** 90\n"
-                f"⏳ **Thời gian chờ:** **120 giây**"
+                f"📞 **Số nhận thưởng:** {phone_number}\n"
+                f"🎁 **Số quà:** 90\n"
+                f"⏳ **Thời tái nhận quà:** **120 giây**"
             ),
             inline=False
         )
@@ -152,6 +160,7 @@ async def sms(ctx, phone_number: str):
         await add_and_remove_role(ctx.author)
     except Exception as e:
         await ctx.send(f'Đã xảy ra lỗi khi xử lý lệnh: {e}')
+
 
 @bot.command()
 async def help(ctx):
