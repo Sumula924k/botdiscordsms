@@ -15,7 +15,7 @@ http = urllib3.PoolManager(
     ca_certs='/path/to/your/certificate-authority-bundle-file'
 )
 
-if len(sys.argv) != 2:
+if len(sys.argv) != 1:
     print("Số lượng tham số không đúng")
     sys.exit()
 
