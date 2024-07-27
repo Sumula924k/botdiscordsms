@@ -3663,21 +3663,20 @@ def call_functions():
     ]
     
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        for _ in range(count):
-            futures = []
-            # Thực hiện các hàm theo nhóm với thời gian delay giữa các nhóm
-            for i, func in enumerate(functions):
-                future = executor.submit(func)
-                futures.append(future)
-                if (i + 1) % 5 == 0:  # Thêm delay sau mỗi nhóm 5 hàm
-                    time.sleep(2)
-            
-            # Đợi tất cả các hàm trong nhóm hoàn thành
-            for future in concurrent.futures.as_completed(futures):
-                pass  # Bạn có thể xử lý kết quả tại đây nếu cần
+        futures = []
+        # Thực hiện các hàm theo nhóm với thời gian delay giữa các nhóm
+        for i, func in enumerate(functions):
+            future = executor.submit(func)
+            futures.append(future)
+            if (i + 1) % 5 == 0:  # Thêm delay sau mỗi nhóm 5 hàm
+                time.sleep(2)
+        
+        # Đợi tất cả các hàm trong nhóm hoàn thành
+        for future in concurrent.futures.as_completed(futures):
+            pass  # Bạn có thể xử lý kết quả tại đây nếu cần
 
-            # Đợi giữa các lần gọi hàm
-            time.sleep(0.1)
+        # Đợi giữa các lần gọi hàm
+        time.sleep(0.1)
 
 if __name__ == "__main__":
     call_functions()
