@@ -2,7 +2,10 @@ import requests
 import time
 import sys
 import urllib3
-from colorama import Fore, Style
+from colorama import Fore, Style, init
+
+# Khởi tạo colorama để hỗ trợ màu sắc trong terminal
+init(autoreset=True)
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
