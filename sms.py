@@ -2,7 +2,6 @@ import requests
 import time
 import sys
 import urllib3
-import concurrent.futures
 from colorama import Fore, Style, init
 
 # Khởi tạo colorama để hỗ trợ màu sắc trong terminal
@@ -15,13 +14,22 @@ http = urllib3.PoolManager(
     ca_certs='/path/to/your/certificate-authority-bundle-file'
 )
 
-if len(sys.argv) != 1:
+if len(sys.argv) != 3:
     print("Số lượng tham số không đúng")
     sys.exit()
 
 sdt = sys.argv[1]
+other_param = sys.argv[2]
 
 print("Số điện thoại:", sdt)
+print("Tham số khác:", other_param)
+
+def sdtt(sdt):
+    if sdt.startswith("0"):
+        return "+84" + sdt[1:]
+    return sdt
+
+sdt_chuyen_doi = sdtt(sdt)
 
 def tv360():
     cookies = {
@@ -3639,35 +3647,183 @@ def pasgo():
     except requests.exceptions.RequestException:
         print("PASGO | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
-def call_functions():
-    functions = [
-        tv360, beautybox, kingfood, batdongsan, futabus, galaxyplay, hoangphuc, gumac, vinamilk,
-        speedlotte, medicare, tokyolife, vieon, fptreg, fptreset, fptresend, winmart, tgdidong,
-        dienmayxanh, meta, thefaceshop, bestexpress, ghnexpress, myviettel, fptshop, sapo, paynet,
-        reebok, gapowork, shine, oreka, fmstyle, circa, acfc, fptlongchauzl, thuocsi, pantio,
-        winny, owen, befood, foodhubzl, heyu, pantioresend, vttelecom, vinwonders, vietair, vexere,
-        atadi, etrip4u, tinyworld, chudu24, sojo, hasaki, kiehls, emart, hanoia, ahamove, fahasa,
-        vascara, sablanca, sandro, routine, coolmate, mioto, pharmartsms, medigosms, avakids,
-        giathuoctot, medigozl, ddmevabereg, pnjsms, pharmartzl, jiohealth, ddmevabe,
-        nhathuocankhang, mutosi, mocha, sigo, vietravel, pnjzl, mamanbebe, tatmart, dominos,
-        pico, hacom, liena, gofood, pasgo
-    ]
-    
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        futures = []
-        # Thực hiện các hàm theo nhóm với thời gian delay giữa các nhóm
-        for i, func in enumerate(functions):
-            future = executor.submit(func)
-            futures.append(future)
-            if (i + 1) % 5 == 0:  # Thêm delay sau mỗi nhóm 5 hàm
-                time.sleep(2)
-        
-        # Đợi tất cả các hàm trong nhóm hoàn thành
-        for future in concurrent.futures.as_completed(futures):
-            pass  # Bạn có thể xử lý kết quả tại đây nếu cần
-
-        # Đợi giữa các lần gọi hàm
-        time.sleep(0.1)
-
-if __name__ == "__main__":
-    call_functions()
+tv360()
+time.sleep(0.3)
+beautybox()
+time.sleep(0.3)
+kingfood()
+time.sleep(0.3)
+batdongsan()
+time.sleep(0.3)
+futabus()
+time.sleep(0.3)
+galaxyplay()
+time.sleep(0.3)
+hoangphuc()
+time.sleep(0.3)
+gumac()
+time.sleep(0.3)
+vinamilk()
+time.sleep(0.3)
+speedlotte()
+time.sleep(0.3)
+medicare()
+time.sleep(0.3)
+tokyolife()
+time.sleep(0.3)
+vieon()
+time.sleep(0.3)
+fptreg()
+time.sleep(0.3)
+fptreset()
+time.sleep(0.3)
+fptresend()
+time.sleep(0.3)
+winmart()
+time.sleep(0.3)
+tgdidong()
+time.sleep(0.3)
+dienmayxanh()
+time.sleep(0.3)
+meta()
+time.sleep(0.3)
+thefaceshop()
+time.sleep(0.3)
+bestexpress()
+time.sleep(0.3)
+ghnexpress()
+time.sleep(0.3)
+myviettel()
+time.sleep(0.3)
+fptshop()
+time.sleep(0.3)
+sapo()
+time.sleep(0.3)
+paynet()
+time.sleep(0.3)
+reebok()
+time.sleep(0.3)
+gapowork()
+time.sleep(0.3)
+shine()
+time.sleep(0.3)
+oreka()
+time.sleep(0.3)
+fmstyle()
+time.sleep(0.3)
+circa()
+time.sleep(0.3)
+acfc()
+time.sleep(0.3)
+fptlongchauzl()
+time.sleep(0.3)
+thuocsi()
+time.sleep(0.3)
+pantio()
+time.sleep(0.3)
+winny()
+time.sleep(0.3)
+owen()
+time.sleep(0.3)
+befood()
+time.sleep(0.3)
+foodhubzl()
+time.sleep(0.3)
+heyu()
+time.sleep(0.3)
+pantioresend()
+time.sleep(0.3)
+vttelecom()
+time.sleep(0.3)
+vinwonders()
+time.sleep(0.3)
+vietair()
+time.sleep(0.3)
+vexere()
+time.sleep(0.3)
+atadi()
+time.sleep(0.3)
+etrip4u()
+time.sleep(0.3)
+tinyworld()
+time.sleep(0.3)
+chudu24()
+time.sleep(0.3)
+sojo()
+time.sleep(0.3)
+hasaki()
+time.sleep(0.3)
+kiehls()
+time.sleep(0.3)
+emart()
+time.sleep(0.3)
+# watsons() ncc
+# time.sleep(0.3)
+hanoia()
+time.sleep(0.3)
+ahamove()
+time.sleep(0.3)
+fahasa()
+time.sleep(0.3)
+vascara()
+time.sleep(0.3)
+sablanca()
+time.sleep(0.3)
+sandro()
+time.sleep(0.3)
+routine()
+time.sleep(0.3)
+coolmate()
+time.sleep(0.3)
+mioto()
+time.sleep(0.3)
+pharmartsms()
+time.sleep(0.3)
+medigosms()
+time.sleep(0.3)
+avakids()
+time.sleep(0.3)
+giathuoctot()
+time.sleep(0.3)
+medigozl()
+time.sleep(0.3)
+ddmevabereg()
+time.sleep(0.3)
+pharmartzl()
+time.sleep(0.3)
+jiohealth()
+time.sleep(0.3)
+ddmevabe()
+time.sleep(0.3)
+nhathuocankhang()
+time.sleep(0.3)
+mutosi()
+time.sleep(0.3)
+picoregister()
+time.sleep(0.3)
+mocha()
+time.sleep(0.3)
+sigo()
+time.sleep(0.3)
+vietravel()
+time.sleep(0.3)
+pnjzl()
+time.sleep(0.3)
+mamanbebe()
+time.sleep(0.3)
+tatmart()
+time.sleep(0.3)
+mrtho()
+time.sleep(0.3)
+dominos()
+time.sleep(0.3)
+pico()
+time.sleep(0.3)
+hacom()
+time.sleep(0.3)
+liena()
+time.sleep(0.3)
+gofood()
+time.sleep(0.3)
+pasgo()
+time.sleep(0.3)
