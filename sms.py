@@ -15,22 +15,13 @@ http = urllib3.PoolManager(
     ca_certs='/path/to/your/certificate-authority-bundle-file'
 )
 
-if len(sys.argv) != 3:
+if len(sys.argv) != 2:
     print("Số lượng tham số không đúng")
     sys.exit()
 
 sdt = sys.argv[1]
-other_param = sys.argv[2]
 
 print("Số điện thoại:", sdt)
-print("Tham số khác:", other_param)
-
-def sdtt(sdt):
-    if sdt.startswith("0"):
-        return "+84" + sdt[1:]
-    return sdt
-
-sdt_chuyen_doi = sdtt(sdt)
 
 def tv360():
     cookies = {
