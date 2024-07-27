@@ -2,6 +2,7 @@ import requests
 import time
 import sys
 import urllib3
+import concurrent.futures
 from colorama import Fore, Style, init
 
 # Khởi tạo colorama để hỗ trợ màu sắc trong terminal
