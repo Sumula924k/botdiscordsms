@@ -2,6 +2,7 @@ import requests
 import time
 import sys
 import urllib3
+from colorama import Fore, Style
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -71,7 +72,7 @@ def tv360():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("TV360 | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("TV360 | TRẠNG THÁI : THẤT BẠI")
+        print("TV360 | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def beautybox():
     headers = {
@@ -105,7 +106,7 @@ def beautybox():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("BEAUTYBOX | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("BEAUTYBOX | TRẠNG THÁI : THẤT BẠI")
+        print("BEAUTYBOX | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 def kingfood():
     headers = {
         'accept': '*/*',
@@ -141,7 +142,7 @@ def kingfood():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("KINGFOOD | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("KINGFOOD | TRẠNG THÁI : THẤT BẠI")
+        print("KINGFOOD | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def batdongsan():
     cookies = {
@@ -184,7 +185,7 @@ def batdongsan():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("BATDONGSAN | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("BATDONGSAN | TRẠNG THÁI : THẤT BẠI")
+        print("BATDONGSAN | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def futabus():
     headers = {
@@ -216,7 +217,7 @@ def futabus():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("FUTABUS | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("FUTABUS | TRẠNG THÁI : THẤT BẠI")
+        print("FUTABUS | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 # def domino():
 #     headers = {
@@ -277,7 +278,7 @@ def galaxyplay():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("GALAXYPLAY | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("GALAXYPLAY | TRẠNG THÁI : THẤT BẠI")
+        print("GALAXYPLAY | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def hoangphuc():
     cookies = {
@@ -330,7 +331,7 @@ def hoangphuc():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("HOANGPHUC | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("HOANGPHUC | TRẠNG THÁI : THẤT BẠI")
+        print("HOANGPHUC | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def gumac():
     headers = {
@@ -358,7 +359,7 @@ def gumac():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("GUMAC | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("GUMAC | TRẠNG THÁI : THẤT BẠI")
+        print("GUMAC | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def vinamilk():
     cookies = {
@@ -394,7 +395,7 @@ def vinamilk():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("VINAMILK | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("VINAMILK | TRẠNG THÁI : THẤT BẠI")
+        print("VINAMILK | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def speedlotte():
     cookies = {
@@ -434,7 +435,7 @@ def speedlotte():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("SPEEDLOTTE | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("SPEEDLOTTE | TRẠNG THÁI : THẤT BẠI")
+        print("SPEEDLOTTE | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def medicare():
     cookies = {
@@ -471,7 +472,7 @@ def medicare():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("MEDICARE | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("MEDICARE | TRẠNG THÁI : THẤT BẠI")
+        print("MEDICARE | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def tokyolife():
     headers = {
@@ -506,7 +507,7 @@ def tokyolife():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("TOKYOLIFE | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("TOKYOLIFE | TRẠNG THÁI : THẤT BẠI")
+        print("TOKYOLIFE | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def vieon():
     headers = {
@@ -547,7 +548,7 @@ def vieon():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("VIEON | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("VIEON | TRẠNG THÁI : THẤT BẠI")
+        print("VIEON | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def fptreg():
     headers = {
@@ -582,7 +583,7 @@ def fptreg():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("FPTREG | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("FPTREG | TRẠNG THÁI : THẤT BẠI")
+        print("FPTREG | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def fptreset():
     headers = {
@@ -617,7 +618,7 @@ def fptreset():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("FPTRESET | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("FPTRESET | TRẠNG THÁI : THẤT BẠI")
+        print("FPTRESET | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def fptresend():
     headers = {
@@ -653,7 +654,7 @@ def fptresend():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("FPTRESEND | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("FPTRESEND | TRẠNG THÁI : THẤT BẠI")
+        print("FPTRESEND | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def winmart():
     headers = {
@@ -687,7 +688,7 @@ def winmart():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("WINMART | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("WINMART | TRẠNG THÁI : THẤT BẠI")
+        print("WINMART | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def tgdidong():
     cookies = {
@@ -745,7 +746,7 @@ def tgdidong():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("TGDIDONG | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("TGDIDONG | TRẠNG THÁI : THẤT BẠI")
+        print("TGDIDONG | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def dienmayxanh():
     cookies = {
@@ -799,7 +800,7 @@ def dienmayxanh():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("DIENMAYXANH | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("DIENMAYXANH | TRẠNG THÁI : THẤT BẠI")
+        print("DIENMAYXANH | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def meta():
     cookies = {
@@ -849,7 +850,7 @@ def meta():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("META | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("META | TRẠNG THÁI : THẤT BẠI")
+        print("META | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def thefaceshop():
     headers = {
@@ -883,7 +884,7 @@ def thefaceshop():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("THEFACESHOP | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("THEFACESHOP | TRẠNG THÁI : THẤT BẠI")
+        print("THEFACESHOP | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def bestexpress():
     headers = {
@@ -924,7 +925,7 @@ def bestexpress():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("BESTEXPRESS | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("BESTEXPRESS | TRẠNG THÁI : THẤT BẠI")
+        print("BESTEXPRESS | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def ghnexpress():
     headers = {
@@ -953,7 +954,7 @@ def ghnexpress():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("GHNEXPRESS | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("GHNEXPRESS | TRẠNG THÁI : THẤT BẠI")
+        print("GHNEXPRESS | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def myviettel():
     headers = {
@@ -980,7 +981,7 @@ def myviettel():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("MYVIETTEL | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("MYVIETTEL | TRẠNG THÁI : THẤT BẠI")
+        print("MYVIETTEL | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def fptshop():
     headers = {
@@ -1012,7 +1013,7 @@ def fptshop():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("FPTSHOP | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("FPTSHOP | TRẠNG THÁI : THẤT BẠI")
+        print("FPTSHOP | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def sapo():
     cookies = {
@@ -1051,7 +1052,7 @@ def sapo():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("SAPO | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("SAPO | TRẠNG THÁI : THẤT BẠI")
+        print("SAPO | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def paynet():
     cookies = {
@@ -1087,7 +1088,7 @@ def paynet():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("PAYNET | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("PAYNET | TRẠNG THÁI : THẤT BẠI")
+        print("PAYNET | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def reebok():
     headers = {
@@ -1121,7 +1122,7 @@ def reebok():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("REEBOK | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("REEBOK | TRẠNG THÁI : THẤT BẠI")
+        print("REEBOK | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def gapowork():
     headers = {
@@ -1152,7 +1153,7 @@ def gapowork():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("GAPOWORK | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("GAPOWORK | TRẠNG THÁI : THẤT BẠI")
+        print("GAPOWORK | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def shine():
     headers = {
@@ -1185,7 +1186,7 @@ def shine():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("30SHINE | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("30SHINE | TRẠNG THÁI : THẤT BẠI")
+        print("30SHINE | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def oreka():
     cookies = {
@@ -1227,7 +1228,7 @@ def oreka():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("OREKA | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("OREKA | TRẠNG THÁI : THẤT BẠI")
+        print("OREKA | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def fmstyle():
     headers = {
@@ -1263,7 +1264,7 @@ def fmstyle():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("FMSTYLE | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("FMSTYLE | TRẠNG THÁI : THẤT BẠI")
+        print("FMSTYLE | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def circa():
     headers = {
@@ -1296,7 +1297,7 @@ def circa():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("CIRCA | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("CIRCA | TRẠNG THÁI : THẤT BẠI")
+        print("CIRCA | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def acfc():
     cookies = {
@@ -1350,7 +1351,7 @@ def acfc():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("ACFC | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("ACFC | TRẠNG THÁI : THẤT BẠI")
+        print("ACFC | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def fptlongchauzl():
     headers = {
@@ -1387,7 +1388,7 @@ def fptlongchauzl():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("FPTLONGCHAUZL | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("FPTLONGCHAUZL | TRẠNG THÁI : THẤT BẠI")
+        print("FPTLONGCHAUZL | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def thuocsi():
     headers = {
@@ -1426,7 +1427,7 @@ def thuocsi():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("THUOCSI | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("THUOCSI | TRẠNG THÁI : THẤT BẠI")
+        print("THUOCSI | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def pantio():
     headers = {
@@ -1458,7 +1459,7 @@ def pantio():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("PANTIO | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("PANTIO | TRẠNG THÁI : THẤT BẠI")
+        print("PANTIO | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def pantioresend():
     headers = {
@@ -1490,7 +1491,7 @@ def pantioresend():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("PANTIORESEND | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("PANTIORESEND | TRẠNG THÁI : THẤT BẠI")
+        print("PANTIORESEND | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def winny():
     cookies = {
@@ -1541,7 +1542,7 @@ def winny():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("WINNY | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("WINNY | TRẠNG THÁI : THẤT BẠI")
+        print("WINNY | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def owen():
     cookies = {
@@ -1592,7 +1593,7 @@ def owen():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("OWEN | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("OWEN | TRẠNG THÁI : THẤT BẠI")
+        print("OWEN | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def befood():
     headers = {
@@ -1649,7 +1650,7 @@ def befood():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("BEFOOD | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("BEFOOD | TRẠNG THÁI : THẤT BẠI")
+        print("BEFOOD | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def foodhubzl():
     cookies = {
@@ -1690,7 +1691,7 @@ def foodhubzl():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("FOODHUBZL ABAHA | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("FOODHUBZL ABAHA | TRẠNG THÁI : THẤT BẠI")
+        print("FOODHUBZL ABAHA | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def heyu():
     headers = {
@@ -1723,7 +1724,7 @@ def heyu():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("HEYU | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("HEYU | TRẠNG THÁI : THẤT BẠI")
+        print("HEYU | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def vttelecom():
     cookies = {
@@ -1761,7 +1762,7 @@ def vttelecom():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("VTTELECOM | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("VTTELECOM | TRẠNG THÁI : THẤT BẠI")
+        print("VTTELECOM | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def vinwonders():
     headers = {
@@ -1795,7 +1796,7 @@ def vinwonders():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("VINWONDERS | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("VINWONDERS | TRẠNG THÁI : THẤT BẠI")
+        print("VINWONDERS | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def vietair():
     headers = {
@@ -1823,7 +1824,7 @@ def vietair():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("VIETAIR | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("VIETAIR | TRẠNG THÁI : THẤT BẠI")
+        print("VIETAIR | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def vexere():
     headers = {
@@ -1853,7 +1854,7 @@ def vexere():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("VEXERE | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("VEXERE | TRẠNG THÁI : THẤT BẠI")
+        print("VEXERE | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def atadi():
     headers = {
@@ -1883,7 +1884,7 @@ def atadi():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("ATADI | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("ATADI | TRẠNG THÁI : THẤT BẠI")
+        print("ATADI | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def etrip4u():
     cookies = {
@@ -1928,7 +1929,7 @@ def etrip4u():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("ETRIP4U | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("ETRIP4U | TRẠNG THÁI : THẤT BẠI")
+        print("ETRIP4U | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def tinyworld():
     cookies = {
@@ -1967,7 +1968,7 @@ def tinyworld():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("TINYWORLD | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("TINYWORLD | TRẠNG THÁI : THẤT BẠI")
+        print("TINYWORLD | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def chudu24():
     cookies = {
@@ -2013,7 +2014,7 @@ def chudu24():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("CHUDU24 | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("CHUDU24 | TRẠNG THÁI : THẤT BẠI")
+        print("CHUDU24 | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
     
 def sojo():
     headers = {
@@ -2057,7 +2058,7 @@ def sojo():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("SOJO | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("SOJO | TRẠNG THÁI : THẤT BẠI")
+        print("SOJO | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def hasaki():
     cookies = {
@@ -2094,7 +2095,7 @@ def hasaki():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("HASAKI.VN | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("HASAKI.VN | TRẠNG THÁI : THẤT BẠI")
+        print("HASAKI.VN | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def kiehls():
     cookies = {
@@ -2147,7 +2148,7 @@ def kiehls():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("KIEHLS | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("KIEHLS | TRẠNG THÁI : THẤT BẠI")
+        print("KIEHLS | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def emart():
     cookies = {
@@ -2189,7 +2190,7 @@ def emart():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("EMART | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("EMART | TRẠNG THÁI : THẤT BẠI")
+        print("EMART | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def watsons():
     cookies = {
@@ -2256,7 +2257,7 @@ def watsons():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("WATSONS | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("WATSONS | TRẠNG THÁI : THẤT BẠI")
+        print("WATSONS | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def hanoia():
     cookies = {
@@ -2305,7 +2306,7 @@ def hanoia():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("HANOIA | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("HANOIA | TRẠNG THÁI : THẤT BẠI")
+        print("HANOIA | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def ahamove():
     headers = {
@@ -2335,7 +2336,7 @@ def ahamove():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("AHAMOVE | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("AHAMOVE | TRẠNG THÁI : THẤT BẠI")
+        print("AHAMOVE | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def fahasa():
     cookies = {
@@ -2376,7 +2377,7 @@ def fahasa():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("FAHASA | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("FAHASA | TRẠNG THÁI : THẤT BẠI") 
+        print("FAHASA | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL) 
 
 def vascara():
     cookies = {
@@ -2422,7 +2423,7 @@ def vascara():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("VASCARA | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("VASCARA | TRẠNG THÁI : THẤT BẠI")
+        print("VASCARA | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def sablanca():
     cookies = {
@@ -2457,7 +2458,7 @@ def sablanca():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("SABLANCA | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("SABLANCA | TRẠNG THÁI : THẤT BẠI")
+        print("SABLANCA | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def sandro():
     cookies = {
@@ -2508,7 +2509,7 @@ def sandro():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("SANDRO | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("SANDRO | TRẠNG THÁI : THẤT BẠI")
+        print("SANDRO | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def routine():
     cookies = {
@@ -2557,7 +2558,7 @@ def routine():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("ROUTINE | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("ROUTINE | TRẠNG THÁI : THẤT BẠI")
+        print("ROUTINE | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
         
 def coolmate():
     cookies = {
@@ -2603,7 +2604,7 @@ def coolmate():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("COOLMATE | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("COOLMATE | TRẠNG THÁI : THẤT BẠI")
+        print("COOLMATE | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
         
 def mioto():
     cookies = {
@@ -2641,7 +2642,7 @@ def mioto():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("MIOTO | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("MIOTO | TRẠNG THÁI : THẤT BẠI")
+        print("MIOTO | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def avakids():
     cookies = {
@@ -2696,7 +2697,7 @@ def avakids():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("AVAKIDS | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("AVAKIDS | TRẠNG THÁI : THẤT BẠI")
+        print("AVAKIDS | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def giathuoctot():
     headers = {
@@ -2724,7 +2725,7 @@ def giathuoctot():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("GIATHUOCTOT | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("GIATHUOCTOT | TRẠNG THÁI : THẤT BẠI")
+        print("GIATHUOCTOT | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def medigozl():
     headers = {
@@ -2756,7 +2757,7 @@ def medigozl():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("MEDIGOZL | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("MEDIGOZL | TRẠNG THÁI : THẤT BẠI")
+        print("MEDIGOZL | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def pharmartzl():
     cookies = {
@@ -2794,7 +2795,7 @@ def pharmartzl():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("PHARMARTZL | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("PHARMARTZL | TRẠNG THÁI : THẤT BẠI")
+        print("PHARMARTZL | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def pharmartsms():
     cookies = {
@@ -2832,7 +2833,7 @@ def pharmartsms():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("PHARMARTSMS | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("PHARMARTSMS | TRẠNG THÁI : THẤT BẠI")
+        print("PHARMARTSMS | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def medigosms():
     headers = {
@@ -2860,7 +2861,7 @@ def medigosms():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("MEDIGOSMS | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("MEDIGOSMS | TRẠNG THÁI : THẤT BẠI")
+        print("MEDIGOSMS | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def jiohealth():
     headers = {
@@ -2901,7 +2902,7 @@ def jiohealth():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("JIOHEALTH | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("JIOHEALTH | TRẠNG THÁI : THẤT BẠI")
+        print("JIOHEALTH | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def ddmevabereg():
     headers = {
@@ -2936,7 +2937,7 @@ def ddmevabereg():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("DDMEVABE REG | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("DDMEVABE REG | TRẠNG THÁI : THẤT BẠI")
+        print("DDMEVABE REG | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def ddmevabe():
     headers = {
@@ -2964,7 +2965,7 @@ def ddmevabe():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("DDMEVABE | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("DDMEVABE | TRẠNG THÁI : THẤT BẠI")
+        print("DDMEVABE | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def nhathuocankhang():
     cookies = {
@@ -3017,7 +3018,7 @@ def nhathuocankhang():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("NHATHUOCANKHANG | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("NHATHUOCANKHANG | TRẠNG THÁI : THẤT BẠI")
+        print("NHATHUOCANKHANG | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def mutosi():
     headers = {
@@ -3048,7 +3049,7 @@ def mutosi():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("MUTOSI | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("MUTOSI | TRẠNG THÁI : THẤT BẠI")
+        print("MUTOSI | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def mocha():
     headers = {
@@ -3077,7 +3078,7 @@ def mocha():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("MOCHA | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("MOCHA | TRẠNG THÁI : THẤT BẠI")
+        print("MOCHA | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def sigo():
     headers = {
@@ -3112,7 +3113,7 @@ def sigo():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("SIGO | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("SIGO | TRẠNG THÁI : THẤT BẠI")
+        print("SIGO | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def vietravel():
     cookies = {
@@ -3167,7 +3168,7 @@ def vietravel():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("VIETRAVEL | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("VIETRAVEL | TRẠNG THÁI : THẤT BẠI")
+        print("VIETRAVEL | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def pnjzl():
     cookies = {
@@ -3210,7 +3211,7 @@ def pnjzl():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("PNJZL | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("PNJZL | TRẠNG THÁI : THẤT BẠI")
+        print("PNJZL | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def pnjsms():
     cookies = {
@@ -3254,7 +3255,7 @@ def pnjsms():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("PNJSMS | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("PNJSMS | TRẠNG THÁI : THẤT BẠI")
+        print("PNJSMS | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def mamanbebe():
     cookies = {
@@ -3301,7 +3302,7 @@ def mamanbebe():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("MAMANBEBE | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("MAMANBEBE | TRẠNG THÁI : THẤT BẠI")
+        print("MAMANBEBE | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def tatmart():
     cookies = {
@@ -3342,7 +3343,7 @@ def tatmart():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("TATMART | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("TATMART | TRẠNG THÁI : THẤT BẠI")
+        print("TATMART | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def mrtho():
     headers = {
@@ -3371,7 +3372,7 @@ def mrtho():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("MRTHO | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("MRTHO | TRẠNG THÁI : THẤT BẠI")
+        print("MRTHO | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def dominos():
     headers = {
@@ -3404,7 +3405,7 @@ def dominos():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("DOMINOS | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("DOMINOS | TRẠNG THÁI : THẤT BẠI")
+        print("DOMINOS | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def picoregister():
     headers = {
@@ -3438,7 +3439,7 @@ def picoregister():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("PICO REGISTER | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("PICO REGISTER | TRẠNG THÁI : THẤT BẠI")
+        print("PICO REGISTER | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def pico():
     headers = {
@@ -3472,7 +3473,7 @@ def pico():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("PICO | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("PICO | TRẠNG THÁI : THẤT BẠI")
+        print("PICO | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def hacom():
     cookies = {
@@ -3511,7 +3512,7 @@ def hacom():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("HACOM | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("HACOM | TRẠNG THÁI : THẤT BẠI")
+        print("HACOM | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def liena():
     cookies = {
@@ -3561,7 +3562,7 @@ def liena():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("LIENA | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("LIENA | TRẠNG THÁI : THẤT BẠI")
+        print("LIENA | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def gofood():
     cookies = {
@@ -3602,7 +3603,7 @@ def gofood():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("GOFOOD | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("GOFOOD | TRẠNG THÁI : THẤT BẠI")
+        print("GOFOOD | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def pasgo():
     cookies = {
@@ -3641,7 +3642,7 @@ def pasgo():
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("PASGO | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
-        print("PASGO | TRẠNG THÁI : THẤT BẠI")
+        print("PASGO | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 tv360()
 time.sleep(0.3)
