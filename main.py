@@ -5,7 +5,6 @@ import sqlite3
 import subprocess
 import os
 import asyncio
-import pytz
 import random
 import collections
 
@@ -16,14 +15,16 @@ intents.members = True
 
 bot = commands.Bot(command_prefix='/', intents=intents, help_command=None)
 
-# Thay thế 'your_token_here' bằng biến môi trường để bảo mật
 TOKEN = os.getenv('DISCORD_TOKEN')
 
-# IDs của server và kênh
+# Constants
 ALLOWED_CHANNEL_ID = 1264975987934761121
 ALLOWED_GUILD_ID = 1264973683877744798
 TEMP_ROLE_ID = 1264997863079940170
 ROLE_ID = 1264975463672057907
+SPECIAL_ROLE_ID = 1265025672225493223
+LOG_CHANNEL_ID = 1266421667849043978
+INVALID_NUMBERS = ['113', '911', '114', '115', '84357156328', '0357156328']
 
 # Database setup
 try:
@@ -39,17 +40,9 @@ try:
 except sqlite3.Error as e:
     print(f"Lỗi kết nối cơ sở dữ liệu: {e}")
 
-# Lưu trữ trạng thái chờ
-user_waiting = {}
-processes = []  # Danh sách tiến trình
-
-def TimeStamp():
-    # Lấy thời gian hiện tại
-    now = datetime.datetime.utcnow()  # Lấy giờ UTC hiện tại
-    # Chuyển đổi sang giờ Việt Nam (UTC+7)
-    vn_time = now + datetime.timedelta(hours=7)
-    return vn_time.strftime('%Y-%m-%d %I:%M:%S %p')  # %I sử dụng 12-hour clock và %p để thêm AM/PM
-
+# State storage
+processes = []
+recent_gifs = collections.deque(maxlen=4)
 GIF_URLS = [
     "https://c.tenor.com/LmJ_S8wzHlkAAAAd/tenor.gif",
     "https://c.tenor.com/yOV-KR0BbeQAAAAC/tenor.gif",
@@ -74,23 +67,22 @@ GIF_URLS = [
     "https://c.tenor.com/L6bKFEaUkp0AAAAC/tenor.gif"
 ]
 
-recent_gifs = collections.deque(maxlen=4)
+def TimeStamp():
+    return (datetime.datetime.utcnow() + datetime.timedelta(hours=7)).strftime('%Y-%m-%d %I:%M:%S %p')
 
 def get_random_gif_url():
     available_gifs = [url for url in GIF_URLS if url not in recent_gifs]
     if not available_gifs:
-        available_gifs = GIF_URLS  # Nếu không có GIF nào chưa gửi, sử dụng lại tất cả GIF
-        recent_gifs.clear()  # Xóa danh sách GIF đã gửi gần đây
+        available_gifs = GIF_URLS
+        recent_gifs.clear()
     chosen_gif = random.choice(available_gifs)
     recent_gifs.append(chosen_gif)
     return chosen_gif
 
-async def log_to_channel(channel_id, username, user_id, phone_number, execution_time):
-    channel = bot.get_channel(channel_id)
+async def log_to_channel(username, user_id, phone_number, execution_time):
+    channel = bot.get_channel(LOG_CHANNEL_ID)
     if channel:
-        log_message = (
-            f"{username} ||{user_id}|| {phone_number} - {execution_time}\n"
-        )
+        log_message = f"{username} ||{user_id}|| {phone_number} - {execution_time}\n"
         await channel.send(log_message)
 
 @bot.event
@@ -98,15 +90,13 @@ async def on_ready():
     print(f'Kết nối thành công với {bot.user.name}')
 
 def has_required_role(member):
-    role = discord.utils.get(member.guild.roles, id=ROLE_ID)
-    return role in member.roles
+    return discord.utils.get(member.guild.roles, id=ROLE_ID) in member.roles
 
 async def add_and_remove_role(member):
-    guild = member.guild
-    temp_role = discord.utils.get(guild.roles, id=TEMP_ROLE_ID)
+    temp_role = discord.utils.get(member.guild.roles, id=TEMP_ROLE_ID)
     if temp_role:
         await member.add_roles(temp_role)
-        await asyncio.sleep(120)  # Chờ 120 giây
+        await asyncio.sleep(120)
         await member.remove_roles(temp_role)
         channel = bot.get_channel(ALLOWED_CHANNEL_ID)
         if channel:
@@ -123,11 +113,11 @@ async def add_and_remove_role(member):
 
 def check_permissions(ctx):
     if ctx.guild.id != ALLOWED_GUILD_ID:
-        return False, f'Bot chỉ hoạt động tại server Al1nK SMS.'
+        return False, 'Bot chỉ hoạt động tại server Al1nK SMS.'
     if ctx.channel.id != ALLOWED_CHANNEL_ID:
         return False, f'Bot chỉ hoạt động tại kênh <#{ALLOWED_CHANNEL_ID}>.'
     if not has_required_role(ctx.author):
-        return False, f'Tuổi gì dùng lệnh?'
+        return False, 'Tuổi gì dùng lệnh?'
     return True, None
 
 @bot.command()
@@ -137,7 +127,8 @@ async def sms(ctx, phone_number: str):
         await ctx.send(message)
         return
 
-    if not phone_number.isnumeric() or phone_number in ['113', '911', '114', '115', '84357156328', '0357156328']:
+    special_role = discord.utils.get(ctx.guild.roles, id=SPECIAL_ROLE_ID)
+    if not phone_number.isnumeric() or (phone_number in INVALID_NUMBERS and special_role not in ctx.author.roles):
         await ctx.send('Số không hợp lệ hoặc không được phép.')
         return
 
@@ -146,13 +137,11 @@ async def sms(ctx, phone_number: str):
         proc = await asyncio.create_subprocess_exec("python", file_path, phone_number, "120")
         processes.append(proc)
 
-        # Thông tin cần log
         username = ctx.author.name
         user_id = ctx.author.id
         execution_time = TimeStamp()
 
-        # Gửi tin nhắn log
-        await log_to_channel(1266421667849043978, username, user_id, phone_number, execution_time)
+        await log_to_channel(username, user_id, phone_number, execution_time)
 
         embed = discord.Embed(
             title="🎉 Gửi Yêu Cầu Thành Công! 🎉",
@@ -170,13 +159,11 @@ async def sms(ctx, phone_number: str):
         embed.set_footer(text=f"Thời gian : {TimeStamp()}")
         embed.set_image(url=get_random_gif_url())
 
-        # Phản hồi lại tin nhắn gốc của người dùng
         await ctx.message.reply(embed=embed, mention_author=False)
 
         await add_and_remove_role(ctx.author)
     except Exception as e:
         await ctx.send(f'Đã xảy ra lỗi khi xử lý lệnh: {e}')
-
 
 @bot.command()
 async def help(ctx):
@@ -213,7 +200,5 @@ async def on_message(message):
             await message.channel.send('Lệnh không xác định, sử dụng lệnh /help để hiện danh sách lệnh.')
     elif isinstance(message.channel, discord.DMChannel):
         await message.channel.send('Bot chỉ hoạt động tại server Al1nK SMS.')
-    else:
-        return
 
 bot.run(TOKEN)
