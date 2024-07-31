@@ -177,10 +177,6 @@ async def smsvip(ctx, phone_number: str):
         await ctx.send(f'Smsvip chỉ hoạt động tại kênh <#{VIP_CHANNEL_ID}>.')
         return
 
-    if ctx.channel.id == ALLOWED_CHANNEL_ID:
-        await ctx.send(f'Không thể sử dụng lệnh VIP. Hãy dùng tại kênh <#{VIP_CHANNEL_ID}>.')
-        return
-
     # Kiểm tra vai trò
     if not discord.utils.get(ctx.author.roles, id=VIP_ROLE_ID):
         await ctx.send('Bạn cần ROLE VIP để sử dụng lệnh này.')
