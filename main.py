@@ -84,6 +84,12 @@ async def log_to_channel(username, user_id, phone_number, execution_time):
         log_message = f"{username} ||{user_id}|| {phone_number} - {execution_time}\n"
         await channel.send(log_message)
 
+async def log_to_channel_vip(username, user_id, phone_number, execution_time):
+    channel = bot.get_channel(LOG_CHANNEL_ID)
+    if channel:
+        log_message = f"**VIP** {username} ||{user_id}|| {phone_number} - {execution_time}\n"
+        await channel.send(log_message)
+
 @bot.event
 async def on_ready():
     print(f'Kết nối thành công với {bot.user.name}')
@@ -197,7 +203,7 @@ async def smsvip(ctx, phone_number: str):
         user_id = ctx.author.id
         execution_time = TimeStamp()
 
-        await log_to_channel(username, user_id, phone_number, execution_time)
+        await log_to_channel_vip(username, user_id, phone_number, execution_time)
 
         embed = discord.Embed(
             title="🎉 Gửi Yêu Cầu Thành Công! 😈",
