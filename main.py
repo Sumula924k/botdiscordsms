@@ -248,8 +248,8 @@ async def smsvip(ctx, phone_number: str):
             name="Thông tin yêu cầu:",
             value=(
                 f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
-                f"⚡ **Tốc độ:** MAXSPEED\n"
-                f"⛓️ **Số lần lặp: 4 lần** \n"
+                f"⚡ **Tốc độ:** Nhanh\n"
+                f"⛓️ **Số lần lặp: 7 lần** \n"
                 f"🎁 **Số quà:** 91 hộp\n"
                 f"⏳ **Thời nhận tiếp:** 120 giây"
             ),
