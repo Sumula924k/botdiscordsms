@@ -116,6 +116,26 @@ async def add_and_remove_role(member):
             embed.set_footer(text="Made by Th1nK")
             await channel.send(embed=embed)
 
+async def add_and_remove_role_vip(member):
+    temp_role = discord.utils.get(member.guild.roles, id=TEMP_ROLE_ID)
+    if temp_role:
+        await member.add_roles(temp_role)
+        await asyncio.sleep(120)
+        await member.remove_roles(temp_role)
+        channel = bot.get_channel(VIP_CHANNEL_ID)
+        if channel:
+            ping_message = await channel.send(f'{member.mention}')
+            await asyncio.sleep(1)
+            await ping_message.delete()
+            embed = discord.Embed(
+                title="⏳ Thời chờ tái nhận quà đã hết!",
+                description=f"{member.mention} hãy phát quà tiếp nào!",
+                color=discord.Color.red()
+            )
+            embed.set_footer(text="Made by Th1nK")
+            await channel.send(embed=embed)
+
+
 def check_permissions(ctx):
     if ctx.guild.id != ALLOWED_GUILD_ID:
         return False, 'Bot chỉ hoạt động tại server Al1nK SMS.'
@@ -225,7 +245,7 @@ async def smsvip(ctx, phone_number: str):
 
         await ctx.message.reply(embed=embed, mention_author=False)
 
-        await add_and_remove_role(ctx.author)
+        await add_and_remove_role_vip(ctx.author)
     except Exception as e:
         await ctx.send(f'Đã xảy ra lỗi khi xử lý lệnh: {e}')
 
