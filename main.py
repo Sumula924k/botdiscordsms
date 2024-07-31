@@ -114,7 +114,7 @@ def check_permissions(ctx):
     if ctx.guild.id != ALLOWED_GUILD_ID:
         return False, 'Bot chỉ hoạt động tại server Al1nK SMS.'
     if ctx.channel.id != ALLOWED_CHANNEL_ID:
-        return False, f'Bot chỉ hoạt động tại kênh <#{ALLOWED_CHANNEL_ID}>.'
+        return False, f'Sms chỉ hoạt động tại kênh <#{ALLOWED_CHANNEL_ID}>.'
     if not has_required_role(ctx.author):
         return False, 'Tuổi gì dùng lệnh?'
     return True, None
