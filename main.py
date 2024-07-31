@@ -154,6 +154,10 @@ async def sms(ctx, phone_number: str):
         await ctx.send("Đang trong thời gian chờ, hãy thử lại sau.")
         return
 
+    if ctx.channel.id != ALLOWED_CHANNEL_ID:
+        await ctx.send(f'Sms chỉ hoạt động tại kênh <#{ALLOWED_CHANNEL_ID}>.')
+        return
+
     is_allowed, message = check_permissions(ctx)
     if not is_allowed:
         await ctx.send(message)
