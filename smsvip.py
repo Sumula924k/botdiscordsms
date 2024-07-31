@@ -32,7 +32,7 @@ def sdtt(sdt):
 
 sdt_chuyen_doi = sdtt(sdt)
 
-count = 4
+count = 77
 
 def tv360():
     cookies = {
@@ -3760,8 +3760,8 @@ def call_functions():
             for i, func in enumerate(functions):
                 future = executor.submit(func)
                 futures.append(future)
-                if (i + 1) % 5 == 0:  # Thêm delay sau mỗi nhóm 5 hàm
-                    time.sleep(0.5)
+                if (i + 1) % 8 == 0:  # Thêm delay sau mỗi nhóm 5 hàm
+                    time.sleep(0.3)
             
             # Đợi tất cả các hàm trong nhóm hoàn thành
             for future in concurrent.futures.as_completed(futures):
