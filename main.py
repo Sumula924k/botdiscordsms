@@ -255,7 +255,7 @@ async def on_message(message):
 
     if message.content.startswith('/'):
         if message.channel.id != ALLOWED_CHANNEL_ID:
-            await message.channel.send(f'Bot chỉ hoạt động tại kênh <#{ALLOWED_CHANNEL_ID}>.')
+            await message.channel.send(f'Sms chỉ hoạt động tại kênh <#{ALLOWED_CHANNEL_ID}>.')
             return
 
         if message.content.startswith('/sms') or message.content.startswith('/help'):
