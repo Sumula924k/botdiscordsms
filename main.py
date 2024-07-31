@@ -90,6 +90,9 @@ async def log_to_channel_vip(username, user_id, phone_number, execution_time):
         log_message = f"**VIP** {username} ||{user_id}|| {phone_number} - {execution_time}\n"
         await channel.send(log_message)
 
+def has_excluded_role(member):
+    return discord.utils.get(member.guild.roles, id=1264997863079940170) in member.roles
+
 @bot.event
 async def on_ready():
     print(f'Kết nối thành công với {bot.user.name}')
@@ -147,6 +150,10 @@ def check_permissions(ctx):
 
 @bot.command()
 async def sms(ctx, phone_number: str):
+    if has_excluded_role(ctx.author):
+        await ctx.send("Đang trong thời gian chờ, hãy thử lại sau.")
+        return
+
     is_allowed, message = check_permissions(ctx)
     if not is_allowed:
         await ctx.send(message)
@@ -198,6 +205,10 @@ async def sms(ctx, phone_number: str):
 
 @bot.command()
 async def smsvip(ctx, phone_number: str):
+    if has_excluded_role(ctx.author):
+        await ctx.send("Đang trong thời gian chờ, hãy thử lại sau.")
+        return
+
     # Kiểm tra kênh
     if ctx.channel.id != VIP_CHANNEL_ID:
         await ctx.send(f'Smsvip chỉ hoạt động tại kênh <#{VIP_CHANNEL_ID}>.')
