@@ -114,7 +114,7 @@ def check_permissions(ctx):
     if ctx.guild.id != ALLOWED_GUILD_ID:
         return False, 'Bot chỉ hoạt động tại server Al1nK SMS.'
     if ctx.channel.id != ALLOWED_CHANNEL_ID:
-        return False, f'SmS chỉ hoạt động tại kênh <#{ALLOWED_CHANNEL_ID}>.'
+        return False, f'Sms chỉ hoạt động tại kênh <#{ALLOWED_CHANNEL_ID}>.'
     if not has_required_role(ctx.author):
         return False, 'Tuổi gì dùng lệnh?'
     return True, None
@@ -249,15 +249,16 @@ async def on_message(message):
     if message.guild and message.guild.id != ALLOWED_GUILD_ID:
         return
 
+    # Kiểm tra nếu tin nhắn bắt đầu bằng lệnh
     if message.content.startswith('/'):
-        if message.channel.id != ALLOWED_CHANNEL_ID:
-            await message.channel.send(f'Smss chỉ hoạt động tại kênh <#{ALLOWED_CHANNEL_ID}>.')
-            return
+        # Kiểm tra nếu lệnh không phải là /sms hoặc /help
+        if not (message.content.startswith('/sms') or message.content.startswith('/smsvip') or message.content.startswith('/help')):
+            if message.channel.id != ALLOWED_CHANNEL_ID:
+                await message.channel.send(f'Lệnh chỉ hoạt động tại kênh <#{ALLOWED_CHANNEL_ID}>.')
+                return
 
-        if message.content.startswith('/sms') or message.content.startswith('/help'):
-            await bot.process_commands(message)
-        else:
-            await message.channel.send('Lệnh không xác định, sử dụng lệnh /help để hiện danh sách lệnh.')
+        # Xử lý lệnh
+        await bot.process_commands(message)
     elif isinstance(message.channel, discord.DMChannel):
         await message.channel.send('Bot chỉ hoạt động tại server Al1nK SMS.')
 
