@@ -25,6 +25,8 @@ ROLE_ID = 1264975463672057907
 SPECIAL_ROLE_ID = 1265025672225493223
 LOG_CHANNEL_ID = 1266421667849043978
 INVALID_NUMBERS = ['113', '911', '114', '115', '84357156328', '0357156328']
+VIP_CHANNEL_ID = 1268130522731905079
+VIP_ROLE_ID = 1268131048575729665
 
 # Database setup
 try:
@@ -124,6 +126,11 @@ async def sms(ctx, phone_number: str):
         await ctx.send(message)
         return
 
+    # Nếu là lệnh /smsvip thì bỏ qua
+    if ctx.channel.id == VIP_CHANNEL_ID:
+        await ctx.send('Lệnh này không thể sử dụng ở kênh VIP. Hãy dùng /smsvip.')
+        return
+
     special_role = discord.utils.get(ctx.guild.roles, id=SPECIAL_ROLE_ID)
     if not phone_number.isnumeric() or (phone_number in INVALID_NUMBERS and special_role not in ctx.author.roles):
         await ctx.send('Số không hợp lệ hoặc không được phép.')
@@ -148,7 +155,65 @@ async def sms(ctx, phone_number: str):
             name="Thông tin yêu cầu:",
             value=(
                 f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
+                f"⚡ **Tốc độ:** Basic\n"
                 f"🎁 **Số quà:** 90 hộp\n"
+                f"⏳ **Thời nhận tiếp:** 120 giây"
+            ),
+            inline=False
+        )
+        embed.set_footer(text=f"Thời gian : {TimeStamp()}")
+        embed.set_image(url=get_random_gif_url())
+
+        await ctx.message.reply(embed=embed, mention_author=False)
+
+        await add_and_remove_role(ctx.author)
+    except Exception as e:
+        await ctx.send(f'Đã xảy ra lỗi khi xử lý lệnh: {e}')
+
+@bot.command()
+async def smsvip(ctx, phone_number: str):
+    # Kiểm tra kênh
+    if ctx.channel.id != VIP_CHANNEL_ID:
+        await ctx.send(f'Smsvip chỉ hoạt động tại kênh <#{VIP_CHANNEL_ID}>.')
+        return
+
+    if ctx.channel.id == ALLOWED_CHANNEL_ID:
+        await ctx.send(f'Không thể sử dụng lệnh VIP. Hãy dùng tại kênh <#{VIP_CHANNEL_ID}>.')
+        return
+
+    # Kiểm tra vai trò
+    if not discord.utils.get(ctx.author.roles, id=VIP_ROLE_ID):
+        await ctx.send('Bạn cần ROLE VIP để sử dụng lệnh này.')
+        return
+
+    # Kiểm tra số điện thoại
+    special_role = discord.utils.get(ctx.guild.roles, id=SPECIAL_ROLE_ID)
+    if not phone_number.isnumeric() or (phone_number in INVALID_NUMBERS and special_role not in ctx.author.roles):
+        await ctx.send('Số không hợp lệ hoặc không được phép.')
+        return
+
+    try:
+        file_path = os.path.join(os.getcwd(), "smsvip.py")
+        proc = await asyncio.create_subprocess_exec("python", file_path, phone_number, "120")
+        processes.append(proc)
+
+        username = ctx.author.name
+        user_id = ctx.author.id
+        execution_time = TimeStamp()
+
+        await log_to_channel(username, user_id, phone_number, execution_time)
+
+        embed = discord.Embed(
+            title="🎉 Gửi Yêu Cầu Thành Công! 😈",
+            color=0xf78a8a
+        )
+        embed.add_field(
+            name="Thông tin yêu cầu:",
+            value=(
+                f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
+                f"⚡ **Tốc độ:** MAXSPEED\n"
+                f"⛓️ **Số lần lặp: 10 lần** \n"
+                f"🎁 **Số quà:** 91 hộp\n"
                 f"⏳ **Thời nhận tiếp:** 120 giây"
             ),
             inline=False
@@ -173,10 +238,12 @@ async def help(ctx):
         title="Danh Sách Lệnh",
         color=0xf78a8a
     )
-    embed.add_field(name="/sms {số điện thoại}", value="Gửi tin nhắn SMS. (Phải có quyền sử dụng lệnh)", inline=False)
+    embed.add_field(name="/sms {số điện thoại}", value="Gửi tin nhắn SMS. (Cần Quyền Hạn)", inline=False)
+    embed.add_field(name="/smsvip {số điện thoại}", value="Gửi tin nhắn SMS VIP. (Cần Quyền Hạn)", inline=False)
     embed.set_footer(text="Made by Th1nK")
 
     await ctx.send(embed=embed)
+
 
 @bot.event
 async def on_message(message):
