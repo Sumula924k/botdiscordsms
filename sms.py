@@ -3671,6 +3671,73 @@ def coolmateresend():
     except requests.exceptions.RequestException:
         print("COOLMATERESEND | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
+def vietloan():
+    cookies = {
+        'jslbrc': 'w.20240725025025a4a6e770-4a30-11ef-b50d-96d7934ebbe4.A_GS',
+        '__cfruid': '94bcfce67157e886a01124469394f2d98678e632-1722410833',
+        '_gcl_au': '1.1.1637479389.1722410837',
+        '_gid': 'GA1.2.249547405.1722410837',
+        '_tt_enable_cookie': '1',
+        '_ttp': 'BCNl-9LA0i0a8YqJWV2Veir4WGy',
+        '_clck': '8x261n%7C2%7Cfnx%7C0%7C1673',
+        'mousestats_vi': 'e6c32520217f71487615',
+        'mousestats_si': '3e2a87f99adf896bce1e',
+        '_ym_uid': '1722410839843139251',
+        '_ym_d': '1722410839',
+        '_ym_isad': '2',
+        '_ym_visorc': 'w',
+        'XSRF-TOKEN': 'eyJpdiI6Ilh0eGx0WFkzempHcUl0SGwxTVBYNUE9PSIsInZhbHVlIjoiR1FMc2R4MFlDRk9nN0FJY1UvckorTitKdmtZRE5MbG9tRDEvTVQ2dWlyOTYzZVVpM3RUUHVMYWhQaGNFd0dwRnRMMVpWNTR3MEdXcFJ1OXJ1N1RUUGM3bXdDNFhLdFh5WktybG9tblZqdnpGWTVpMEs1cStnS045bnR6ZmwrOTgiLCJtYWMiOiI2N2M0OTk2MGU5MTA4ZGJjZGZjNDZhY2MzNWQzOTRhMzU3NDc4OGM3NDQ3NTc4YWRlYzNhOTNlODVmODA2MDEzIiwidGFnIjoiIn0%3D',
+        'sessionid': 'eyJpdiI6IkJRNHFWelAwVHdwWlprTElOWE1xMXc9PSIsInZhbHVlIjoiNXhvbUNuRFdFQThVRTY5eHNBREJwSExYVkxEa0VTZU94VEJRK0tsck1qQ0FydFdzaFRkMEZ5b1pQV25mOEFtR3p5aUZpMGVDYitPaUh3ejZ5dFh0VkRoMTRXdFV1aXhsd21TdWw4UGljQitJWmJiRDVTWXRiOStzZUt1SENqaG8iLCJtYWMiOiI3ZDE4MTY3MmRhMmIzN2YxNDNlMjg0MjFlZDAyZmNiMWJhZGJmOWI1MDY5ZDc2OGYzZjMxNmJiNzVlODY2NDI5IiwidGFnIjoiIn0%3D',
+        'utm_uid': 'eyJpdiI6IktKMjNTNnRqdmx6MEUzV1czcEt6SVE9PSIsInZhbHVlIjoidE9LQ08wbXVldUd4VzMxc1R2V2RTKzJmM25lUXgzYXpXRXFGN3I1OG4xeEJMc212cnlCRXYrNEo3ZnU3QWxUSTJsY0FsUE5mZmtCT3BneFdIU25lb0E3N1djZzJKNlZpUmdZSkNHclZTMGZvMEZaUUNrby9EWHVoa3EyZDBNRzAiLCJtYWMiOiJiNTRlZGVhMTEyMDRlMjI2M2ZjM2ZmYmM2NDMzYjQ2NjI1MzMxOTY1ODE2N2M5N2EyNjI1NWM3ZDUxZTg5OTk4IiwidGFnIjoiIn0%3D',
+        '_ga': 'GA1.2.1436947795.1722410837',
+        '_ga_EBK41LH7H5': 'GS1.1.1722410836.1.1.1722410860.36.0.0',
+        'ec_png_utm': '632e6101-b428-93c3-3898-ca177175bb79',
+        'ec_png_client': 'false',
+        'ec_png_client_utm': 'null',
+        'ec_cache_utm': '632e6101-b428-93c3-3898-ca177175bb79',
+        'ec_cache_client': 'false',
+        'ec_cache_client_utm': 'null',
+        'ec_etag_utm': '632e6101-b428-93c3-3898-ca177175bb79',
+        'ec_etag_client': 'false',
+        'ec_etag_client_utm': 'null',
+        '_clsk': '9762wf%7C1722410862712%7C1%7C1%7Cr.clarity.ms%2Fcollect',
+        'uid': '632e6101-b428-93c3-3898-ca177175bb79',
+        'client': 'false',
+        'client_utm': 'null',
+    }
+
+    headers = {
+        'accept': '*/*',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        # 'cookie': 'jslbrc=w.20240725025025a4a6e770-4a30-11ef-b50d-96d7934ebbe4.A_GS; __cfruid=94bcfce67157e886a01124469394f2d98678e632-1722410833; _gcl_au=1.1.1637479389.1722410837; _gid=GA1.2.249547405.1722410837; _tt_enable_cookie=1; _ttp=BCNl-9LA0i0a8YqJWV2Veir4WGy; _clck=8x261n%7C2%7Cfnx%7C0%7C1673; mousestats_vi=e6c32520217f71487615; mousestats_si=3e2a87f99adf896bce1e; _ym_uid=1722410839843139251; _ym_d=1722410839; _ym_isad=2; _ym_visorc=w; XSRF-TOKEN=eyJpdiI6Ilh0eGx0WFkzempHcUl0SGwxTVBYNUE9PSIsInZhbHVlIjoiR1FMc2R4MFlDRk9nN0FJY1UvckorTitKdmtZRE5MbG9tRDEvTVQ2dWlyOTYzZVVpM3RUUHVMYWhQaGNFd0dwRnRMMVpWNTR3MEdXcFJ1OXJ1N1RUUGM3bXdDNFhLdFh5WktybG9tblZqdnpGWTVpMEs1cStnS045bnR6ZmwrOTgiLCJtYWMiOiI2N2M0OTk2MGU5MTA4ZGJjZGZjNDZhY2MzNWQzOTRhMzU3NDc4OGM3NDQ3NTc4YWRlYzNhOTNlODVmODA2MDEzIiwidGFnIjoiIn0%3D; sessionid=eyJpdiI6IkJRNHFWelAwVHdwWlprTElOWE1xMXc9PSIsInZhbHVlIjoiNXhvbUNuRFdFQThVRTY5eHNBREJwSExYVkxEa0VTZU94VEJRK0tsck1qQ0FydFdzaFRkMEZ5b1pQV25mOEFtR3p5aUZpMGVDYitPaUh3ejZ5dFh0VkRoMTRXdFV1aXhsd21TdWw4UGljQitJWmJiRDVTWXRiOStzZUt1SENqaG8iLCJtYWMiOiI3ZDE4MTY3MmRhMmIzN2YxNDNlMjg0MjFlZDAyZmNiMWJhZGJmOWI1MDY5ZDc2OGYzZjMxNmJiNzVlODY2NDI5IiwidGFnIjoiIn0%3D; utm_uid=eyJpdiI6IktKMjNTNnRqdmx6MEUzV1czcEt6SVE9PSIsInZhbHVlIjoidE9LQ08wbXVldUd4VzMxc1R2V2RTKzJmM25lUXgzYXpXRXFGN3I1OG4xeEJMc212cnlCRXYrNEo3ZnU3QWxUSTJsY0FsUE5mZmtCT3BneFdIU25lb0E3N1djZzJKNlZpUmdZSkNHclZTMGZvMEZaUUNrby9EWHVoa3EyZDBNRzAiLCJtYWMiOiJiNTRlZGVhMTEyMDRlMjI2M2ZjM2ZmYmM2NDMzYjQ2NjI1MzMxOTY1ODE2N2M5N2EyNjI1NWM3ZDUxZTg5OTk4IiwidGFnIjoiIn0%3D; _ga=GA1.2.1436947795.1722410837; _ga_EBK41LH7H5=GS1.1.1722410836.1.1.1722410860.36.0.0; ec_png_utm=632e6101-b428-93c3-3898-ca177175bb79; ec_png_client=false; ec_png_client_utm=null; ec_cache_utm=632e6101-b428-93c3-3898-ca177175bb79; ec_cache_client=false; ec_cache_client_utm=null; ec_etag_utm=632e6101-b428-93c3-3898-ca177175bb79; ec_etag_client=false; ec_etag_client_utm=null; _clsk=9762wf%7C1722410862712%7C1%7C1%7Cr.clarity.ms%2Fcollect; uid=632e6101-b428-93c3-3898-ca177175bb79; client=false; client_utm=null',
+        'origin': 'https://vietloan.vn',
+        'priority': 'u=1, i',
+        'referer': 'https://vietloan.vn/register',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'x-requested-with': 'XMLHttpRequest',
+    }
+
+    data = {
+        'phone': sdt,
+        '_token': 'Fh2qJ1nzCevC64qwn8dWINt1Nw0ykTSrpDEABcBU',
+    }
+
+    try:
+        response = requests.post('https://vietloan.vn/register/phone-resend', cookies=cookies, headers=headers, data=data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("VIETLOAN | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("VIETLOAN | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+vietloan()
+time.sleep(0.3)
 tv360()
 time.sleep(0.3)
 beautybox()
