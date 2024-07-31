@@ -114,7 +114,7 @@ def check_permissions(ctx):
     if ctx.guild.id != ALLOWED_GUILD_ID:
         return False, 'Bot chỉ hoạt động tại server Al1nK SMS.'
     if ctx.channel.id != ALLOWED_CHANNEL_ID:
-        return False, f'Sms chỉ hoạt động tại kênh <#{ALLOWED_CHANNEL_ID}>.'
+        return False, f'SmS chỉ hoạt động tại kênh <#{ALLOWED_CHANNEL_ID}>.'
     if not has_required_role(ctx.author):
         return False, 'Tuổi gì dùng lệnh?'
     return True, None
@@ -251,7 +251,7 @@ async def on_message(message):
 
     if message.content.startswith('/'):
         if message.channel.id != ALLOWED_CHANNEL_ID:
-            await message.channel.send(f'Sms chỉ hoạt động tại kênh <#{ALLOWED_CHANNEL_ID}>.')
+            await message.channel.send(f'Smss chỉ hoạt động tại kênh <#{ALLOWED_CHANNEL_ID}>.')
             return
 
         if message.content.startswith('/sms') or message.content.startswith('/help'):
