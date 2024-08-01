@@ -148,6 +148,11 @@ def check_permissions(ctx):
         return False, 'Tuổi gì dùng lệnh?'
     return True, None
 
+def validate_phone_number(phone_number):
+    if len(phone_number) < 10:
+        return False, "Số điện thoại không hợp lệ, hãy kiểm tra lại."
+    return True, None
+
 @bot.command()
 async def sms(ctx, phone_number: str):
     if has_excluded_role(ctx.author):
@@ -163,7 +168,11 @@ async def sms(ctx, phone_number: str):
         await ctx.send(message)
         return
 
-    # Nếu là lệnh /smsvip thì bỏ qua
+    is_valid, message = validate_phone_number(phone_number)
+    if not is_valid:
+        await ctx.send(message)
+        return
+
     if ctx.channel.id == VIP_CHANNEL_ID:
         await ctx.send('Lệnh này không thể sử dụng ở kênh VIP. Hãy dùng /smsvip.')
         return
@@ -221,6 +230,11 @@ async def smsvip(ctx, phone_number: str):
     # Kiểm tra vai trò
     if not discord.utils.get(ctx.author.roles, id=VIP_ROLE_ID):
         await ctx.send('Bạn cần ROLE VIP để sử dụng lệnh này.')
+        return
+
+    is_valid, message = validate_phone_number(phone_number)
+    if not is_valid:
+        await ctx.send(message)
         return
 
     # Kiểm tra số điện thoại
