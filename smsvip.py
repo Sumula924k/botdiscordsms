@@ -32,7 +32,7 @@ def sdtt(sdt):
 
 sdt_chuyen_doi = sdtt(sdt)
 
-count = 7
+count = 6
 
 def tv360():
     cookies = {
