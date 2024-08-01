@@ -150,9 +150,9 @@ def check_permissions(ctx):
 
 def validate_phone_number(phone_number):
     if len(phone_number) < 10:
-        return False, "Số điện thoại quá ngắn, hãy kiểm tra lại."
+        return False, "Số điện thoại không hợp lệ, hãy kiểm tra lại."
     elif len(phone_number) > 10:
-        return False, "Số điện thoại quá dài, hãy kiểm tra lại."
+        return False, "Số điện thoại không hợp lệ, hãy kiểm tra lại."
     return True, None
 
 @bot.command()
