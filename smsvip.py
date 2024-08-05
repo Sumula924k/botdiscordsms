@@ -257,7 +257,6 @@ def galaxyplay():
 
 def hoangphuc():
     cookies = {
-        'form_key': 'foYNoUTBeSb3u9Ky',
         'mage-banners-cache-storage': '{}',
         'mage-cache-storage': '{}',
         'mage-cache-storage-section-invalidation': '{}',
@@ -271,15 +270,16 @@ def hoangphuc():
         'product_data_storage': '{}',
         'mage-cache-sessid': 'true',
         'mst-cache-warmer-track': '1721490287753',
-        'private_content_version': '49f632da2b3ba9baa44ac87e1acceb51',
+        'section_data_ids': '{}',
+        'private_content_version': 'c54559f3c098d65d341757813fe12a5b',
     }
 
     headers = {
         'accept': 'application/json, text/javascript, */*; q=0.01',
-        'accept-language': 'vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
         'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-        # 'cookie': 'form_key=foYNoUTBeSb3u9Ky; mage-banners-cache-storage={}; mage-cache-storage={}; mage-cache-storage-section-invalidation={}; PHPSESSID=ac5e556aba621e003eea52e3ee2e7306; form_key=foYNoUTBeSb3u9Ky; mage-messages=; recently_viewed_product={}; recently_viewed_product_previous={}; recently_compared_product={}; recently_compared_product_previous={}; product_data_storage={}; mage-cache-sessid=true; mst-cache-warmer-track=1721490287753; private_content_version=49f632da2b3ba9baa44ac87e1acceb51',
-        'newrelic': 'eyJ2IjpbMCwxXSwiZCI6eyJ0eSI6IkJyb3dzZXIiLCJhYyI6IjQxNzMwMTkiLCJhcCI6IjExMjAyMzc5NzIiLCJpZCI6IjFkNWJkZWE3ODIzYTA1MmQiLCJ0ciI6IjNhZGMzYWRkODkyYzI1NzE2MjYxZTA1Mzg3NTI1OGRkIiwidGkiOjE3MjE0OTAzMTM0ODUsInRrIjoiMTMyMjg0MCJ9fQ==',
+        # 'cookie': 'mage-banners-cache-storage={}; mage-cache-storage={}; mage-cache-storage-section-invalidation={}; PHPSESSID=ac5e556aba621e003eea52e3ee2e7306; form_key=foYNoUTBeSb3u9Ky; mage-messages=; recently_viewed_product={}; recently_viewed_product_previous={}; recently_compared_product={}; recently_compared_product_previous={}; product_data_storage={}; mage-cache-sessid=true; mst-cache-warmer-track=1721490287753; section_data_ids={}; private_content_version=c54559f3c098d65d341757813fe12a5b',
+        'newrelic': 'eyJ2IjpbMCwxXSwiZCI6eyJ0eSI6IkJyb3dzZXIiLCJhYyI6IjQxNzMwMTkiLCJhcCI6IjExMjAyMzc5NzIiLCJpZCI6ImFiODFhNzc0NWI0YjUzNzUiLCJ0ciI6IjZhMTE4Y2I3NTEzNDQ5NjU5NzZlMzM1NGRkMTlmYmY5IiwidGkiOjE3MjI4MjY1MTIwNzIsInRrIjoiMTMyMjg0MCJ9fQ==',
         'origin': 'https://hoang-phuc.com',
         'priority': 'u=1, i',
         'referer': 'https://hoang-phuc.com/customer/account/create/',
@@ -289,8 +289,8 @@ def hoangphuc():
         'sec-fetch-dest': 'empty',
         'sec-fetch-mode': 'cors',
         'sec-fetch-site': 'same-origin',
-        'traceparent': '00-3adc3add892c25716261e053875258dd-1d5bdea7823a052d-01',
-        'tracestate': '1322840@nr=0-1-4173019-1120237972-1d5bdea7823a052d----1721490313485',
+        'traceparent': '00-6a118cb751344965976e3354dd19fbf9-ab81a7745b4b5375-01',
+        'tracestate': '1322840@nr=0-1-4173019-1120237972-ab81a7745b4b5375----1722826512072',
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
         'x-newrelic-id': 'UAcAUlZSARABVFlaBQYEVlUD',
         'x-requested-with': 'XMLHttpRequest',
@@ -299,6 +299,7 @@ def hoangphuc():
     data = {
         'action_type': '1',
         'tel': sdt,
+        'form_key': 'foYNoUTBeSb3u9Ky',
     }
 
     try:
@@ -1773,22 +1774,22 @@ def vexere():
     headers = {
         'accept': 'application/json, text/plain, */*',
         'accept-language': 'vi-VN',
-        'authorization': 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXAiOjIsInVzciI6ImZlIiwiY2lkIjoiYTRlYWM1MDAtMzYyNC0xMWU1LWFjOWUtMDkxMjRjNjAxMDEzIiwiZXhwIjoxNzIyMTg2Mzg1fQ.zG6tG8-JmMkj08kJjMeSUOrKwUEjvsKwwgyPWJQ-IkM',
+        'authorization': 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXAiOjIsInVzciI6ImZlIiwiY2lkIjoiYTRlYWM1MDAtMzYyNC0xMWU1LWFjOWUtMDkxMjRjNjAxMDEzIiwiZXhwIjoxNzIyODMwMjEzfQ.5X_2FWxsEMBg7Q-v7xrHICnonkrxsoqSY0cYDdKPeuY',
         'content-type': 'application/json',
         'origin': 'https://vexere.com',
         'priority': 'u=1, i',
         'referer': 'https://vexere.com/',
         'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
+        'sec-ch-ua-mobile': '?1',
+        'sec-ch-ua-platform': '"Android"',
         'sec-fetch-dest': 'empty',
         'sec-fetch-mode': 'cors',
         'sec-fetch-site': 'same-site',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Mobile Safari/537.36',
     }
 
     json_data = {
-        'phone': f'+84{sdt}',
+        'phone': sdt_chuyen_doi,
         'lang': 'vi-VN',
     }
 
@@ -2509,21 +2510,20 @@ def coolmate():
         'box_token': '9dbb29f1bd9e93ef4a5f8468ff0b5618',
         'cart_quantity': '0',
         'active-voucher1': 'true',
-        'g_state': '{"i_p":1722403917652,"i_l":3}',
         'affiliate_content': '%7B%22time_stamp%22%3A1722183210%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22search%22%2C%22utm_campaign%22%3A%22VN_GG_SEARCH_BRANDKEY%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.161.22.162%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2221084599217-163380422121-coolmate%22%2C%22utm_content%22%3A%22693188749431%22%2C%22gclid%22%3A%22CjwKCAjw2Je1BhAgEiwAp3KY739mKtecc9dlS5fi39n6ZFmGvB1cwdDu9FjCpG7KGqjDQbjsMG-EyBoCZ8EQAvD_BwE%22%7D',
-        'redirect_url': 'eyJpdiI6IlBUcVZ3ZDBmTzIxeHBUQld5RCtzaFE9PSIsInZhbHVlIjoiakJ3aEpvMzYzNzl6WG9UMWFyT1Z5ZjlVMzZsNDdkdWFOS1VPaGU2U2JFK2Z0MVRDWGNFWDYxdXlcL3BrVlVLanMiLCJtYWMiOiIxYzVjNjI5NTQ5OGY3MzFkMzQ3M2E4NGJjYjI2NzMyYmJlMTVlNDYxZWM2ZDNkYTE5ZDQxN2U3MDAzZGZiNzhkIn0%3D',
-        'XSRF-TOKEN': 'eyJpdiI6Imk3dzEwY0JLaFwvZFJhR0xmb09cL2xqQT09IiwidmFsdWUiOiJqS0VKNzRcL3ZReGNCSjJJN0pkQmhOWllTTnBzNWFkVHVpUlo4NlQ3QUxubU95TEcyS05nRG9VckFRWnJaSW1MayIsIm1hYyI6ImY0Mzc5OTRkNjY1ODNmNDJlNzZlYmM0NDg1MDUwNmI0NWYzMWRlMTA5YWNhZTQ5ZjM2YjYxYjQ1NWQ2OGJjZGYifQ%3D%3D',
-        'laravel_session': 'eyJpdiI6IkQ2YkJlVlROQnh1RENBakNnY1JYUUE9PSIsInZhbHVlIjoiUXd2eGRKcm1GSWVZRGhKVVBJbnIyZ0hiQmJxb3VvQjVPcWpMc2pnalczc1lnY2taUEJkRFp3SngzeE5aU2JNRSIsIm1hYyI6ImZiMjg3OWIwMDNhYjkwZmQ5NTY3Mjg1OGVjYjBlYmE5MGFjNzE5NGM1OGMzYjhmNjA0YzhhNDcyNzc0ODZiZTUifQ%3D%3D',
+        'g_state': '{"i_p":1725246086128,"i_l":4}',
+        'XSRF-TOKEN': 'eyJpdiI6ImF3d1RYNmhQTW9OczN2WWZnTndwWEE9PSIsInZhbHVlIjoieVZPTzkxK0MxOU9DREkyUFg4NU1PR0pna3p4bnNCS0R2SDZ2djEzb1dYRWRZYmtcL0pacDljUFRIOFpIVStXZnQiLCJtYWMiOiI0NWM2NDBjYjQ2YWYzZTNmZDJkYWU2MDIwZmQ3NDQ5MTQ3MGVhOTk3MWMzNzc1MTgwYmRiMDFmMmNhNmZhYmFlIn0%3D',
+        'laravel_session': 'eyJpdiI6InFFc2FmXC9BSVlYTGRsZmtJUWpTWTlBPT0iLCJ2YWx1ZSI6IjlQWmdpQitVUTlHNG1jUE5ZNXIxSjRPRmdibytqekhMQVRcLzVEYmhVVnlTVUhzZlRqaG1uVWp1eStvTTh4S3NRIiwibWFjIjoiOThlMjVkZmNmM2M4NzM5ZjEzMTg0MjZiYTAwNWZmZjBhZmM1N2UxODRkYzY1NDJmNTQxYmMzZGEzNmJjMDk0YiJ9',
     }
 
     headers = {
         'accept': '*/*',
         'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
         'content-type': 'application/json',
-        # 'cookie': 'device_token=597f946e29e835d88f56392f40ea75c3; box_token=9dbb29f1bd9e93ef4a5f8468ff0b5618; cart_quantity=0; active-voucher1=true; g_state={"i_p":1722403917652,"i_l":3}; affiliate_content=%7B%22time_stamp%22%3A1722183210%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22search%22%2C%22utm_campaign%22%3A%22VN_GG_SEARCH_BRANDKEY%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.161.22.162%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2221084599217-163380422121-coolmate%22%2C%22utm_content%22%3A%22693188749431%22%2C%22gclid%22%3A%22CjwKCAjw2Je1BhAgEiwAp3KY739mKtecc9dlS5fi39n6ZFmGvB1cwdDu9FjCpG7KGqjDQbjsMG-EyBoCZ8EQAvD_BwE%22%7D; redirect_url=eyJpdiI6IlBUcVZ3ZDBmTzIxeHBUQld5RCtzaFE9PSIsInZhbHVlIjoiakJ3aEpvMzYzNzl6WG9UMWFyT1Z5ZjlVMzZsNDdkdWFOS1VPaGU2U2JFK2Z0MVRDWGNFWDYxdXlcL3BrVlVLanMiLCJtYWMiOiIxYzVjNjI5NTQ5OGY3MzFkMzQ3M2E4NGJjYjI2NzMyYmJlMTVlNDYxZWM2ZDNkYTE5ZDQxN2U3MDAzZGZiNzhkIn0%3D; XSRF-TOKEN=eyJpdiI6Imk3dzEwY0JLaFwvZFJhR0xmb09cL2xqQT09IiwidmFsdWUiOiJqS0VKNzRcL3ZReGNCSjJJN0pkQmhOWllTTnBzNWFkVHVpUlo4NlQ3QUxubU95TEcyS05nRG9VckFRWnJaSW1MayIsIm1hYyI6ImY0Mzc5OTRkNjY1ODNmNDJlNzZlYmM0NDg1MDUwNmI0NWYzMWRlMTA5YWNhZTQ5ZjM2YjYxYjQ1NWQ2OGJjZGYifQ%3D%3D; laravel_session=eyJpdiI6IkQ2YkJlVlROQnh1RENBakNnY1JYUUE9PSIsInZhbHVlIjoiUXd2eGRKcm1GSWVZRGhKVVBJbnIyZ0hiQmJxb3VvQjVPcWpMc2pnalczc1lnY2taUEJkRFp3SngzeE5aU2JNRSIsIm1hYyI6ImZiMjg3OWIwMDNhYjkwZmQ5NTY3Mjg1OGVjYjBlYmE5MGFjNzE5NGM1OGMzYjhmNjA0YzhhNDcyNzc0ODZiZTUifQ%3D%3D',
+        # 'cookie': 'device_token=597f946e29e835d88f56392f40ea75c3; box_token=9dbb29f1bd9e93ef4a5f8468ff0b5618; cart_quantity=0; active-voucher1=true; affiliate_content=%7B%22time_stamp%22%3A1722183210%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22search%22%2C%22utm_campaign%22%3A%22VN_GG_SEARCH_BRANDKEY%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.161.22.162%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2221084599217-163380422121-coolmate%22%2C%22utm_content%22%3A%22693188749431%22%2C%22gclid%22%3A%22CjwKCAjw2Je1BhAgEiwAp3KY739mKtecc9dlS5fi39n6ZFmGvB1cwdDu9FjCpG7KGqjDQbjsMG-EyBoCZ8EQAvD_BwE%22%7D; g_state={"i_p":1725246086128,"i_l":4}; XSRF-TOKEN=eyJpdiI6ImF3d1RYNmhQTW9OczN2WWZnTndwWEE9PSIsInZhbHVlIjoieVZPTzkxK0MxOU9DREkyUFg4NU1PR0pna3p4bnNCS0R2SDZ2djEzb1dYRWRZYmtcL0pacDljUFRIOFpIVStXZnQiLCJtYWMiOiI0NWM2NDBjYjQ2YWYzZTNmZDJkYWU2MDIwZmQ3NDQ5MTQ3MGVhOTk3MWMzNzc1MTgwYmRiMDFmMmNhNmZhYmFlIn0%3D; laravel_session=eyJpdiI6InFFc2FmXC9BSVlYTGRsZmtJUWpTWTlBPT0iLCJ2YWx1ZSI6IjlQWmdpQitVUTlHNG1jUE5ZNXIxSjRPRmdibytqekhMQVRcLzVEYmhVVnlTVUhzZlRqaG1uVWp1eStvTTh4S3NRIiwibWFjIjoiOThlMjVkZmNmM2M4NzM5ZjEzMTg0MjZiYTAwNWZmZjBhZmM1N2UxODRkYzY1NDJmNTQxYmMzZGEzNmJjMDk0YiJ9',
         'origin': 'https://www.coolmate.me',
         'priority': 'u=1, i',
-        'referer': 'https://www.coolmate.me/account/register',
+        'referer': 'https://www.coolmate.me/',
         'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
         'sec-ch-ua-mobile': '?0',
         'sec-ch-ua-platform': '"Windows"',
@@ -2531,12 +2531,12 @@ def coolmate():
         'sec-fetch-mode': 'cors',
         'sec-fetch-site': 'same-origin',
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'x-csrf-token': 'q5YgFB6c3H2kmd2OH55Y5LRduCE61mM6mW5WKxpX',
+        'x-csrf-token': 'cOZwM91D482ZCZm9pMfvWChbDBZIhMqtv8m9RV67',
     }
 
     json_data = {
-        'fullname': 'tran qvan',
-        'email': 'lamgidoooa@gmail.com',
+        'fullname': 'Datt',
+        'email': 'quadeptrai@gmail.com',
         'phone': sdt,
         'password': '123123aA@',
         'ajax': True,
@@ -3593,20 +3593,20 @@ def coolmatereset():
         'box_token': '9dbb29f1bd9e93ef4a5f8468ff0b5618',
         'cart_quantity': '0',
         'active-voucher1': 'true',
-        'g_state': '{"i_p":1722403917652,"i_l":3}',
         'affiliate_content': '%7B%22time_stamp%22%3A1722183210%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22search%22%2C%22utm_campaign%22%3A%22VN_GG_SEARCH_BRANDKEY%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.161.22.162%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2221084599217-163380422121-coolmate%22%2C%22utm_content%22%3A%22693188749431%22%2C%22gclid%22%3A%22CjwKCAjw2Je1BhAgEiwAp3KY739mKtecc9dlS5fi39n6ZFmGvB1cwdDu9FjCpG7KGqjDQbjsMG-EyBoCZ8EQAvD_BwE%22%7D',
-        'XSRF-TOKEN': 'eyJpdiI6IjArbjZQQnpYT2V1YSt0RHFCbTg1SUE9PSIsInZhbHVlIjoiUjhPSzBZM1Z2dGt0VzZMYVJPK0RNYXlDMUQ5b1FtNVd0SHJpMHBZZEU3TDBEem5mc2I1TEZZT05ITWgrQ001cyIsIm1hYyI6ImY4OWQwZjAwODM1Mjg3MGNhZTNiNWYxNmExYzE0M2Y4NDJjYjNkNmJkMzNiNTRlNmMwYjZlYjA2ZTg2YzgwMWUifQ%3D%3D',
-        'laravel_session': 'eyJpdiI6InhxRjBnSENmS2VjSWphdlFqdGIwTGc9PSIsInZhbHVlIjoib01xTkl0bkVMRzJFdk1ocWx6RWRzTjhOZExNc01aVEx3eXZzQ3FvMTh6VEEweHNaRHNzS1RxTzJMazBrUnk0NyIsIm1hYyI6IjljNzI0Mjk1NWM3MTliOGYwOTQwYzJlZDFkNWE5NGY3NDlmNDliY2NjYzMzMzQ1MWQ1YjA1M2EyZTVmYWQyYTYifQ%3D%3D',
+        'g_state': '{"i_p":1725246086128,"i_l":4}',
+        'XSRF-TOKEN': 'eyJpdiI6IjZuaFd0YmZFV3V1NzBOOTRNeHVjMkE9PSIsInZhbHVlIjoiTXlmTmNmOEZKNGRqZzhHRFI5Z2pOXC9la2c5NFpcL3NvNldSR2Z1eE95UlA1bDlXN1NYenJHZGFUVldqWjVSN2ZEIiwibWFjIjoiNWQyNTVhOGY4NGM4MzYyOTUyMjA4NGQ5YTY4NjNjNzk1YzEwMDY0ZjVmNDhlY2JhMjlmOWU5NWQyNWE4MDM0YyJ9',
+        'laravel_session': 'eyJpdiI6ImEzbjBxTVJiSTVcL1d3TnRtN2kwZ01nPT0iLCJ2YWx1ZSI6InRmSFdKcEVnaVB6Z1M5K3N4THJWcVNkRGkxa2JJVVNndnRaZmU4VXRuV1wvampLZW9CM2RyTGhza0doYnoyT3dUIiwibWFjIjoiM2ViNDdlNzU5Mzk3Yjk3ZjY0NTM1N2JlYWZkMzJjM2ExNTE2OWRlMDhhODk3YzIwNTdkNmM0ZWNmZGJiYjRhMSJ9',
     }
 
     headers = {
         'accept': '*/*',
         'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
         'content-type': 'application/json',
-        # 'cookie': 'device_token=597f946e29e835d88f56392f40ea75c3; box_token=9dbb29f1bd9e93ef4a5f8468ff0b5618; cart_quantity=0; active-voucher1=true; g_state={"i_p":1722403917652,"i_l":3}; affiliate_content=%7B%22time_stamp%22%3A1722183210%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22search%22%2C%22utm_campaign%22%3A%22VN_GG_SEARCH_BRANDKEY%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.161.22.162%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2221084599217-163380422121-coolmate%22%2C%22utm_content%22%3A%22693188749431%22%2C%22gclid%22%3A%22CjwKCAjw2Je1BhAgEiwAp3KY739mKtecc9dlS5fi39n6ZFmGvB1cwdDu9FjCpG7KGqjDQbjsMG-EyBoCZ8EQAvD_BwE%22%7D; XSRF-TOKEN=eyJpdiI6IjArbjZQQnpYT2V1YSt0RHFCbTg1SUE9PSIsInZhbHVlIjoiUjhPSzBZM1Z2dGt0VzZMYVJPK0RNYXlDMUQ5b1FtNVd0SHJpMHBZZEU3TDBEem5mc2I1TEZZT05ITWgrQ001cyIsIm1hYyI6ImY4OWQwZjAwODM1Mjg3MGNhZTNiNWYxNmExYzE0M2Y4NDJjYjNkNmJkMzNiNTRlNmMwYjZlYjA2ZTg2YzgwMWUifQ%3D%3D; laravel_session=eyJpdiI6InhxRjBnSENmS2VjSWphdlFqdGIwTGc9PSIsInZhbHVlIjoib01xTkl0bkVMRzJFdk1ocWx6RWRzTjhOZExNc01aVEx3eXZzQ3FvMTh6VEEweHNaRHNzS1RxTzJMazBrUnk0NyIsIm1hYyI6IjljNzI0Mjk1NWM3MTliOGYwOTQwYzJlZDFkNWE5NGY3NDlmNDliY2NjYzMzMzQ1MWQ1YjA1M2EyZTVmYWQyYTYifQ%3D%3D',
+        # 'cookie': 'device_token=597f946e29e835d88f56392f40ea75c3; box_token=9dbb29f1bd9e93ef4a5f8468ff0b5618; cart_quantity=0; active-voucher1=true; affiliate_content=%7B%22time_stamp%22%3A1722183210%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22search%22%2C%22utm_campaign%22%3A%22VN_GG_SEARCH_BRANDKEY%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.161.22.162%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2221084599217-163380422121-coolmate%22%2C%22utm_content%22%3A%22693188749431%22%2C%22gclid%22%3A%22CjwKCAjw2Je1BhAgEiwAp3KY739mKtecc9dlS5fi39n6ZFmGvB1cwdDu9FjCpG7KGqjDQbjsMG-EyBoCZ8EQAvD_BwE%22%7D; g_state={"i_p":1725246086128,"i_l":4}; XSRF-TOKEN=eyJpdiI6IjZuaFd0YmZFV3V1NzBOOTRNeHVjMkE9PSIsInZhbHVlIjoiTXlmTmNmOEZKNGRqZzhHRFI5Z2pOXC9la2c5NFpcL3NvNldSR2Z1eE95UlA1bDlXN1NYenJHZGFUVldqWjVSN2ZEIiwibWFjIjoiNWQyNTVhOGY4NGM4MzYyOTUyMjA4NGQ5YTY4NjNjNzk1YzEwMDY0ZjVmNDhlY2JhMjlmOWU5NWQyNWE4MDM0YyJ9; laravel_session=eyJpdiI6ImEzbjBxTVJiSTVcL1d3TnRtN2kwZ01nPT0iLCJ2YWx1ZSI6InRmSFdKcEVnaVB6Z1M5K3N4THJWcVNkRGkxa2JJVVNndnRaZmU4VXRuV1wvampLZW9CM2RyTGhza0doYnoyT3dUIiwibWFjIjoiM2ViNDdlNzU5Mzk3Yjk3ZjY0NTM1N2JlYWZkMzJjM2ExNTE2OWRlMDhhODk3YzIwNTdkNmM0ZWNmZGJiYjRhMSJ9',
         'origin': 'https://www.coolmate.me',
         'priority': 'u=1, i',
-        'referer': 'https://www.coolmate.me/account/forgot',
+        'referer': 'https://www.coolmate.me/',
         'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
         'sec-ch-ua-mobile': '?0',
         'sec-ch-ua-platform': '"Windows"',
@@ -3614,13 +3614,13 @@ def coolmatereset():
         'sec-fetch-mode': 'cors',
         'sec-fetch-site': 'same-origin',
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'x-csrf-token': 'q5YgFB6c3H2kmd2OH55Y5LRduCE61mM6mW5WKxpX',
+        'x-csrf-token': 'cOZwM91D482ZCZm9pMfvWChbDBZIhMqtv8m9RV67',
     }
 
     json_data = {
         'address': sdt,
         'type': 'phone',
-        'prev': 'https://www.coolmate.me/account/login?itm_source=navbar',
+        'prev': '',
         'ajax': True,
     }
 
@@ -3637,21 +3637,21 @@ def coolmateresend():
         'box_token': '9dbb29f1bd9e93ef4a5f8468ff0b5618',
         'cart_quantity': '0',
         'active-voucher1': 'true',
-        'g_state': '{"i_p":1722403917652,"i_l":3}',
         'affiliate_content': '%7B%22time_stamp%22%3A1722183210%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22search%22%2C%22utm_campaign%22%3A%22VN_GG_SEARCH_BRANDKEY%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.161.22.162%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2221084599217-163380422121-coolmate%22%2C%22utm_content%22%3A%22693188749431%22%2C%22gclid%22%3A%22CjwKCAjw2Je1BhAgEiwAp3KY739mKtecc9dlS5fi39n6ZFmGvB1cwdDu9FjCpG7KGqjDQbjsMG-EyBoCZ8EQAvD_BwE%22%7D',
-        'XSRF-TOKEN': 'eyJpdiI6Ikw3Q0hENlYzTEk0Mks1clwvN1U1eUVRPT0iLCJ2YWx1ZSI6InQ2bFROVThKeHIzYUZNdklQbDRWdXBcL09vZU5CVHdHdWkrS1V1eW9FR1Z2ajZvRkdKVjY1N1hOcFwvOEpxWXlZKyIsIm1hYyI6IjdkNDc0M2JhMWZjNThjZTViODdiMThhMDg0NWJmYjc3NTAwZjY2MzY2NzhkOTkxNTVmZGEwZmU5ZDExNzUyMDAifQ%3D%3D',
-        'laravel_session': 'eyJpdiI6IkxjclpJYTZyYmhmVHpPeUhsSk01b0E9PSIsInZhbHVlIjoiMW8wc0pHMnR0ZlJXcVBLbmk1UEpYNVA2ZDRhaU5IRkh5MFFYY0lZUVRadVZKMW9YMytIM0tNK3dFamdwYklLSyIsIm1hYyI6IjZlZmFmZTM2ZWQ0Njk5MDBjNDRmZWZkOThlYjdjNDcxNjk2MGY3MTliNDQ2YmMyYjQ5Y2EzOWM0Njg3MTE5YzYifQ%3D%3D',
-        'redirect_url': 'eyJpdiI6IlBUcVZ3ZDBmTzIxeHBUQld5RCtzaFE9PSIsInZhbHVlIjoiakJ3aEpvMzYzNzl6WG9UMWFyT1Z5ZjlVMzZsNDdkdWFOS1VPaGU2U2JFK2Z0MVRDWGNFWDYxdXlcL3BrVlVLanMiLCJtYWMiOiIxYzVjNjI5NTQ5OGY3MzFkMzQ3M2E4NGJjYjI2NzMyYmJlMTVlNDYxZWM2ZDNkYTE5ZDQxN2U3MDAzZGZiNzhkIn0%3D',
+        'g_state': '{"i_p":1725246086128,"i_l":4}',
+        'XSRF-TOKEN': 'eyJpdiI6InozXC9VV3JVUFlqRkliV1RublRVeWpnPT0iLCJ2YWx1ZSI6IlRCWWxkWG00TnVvZHFuMTY2WEtMRTkyMVg4VzcrbmtveW5UZ3pNQ1lBUHBlVTBvbEszUnBPdUpETzI5VUVycmIiLCJtYWMiOiI1OGFmZmM3NDM3ZWVkYzNlYzgyMzc4OTQzODdiNjFlOTI4Yjk4ZGQ5MjQ4NjlhZjI3NjE5YTNiZWQ1Yjg3NzAxIn0%3D',
+        'laravel_session': 'eyJpdiI6InJYQUxYQWJMXC9Oa2lRcFpuZW1oaUhBPT0iLCJ2YWx1ZSI6IlJUQks4OHZNcmtSWEVxOUJobGJMdGZxUHBEVE9WSVh4WmF6cVF6enczRk9TbVUwaG92RGhvZEJMREFEQVdLQUsiLCJtYWMiOiI4OTczODkzY2MxN2Q5NDhkMDIzNzNjNzUwYjI0ZWY0OTc4OTFhOGE5NzVlYjk5ODVlZThkMTVmMWI1MzZhZDE0In0%3D',
+        'redirect_url': 'eyJpdiI6Ijlsbk96dU43YlI1b0g0Q2FDUDZWSHc9PSIsInZhbHVlIjoib21vQXVwNmhuMFp4UEZadncwQ1dWZ2FBUDVhSGRzNDBqT3lEeUNEN0p0WT0iLCJtYWMiOiI3ZmM4NWFkNzI5ZTVmNjc5YTRmMDg1ZjVmNGVmOTIwMjU2NWZjYjRlMDM3N2JjZmFlOTMzYWEyYjA5N2NhNjBiIn0%3D',
     }
 
     headers = {
         'accept': '*/*',
         'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
         'content-type': 'application/json',
-        # 'cookie': 'device_token=597f946e29e835d88f56392f40ea75c3; box_token=9dbb29f1bd9e93ef4a5f8468ff0b5618; cart_quantity=0; active-voucher1=true; g_state={"i_p":1722403917652,"i_l":3}; affiliate_content=%7B%22time_stamp%22%3A1722183210%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22search%22%2C%22utm_campaign%22%3A%22VN_GG_SEARCH_BRANDKEY%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.161.22.162%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2221084599217-163380422121-coolmate%22%2C%22utm_content%22%3A%22693188749431%22%2C%22gclid%22%3A%22CjwKCAjw2Je1BhAgEiwAp3KY739mKtecc9dlS5fi39n6ZFmGvB1cwdDu9FjCpG7KGqjDQbjsMG-EyBoCZ8EQAvD_BwE%22%7D; XSRF-TOKEN=eyJpdiI6Ikw3Q0hENlYzTEk0Mks1clwvN1U1eUVRPT0iLCJ2YWx1ZSI6InQ2bFROVThKeHIzYUZNdklQbDRWdXBcL09vZU5CVHdHdWkrS1V1eW9FR1Z2ajZvRkdKVjY1N1hOcFwvOEpxWXlZKyIsIm1hYyI6IjdkNDc0M2JhMWZjNThjZTViODdiMThhMDg0NWJmYjc3NTAwZjY2MzY2NzhkOTkxNTVmZGEwZmU5ZDExNzUyMDAifQ%3D%3D; laravel_session=eyJpdiI6IkxjclpJYTZyYmhmVHpPeUhsSk01b0E9PSIsInZhbHVlIjoiMW8wc0pHMnR0ZlJXcVBLbmk1UEpYNVA2ZDRhaU5IRkh5MFFYY0lZUVRadVZKMW9YMytIM0tNK3dFamdwYklLSyIsIm1hYyI6IjZlZmFmZTM2ZWQ0Njk5MDBjNDRmZWZkOThlYjdjNDcxNjk2MGY3MTliNDQ2YmMyYjQ5Y2EzOWM0Njg3MTE5YzYifQ%3D%3D; redirect_url=eyJpdiI6IlBUcVZ3ZDBmTzIxeHBUQld5RCtzaFE9PSIsInZhbHVlIjoiakJ3aEpvMzYzNzl6WG9UMWFyT1Z5ZjlVMzZsNDdkdWFOS1VPaGU2U2JFK2Z0MVRDWGNFWDYxdXlcL3BrVlVLanMiLCJtYWMiOiIxYzVjNjI5NTQ5OGY3MzFkMzQ3M2E4NGJjYjI2NzMyYmJlMTVlNDYxZWM2ZDNkYTE5ZDQxN2U3MDAzZGZiNzhkIn0%3D',
+        # 'cookie': 'device_token=597f946e29e835d88f56392f40ea75c3; box_token=9dbb29f1bd9e93ef4a5f8468ff0b5618; cart_quantity=0; active-voucher1=true; affiliate_content=%7B%22time_stamp%22%3A1722183210%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22search%22%2C%22utm_campaign%22%3A%22VN_GG_SEARCH_BRANDKEY%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.161.22.162%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2221084599217-163380422121-coolmate%22%2C%22utm_content%22%3A%22693188749431%22%2C%22gclid%22%3A%22CjwKCAjw2Je1BhAgEiwAp3KY739mKtecc9dlS5fi39n6ZFmGvB1cwdDu9FjCpG7KGqjDQbjsMG-EyBoCZ8EQAvD_BwE%22%7D; g_state={"i_p":1725246086128,"i_l":4}; XSRF-TOKEN=eyJpdiI6InozXC9VV3JVUFlqRkliV1RublRVeWpnPT0iLCJ2YWx1ZSI6IlRCWWxkWG00TnVvZHFuMTY2WEtMRTkyMVg4VzcrbmtveW5UZ3pNQ1lBUHBlVTBvbEszUnBPdUpETzI5VUVycmIiLCJtYWMiOiI1OGFmZmM3NDM3ZWVkYzNlYzgyMzc4OTQzODdiNjFlOTI4Yjk4ZGQ5MjQ4NjlhZjI3NjE5YTNiZWQ1Yjg3NzAxIn0%3D; laravel_session=eyJpdiI6InJYQUxYQWJMXC9Oa2lRcFpuZW1oaUhBPT0iLCJ2YWx1ZSI6IlJUQks4OHZNcmtSWEVxOUJobGJMdGZxUHBEVE9WSVh4WmF6cVF6enczRk9TbVUwaG92RGhvZEJMREFEQVdLQUsiLCJtYWMiOiI4OTczODkzY2MxN2Q5NDhkMDIzNzNjNzUwYjI0ZWY0OTc4OTFhOGE5NzVlYjk5ODVlZThkMTVmMWI1MzZhZDE0In0%3D; redirect_url=eyJpdiI6Ijlsbk96dU43YlI1b0g0Q2FDUDZWSHc9PSIsInZhbHVlIjoib21vQXVwNmhuMFp4UEZadncwQ1dWZ2FBUDVhSGRzNDBqT3lEeUNEN0p0WT0iLCJtYWMiOiI3ZmM4NWFkNzI5ZTVmNjc5YTRmMDg1ZjVmNGVmOTIwMjU2NWZjYjRlMDM3N2JjZmFlOTMzYWEyYjA5N2NhNjBiIn0%3D',
         'origin': 'https://www.coolmate.me',
         'priority': 'u=1, i',
-        'referer': 'https://www.coolmate.me/account/register',
+        'referer': 'https://www.coolmate.me/',
         'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
         'sec-ch-ua-mobile': '?0',
         'sec-ch-ua-platform': '"Windows"',
@@ -3659,7 +3659,7 @@ def coolmateresend():
         'sec-fetch-mode': 'cors',
         'sec-fetch-site': 'same-origin',
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'x-csrf-token': 'q5YgFB6c3H2kmd2OH55Y5LRduCE61mM6mW5WKxpX',
+        'x-csrf-token': 'cOZwM91D482ZCZm9pMfvWChbDBZIhMqtv8m9RV67',
     }
 
     json_data = {
