@@ -3959,7 +3959,7 @@ def call_functions():
                 future = executor.submit(func)
                 futures.append(future)
                 if (i + 1) % 8 == 0:  # Thêm delay sau mỗi nhóm 5 hàm
-                    time.sleep(0.3)
+                    time.sleep(0.4)
             
             # Đợi tất cả các hàm trong nhóm hoàn thành
             for future in concurrent.futures.as_completed(futures):
