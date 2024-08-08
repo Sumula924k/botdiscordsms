@@ -4625,7 +4625,7 @@ functions = [
     mutosi, picoregister, mocha, sigo, vietravel, pnjzl, mamanbebe, tatmart, mrtho, dominos,
     pico, hacom, xanhsmreg, ghtkreg, pcspostreg, book365reg, liena, gofood, pasgo, coolmatereset,
     vietloan, viettelpost, xanhsm, acheckin, ghtk, pcspost, book365, richvn, brgshopping, nativex,
-    vuihoc, mainguyen, phongtro123, chothuephongtro, bds123
+    vuihoc, mainguyen, chothuephongtro, bds123
 ]
 
 def execute_with_delay(func):
