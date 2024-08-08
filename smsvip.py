@@ -4613,37 +4613,32 @@ def bds123():
     except requests.exceptions.RequestException:
         print("BDS123 | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
-def call_functions():
-    functions = [
-        tv360, beautybox, kingfood, batdongsan, futabus, galaxyplay, hoangphuc, gumac, vinamilk,
-        speedlotte, medicare, tokyolife, vieon, fptreg, fptreset, fptresend, winmart, tgdidong,
-        dienmayxanh, meta, thefaceshop, bestexpress, ghnexpress, myviettel, fptshop, sapo, paynet,
-        reebok, gapowork, shine, oreka, fmstyle, acfc, fptlongchauzl, thuocsi, pantio,
-        winny, owen, befood, foodhubzl, heyu, pantioresend, vttelecom, vinwonders, vietair, vexere,
-        atadi, etrip4u, tinyworld, chudu24, sojo, hasaki, kiehls, emart, hanoia, ahamove, fahasa, book365reg,
-        vascara, sablanca, sandro, routine, coolmate, mioto, coolmatereset, pharmartsms, medigosms, avakids,
-        giathuoctot, medigozl, ddmevabereg, pnjsms, pharmartzl, jiohealth, ddmevabe, xanhsmreg, pcspostreg,
-        nhathuocankhang, mutosi, mocha, sigo, vietravel, pnjzl, mamanbebe, tatmart, dominos, ghtkreg,
-        pico, hacom, liena, gofood, pasgo, coolmateresend, vietloan, viettelpost, xanhsm, acheckin, ghtk,
-        pcspost, book365, richvn, brgshopping, nativex, vuihoc, mainguyen, phongtro123, chothuephongtro, bds123
-    ]
-    
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        for _ in range(5):
-            futures = []
-            # Thực hiện các hàm theo nhóm với thời gian delay giữa các nhóm
-            for i, func in enumerate(functions):
-                future = executor.submit(func)
-                futures.append(future)
-                if (i + 1) % 8 == 0:  # Thêm delay sau mỗi nhóm 5 hàm
-                    time.sleep(0.4)
-            
-            # Đợi tất cả các hàm trong nhóm hoàn thành
-            for future in concurrent.futures.as_completed(futures):
-                pass  # Bạn có thể xử lý kết quả tại đây nếu cần
+functions = [
+    tv360, beautybox, kingfood, batdongsan, futabus, galaxyplay, hoangphuc, gumac, vinamilk,
+    speedlotte, medicare, tokyolife, vieon, fptreg, fptreset, fptresend, winmart, tgdidong,
+    dienmayxanh, meta, thefaceshop, bestexpress, ghnexpress, myviettel, fptshop, sapo, paynet,
+    reebok, gapowork, shine, oreka, fmstyle, acfc, fptlongchauzl, thuocsi, pantio, winny, owen,
+    befood, foodhubzl, heyu, pantioresend, vttelecom, vinwonders, vietair, vexere, atadi, etrip4u,
+    tinyworld, chudu24, sojo, hasaki, kiehls, emart, hanoia, ahamove, fahasa, vascara, sablanca,
+    sandro, routine, coolmate, mioto, pharmartsms, medigosms, avakids, giathuoctot, medigozl,
+    ddmevabereg, pnjsms, pharmartzl, jiohealth, ddmevabe, nhathuocankhang, coolmateresend,
+    mutosi, picoregister, mocha, sigo, vietravel, pnjzl, mamanbebe, tatmart, mrtho, dominos,
+    pico, hacom, xanhsmreg, ghtkreg, pcspostreg, book365reg, liena, gofood, pasgo, coolmatereset,
+    vietloan, viettelpost, xanhsm, acheckin, ghtk, pcspost, book365, richvn, brgshopping, nativex,
+    vuihoc, mainguyen, phongtro123, chothuephongtro, bds123
+]
 
-            # Đợi giữa các lần gọi hàm
-            time.sleep(0.1)
+def execute_with_delay(func):
+    func()
+    time.sleep(0)
 
+def main(count):
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        for _ in range(count):
+            futures = [executor.submit(execute_with_delay, func) for func in functions]
+            concurrent.futures.wait(futures)
+
+# Example usage
 if __name__ == "__main__":
-    call_functions()
+    count = 15  # Change this to the desired count
+    main(count)
