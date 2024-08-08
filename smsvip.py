@@ -4629,7 +4629,7 @@ def call_functions():
     ]
     
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        for _ in range(15):
+        for _ in range(5):
             futures = []
             # Thực hiện các hàm theo nhóm với thời gian delay giữa các nhóm
             for i, func in enumerate(functions):
