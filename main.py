@@ -63,7 +63,18 @@ GIF_URLS = [
     "https://c.tenor.com/2BmAiarixGAAAAAC/tenor.gif",
     "https://c.tenor.com/1nwkeOg8j48AAAAd/tenor.gif",
     "https://c.tenor.com/5wn9MtW_PYUAAAAd/tenor.gif",
-    "https://c.tenor.com/L6bKFEaUkp0AAAAC/tenor.gif"
+    "https://c.tenor.com/L6bKFEaUkp0AAAAC/tenor.gif",
+    "https://c.tenor.com/q3hjT73igbwAAAAC/tenor.gif",
+    "https://c.tenor.com/QjMLx8tgJ0UAAAAC/tenor.gif",
+    "https://c.tenor.com/4a8oLL-3PYAAAAAd/tenor.gif",
+    "https://c.tenor.com/rycw44X648oAAAAd/tenor.gif",
+    "https://c.tenor.com/quduIlTKjWwAAAAd/tenor.gif",
+    "https://c.tenor.com/9djzdAaY9Z8AAAAd/tenor.gif",
+    "https://c.tenor.com/G4OcrlG79AYAAAAC/tenor.gif",
+    "https://c.tenor.com/3kuJ1ZABvCoAAAAd/tenor.gif",
+    "https://c.tenor.com/tu-cBstJDtEAAAAd/tenor.gif",
+    "https://c.tenor.com/yVlyIA6v-_YAAAAC/tenor.gif",
+    "https://c.tenor.com/L6gAWJ03Cz0AAAAd/tenor.gif"
 ]
 
 def TimeStamp():
