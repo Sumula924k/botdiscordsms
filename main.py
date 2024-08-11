@@ -215,7 +215,7 @@ async def sms(ctx, phone_number: str):
             value=(
                 f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
                 f"⚡ **Tốc độ:** Basic\n"
-                f"🎁 **Số quà:** 110 hộp\n"
+                f"🎁 **Số quà:** 125 hộp\n"
                 f"⏳ **Thời nhận tiếp:** 120 giây"
             ),
             inline=False
@@ -277,7 +277,7 @@ async def smsvip(ctx, phone_number: str):
                 f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
                 f"⚡ **Tốc độ:** Nhanh\n"
                 f"⛓️ **Số lần lặp: 15 lần** \n"
-                f"🎁 **Số quà:** 110 hộp\n"
+                f"🎁 **Số quà:** 125 hộp\n"
                 f"⏳ **Thời nhận tiếp:** 120 giây"
             ),
             inline=False
