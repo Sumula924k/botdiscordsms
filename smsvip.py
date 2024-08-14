@@ -31,10 +31,10 @@ if len(sys.argv) != 3:
     sys.exit()
 
 sdt = sys.argv[1]
-other_param = sys.argv[2]
+count = sys.argv[2]
 
 print("Số điện thoại:", sdt)
-print("Tham số khác:", other_param)
+print("Số lần lặp:", count)
 
 def sdtt(sdt):
     if sdt.startswith("0"):
@@ -5320,6 +5320,5 @@ def main(count):
             concurrent.futures.wait(futures)
 
 # Example usage
-if __name__ == "__main__":
-    count = 15  # Change this to the desired count
+if __name__ == "__main__":  # Change this to the desired count
     main(count)
