@@ -207,10 +207,8 @@ async def sms(ctx, phone_number: str, count: int = 1):
 
     try:
         file_path = os.path.join(os.getcwd(), "sms.py")
-        # Chuyển count thành chuỗi
         proc = await asyncio.create_subprocess_exec("python", file_path, phone_number, str(count))
         processes[(ctx.author.id, phone_number)] = proc
-
 
         username = ctx.author.name
         user_id = ctx.author.id
@@ -241,6 +239,7 @@ async def sms(ctx, phone_number: str, count: int = 1):
         await add_and_remove_role(ctx.author)
     except Exception as e:
         await ctx.send(f'Đã xảy ra lỗi khi xử lý lệnh: {e}')
+
 
 @bot.command()
 async def smsvip(ctx, phone_number: str, count: int = 1):
