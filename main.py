@@ -216,6 +216,8 @@ async def sms(ctx, phone_number: str, count: int = 1):
 
         await log_to_channel(username, user_id, phone_number, count, execution_time)
 
+        time.sleep(0.5)
+        
         embed = discord.Embed(
             title="🎉 Gửi Yêu Cầu Thành Công! 🎉",
             color=0xf78a8a
