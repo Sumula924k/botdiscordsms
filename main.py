@@ -43,7 +43,7 @@ except sqlite3.Error as e:
     print(f"Lỗi kết nối cơ sở dữ liệu: {e}")
 
 # State storage
-processes = []
+processes = {}
 recent_gifs = collections.deque(maxlen=4)
 GIF_URLS = [
     "https://c.tenor.com/LmJ_S8wzHlkAAAAd/tenor.gif",
@@ -153,21 +153,12 @@ async def add_and_remove_role_vip(member):
 def check_permissions(ctx):
     if ctx.command.name == 'help':  # Không kiểm tra quyền cho lệnh /help
         return True, None
-
     if ctx.guild.id != ALLOWED_GUILD_ID:
         return False, 'Bot chỉ hoạt động tại server Al1nK SMS.'
     if ctx.channel.id != ALLOWED_CHANNEL_ID:
         return False, f'Sms chỉ hoạt động tại kênh <#{ALLOWED_CHANNEL_ID}>.'
     if not has_required_role(ctx.author):
-        return False, 'Tuổi gì dùng lệnh?'
-    return True, None
-
-    if ctx.guild.id != ALLOWED_GUILD_ID:
-        return False, 'Bot chỉ hoạt động tại server Al1nK SMS.'
-    if ctx.channel.id != ALLOWED_CHANNEL_ID:
-        return False, f'Sms chỉ hoạt động tại kênh <#{ALLOWED_CHANNEL_ID}>.'
-    if not has_required_role(ctx.author):
-        return False, 'Tuổi gì dùng lệnh?'
+        return False, 'Bạn không có quyền sử dụng lệnh này.'
     return True, None
 
 def validate_phone_number(phone_number):
@@ -339,6 +330,12 @@ async def help(ctx):
 
 @bot.command()
 async def smsstop(ctx, phone_number: str):
+    # Kiểm tra kênh
+    allowed_channels = [1264975987934761121, 1268130522731905079]
+    if ctx.channel.id not in allowed_channels:
+        await ctx.send(f"Không dùng lệnh tại đây.")
+        return
+
     # Chuyển số điện thoại thành định dạng ẩn
     if len(phone_number) >= 8:  # Đảm bảo số điện thoại đủ dài để ẩn phần cuối
         masked_number = phone_number[:6] + 'xxxx'
@@ -356,22 +353,18 @@ async def smsstop(ctx, phone_number: str):
         # Sử dụng reply để gửi tin nhắn mà không ping người dùng
         await ctx.message.reply(f"Không tìm thấy tiến trình SMS tới số: {masked_number}.", mention_author=False)
 
+
 @bot.command()
-@commands.has_role(1265025672225493223)  # Yêu cầu vai trò admin
+@commands.has_role(SPECIAL_ROLE_ID)
 async def smsstopall(ctx):
-    if not discord.utils.get(ctx.author.roles, id=1265025672225493223):
-        await ctx.send("Bạn không có quyền sử dụng lệnh này.")
+    if ctx.author.id != 1265025672225493223:
+        await ctx.send('Bạn không có quyền thực hiện lệnh này.')
         return
 
-    # Dừng tất cả tiến trình ngay lập tức
-    global processes
-    for (author_id, phone_number), proc in list(processes.items()):
-        proc.kill()  # Dừng tiến trình ngay lập tức
-        del processes[(author_id, phone_number)]
-
+    for proc in processes.values():
+        proc.kill()
     processes.clear()
-
-    await ctx.send("Đã dừng mọi tiến trình.")
+    await ctx.send('Đã dừng tất cả tiến trình.')
 
 @bot.event
 async def on_message(message):
