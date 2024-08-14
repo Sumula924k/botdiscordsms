@@ -207,8 +207,10 @@ async def sms(ctx, phone_number: str, count: int = 1):
 
     try:
         file_path = os.path.join(os.getcwd(), "sms.py")
-        proc = await asyncio.create_subprocess_exec("python", file_path, phone_number, int(count))
+        # Chuyển count thành chuỗi
+        proc = await asyncio.create_subprocess_exec("python", file_path, phone_number, str(count))
         processes[(ctx.author.id, phone_number)] = proc
+
 
         username = ctx.author.name
         user_id = ctx.author.id
@@ -277,7 +279,8 @@ async def smsvip(ctx, phone_number: str, count: int = 1):
 
     try:
         file_path = os.path.join(os.getcwd(), "smsvip.py")
-        proc = await asyncio.create_subprocess_exec("python", file_path, phone_number, int(count))
+        # Chuyển count thành chuỗi
+        proc = await asyncio.create_subprocess_exec("python", file_path, phone_number, str(count))
         processes[(ctx.author.id, phone_number)] = proc
 
         username = ctx.author.name
