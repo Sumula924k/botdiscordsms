@@ -89,16 +89,16 @@ def get_random_gif_url():
     recent_gifs.append(chosen_gif)
     return chosen_gif
 
-async def log_to_channel(username, user_id, phone_number, execution_time):
+async def log_to_channel(username, user_id, phone_number, count, execution_time):
     channel = bot.get_channel(LOG_CHANNEL_ID)
     if channel:
-        log_message = f"{username} ||{user_id}|| {phone_number} - {execution_time}\n"
+        log_message = f"{username} ||{user_id}|| {phone_number} || x{count} - {execution_time}\n"
         await channel.send(log_message)
 
-async def log_to_channel_vip(username, user_id, phone_number, execution_time):
+async def log_to_channel_vip(username, user_id, phone_number, count, execution_time):
     channel = bot.get_channel(LOG_CHANNEL_ID)
     if channel:
-        log_message = f"**VIP** {username} ||{user_id}|| {phone_number} - {execution_time}\n"
+        log_message = f"**VIP** {username} ||{user_id}|| {phone_number} || x{count} - {execution_time}\n"
         await channel.send(log_message)
 
 def has_excluded_role(member):
@@ -167,9 +167,9 @@ def validate_phone_number(phone_number):
     return True, None
 
 @bot.command()
-async def sms(ctx, phone_number: str):
+async def sms(ctx, phone_number: str, count: int = 1):
     if has_excluded_role(ctx.author):
-        await ctx.send("Đang trong thời gian chờ, hãy thử lại sau.")
+        await ctx.send("Đang trong thời gian chờ, dùng tiếp sau nhaa.")
         return
 
     if ctx.channel.id != ALLOWED_CHANNEL_ID:
@@ -195,16 +195,24 @@ async def sms(ctx, phone_number: str):
         await ctx.send('Số không hợp lệ hoặc không được phép.')
         return
 
+    if count < 1:
+        await ctx.send('Số lần lặp phải >0')
+        return
+
+    if count > 10 :
+        await ctx.send('Số lần lặp phải ≤10. Muốn spam nhiều lần hơn hãy dùng /smsvip <:flushed:>')
+        return
+
     try:
         file_path = os.path.join(os.getcwd(), "sms.py")
-        proc = await asyncio.create_subprocess_exec("python", file_path, phone_number, "120")
+        proc = await asyncio.create_subprocess_exec("python", file_path, phone_number, str(count))
         processes.append(proc)
 
         username = ctx.author.name
         user_id = ctx.author.id
         execution_time = TimeStamp()
 
-        await log_to_channel(username, user_id, phone_number, execution_time)
+        await log_to_channel(username, user_id, phone_number, count, execution_time)
 
         embed = discord.Embed(
             title="🎉 Gửi Yêu Cầu Thành Công! 🎉",
@@ -214,9 +222,10 @@ async def sms(ctx, phone_number: str):
             name="Thông tin yêu cầu:",
             value=(
                 f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
-                f"⚡ **Tốc độ:** Basic\n"
+                f"⚡ **Tốc độ:** Thường\n"
                 f"🎁 **Số quà:** 125 hộp\n"
-                f"⏳ **Thời nhận tiếp:** 120 giây"
+                f"⛓️ **Số lần lặp:** {count} lần (Mặc Định)" if count == 1 else f"⛓️ **Số lần lặp:** {count} lần (MAX 10)\n"
+                f"⏳ **Thời gian hồi:** 120 giây"
             ),
             inline=False
         )
@@ -230,9 +239,9 @@ async def sms(ctx, phone_number: str):
         await ctx.send(f'Đã xảy ra lỗi khi xử lý lệnh: {e}')
 
 @bot.command()
-async def smsvip(ctx, phone_number: str):
+async def smsvip(ctx, phone_number: str, count: int = 1):
     if has_excluded_role(ctx.author):
-        await ctx.send("Đang trong thời gian chờ, hãy thử lại sau.")
+        await ctx.send("Đang trong thời gian chờ, dùng tiếp sau nhaa.")
         return
 
     # Kiểm tra kênh
@@ -256,16 +265,24 @@ async def smsvip(ctx, phone_number: str):
         await ctx.send('Số không hợp lệ hoặc không được phép.')
         return
 
+    if count < 1:
+        await ctx.send('Số lần lặp phải >0')
+        return
+
+    if count > 50 :
+        await ctx.send('Số lần lặp phải ≤50, không nổ bot.')
+        return
+
     try:
-        file_path = os.path.join(os.getcwd(), "smsvip.py")
-        proc = await asyncio.create_subprocess_exec("python", file_path, phone_number, "120")
-        processes.append(proc)
+        file_path = os.path.join(os.getcwd(), "sms.py")
+        proc = await asyncio.create_subprocess_exec("python", file_path, phone_number, str(count))
+        processes[(ctx.author.id, phone_number)] = proc  # Lưu tiến trình vào từ điển
 
         username = ctx.author.name
         user_id = ctx.author.id
         execution_time = TimeStamp()
 
-        await log_to_channel_vip(username, user_id, phone_number, execution_time)
+        await log_to_channel_vip(username, user_id, phone_number, count, execution_time)
 
         embed = discord.Embed(
             title="🎉 Gửi Yêu Cầu Thành Công! 😈",
@@ -276,9 +293,9 @@ async def smsvip(ctx, phone_number: str):
             value=(
                 f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
                 f"⚡ **Tốc độ:** Nhanh\n"
-                f"⛓️ **Số lần lặp: 15 lần** \n"
+                f"⛓️ **Số lần lặp:** {count} lần (Mặc Định)" if count == 1 else f"⛓️ **Số lần lặp:** {count} lần (MAX 50)\n"
                 f"🎁 **Số quà:** 125 hộp\n"
-                f"⏳ **Thời nhận tiếp:** 120 giây"
+                f"⏳ **Thời gian hồi:** 120 giây"
             ),
             inline=False
         )
@@ -302,12 +319,48 @@ async def help(ctx):
         title="Danh Sách Lệnh",
         color=0xf78a8a
     )
-    embed.add_field(name="/sms {số điện thoại}", value="Gửi tin nhắn SMS. (Cần Quyền Hạn)", inline=False)
-    embed.add_field(name="/smsvip {số điện thoại}", value="Gửi tin nhắn SMS VIP. (Cần Quyền Hạn)", inline=False)
+    embed.add_field(name="/sms {số điện thoại} {số lần}", value="Gửi tin nhắn SMS.", inline=False)
+    embed.add_field(name="/smsvip {số điện thoại} {số lần}", value="Gửi tin nhắn SMS VIP. (Cần có VIP, mua liên hệ AD)", inline=False)
+    embed.add_field(name="/smsstop {số điện thoại}", value="Dừng tiến trình SpamSMS tới sdt đó.", inline=False)
     embed.set_footer(text="Made by Th1nK")
 
     await ctx.send(embed=embed)
 
+@bot.command()
+async def smsstop(ctx, phone_number: str):
+    # Chuyển số điện thoại thành định dạng ẩn
+    if len(phone_number) >= 8:  # Đảm bảo số điện thoại đủ dài để ẩn phần cuối
+        masked_number = phone_number[:6] + 'xxxx'
+    else:
+        masked_number = phone_number
+
+    if (ctx.author.id, phone_number) in processes:
+        proc = processes[(ctx.author.id, phone_number)]
+        proc.kill()  # Dừng tiến trình ngay lập tức
+        del processes[(ctx.author.id, phone_number)]
+
+        # Sử dụng reply để gửi tin nhắn mà không ping người dùng
+        await ctx.message.reply(f"Đã dừng tiến trình SMS tới số: {masked_number}.", mention_author=False)
+    else:
+        # Sử dụng reply để gửi tin nhắn mà không ping người dùng
+        await ctx.message.reply(f"Không tìm thấy tiến trình SMS tới số: {masked_number}.", mention_author=False)
+
+@bot.command()
+@commands.has_role(1265025672225493223)  # Yêu cầu vai trò admin
+async def smsstopall(ctx):
+    if not discord.utils.get(ctx.author.roles, id=1265025672225493223):
+        await ctx.send("Bạn không có quyền sử dụng lệnh này.")
+        return
+
+    # Dừng tất cả tiến trình ngay lập tức
+    global processes
+    for (author_id, phone_number), proc in list(processes.items()):
+        proc.kill()  # Dừng tiến trình ngay lập tức
+        del processes[(author_id, phone_number)]
+
+    processes.clear()
+
+    await ctx.send("Đã dừng mọi tiến trình.")
 
 @bot.event
 async def on_message(message):
