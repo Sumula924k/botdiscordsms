@@ -92,13 +92,13 @@ def get_random_gif_url():
 async def log_to_channel(username, user_id, phone_number, count, execution_time):
     channel = bot.get_channel(LOG_CHANNEL_ID)
     if channel:
-        log_message = f"{username} ||{user_id}|| {phone_number} || x{count} - {execution_time}\n"
+        log_message = f"{username} ||{user_id}|| {phone_number} x**{count}** - {execution_time}\n"
         await channel.send(log_message)
 
 async def log_to_channel_vip(username, user_id, phone_number, count, execution_time):
     channel = bot.get_channel(LOG_CHANNEL_ID)
     if channel:
-        log_message = f"**VIP** {username} ||{user_id}|| {phone_number} || x{count} - {execution_time}\n"
+        log_message = f"**VIP** {username} ||{user_id}|| {phone_number} x**{count}** - {execution_time}\n"
         await channel.send(log_message)
 
 def has_excluded_role(member):
