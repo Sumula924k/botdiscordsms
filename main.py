@@ -215,24 +215,36 @@ async def sms(ctx, phone_number: str, count: int = 1):
         execution_time = TimeStamp()
 
         await log_to_channel(username, user_id, phone_number, count, execution_time)
-
-        time.sleep(0.5)
         
         embed = discord.Embed(
             title="🎉 Gửi Yêu Cầu Thành Công! 🎉",
             color=0xf78a8a
         )
-        embed.add_field(
-            name="Thông tin yêu cầu:",
-            value=(
-                f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
-                f"⚡ **Tốc độ:** Thường\n"
-                f"🎁 **Số quà:** 125 hộp\n"
-                f"⛓️ **Số lần lặp:** {count} lần (Mặc Định)" if count == 1 else f"⛓️ **Số lần lặp:** {count} lần (MAX 10)\n"
-                f"⏳ **Thời gian hồi:** 120 giây"
-            ),
-            inline=False
-        )
+        
+        if count == 1:
+            embed.add_field(
+                name="Thông tin yêu cầu:",
+                value=(
+                    f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
+                    f"⚡ **Tốc độ:** Thường\n"
+                    f"🎁 **Số quà:** 125 hộp\n"
+                    f"⛓️ **Số lần lặp:** {count} lần (Mặc Định)\n"
+                    f"⏳ **Thời gian hồi:** 120 giây"
+                ),
+                inline=False
+            )
+        else:
+            embed.add_field(
+                name="Thông tin yêu cầu:",
+                value=(
+                    f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
+                    f"⚡ **Tốc độ:** Thường\n"
+                    f"🎁 **Số quà:** 125 hộp\n"
+                    f"⛓️ **Số lần lặp:** {count} lần (MAX 10)\n"
+                    f"⏳ **Thời gian hồi:** 120 giây"
+                ),
+                inline=False
+            )
         embed.set_footer(text=f"Thời gian : {TimeStamp()}")
         embed.set_image(url=get_random_gif_url())
 
@@ -294,17 +306,31 @@ async def smsvip(ctx, phone_number: str, count: int = 1):
             title="🎉 Gửi Yêu Cầu Thành Công! 😈",
             color=0xf78a8a
         )
-        embed.add_field(
-            name="Thông tin yêu cầu:",
-            value=(
-                f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
-                f"⚡ **Tốc độ:** Nhanh\n"
-                f"⛓️ **Số lần lặp:** {count} lần (Mặc Định)" if count == 1 else f"⛓️ **Số lần lặp:** {count} lần (MAX 50)\n"
-                f"🎁 **Số quà:** 125 hộp\n"
-                f"⏳ **Thời gian hồi:** 120 giây"
-            ),
-            inline=False
-        )
+        
+        if count == 1:
+            embed.add_field(
+                name="Thông tin yêu cầu:",
+                value=(
+                    f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
+                    f"⚡ **Tốc độ:** Nhanh\n"
+                    f"🎁 **Số quà:** 125 hộp\n"
+                    f"⛓️ **Số lần lặp:** {count} lần (Mặc Định)\n"
+                    f"⏳ **Thời gian hồi:** 120 giây"
+                ),
+                inline=False
+            )
+        else:
+            embed.add_field(
+                name="Thông tin yêu cầu:",
+                value=(
+                    f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
+                    f"⚡ **Tốc độ:** Nhanh\n"
+                    f"🎁 **Số quà:** 125 hộp\n"
+                    f"⛓️ **Số lần lặp:** {count} lần (MAX 50)\n"
+                    f"⏳ **Thời gian hồi:** 120 giây"
+                ),
+                inline=False
+            )
         embed.set_footer(text=f"Thời gian : {TimeStamp()}")
         embed.set_image(url=get_random_gif_url())
 
