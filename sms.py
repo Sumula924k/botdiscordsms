@@ -33,7 +33,7 @@ sdt = sys.argv[1]
 count = sys.argv[2]
 
 print("Số điện thoại:", sdt)
-print("Số lần lặp:", int(count))
+print("Số lần lặp:", count)
 
 count = int(count)
 
