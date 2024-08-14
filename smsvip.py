@@ -36,6 +36,8 @@ count = sys.argv[2]
 print("Số điện thoại:", sdt)
 print("Số lần lặp:", count)
 
+count = int(count)
+
 def sdtt(sdt):
     if sdt.startswith("0"):
         return "+84" + sdt[1:]
