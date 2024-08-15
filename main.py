@@ -378,13 +378,13 @@ async def smsstop(ctx, phone_number: str):
 
     if (ctx.author.id, phone_number) in processes:
         proc = processes[(ctx.author.id, phone_number)]
-        proc.kill()  # Dừng tiến trình ngay lập tức
-        del processes[(ctx.author.id, phone_number)]
-
-        # Sử dụng reply để gửi tin nhắn mà không ping người dùng
-        await ctx.message.reply(f"Đã dừng tiến trình SMS tới số: {masked_number}.", mention_author=False)
+        try:
+            proc.kill()  # Dừng tiến trình ngay lập tức
+            del processes[(ctx.author.id, phone_number)]
+            await ctx.message.reply(f"Đã dừng tiến trình SMS tới số: {masked_number}.", mention_author=False)
+        except Exception:
+            await ctx.message.reply(f"Không tìm thấy tiến trình SMS tới số: {masked_number}.", mention_author=False)
     else:
-        # Sử dụng reply để gửi tin nhắn mà không ping người dùng
         await ctx.message.reply(f"Không tìm thấy tiến trình SMS tới số: {masked_number}.", mention_author=False)
 
 
