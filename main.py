@@ -115,7 +115,7 @@ async def add_and_remove_role(member):
     temp_role = discord.utils.get(member.guild.roles, id=TEMP_ROLE_ID)
     if temp_role:
         await member.add_roles(temp_role)
-        await asyncio.sleep(120)
+        await asyncio.sleep(90)
         await member.remove_roles(temp_role)
         channel = bot.get_channel(ALLOWED_CHANNEL_ID)
         if channel:
@@ -134,7 +134,7 @@ async def add_and_remove_role_vip(member):
     temp_role = discord.utils.get(member.guild.roles, id=TEMP_ROLE_ID)
     if temp_role:
         await member.add_roles(temp_role)
-        await asyncio.sleep(120)
+        await asyncio.sleep(180)
         await member.remove_roles(temp_role)
         channel = bot.get_channel(VIP_CHANNEL_ID)
         if channel:
@@ -189,7 +189,7 @@ async def sms(ctx, phone_number: str, count: int = 1):
         return
 
     if ctx.channel.id == VIP_CHANNEL_ID:
-        await ctx.send('Lệnh này không thể sử dụng ở kênh VIP. Hãy dùng /smsvip.')
+        await ctx.send('Lệnh này không thể sử dụng ở kênh SUPER. Hãy dùng /supersms.')
         return
 
     special_role = discord.utils.get(ctx.guild.roles, id=SPECIAL_ROLE_ID)
@@ -201,8 +201,8 @@ async def sms(ctx, phone_number: str, count: int = 1):
         await ctx.send('Số lần lặp phải >0')
         return
 
-    if count > 10 :
-        await ctx.send('Số lần lặp phải ≤10. Muốn spam nhiều lần hơn hãy dùng /smsvip <:flushed:>')
+    if count > 2 :
+        await ctx.send('Số lần lặp phải ≤2. Nhiều lần hơn hãy dùng /supersms.')
         return
 
     try:
@@ -226,10 +226,11 @@ async def sms(ctx, phone_number: str, count: int = 1):
                 name="Thông tin yêu cầu:",
                 value=(
                     f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
+                    f"💸 **Gói:** FREE\n"
                     f"⚡ **Tốc độ:** Thường\n"
-                    f"🎁 **Số quà:** 125 hộp\n"
-                    f"⛓️ **Số lần lặp:** {count} lần (Mặc Định)\n"
-                    f"⏳ **Thời gian hồi:** 120 giây"
+                    f"🔗 **Số API:** 40\n"
+                    f"⛓️ **Số lần lặp:** {count} lần (Mặc Định, MAX 2)\n"
+                    f"⏳ **Thời gian hồi:** 90 giây"
                 ),
                 inline=False
             )
@@ -238,10 +239,11 @@ async def sms(ctx, phone_number: str, count: int = 1):
                 name="Thông tin yêu cầu:",
                 value=(
                     f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
+                    f"💸 **Gói:** FREE\n"
                     f"⚡ **Tốc độ:** Thường\n"
-                    f"🎁 **Số quà:** 125 hộp\n"
-                    f"⛓️ **Số lần lặp:** {count} lần (MAX 10)\n"
-                    f"⏳ **Thời gian hồi:** 120 giây"
+                    f"🔗 **Số API:** 40\n"
+                    f"⛓️ **Số lần lặp:** {count} lần (MAX 2)\n"
+                    f"⏳ **Thời gian hồi:** 90 giây"
                 ),
                 inline=False
             )
@@ -256,19 +258,19 @@ async def sms(ctx, phone_number: str, count: int = 1):
 
 
 @bot.command()
-async def smsvip(ctx, phone_number: str, count: int = 1):
+async def supersms(ctx, phone_number: str, count: int = 1):
     if has_excluded_role(ctx.author):
         await ctx.send("Đang trong thời gian chờ, dùng tiếp sau nhaa.")
         return
 
     # Kiểm tra kênh
     if ctx.channel.id != VIP_CHANNEL_ID:
-        await ctx.send(f'Smsvip chỉ hoạt động tại kênh <#{VIP_CHANNEL_ID}>.')
+        await ctx.send(f'Supersms chỉ hoạt động tại kênh <#{VIP_CHANNEL_ID}>.')
         return
 
     # Kiểm tra vai trò
     if not discord.utils.get(ctx.author.roles, id=VIP_ROLE_ID):
-        await ctx.send('Bạn cần ROLE VIP để sử dụng lệnh này.')
+        await ctx.send('Bạn cần ROLE SUPER để sử dụng lệnh này.')
         return
 
     is_valid, message = validate_phone_number(phone_number)
@@ -286,8 +288,8 @@ async def smsvip(ctx, phone_number: str, count: int = 1):
         await ctx.send('Số lần lặp phải >0')
         return
 
-    if count > 50 :
-        await ctx.send('Số lần lặp phải ≤50, không nổ bot.')
+    if count > 500 :
+        await ctx.send('Số lần lặp phải ≤500, không là **nổ** bot bạn yêu ơi.')
         return
 
     try:
@@ -312,10 +314,11 @@ async def smsvip(ctx, phone_number: str, count: int = 1):
                 name="Thông tin yêu cầu:",
                 value=(
                     f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
-                    f"⚡ **Tốc độ:** Nhanh\n"
-                    f"🎁 **Số quà:** 125 hộp\n"
-                    f"⛓️ **Số lần lặp:** {count} lần (Mặc Định)\n"
-                    f"⏳ **Thời gian hồi:** 120 giây"
+                    f"💸 **Gói:** SUPER\n"
+                    f"⚡ **Tốc độ:** SUPER\n"
+                    f"🔗 **Số API:** 125 (MAX)\n"
+                    f"⛓️ **Số lần lặp:** {count} lần (Mặc Định, MAX 500)\n"
+                    f"⏳ **Thời gian hồi:** 180 giây"
                 ),
                 inline=False
             )
@@ -324,10 +327,11 @@ async def smsvip(ctx, phone_number: str, count: int = 1):
                 name="Thông tin yêu cầu:",
                 value=(
                     f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
-                    f"⚡ **Tốc độ:** Nhanh\n"
-                    f"🎁 **Số quà:** 125 hộp\n"
-                    f"⛓️ **Số lần lặp:** {count} lần (MAX 50)\n"
-                    f"⏳ **Thời gian hồi:** 120 giây"
+                    f"💸 **Gói:** SUPER\n"
+                    f"⚡ **Tốc độ:** SUPER\n"
+                    f"🔗 **Số API:** 125 (MAX)\n"
+                    f"⛓️ **Số lần lặp:** {count} lần (MAX 500)\n"
+                    f"⏳ **Thời gian hồi:** 180 giây"
                 ),
                 inline=False
             )
@@ -387,13 +391,16 @@ async def smsstop(ctx, phone_number: str):
 @bot.command()
 @commands.has_role(SPECIAL_ROLE_ID)
 async def smsstopall(ctx):
-    if ctx.author.id != 1265025672225493223:
+    # Kiểm tra nếu người dùng có vai trò với ID 1265025672225493223
+    if not any(role.id == 1265025672225493223 for role in ctx.author.roles):
         await ctx.send('Bạn không có quyền thực hiện lệnh này.')
         return
 
+    # Dừng tất cả các tiến trình SMS và xóa chúng khỏi từ điển
     for proc in processes.values():
         proc.kill()
     processes.clear()
+
     await ctx.send('Đã dừng tất cả tiến trình.')
 
 @bot.event
