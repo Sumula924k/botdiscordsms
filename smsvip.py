@@ -1813,7 +1813,7 @@ def vexere():
     headers = {
         'accept': 'application/json, text/plain, */*',
         'accept-language': 'vi-VN',
-        'authorization': 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXAiOjIsInVzciI6ImZlIiwiY2lkIjoiYTRlYWM1MDAtMzYyNC0xMWU1LWFjOWUtMDkxMjRjNjAxMDEzIiwiZXhwIjoxNzIzMjAzNjE0fQ.Jpn5v1QtXY3tVFkiQpNxtiilfvn00JUVKI8fRFe7yTc',
+        'authorization': 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXAiOjIsInVzciI6ImZlIiwiY2lkIjoiYTRlYWM1MDAtMzYyNC0xMWU1LWFjOWUtMDkxMjRjNjAxMDEzIiwiZXhwIjoxNzIzNzA2OTM5fQ.ZPwjlOKyhe9MFkIAUYJZHNgKV-aDx9VG8L6HuqW9DLw',
         'content-type': 'application/json',
         'origin': 'https://vexere.com',
         'priority': 'u=1, i',
@@ -1828,7 +1828,7 @@ def vexere():
     }
 
     json_data = {
-        'phone': f'+84{sdt}',
+        'phone': '+840357156322',
         'lang': 'vi-VN',
     }
 
@@ -2550,19 +2550,19 @@ def coolmate():
         'cart_quantity': '0',
         'active-voucher1': 'true',
         'g_state': '{"i_p":1725246086128,"i_l":4}',
-        'affiliate_content': '%7B%22time_stamp%22%3A1723196856%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22pmax%22%2C%22utm_campaign%22%3A%22VN_GG_PMAX_4SEASON%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%5C%2Fcollection%5C%2Fsan-pham-moi%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.161.22.166%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2219538181565--%22%2C%22utm_content%22%3Anull%2C%22gclid%22%3A%22CjwKCAjw_Na1BhAlEiwAM-dm7DYmMVm6OHcCbFOvr-RFQgBrgvAymOlXYufY0hlchR_ukvKc2ePdXxoCzskQAvD_BwE%22%7D',
-        'XSRF-TOKEN': 'eyJpdiI6IitNM0llZGZHODMwQkF2UjJQXC9ONWdRPT0iLCJ2YWx1ZSI6IkY2cmcxVmJGYVJ5U0Y1NCt3d3diQ1FMdmxBckFpd0c2akM1NEt6UHRUZmZlZGxhcDlZRmhtYmVycE9EaGpQWTAiLCJtYWMiOiIyYjhlMWQ1MmMxYzYyMzg5ZmZkNDhiMGRmYzc3YzJmNTJkMThmOTc2YTdkMDhiYmMxZGRlNDBmNmMxNzY1MmYzIn0%3D',
-        'laravel_session': 'eyJpdiI6InFjRWZLQTF3TlZXcEdTdUUwZkQzY2c9PSIsInZhbHVlIjoiWlJKOWVQK3lYWWRYa1wvVU1ZMVNja0g1T3NTS29vRndhR2F6XC9sY3loakhGQ0xnWDV5dmhPcG5GZjk2aXJJdWpjIiwibWFjIjoiODljYzYwMTc2MjQ0Mzc4NDQzNmMxMGY3M2Y5ODBmYzI3OTRhNDEwZWMzYzJmOGM5MTY1Nzk4NzNmYzc4NTg4ZCJ9',
+        'affiliate_content': '%7B%22time_stamp%22%3A1723354726%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22search%22%2C%22utm_campaign%22%3A%22VN_GG_Search_COM_STA_GP_TVN_01062024_EXACTKEWORDS%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%5C%2Fcollection%5C%2Ftat-vo-nam%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.90.220.68%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2221332724879-163056499676-v%5Cu1edb%20tay%20nam%22%2C%22utm_content%22%3A%22700923935895%22%2C%22gclid%22%3A%22Cj0KCQjwn9y1BhC2ARIsAG5IY-4LLvEnGTTKvC3t-KJumETp2sBDpntabX_CQTDiWbXdbv6xHHkYirIaAlkwEALw_wcB%22%7D',
+        'XSRF-TOKEN': 'eyJpdiI6Imw2M1NyN0tWK1NFVWRucUVpRTJOSnc9PSIsInZhbHVlIjoiOWxqYXgrQ0tHK2R4VWtudHZuUzM4bkd1Z1c1TEl4bk1LRDFESlwvTHJRWVdqaFRQXC9jMjlLODA5MzJtcnBrdzMxIiwibWFjIjoiYmI5ZTk4OWFkMmFhZDk3NjhjMzk0N2E5MzhlZDZmMGJjOTE4MTc4MjIwMzZiMjVjMDg1NTllZGVlMzYzYjkxOSJ9',
+        'laravel_session': 'eyJpdiI6Ik96RXlhV1JMVGEzT1E0T0ZCSk05VEE9PSIsInZhbHVlIjoiVWVrdXhaVTI5K3Rlam9SQ1Y4QzhCTEIyRnNcL2xjcmh1Y1dHd0NNOEw5VjR3dzNiNnVaQUl4TlwvcStDOUtwOHVDIiwibWFjIjoiOGMyNWU3ZDBlZTQ1NzdjOGFlZGU4OGZjMjUzNzE1Yzc0OGE4OTg1Y2RhNjEyOTZhMWE2ZmNlZmE4ZDM3OWI2MiJ9',
     }
 
     headers = {
         'accept': '*/*',
         'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
         'content-type': 'application/json',
-        # 'cookie': 'device_token=597f946e29e835d88f56392f40ea75c3; box_token=9dbb29f1bd9e93ef4a5f8468ff0b5618; cart_quantity=0; active-voucher1=true; g_state={"i_p":1725246086128,"i_l":4}; affiliate_content=%7B%22time_stamp%22%3A1723196856%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22pmax%22%2C%22utm_campaign%22%3A%22VN_GG_PMAX_4SEASON%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%5C%2Fcollection%5C%2Fsan-pham-moi%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.161.22.166%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2219538181565--%22%2C%22utm_content%22%3Anull%2C%22gclid%22%3A%22CjwKCAjw_Na1BhAlEiwAM-dm7DYmMVm6OHcCbFOvr-RFQgBrgvAymOlXYufY0hlchR_ukvKc2ePdXxoCzskQAvD_BwE%22%7D; XSRF-TOKEN=eyJpdiI6IitNM0llZGZHODMwQkF2UjJQXC9ONWdRPT0iLCJ2YWx1ZSI6IkY2cmcxVmJGYVJ5U0Y1NCt3d3diQ1FMdmxBckFpd0c2akM1NEt6UHRUZmZlZGxhcDlZRmhtYmVycE9EaGpQWTAiLCJtYWMiOiIyYjhlMWQ1MmMxYzYyMzg5ZmZkNDhiMGRmYzc3YzJmNTJkMThmOTc2YTdkMDhiYmMxZGRlNDBmNmMxNzY1MmYzIn0%3D; laravel_session=eyJpdiI6InFjRWZLQTF3TlZXcEdTdUUwZkQzY2c9PSIsInZhbHVlIjoiWlJKOWVQK3lYWWRYa1wvVU1ZMVNja0g1T3NTS29vRndhR2F6XC9sY3loakhGQ0xnWDV5dmhPcG5GZjk2aXJJdWpjIiwibWFjIjoiODljYzYwMTc2MjQ0Mzc4NDQzNmMxMGY3M2Y5ODBmYzI3OTRhNDEwZWMzYzJmOGM5MTY1Nzk4NzNmYzc4NTg4ZCJ9',
+        # 'cookie': 'device_token=597f946e29e835d88f56392f40ea75c3; box_token=9dbb29f1bd9e93ef4a5f8468ff0b5618; cart_quantity=0; active-voucher1=true; g_state={"i_p":1725246086128,"i_l":4}; affiliate_content=%7B%22time_stamp%22%3A1723354726%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22search%22%2C%22utm_campaign%22%3A%22VN_GG_Search_COM_STA_GP_TVN_01062024_EXACTKEWORDS%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%5C%2Fcollection%5C%2Ftat-vo-nam%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.90.220.68%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2221332724879-163056499676-v%5Cu1edb%20tay%20nam%22%2C%22utm_content%22%3A%22700923935895%22%2C%22gclid%22%3A%22Cj0KCQjwn9y1BhC2ARIsAG5IY-4LLvEnGTTKvC3t-KJumETp2sBDpntabX_CQTDiWbXdbv6xHHkYirIaAlkwEALw_wcB%22%7D; XSRF-TOKEN=eyJpdiI6Imw2M1NyN0tWK1NFVWRucUVpRTJOSnc9PSIsInZhbHVlIjoiOWxqYXgrQ0tHK2R4VWtudHZuUzM4bkd1Z1c1TEl4bk1LRDFESlwvTHJRWVdqaFRQXC9jMjlLODA5MzJtcnBrdzMxIiwibWFjIjoiYmI5ZTk4OWFkMmFhZDk3NjhjMzk0N2E5MzhlZDZmMGJjOTE4MTc4MjIwMzZiMjVjMDg1NTllZGVlMzYzYjkxOSJ9; laravel_session=eyJpdiI6Ik96RXlhV1JMVGEzT1E0T0ZCSk05VEE9PSIsInZhbHVlIjoiVWVrdXhaVTI5K3Rlam9SQ1Y4QzhCTEIyRnNcL2xjcmh1Y1dHd0NNOEw5VjR3dzNiNnVaQUl4TlwvcStDOUtwOHVDIiwibWFjIjoiOGMyNWU3ZDBlZTQ1NzdjOGFlZGU4OGZjMjUzNzE1Yzc0OGE4OTg1Y2RhNjEyOTZhMWE2ZmNlZmE4ZDM3OWI2MiJ9',
         'origin': 'https://www.coolmate.me',
         'priority': 'u=1, i',
-        'referer': 'https://www.coolmate.me/collection/san-pham-moi?&utm_source=ggads&utm_medium=pmax&utm_campaign=VN_GG_PMAX_4SEASON&utm_term=19538181565--&utm_content=&gad_source=1&gclid=CjwKCAjw_Na1BhAlEiwAM-dm7DYmMVm6OHcCbFOvr-RFQgBrgvAymOlXYufY0hlchR_ukvKc2ePdXxoCzskQAvD_BwE',
+        'referer': 'https://www.coolmate.me/collection/combo-set-do-gia-tot?itm_source=homepage&itm_medium=herobanner_1&itm_campaign=Sale_giua_thang_15_8_-_Destop_-_fix_3&itm_content=/image/August2024/Sale_giua_thang_15_8_-_Destop_-_fix_3.jpg',
         'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
         'sec-ch-ua-mobile': '?0',
         'sec-ch-ua-platform': '"Windows"',
@@ -2570,14 +2570,14 @@ def coolmate():
         'sec-fetch-mode': 'cors',
         'sec-fetch-site': 'same-origin',
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'x-csrf-token': 'D7iqmZnnMxUtxKkXXepInRbiIubOm2TDB9ci70Y2',
+        'x-csrf-token': 'rIG6136gGu756xPVgVVrXfLhxZUjZjmatPQ1iU7u',
     }
 
     json_data = {
         'fullname': 'tran quoc huuh',
-        'email': 'quadeptrai@gmail.com',
+        'email': 'soeasyvn1336@gmail.com',
         'phone': sdt,
-        'password': '123123aa',
+        'password': '123123aA@',
         'ajax': True,
     }
 
@@ -3678,20 +3678,20 @@ def coolmateresend():
         'cart_quantity': '0',
         'active-voucher1': 'true',
         'g_state': '{"i_p":1725246086128,"i_l":4}',
-        'affiliate_content': '%7B%22time_stamp%22%3A1723196856%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22pmax%22%2C%22utm_campaign%22%3A%22VN_GG_PMAX_4SEASON%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%5C%2Fcollection%5C%2Fsan-pham-moi%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.161.22.166%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2219538181565--%22%2C%22utm_content%22%3Anull%2C%22gclid%22%3A%22CjwKCAjw_Na1BhAlEiwAM-dm7DYmMVm6OHcCbFOvr-RFQgBrgvAymOlXYufY0hlchR_ukvKc2ePdXxoCzskQAvD_BwE%22%7D',
-        'XSRF-TOKEN': 'eyJpdiI6InBDaUJwT2xIV1wvS250eW9mZlAxc2lBPT0iLCJ2YWx1ZSI6ImhCWndRdXZHb2dqSm12WWdrdG9HU1krc054Y2tsXC9kTkVNQWQ1Q1RjS01zQURPbVNacExCTzRTMmhQcUczK1FXIiwibWFjIjoiODA0M2UxM2JkNDhjODYxNTRmNThlZmU5YTlkN2MwYmRjYzAwNjZkMzBhOGI3MjRmYWE3MzQwMDlmZjYwNzZmZCJ9',
-        'laravel_session': 'eyJpdiI6IlpNWGJmbm9QXC9aQlpsWGV4eHNZWjBBPT0iLCJ2YWx1ZSI6Ilp2Rm5xVGUrNnhhUElyUEpnOXlyNCtPV1YxcktMWkxVd3B3MjRwWmlXaVhDdjI4Ull5TnBaM3hJMWdjTE5FcnUiLCJtYWMiOiI2MDA2YjVmYjBjN2JiZDViNjljY2UzYmU1MTgyMjU2MWZhMzIxMzNjMGY5ZGMyZWIwZDNlN2ZmNzNlMDBlMWI3In0%3D',
-        'redirect_url': 'eyJpdiI6ImtRZHYxdzd3Qm45N29NNjNnMlN0dXc9PSIsInZhbHVlIjoiQVNJVEpWcHp2eWQxbGZnSmo2K3ZPbGYxUCttMXNMVURYQzc0YlpHeWNYZFcwMExoQldXazhYZjY0MHc3N0ZBUzFHTTVmdThyMGVoSzNDZ1wvWWRHSVJ3K0JqQU5Ha0h4Z0F4ZkhRdXBqeWxWN0R5MnpTXC9RZU4yN2QzWUlkaWZXXC9kZUdzcXZXcGl6WUNZcWVod2p1dUNxdlVUVlhROHJFaXB0MFFPc1wvVjRHbmVsRGhrSHM1OHhKYVNXRWJ6SFFUOHI0WHpqeHJCMDEyK1hJVXpCaVRiKzVTODRSQTNGTm5LMUlvbEJkMGR4ZjdFZmhTVTBmVXdoRnBza3ZycnNjVWZrTVhidjg3K1grVjJxKytZYzFcL0ZXUU9GM1p6UUt3cTZoTUg0ZURMV3dlS25YR0YrQnR5QVhBNVpsdEY2Wjdwb29mWmw0SlwvUkZTNEFxbFZ0TGZURHl5SzM0eFBHQUhQVmxSUGRzR0hqaWdJPSIsIm1hYyI6IjUxYjEzNDViZmJjNjQ4ZjQ2ZWVlNzUxMTgzZjdlZmRkMzkwMWMzNTVmYjNjNmFlOGM3Y2MzMDFhMjY2NDJhNzkifQ%3D%3D',
+        'affiliate_content': '%7B%22time_stamp%22%3A1723354726%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22search%22%2C%22utm_campaign%22%3A%22VN_GG_Search_COM_STA_GP_TVN_01062024_EXACTKEWORDS%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%5C%2Fcollection%5C%2Ftat-vo-nam%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.90.220.68%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2221332724879-163056499676-v%5Cu1edb%20tay%20nam%22%2C%22utm_content%22%3A%22700923935895%22%2C%22gclid%22%3A%22Cj0KCQjwn9y1BhC2ARIsAG5IY-4LLvEnGTTKvC3t-KJumETp2sBDpntabX_CQTDiWbXdbv6xHHkYirIaAlkwEALw_wcB%22%7D',
+        'XSRF-TOKEN': 'eyJpdiI6IjlyQjBOY1ZvT2VkQVVnQnVLUkFYSkE9PSIsInZhbHVlIjoiR0NuaHdkeTd5Z2tqTldFV2NDS1Bhc2tRV3E4N0ZTMEI1ZGt4RGxiTjVZZFRTMGhVd0ZWdUNRYzNcL0hnS2tld3oiLCJtYWMiOiI2NWFiNzBkZDQxMzc5NzhhNGQ3ODNhMWRiODI2YmNmMjUzNTQ4MjZiMmQ0MzhiNzBlYTI1YTI5YzQ3YjJhNGMwIn0%3D',
+        'laravel_session': 'eyJpdiI6IkxYT0loN2tLSEpVeXRDVlZ2QVVpaUE9PSIsInZhbHVlIjoiMXZ0ZmtMbW5idVRGeUtoWmpJb3BMblVkK1dzM0VHK1N4aVlCQ0EzbUxRYko3TnlLUENCYkNQY2d2TkVzRDRRZCIsIm1hYyI6IjZjZGE3OWEyZmFjNDdjYzdiM2JiMWViZjNkMmRjMjA5YjUwZGMzNTA4NjZkNjcxMDA2OGEyNjBmODVjMTc3NTMifQ%3D%3D',
+        'redirect_url': 'eyJpdiI6IkwxQmpzTjFLWFJkakpZczZvc2dobkE9PSIsInZhbHVlIjoiUWFjVWt0YlZzWE5yM1BBb2hBSHd2TDAwaVwvNVVEczcwc3dBRFdQdUJIUEljcjMyUXlEUEZMOWJRVTRJVlh3MHZjVTJoTkN1MzFSemhEcDUwSWtqNUozSk1yOE0wUjJNWVVmbzROOTFvaExIN2R3V2VWVzVyK3l2d004c2lBMG0rdVwvWWk0cFwvNkc1VlFOd05cLzRDUXZ3VkhmN2ZjRjFENGJqSHQ2ZDZuSnRnVUJMakpTV2xkcUFUZWVpV2IxUEhZcVhGbk1MQzFFK3k2RGhDR2tIMysrRDVVUmxnaVFnKzl2a2VLUU9kWmo4NEl4UFBoSUFNcDZYU05Vb1NuRFhmUkpxcEtDTEFBcWxxUFJYQ2RuMWNcL08xNk1hNFNLT2pXTHpFaytvcnFsakdqOD0iLCJtYWMiOiJhODgzNDY3NmRkZWJlYmM1MjYwNjQxZTA4ODY2Nzg1YWQ4ODc0MjIwZDdkMmIyMjUwMzliODA0ZDA5YTlkZGMxIn0%3D',
     }
 
     headers = {
         'accept': '*/*',
         'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
         'content-type': 'application/json',
-        # 'cookie': 'device_token=597f946e29e835d88f56392f40ea75c3; box_token=9dbb29f1bd9e93ef4a5f8468ff0b5618; cart_quantity=0; active-voucher1=true; g_state={"i_p":1725246086128,"i_l":4}; affiliate_content=%7B%22time_stamp%22%3A1723196856%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22pmax%22%2C%22utm_campaign%22%3A%22VN_GG_PMAX_4SEASON%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%5C%2Fcollection%5C%2Fsan-pham-moi%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.161.22.166%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2219538181565--%22%2C%22utm_content%22%3Anull%2C%22gclid%22%3A%22CjwKCAjw_Na1BhAlEiwAM-dm7DYmMVm6OHcCbFOvr-RFQgBrgvAymOlXYufY0hlchR_ukvKc2ePdXxoCzskQAvD_BwE%22%7D; XSRF-TOKEN=eyJpdiI6InBDaUJwT2xIV1wvS250eW9mZlAxc2lBPT0iLCJ2YWx1ZSI6ImhCWndRdXZHb2dqSm12WWdrdG9HU1krc054Y2tsXC9kTkVNQWQ1Q1RjS01zQURPbVNacExCTzRTMmhQcUczK1FXIiwibWFjIjoiODA0M2UxM2JkNDhjODYxNTRmNThlZmU5YTlkN2MwYmRjYzAwNjZkMzBhOGI3MjRmYWE3MzQwMDlmZjYwNzZmZCJ9; laravel_session=eyJpdiI6IlpNWGJmbm9QXC9aQlpsWGV4eHNZWjBBPT0iLCJ2YWx1ZSI6Ilp2Rm5xVGUrNnhhUElyUEpnOXlyNCtPV1YxcktMWkxVd3B3MjRwWmlXaVhDdjI4Ull5TnBaM3hJMWdjTE5FcnUiLCJtYWMiOiI2MDA2YjVmYjBjN2JiZDViNjljY2UzYmU1MTgyMjU2MWZhMzIxMzNjMGY5ZGMyZWIwZDNlN2ZmNzNlMDBlMWI3In0%3D; redirect_url=eyJpdiI6ImtRZHYxdzd3Qm45N29NNjNnMlN0dXc9PSIsInZhbHVlIjoiQVNJVEpWcHp2eWQxbGZnSmo2K3ZPbGYxUCttMXNMVURYQzc0YlpHeWNYZFcwMExoQldXazhYZjY0MHc3N0ZBUzFHTTVmdThyMGVoSzNDZ1wvWWRHSVJ3K0JqQU5Ha0h4Z0F4ZkhRdXBqeWxWN0R5MnpTXC9RZU4yN2QzWUlkaWZXXC9kZUdzcXZXcGl6WUNZcWVod2p1dUNxdlVUVlhROHJFaXB0MFFPc1wvVjRHbmVsRGhrSHM1OHhKYVNXRWJ6SFFUOHI0WHpqeHJCMDEyK1hJVXpCaVRiKzVTODRSQTNGTm5LMUlvbEJkMGR4ZjdFZmhTVTBmVXdoRnBza3ZycnNjVWZrTVhidjg3K1grVjJxKytZYzFcL0ZXUU9GM1p6UUt3cTZoTUg0ZURMV3dlS25YR0YrQnR5QVhBNVpsdEY2Wjdwb29mWmw0SlwvUkZTNEFxbFZ0TGZURHl5SzM0eFBHQUhQVmxSUGRzR0hqaWdJPSIsIm1hYyI6IjUxYjEzNDViZmJjNjQ4ZjQ2ZWVlNzUxMTgzZjdlZmRkMzkwMWMzNTVmYjNjNmFlOGM3Y2MzMDFhMjY2NDJhNzkifQ%3D%3D',
+        # 'cookie': 'device_token=597f946e29e835d88f56392f40ea75c3; box_token=9dbb29f1bd9e93ef4a5f8468ff0b5618; cart_quantity=0; active-voucher1=true; g_state={"i_p":1725246086128,"i_l":4}; affiliate_content=%7B%22time_stamp%22%3A1723354726%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22search%22%2C%22utm_campaign%22%3A%22VN_GG_Search_COM_STA_GP_TVN_01062024_EXACTKEWORDS%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%5C%2Fcollection%5C%2Ftat-vo-nam%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.90.220.68%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2221332724879-163056499676-v%5Cu1edb%20tay%20nam%22%2C%22utm_content%22%3A%22700923935895%22%2C%22gclid%22%3A%22Cj0KCQjwn9y1BhC2ARIsAG5IY-4LLvEnGTTKvC3t-KJumETp2sBDpntabX_CQTDiWbXdbv6xHHkYirIaAlkwEALw_wcB%22%7D; XSRF-TOKEN=eyJpdiI6IjlyQjBOY1ZvT2VkQVVnQnVLUkFYSkE9PSIsInZhbHVlIjoiR0NuaHdkeTd5Z2tqTldFV2NDS1Bhc2tRV3E4N0ZTMEI1ZGt4RGxiTjVZZFRTMGhVd0ZWdUNRYzNcL0hnS2tld3oiLCJtYWMiOiI2NWFiNzBkZDQxMzc5NzhhNGQ3ODNhMWRiODI2YmNmMjUzNTQ4MjZiMmQ0MzhiNzBlYTI1YTI5YzQ3YjJhNGMwIn0%3D; laravel_session=eyJpdiI6IkxYT0loN2tLSEpVeXRDVlZ2QVVpaUE9PSIsInZhbHVlIjoiMXZ0ZmtMbW5idVRGeUtoWmpJb3BMblVkK1dzM0VHK1N4aVlCQ0EzbUxRYko3TnlLUENCYkNQY2d2TkVzRDRRZCIsIm1hYyI6IjZjZGE3OWEyZmFjNDdjYzdiM2JiMWViZjNkMmRjMjA5YjUwZGMzNTA4NjZkNjcxMDA2OGEyNjBmODVjMTc3NTMifQ%3D%3D; redirect_url=eyJpdiI6IkwxQmpzTjFLWFJkakpZczZvc2dobkE9PSIsInZhbHVlIjoiUWFjVWt0YlZzWE5yM1BBb2hBSHd2TDAwaVwvNVVEczcwc3dBRFdQdUJIUEljcjMyUXlEUEZMOWJRVTRJVlh3MHZjVTJoTkN1MzFSemhEcDUwSWtqNUozSk1yOE0wUjJNWVVmbzROOTFvaExIN2R3V2VWVzVyK3l2d004c2lBMG0rdVwvWWk0cFwvNkc1VlFOd05cLzRDUXZ3VkhmN2ZjRjFENGJqSHQ2ZDZuSnRnVUJMakpTV2xkcUFUZWVpV2IxUEhZcVhGbk1MQzFFK3k2RGhDR2tIMysrRDVVUmxnaVFnKzl2a2VLUU9kWmo4NEl4UFBoSUFNcDZYU05Vb1NuRFhmUkpxcEtDTEFBcWxxUFJYQ2RuMWNcL08xNk1hNFNLT2pXTHpFaytvcnFsakdqOD0iLCJtYWMiOiJhODgzNDY3NmRkZWJlYmM1MjYwNjQxZTA4ODY2Nzg1YWQ4ODc0MjIwZDdkMmIyMjUwMzliODA0ZDA5YTlkZGMxIn0%3D',
         'origin': 'https://www.coolmate.me',
         'priority': 'u=1, i',
-        'referer': 'https://www.coolmate.me/collection/san-pham-moi?&utm_source=ggads&utm_medium=pmax&utm_campaign=VN_GG_PMAX_4SEASON&utm_term=19538181565--&utm_content=&gad_source=1&gclid=CjwKCAjw_Na1BhAlEiwAM-dm7DYmMVm6OHcCbFOvr-RFQgBrgvAymOlXYufY0hlchR_ukvKc2ePdXxoCzskQAvD_BwE',
+        'referer': 'https://www.coolmate.me/collection/combo-set-do-gia-tot?itm_source=homepage&itm_medium=herobanner_1&itm_campaign=Sale_giua_thang_15_8_-_Destop_-_fix_3&itm_content=/image/August2024/Sale_giua_thang_15_8_-_Destop_-_fix_3.jpg',
         'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
         'sec-ch-ua-mobile': '?0',
         'sec-ch-ua-platform': '"Windows"',
@@ -3699,7 +3699,7 @@ def coolmateresend():
         'sec-fetch-mode': 'cors',
         'sec-fetch-site': 'same-origin',
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'x-csrf-token': 'D7iqmZnnMxUtxKkXXepInRbiIubOm2TDB9ci70Y2',
+        'x-csrf-token': 'rIG6136gGu756xPVgVVrXfLhxZUjZjmatPQ1iU7u',
     }
 
     json_data = {
@@ -4258,9 +4258,9 @@ def richvn():
 def brgshopping():
     cookies = {
         'frontend_lang': 'vi_VN',
-        'session_id': '7263e3027f0777a42baacbe042e2f4600815f515',
         'brgshopping.vn': 'brgshopping.vn',
         'brg_cookie_popup': 'xxxxxxxxxxx',
+        'session_id': '99afa4f7b7fb49a2a12cfa5eaa78e866fb90136a',
     }
 
     headers = {
@@ -4269,7 +4269,7 @@ def brgshopping():
         'Cache-Control': 'max-age=0',
         'Connection': 'keep-alive',
         'Content-Type': 'application/x-www-form-urlencoded',
-        # 'Cookie': 'frontend_lang=vi_VN; session_id=7263e3027f0777a42baacbe042e2f4600815f515; brgshopping.vn=brgshopping.vn; brg_cookie_popup=xxxxxxxxxxx',
+        # 'Cookie': 'frontend_lang=vi_VN; brgshopping.vn=brgshopping.vn; brg_cookie_popup=xxxxxxxxxxx; session_id=99afa4f7b7fb49a2a12cfa5eaa78e866fb90136a',
         'Origin': 'https://brgshopping.vn',
         'Referer': 'https://brgshopping.vn/web/signup',
         'Sec-Fetch-Dest': 'document',
@@ -4284,11 +4284,11 @@ def brgshopping():
     }
 
     data = {
-        'csrf_token': 'f460ad429ce7758e0f4257ad2cb99dbe67818444o1723198297',
+        'csrf_token': '6b3ae11de46aadc384265ad16747be93c6a96b2eo1723707360',
         'login': sdt,
         'name': 'John Davis',
-        'password': 'bVQ2TyTHPf4GTuc',
-        'confirm_password': 'bVQ2TyTHPf4GTuc',
+        'password': '123123aA@',
+        'confirm_password': '123123aA@',
         'redirect': '',
         'token': '',
     }
@@ -4751,8 +4751,33 @@ def hoasenhome():
         'isSubscribed': True,
     }
 
+
+    response = requests.post('https://admin.hoasenhome.vn/rest/V1/service/customers/signup', headers=headers, json=json_data)
+
+    headers = {
+    'Accept': 'application/json',
+    'Accept-Language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+    'Connection': 'keep-alive',
+    'Content-Type': 'application/json',
+    'Origin': 'https://hoasenhome.vn',
+    'Referer': 'https://hoasenhome.vn/',
+    'Sec-Fetch-Dest': 'empty',
+    'Sec-Fetch-Mode': 'cors',
+    'Sec-Fetch-Site': 'same-site',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+    'X-Requested-Store': 'default',
+    'X-Requested-With': 'XMLHttpRequest',
+    'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"Windows"',
+    }
+
+    json_data = {
+        'phoneNumber': sdt,
+    }
+
     try:
-        response = requests.post('https://admin.hoasenhome.vn/rest/V1/service/customers/signup', headers=headers, json=json_data)
+        response = requests.post('https://admin.hoasenhome.vn/rest/V1/customers/sms/forgot-password', headers=headers, json=json_data)
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("HOASENHOME | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
@@ -4760,16 +4785,16 @@ def hoasenhome():
 
 def vulcano():
     cookies = {
-        'XSRF-TOKEN': 'eyJpdiI6Ik5qVWN1a2JSZjV1VFhrQVd6WFNWYnc9PSIsInZhbHVlIjoiYTlqZ3Q5OE9hNGo1MEtRU3FadjZJNkE2MjR5ZU9MSVAxbytRMXdUZ2tCQ2YyY3IwY3BzSXVueTdOWUNmVG9zd00wR255YW9reGJhU3NtR3U1b3FRbFJTYnVCaUUrUEtlTHdmK0NWUFFLNVM4ZjZtUlg5dm15Vld0MTNSWU1ZV3UiLCJtYWMiOiJjM2Y2OGJhY2IwMWU1M2Y4NmZiZTkxZTJjZTA1NDAwZWVjNmRhNGVlMTBjNWY5MWJjMWY5ODBlOTViOTM5MzQzIiwidGFnIjoiIn0%3D',
-        'vulcanovn_session': 'eyJpdiI6ImtaTmhFeDJ1RkJQc0tFdEdlbUtXclE9PSIsInZhbHVlIjoiWHR4YkFBRjJlQ0JjQTQ0R3BmaVAzRlp3YmJCTXlJamJQNkNXdjR4WFVRY3BadjJ6Nk55aitrN3UzSXdnN2lSME5lU2RIdHNQbS9qaHNuUmxFR3RnTnJzb3dGUi9UVW9DZVdNVnpEMGJlN2NzWXdibms5OGpleTMyVkg2Y2tSd1giLCJtYWMiOiJhMjU4NjRiNDU5ZjJmMjM3MjBlMWJkY2QzNzMwN2NlMmI0OWQxNGI4YWEzY2NjY2U3YTg2Y2Q1MDAxNjUzOGUwIiwidGFnIjoiIn0%3D',
-        'utm_values': 'eyJpdiI6IkxvQ2JjZGh5d0R1SjNmQnhTbTQ4OEE9PSIsInZhbHVlIjoiWjFhcnJ1NzBYY0ZXeDdzOHpwTjhkZklMZGUxTGdoOVRzM3hlTS9HeTJKcGxFRTRKRk1INmE4dVdscVJ0eGRGNCIsIm1hYyI6IjVlYTM0ZmFiMjcwYTk1MTVlMDBjMTc2NDViMzVmZTczYmFiMzViMTE5MzVmNDdiNDg4ZTgzOTM5NjQxOTZhYmQiLCJ0YWciOiIifQ%3D%3D',
+        'XSRF-TOKEN': 'eyJpdiI6IkJ6Q2tWTzFybXAyU3V1UEVwYlBkM0E9PSIsInZhbHVlIjoiU2ZWd3cxSDVLdkVVMlB3dUZSQVBxNXFNcm9sVkYwTmhsOWY1V1BzajZBVFpOT0RGVU5aRm45M1MyQk9SYjhMU0JBWHRPaEhkeWZCT2hCZjdJbnd5SmE0Y0dDN2NaOTUwUzlHcEU1Qlhmc2JDSENXbG5QYW1GS3Z0aUlHazdUOEYiLCJtYWMiOiJmNmY4NzgxZjY5MzgwZWFkY2MxMDJiOTdlMDE5ZWQzOTEwZTI1YzMzNmUzMWQ0ZTU4YTc0YmZiZGEyZDk3YmU5IiwidGFnIjoiIn0%3D',
+        'vulcanovn_session': 'eyJpdiI6InNqK3ZGZ3Z1OGQ3SG03aWVhRXJ6Znc9PSIsInZhbHVlIjoiMThzZ0llcXhNTTBzaTRZYlNyVlRPS0o4K1BqNnI4T0lNSXRaT0cycFpJRms1dS9qNFRIN0FUZnZPSm4rRW9TazJZR013WG1FeWxjU0pjWHFYOHRVd1hIRG9LbngzNFNPMWtNUXAxdGIxWkR6bGJkcklldXlpVVBWNm9oRytXaUwiLCJtYWMiOiJkYzFjZDAyODA0YzM0MzkxYjcxMWIyMDgyNjc3Y2Y3ZDAxMzVjMTIwZGE0YTFiNmUwNmVjZmQ1ZGM1ZjBiMzM5IiwidGFnIjoiIn0%3D',
+        'utm_values': 'eyJpdiI6Ii9DS0t3SDRQZHdSME9RLzJUTlVadXc9PSIsInZhbHVlIjoiUWxodC9zUnl4SkVVOGFZY3QvUmVmZnhBUHhDSzl1NGx1K2gyV0ZqUjFkTEQxeVdVR0lNQ0dna3R3dmVFQmYvVyIsIm1hYyI6IjQ0NjNkZDMzMThkNTVmNjAwYmYzMTJmYTBhODk5NjM2NGIxZDczNGI5NGRlYWZlYmMxYWMzYWU4NjkzNGY5MGUiLCJ0YWciOiIifQ%3D%3D',
     }
 
     headers = {
         'accept': '*/*',
         'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
         'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-        # 'cookie': 'XSRF-TOKEN=eyJpdiI6Ik5qVWN1a2JSZjV1VFhrQVd6WFNWYnc9PSIsInZhbHVlIjoiYTlqZ3Q5OE9hNGo1MEtRU3FadjZJNkE2MjR5ZU9MSVAxbytRMXdUZ2tCQ2YyY3IwY3BzSXVueTdOWUNmVG9zd00wR255YW9reGJhU3NtR3U1b3FRbFJTYnVCaUUrUEtlTHdmK0NWUFFLNVM4ZjZtUlg5dm15Vld0MTNSWU1ZV3UiLCJtYWMiOiJjM2Y2OGJhY2IwMWU1M2Y4NmZiZTkxZTJjZTA1NDAwZWVjNmRhNGVlMTBjNWY5MWJjMWY5ODBlOTViOTM5MzQzIiwidGFnIjoiIn0%3D; vulcanovn_session=eyJpdiI6ImtaTmhFeDJ1RkJQc0tFdEdlbUtXclE9PSIsInZhbHVlIjoiWHR4YkFBRjJlQ0JjQTQ0R3BmaVAzRlp3YmJCTXlJamJQNkNXdjR4WFVRY3BadjJ6Nk55aitrN3UzSXdnN2lSME5lU2RIdHNQbS9qaHNuUmxFR3RnTnJzb3dGUi9UVW9DZVdNVnpEMGJlN2NzWXdibms5OGpleTMyVkg2Y2tSd1giLCJtYWMiOiJhMjU4NjRiNDU5ZjJmMjM3MjBlMWJkY2QzNzMwN2NlMmI0OWQxNGI4YWEzY2NjY2U3YTg2Y2Q1MDAxNjUzOGUwIiwidGFnIjoiIn0%3D; utm_values=eyJpdiI6IkxvQ2JjZGh5d0R1SjNmQnhTbTQ4OEE9PSIsInZhbHVlIjoiWjFhcnJ1NzBYY0ZXeDdzOHpwTjhkZklMZGUxTGdoOVRzM3hlTS9HeTJKcGxFRTRKRk1INmE4dVdscVJ0eGRGNCIsIm1hYyI6IjVlYTM0ZmFiMjcwYTk1MTVlMDBjMTc2NDViMzVmZTczYmFiMzViMTE5MzVmNDdiNDg4ZTgzOTM5NjQxOTZhYmQiLCJ0YWciOiIifQ%3D%3D',
+        # 'cookie': 'XSRF-TOKEN=eyJpdiI6IkJ6Q2tWTzFybXAyU3V1UEVwYlBkM0E9PSIsInZhbHVlIjoiU2ZWd3cxSDVLdkVVMlB3dUZSQVBxNXFNcm9sVkYwTmhsOWY1V1BzajZBVFpOT0RGVU5aRm45M1MyQk9SYjhMU0JBWHRPaEhkeWZCT2hCZjdJbnd5SmE0Y0dDN2NaOTUwUzlHcEU1Qlhmc2JDSENXbG5QYW1GS3Z0aUlHazdUOEYiLCJtYWMiOiJmNmY4NzgxZjY5MzgwZWFkY2MxMDJiOTdlMDE5ZWQzOTEwZTI1YzMzNmUzMWQ0ZTU4YTc0YmZiZGEyZDk3YmU5IiwidGFnIjoiIn0%3D; vulcanovn_session=eyJpdiI6InNqK3ZGZ3Z1OGQ3SG03aWVhRXJ6Znc9PSIsInZhbHVlIjoiMThzZ0llcXhNTTBzaTRZYlNyVlRPS0o4K1BqNnI4T0lNSXRaT0cycFpJRms1dS9qNFRIN0FUZnZPSm4rRW9TazJZR013WG1FeWxjU0pjWHFYOHRVd1hIRG9LbngzNFNPMWtNUXAxdGIxWkR6bGJkcklldXlpVVBWNm9oRytXaUwiLCJtYWMiOiJkYzFjZDAyODA0YzM0MzkxYjcxMWIyMDgyNjc3Y2Y3ZDAxMzVjMTIwZGE0YTFiNmUwNmVjZmQ1ZGM1ZjBiMzM5IiwidGFnIjoiIn0%3D; utm_values=eyJpdiI6Ii9DS0t3SDRQZHdSME9RLzJUTlVadXc9PSIsInZhbHVlIjoiUWxodC9zUnl4SkVVOGFZY3QvUmVmZnhBUHhDSzl1NGx1K2gyV0ZqUjFkTEQxeVdVR0lNQ0dna3R3dmVFQmYvVyIsIm1hYyI6IjQ0NjNkZDMzMThkNTVmNjAwYmYzMTJmYTBhODk5NjM2NGIxZDczNGI5NGRlYWZlYmMxYWMzYWU4NjkzNGY5MGUiLCJ0YWciOiIifQ%3D%3D',
         'origin': 'https://vulcano.vn',
         'priority': 'u=1, i',
         'referer': 'https://vulcano.vn/register',
@@ -4780,7 +4805,7 @@ def vulcano():
         'sec-fetch-mode': 'cors',
         'sec-fetch-site': 'same-origin',
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'x-csrf-token': '3euyYieVhkfjdSIsKDkLuIqJMlYB8urfnlVtxGT3',
+        'x-csrf-token': '9Dhr621QSdLEIjaiPEWHx7SUutyy28qa30K6ddsd',
         'x-requested-with': 'XMLHttpRequest',
     }
 
@@ -4794,12 +4819,13 @@ def vulcano():
         print("VULCANO | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
         print("VULCANO | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+        print(response.text)
 
 def vulcanoreset():
     cookies = {
-        'XSRF-TOKEN': 'eyJpdiI6InVNWEdsOUpQVzJ6SkQ4bWJrbVRlYnc9PSIsInZhbHVlIjoiNkxTY2VxdjI0WkRGQ0dNVGFGRzZWenhlSU9ZdU9peUVwU1J0Y21EdXNIOGhGbzUyYm1RM20yNndXNCtDYzZqS0pwaEVneGIwTDRxeG81U2d2R2RNeWpxQ3QyZVJKK0FZQVdXcXNabmNCM1kycG9SRzNCZExaakhQRURrMTEzbGciLCJtYWMiOiJhYTM2OTNlZWU1Mjg5YzM4NmE4NmI4MWI4OTEzMGM4ZGE0NzQzMmY5MGZiNTc1YWM4YTg3OGFkZjJhNWIwZWNkIiwidGFnIjoiIn0%3D',
-        'vulcanovn_session': 'eyJpdiI6InJwS1BXNFlEb1gzZHZpSVpDclNMRHc9PSIsInZhbHVlIjoiT25XN0EwR2p0MGNFdnI1NTczeXcxd3NzL2ZLaDVPcXlmUkkvSWl3ckgydkQwQ1lhaXhJUkJwdy92QWxsdmZiSVBqTnl4bHQrQUFneVFBWGVIWVk0MmVTZGpYM3ZBZUNrWXY0NFduSlFMdFZMdVAxcGlXSEdMTWVmKzl1MlYzK1UiLCJtYWMiOiIzN2QzNDhjMmY5MDEyMGFiMWYzMDMzZGZkYWNjZWFiNjM0NjMzOGY3YjhlOTlhZmM2Y2M4ODk2ODE3NDNkZmNmIiwidGFnIjoiIn0%3D',
-        'utm_values': 'eyJpdiI6ImlGdElEcFZVMHAwM3l6NE53RGhqSkE9PSIsInZhbHVlIjoiaHJzUmd2QjJ6WmJIaUxhVXF0SDZrR1YzTjlCRStaSmN2cUxoejRFNldnR0NSRXNncytEckcyZndyMWZIR3BMTyIsIm1hYyI6ImM0MjBkYTdlZjU4ZTVjNWIyY2ZhY2U5YjI0NDllYjM5ZTE1YjExMDkxZDZiMGQyNmM0OWIzMTQyNTEzY2VlODAiLCJ0YWciOiIifQ%3D%3D',
+        'XSRF-TOKEN': 'eyJpdiI6InFORmE5Yzc2Q0hOOTRLS1JtbjFvRnc9PSIsInZhbHVlIjoiRnU1Qy9sdnI5WnlZZ1VYSU9XMVR1eUtNeUhlYWRac2N5dHljakVmRmRXMjlaQUlmMWFtY3AyVEdRVitHcVNJSFpldUV4ajQ4UC91NnFxS0NBZ21lRUNkeGlYSGxhTDFjYXFUOWRobStUOGhiWk5mM3dtV3hwZjE1R2lzaDdwQlkiLCJtYWMiOiI2YTA5NjQwYzllNGE2ZTQyM2JmMzdlY2M5NTJkMmRhZDJjNGFjY2VhNzRiMWYyMTExZmVjNzE5ODMyZTgwM2JkIiwidGFnIjoiIn0%3D',
+        'vulcanovn_session': 'eyJpdiI6IjhIZ3krcHZOK3F5OWx2VVVvd0Y1cmc9PSIsInZhbHVlIjoiaWJhWnM4VUN0SDE2MnlDYTlMSFVHRzFlYnVXZ1BqNWJsYk5Cblk3ckR4ZGdwVVVCQmxOMzhvL3ZGWUgvbitZaTdnbnU3STB3Yzc0OFZpWElHUnJQeVp1bFVldGVlTlZBS0kzZGtNQ2ptMmdhUDVFckFTUjUyWVBsbTgwSUdDOTQiLCJtYWMiOiI2ZTMyZjQ2ZjFhYmY5ZjQ0MTQzNjAzMGI5Mjg3NjM2NjkyNWNhMTAxZWI0NDFiYzkwMDhmZTdlYjMzZjhlYjA4IiwidGFnIjoiIn0%3D',
+        'utm_values': 'eyJpdiI6IkQ2dHVKT3poMkhkMUlQY2NmMHNLNmc9PSIsInZhbHVlIjoidndvekp5aU8zYmpoaWt4ZVZCVHF0KzMwTlQrdklWMThvNXZydnlwbDV3VW9Fa3Z0Z3FrOEY2N1gwMjNGbGxNTSIsIm1hYyI6ImRjNDQ1MWZmOTQ3ZGNmYjhjNzFiMDk0NmY4MzZiMDg2ZjgxMTZkMDkxOTJkNTJlMDRlZTQxNjM1ZDhlYjAzYmYiLCJ0YWciOiIifQ%3D%3D',
     }
 
     headers = {
@@ -4807,7 +4833,7 @@ def vulcanoreset():
         'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
         'cache-control': 'max-age=0',
         'content-type': 'application/x-www-form-urlencoded',
-        # 'cookie': 'XSRF-TOKEN=eyJpdiI6InVNWEdsOUpQVzJ6SkQ4bWJrbVRlYnc9PSIsInZhbHVlIjoiNkxTY2VxdjI0WkRGQ0dNVGFGRzZWenhlSU9ZdU9peUVwU1J0Y21EdXNIOGhGbzUyYm1RM20yNndXNCtDYzZqS0pwaEVneGIwTDRxeG81U2d2R2RNeWpxQ3QyZVJKK0FZQVdXcXNabmNCM1kycG9SRzNCZExaakhQRURrMTEzbGciLCJtYWMiOiJhYTM2OTNlZWU1Mjg5YzM4NmE4NmI4MWI4OTEzMGM4ZGE0NzQzMmY5MGZiNTc1YWM4YTg3OGFkZjJhNWIwZWNkIiwidGFnIjoiIn0%3D; vulcanovn_session=eyJpdiI6InJwS1BXNFlEb1gzZHZpSVpDclNMRHc9PSIsInZhbHVlIjoiT25XN0EwR2p0MGNFdnI1NTczeXcxd3NzL2ZLaDVPcXlmUkkvSWl3ckgydkQwQ1lhaXhJUkJwdy92QWxsdmZiSVBqTnl4bHQrQUFneVFBWGVIWVk0MmVTZGpYM3ZBZUNrWXY0NFduSlFMdFZMdVAxcGlXSEdMTWVmKzl1MlYzK1UiLCJtYWMiOiIzN2QzNDhjMmY5MDEyMGFiMWYzMDMzZGZkYWNjZWFiNjM0NjMzOGY3YjhlOTlhZmM2Y2M4ODk2ODE3NDNkZmNmIiwidGFnIjoiIn0%3D; utm_values=eyJpdiI6ImlGdElEcFZVMHAwM3l6NE53RGhqSkE9PSIsInZhbHVlIjoiaHJzUmd2QjJ6WmJIaUxhVXF0SDZrR1YzTjlCRStaSmN2cUxoejRFNldnR0NSRXNncytEckcyZndyMWZIR3BMTyIsIm1hYyI6ImM0MjBkYTdlZjU4ZTVjNWIyY2ZhY2U5YjI0NDllYjM5ZTE1YjExMDkxZDZiMGQyNmM0OWIzMTQyNTEzY2VlODAiLCJ0YWciOiIifQ%3D%3D',
+        # 'cookie': 'XSRF-TOKEN=eyJpdiI6InFORmE5Yzc2Q0hOOTRLS1JtbjFvRnc9PSIsInZhbHVlIjoiRnU1Qy9sdnI5WnlZZ1VYSU9XMVR1eUtNeUhlYWRac2N5dHljakVmRmRXMjlaQUlmMWFtY3AyVEdRVitHcVNJSFpldUV4ajQ4UC91NnFxS0NBZ21lRUNkeGlYSGxhTDFjYXFUOWRobStUOGhiWk5mM3dtV3hwZjE1R2lzaDdwQlkiLCJtYWMiOiI2YTA5NjQwYzllNGE2ZTQyM2JmMzdlY2M5NTJkMmRhZDJjNGFjY2VhNzRiMWYyMTExZmVjNzE5ODMyZTgwM2JkIiwidGFnIjoiIn0%3D; vulcanovn_session=eyJpdiI6IjhIZ3krcHZOK3F5OWx2VVVvd0Y1cmc9PSIsInZhbHVlIjoiaWJhWnM4VUN0SDE2MnlDYTlMSFVHRzFlYnVXZ1BqNWJsYk5Cblk3ckR4ZGdwVVVCQmxOMzhvL3ZGWUgvbitZaTdnbnU3STB3Yzc0OFZpWElHUnJQeVp1bFVldGVlTlZBS0kzZGtNQ2ptMmdhUDVFckFTUjUyWVBsbTgwSUdDOTQiLCJtYWMiOiI2ZTMyZjQ2ZjFhYmY5ZjQ0MTQzNjAzMGI5Mjg3NjM2NjkyNWNhMTAxZWI0NDFiYzkwMDhmZTdlYjMzZjhlYjA4IiwidGFnIjoiIn0%3D; utm_values=eyJpdiI6IkQ2dHVKT3poMkhkMUlQY2NmMHNLNmc9PSIsInZhbHVlIjoidndvekp5aU8zYmpoaWt4ZVZCVHF0KzMwTlQrdklWMThvNXZydnlwbDV3VW9Fa3Z0Z3FrOEY2N1gwMjNGbGxNTSIsIm1hYyI6ImRjNDQ1MWZmOTQ3ZGNmYjhjNzFiMDk0NmY4MzZiMDg2ZjgxMTZkMDkxOTJkNTJlMDRlZTQxNjM1ZDhlYjAzYmYiLCJ0YWciOiIifQ%3D%3D',
         'origin': 'https://vulcano.vn',
         'priority': 'u=0, i',
         'referer': 'https://vulcano.vn/forgot-password',
@@ -4823,7 +4849,7 @@ def vulcanoreset():
     }
 
     data = {
-        '_token': '3euyYieVhkfjdSIsKDkLuIqJMlYB8urfnlVtxGT3',
+        '_token': '9Dhr621QSdLEIjaiPEWHx7SUutyy28qa30K6ddsd',
         'phone_or_email': sdt,
     }
 
