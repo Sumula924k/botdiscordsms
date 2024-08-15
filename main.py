@@ -392,13 +392,20 @@ async def smsstop(ctx, phone_number: str):
 @commands.has_role(SPECIAL_ROLE_ID)
 async def smsstopall(ctx):
     # Kiểm tra nếu người dùng có vai trò với ID 1265025672225493223
-    if not any(role.id == 1265025672225493223 for role in ctx.author.roles):
+    if not any(role.id == SPECIAL_ROLE_ID for role in ctx.author.roles):
         await ctx.send('Bạn không có quyền thực hiện lệnh này.')
+        return
+
+    if not processes:
+        await ctx.send('Hiện tại không có tiến trình nào đang chạy.')
         return
 
     # Dừng tất cả các tiến trình SMS và xóa chúng khỏi từ điển
     for proc in processes.values():
-        proc.kill()
+        try:
+            proc.kill()
+        except ProcessLookupError:
+            pass  # Tiến trình đã kết thúc hoặc không tồn tại
     processes.clear()
 
     await ctx.send('Đã dừng tất cả tiến trình.')
