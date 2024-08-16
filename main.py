@@ -423,7 +423,7 @@ async def on_message(message):
         # Kiểm tra nếu lệnh không phải là /sms hoặc /help
         if not (message.content.startswith('/sms') or message.content.startswith('/supersms') or message.content.startswith('/help')):
             if message.channel.id != ALLOWED_CHANNEL_ID:
-                await message.channel.send(f'Lệnh chỉ hoạt động tại kênh <#{ALLOWED_CHANNEL_ID}>.')
+                await message.channel.send(f'Sai cú pháp, /help để xem chi tiết lệnh.')
                 return
 
         # Xử lý lệnh
