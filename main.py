@@ -358,6 +358,7 @@ async def help(ctx):
     embed.add_field(name="/sms {số điện thoại} {số lần}", value="Gửi tin nhắn SMS.", inline=False)
     embed.add_field(name="/supersms {số điện thoại} {số lần}", value="Gửi tin nhắn SUPERSMS. (Cần có role SUPER, mua liên hệ Admin Th1nK)", inline=False)
     embed.add_field(name="/smsstop {số điện thoại}", value="Dừng tiến trình SpamSMS tới sdt đó.", inline=False)
+    embed.add_field(name="/help", value="Xem danh sách lệnh hiện có.", inline=False)
     embed.set_footer(text="Made by Th1nK")
 
     await ctx.send(embed=embed)
