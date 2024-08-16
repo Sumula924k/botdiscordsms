@@ -4819,7 +4819,6 @@ def vulcano():
         print("VULCANO | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
         print("VULCANO | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-        print(response.text)
 
 def vulcanoreset():
     cookies = {
