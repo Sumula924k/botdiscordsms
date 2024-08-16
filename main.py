@@ -288,8 +288,8 @@ async def supersms(ctx, phone_number: str, count: int = 1):
         await ctx.send('Số lần lặp phải >0')
         return
 
-    if count > 500 :
-        await ctx.send('Số lần lặp phải ≤500, không là **nổ** bot bạn yêu ơi.')
+    if count > 250 :
+        await ctx.send('Số lần lặp phải ≤250, không là **nổ** bot bạn yêu ơi.')
         return
 
     try:
@@ -317,7 +317,7 @@ async def supersms(ctx, phone_number: str, count: int = 1):
                     f"💸 **Gói:** SUPER\n"
                     f"⚡ **Tốc độ:** SUPER\n"
                     f"🔗 **Số API:** 125 (MAX)\n"
-                    f"⛓️ **Số lần lặp:** {count} lần (Mặc Định, MAX 500)\n"
+                    f"⛓️ **Số lần lặp:** {count} lần (Mặc Định, MAX 250)\n"
                     f"⏳ **Thời gian hồi:** 180 giây"
                 ),
                 inline=False
@@ -330,7 +330,7 @@ async def supersms(ctx, phone_number: str, count: int = 1):
                     f"💸 **Gói:** SUPER\n"
                     f"⚡ **Tốc độ:** SUPER\n"
                     f"🔗 **Số API:** 125 (MAX)\n"
-                    f"⛓️ **Số lần lặp:** {count} lần (MAX 500)\n"
+                    f"⛓️ **Số lần lặp:** {count} lần (MAX 250)\n"
                     f"⏳ **Thời gian hồi:** 180 giây"
                 ),
                 inline=False
