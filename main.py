@@ -124,7 +124,7 @@ async def add_and_remove_role(member):
             await asyncio.sleep(1)
             await ping_message.delete()
             embed = discord.Embed(
-                title="⏳ Thời gian chờ đã hết!",
+                title="⏳ Thời chờ tái nhận quà đã hết!",
                 description=f"{member.mention} hãy phát quà tiếp nào!",
                 color=discord.Color.red()
             )
@@ -143,7 +143,7 @@ async def add_and_remove_role_vip(member):
             await asyncio.sleep(1)
             await ping_message.delete()
             embed = discord.Embed(
-                title="⏳ Thời gian chờ đã hết!",
+                title="⏳ Thời chờ tái nhận quà đã hết!",
                 description=f"{member.mention} hãy phát quà tiếp nào!",
                 color=discord.Color.red()
             )
@@ -283,6 +283,15 @@ async def sms(ctx, phone_number: str, count: int = 1):
         await add_and_remove_role(ctx.author)
     except Exception as e:
         await ctx.send(f'Đã xảy ra lỗi khi xử lý lệnh: {e}')
+    # Xóa tiến trình khỏi từ điển khi kết thúc
+    while (ctx.author.id, phone_number) in processes:
+        proc = processes[(ctx.author.id, phone_number)]
+        try:
+            await proc.wait()  # Chờ tiến trình kết thúc
+            del processes[(ctx.author.id, phone_number)]
+        except Exception as e:
+            print(f"Đã xảy ra lỗi khi dừng tiến trình: {e}")
+            del processes[(ctx.author.id, phone_number)]
 
 
 @bot.command()
@@ -397,6 +406,15 @@ async def supersms(ctx, phone_number: str, count: int = 1):
         await add_and_remove_role_vip(ctx.author)
     except Exception as e:
         await ctx.send(f'Đã xảy ra lỗi khi xử lý lệnh: {e}')
+    # Xóa tiến trình khỏi từ điển khi kết thúc
+    while (ctx.author.id, phone_number) in processes:
+        proc = processes[(ctx.author.id, phone_number)]
+        try:
+            await proc.wait()  # Chờ tiến trình kết thúc
+            del processes[(ctx.author.id, phone_number)]
+        except Exception as e:
+            print(f"Đã xảy ra lỗi khi dừng tiến trình: {e}")
+            del processes[(ctx.author.id, phone_number)]
 
 @bot.command()
 async def help(ctx):
