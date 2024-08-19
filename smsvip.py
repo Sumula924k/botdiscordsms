@@ -39,7 +39,7 @@ print("Số lần lặp:", count)
 count = int(count)
 
 if count > 10:
-    count = 20
+    count = 15
 
 def sdtt(sdt):
     if sdt.startswith("0"):
