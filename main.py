@@ -188,7 +188,7 @@ async def sms(ctx, phone_number: str, count: int = 1):
         embed = Embed(
             title="Tiến trình đang hoạt động",
             description=(
-                f'💼 Tiến trình spam bạn đã trước đó tạo vẫn đang chạy.\n'
+                f'💼 Tiến trình spam bạn đã tạo trước đó vẫn đang chạy.\n'
                 '⌚ Hãy chờ hoặc dùng **/smsstop {phone_number}**.'
             ),
             color=0xf78a8a  # Màu đỏ cho thông báo lỗi
@@ -202,7 +202,7 @@ async def sms(ctx, phone_number: str, count: int = 1):
         embed = Embed(
             title="Tiến trình đang hoạt động",
             description=(
-                f'💼 Tiến trình spam bạn đã trước đó tạo vẫn đang chạy.\n'
+                f'💼 Tiến trình spam bạn đã tạo trước đó vẫn đang chạy.\n'
                 '⌚ Hãy chờ hoặc dùng **/smsstop {phone_number}** để dừng tiến trình trước đó.'
             ),
             color=0xf78a8a  # Màu đỏ cho thông báo lỗi
@@ -309,7 +309,7 @@ async def supersms(ctx, phone_number: str, count: int = 1):
         embed = Embed(
             title="Tiến trình đang hoạt động",
             description=(
-                f'💼 Tiến trình spam bạn đã trước đó tạo vẫn đang chạy.\n'
+                f'💼 Tiến trình spam bạn đã tạo trước đó vẫn đang chạy.\n'
                 '⌚ Hãy chờ hoặc dùng **/smsstop {phone_number}**.'
             ),
             color=0xf78a8a  # Màu đỏ cho thông báo lỗi
@@ -322,7 +322,7 @@ async def supersms(ctx, phone_number: str, count: int = 1):
         embed = Embed(
             title="Tiến trình đang hoạt động",
             description=(
-                f'💼 Tiến trình spam bạn đã trước đó tạo vẫn đang chạy.\n'
+                f'💼 Tiến trình spam bạn đã tạo trước đó vẫn đang chạy.\n'
                 '⌚ Hãy chờ hoặc dùng **/smsstop {phone_number}** để dừng tiến trình trước đó.'
             ),
             color=0xf78a8a  # Màu đỏ cho thông báo lỗi
