@@ -124,7 +124,7 @@ async def add_and_remove_role(member):
             await asyncio.sleep(1)
             await ping_message.delete()
             embed = discord.Embed(
-                title="⏳ Thời chờ tái nhận quà đã hết!",
+                title="⏳ Thời gian chờ đã hết!",
                 description=f"{member.mention} hãy phát quà tiếp nào!",
                 color=discord.Color.red()
             )
@@ -143,7 +143,7 @@ async def add_and_remove_role_vip(member):
             await asyncio.sleep(1)
             await ping_message.delete()
             embed = discord.Embed(
-                title="⏳ Thời chờ tái nhận quà đã hết!",
+                title="⏳ Thời gian chờ đã hết!",
                 description=f"{member.mention} hãy phát quà tiếp nào!",
                 color=discord.Color.red()
             )
