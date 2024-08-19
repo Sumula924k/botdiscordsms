@@ -116,7 +116,7 @@ async def add_and_remove_role(member):
     temp_role = discord.utils.get(member.guild.roles, id=TEMP_ROLE_ID)
     if temp_role:
         await member.add_roles(temp_role)
-        await asyncio.sleep(90)
+        await asyncio.sleep(30)
         await member.remove_roles(temp_role)
         channel = bot.get_channel(ALLOWED_CHANNEL_ID)
         if channel:
@@ -135,7 +135,7 @@ async def add_and_remove_role_vip(member):
     temp_role = discord.utils.get(member.guild.roles, id=TEMP_ROLE_ID)
     if temp_role:
         await member.add_roles(temp_role)
-        await asyncio.sleep(180)
+        await asyncio.sleep(15)
         await member.remove_roles(temp_role)
         channel = bot.get_channel(VIP_CHANNEL_ID)
         if channel:
@@ -264,7 +264,7 @@ async def sms(ctx, phone_number: str, count: int = 1):
                     f"⚡ **Tốc độ:** Thường\n"
                     f"🔗 **Số API:** 40\n"
                     f"⛓️ **Số lần lặp:** {count} lần (Mặc Định, MAX 2)\n"
-                    f"⏳ **Thời gian hồi:** 90 giây"
+                    f"⏳ **Thời gian hồi:** 30 giây"
                 ),
                 inline=False
             )
@@ -277,7 +277,7 @@ async def sms(ctx, phone_number: str, count: int = 1):
                     f"⚡ **Tốc độ:** Thường\n"
                     f"🔗 **Số API:** 40\n"
                     f"⛓️ **Số lần lặp:** {count} lần (MAX 2)\n"
-                    f"⏳ **Thời gian hồi:** 90 giây"
+                    f"⏳ **Thời gian hồi:** 30 giây"
                 ),
                 inline=False
             )
@@ -387,7 +387,7 @@ async def supersms(ctx, phone_number: str, count: int = 1):
                     f"⚡ **Tốc độ:** PLUS\n"
                     f"🔗 **Số API:** 125 (MAX)\n"
                     f"⛓️ **Số lần lặp:** {count} lần (Mặc Định, MAX 200)\n"
-                    f"⏳ **Thời gian hồi:** 180 giây"
+                    f"⏳ **Thời gian hồi:** 15 giây"
                 ),
                 inline=False
             )
@@ -400,7 +400,7 @@ async def supersms(ctx, phone_number: str, count: int = 1):
                     f"⚡ **Tốc độ:** PLUS\n"
                     f"🔗 **Số API:** 125 (MAX)\n"
                     f"⛓️ **Số lần lặp:** {count} lần (MAX 200)\n"
-                    f"⏳ **Thời gian hồi:** 180 giây"
+                    f"⏳ **Thời gian hồi:** 15 giây"
                 ),
                 inline=False
             )
