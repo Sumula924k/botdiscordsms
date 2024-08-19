@@ -315,7 +315,7 @@ async def supersms(ctx, phone_number: str, count: int = 1):
                 value=(
                     f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
                     f"💸 **Gói:** SUPER\n"
-                    f"⚡ **Tốc độ:** SUPER\n"
+                    f"⚡ **Tốc độ:** PLUS\n"
                     f"🔗 **Số API:** 125 (MAX)\n"
                     f"⛓️ **Số lần lặp:** {count} lần (Mặc Định, MAX 200)\n"
                     f"⏳ **Thời gian hồi:** 180 giây"
@@ -328,7 +328,7 @@ async def supersms(ctx, phone_number: str, count: int = 1):
                 value=(
                     f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
                     f"💸 **Gói:** SUPER\n"
-                    f"⚡ **Tốc độ:** SUPER\n"
+                    f"⚡ **Tốc độ:** PLUS\n"
                     f"🔗 **Số API:** 125 (MAX)\n"
                     f"⛓️ **Số lần lặp:** {count} lần (MAX 200)\n"
                     f"⏳ **Thời gian hồi:** 180 giây"
