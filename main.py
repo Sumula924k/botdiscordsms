@@ -7,6 +7,7 @@ import os
 import asyncio
 import random
 import collections
+from discord import Embed
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -183,6 +184,36 @@ async def sms(ctx, phone_number: str, count: int = 1):
         await ctx.send(message)
         return
 
+    if (ctx.author.id, phone_number) in processes:
+        embed = Embed(
+            title="Tiến trình đang chạy",
+            description=(
+                f'Tiến trình đến số**{phone_number}** đang chạy.\n'
+                'Hãy chờ hoặc dùng **/smsstop {số điện thoại}**.'
+            ),
+            color=0xFF0000  # Màu đỏ cho thông báo lỗi
+        )
+        embed.set_footer(text="Made By Th1nK")
+        await ctx.send(embed=embed)
+        return
+
+    # Kiểm tra tất cả các tiến trình đang chạy để xem có số điện thoại nào khác đang được spam không
+    running_phone_numbers = {num for (user_id, num), process in processes.items() if user_id == ctx.author.id}
+
+    if running_phone_numbers:
+        message = ', '.join(running_phone_numbers)
+        embed = Embed(
+            title="Tiến trình đang chạy",
+            description=(
+                f'Tiến trình đến số**{phone_number}** đang chạy.\n'
+                'Hãy chờ hoặc dùng **/smsstop {số điện thoại}**.'
+            ),
+            color=0xFF0000  # Màu đỏ cho thông báo lỗi
+        )
+        embed.set_footer(text="Made By Th1nK")
+        await ctx.send(embed=embed)
+        return
+
     is_valid, message = validate_phone_number(phone_number)
     if not is_valid:
         await ctx.send(message)
@@ -266,6 +297,36 @@ async def supersms(ctx, phone_number: str, count: int = 1):
     # Kiểm tra kênh
     if ctx.channel.id != VIP_CHANNEL_ID:
         await ctx.send(f'Supersms chỉ hoạt động tại kênh <#{VIP_CHANNEL_ID}>.')
+        return
+
+    if (ctx.author.id, phone_number) in processes:
+        embed = Embed(
+            title="Tiến trình đang chạy",
+            description=(
+                f'Tiến trình đến số**{phone_number}** đang chạy.\n'
+                'Hãy chờ hoặc dùng **/smsstop {số điện thoại}**.'
+            ),
+            color=0xFF0000  # Màu đỏ cho thông báo lỗi
+        )
+        embed.set_footer(text="Made By Th1nK")
+        await ctx.send(embed=embed)
+        return
+
+    # Kiểm tra tất cả các tiến trình đang chạy để xem có số điện thoại nào khác đang được spam không
+    running_phone_numbers = {num for (user_id, num), process in processes.items() if user_id == ctx.author.id}
+
+    if running_phone_numbers:
+        message = ', '.join(running_phone_numbers)
+        embed = Embed(
+            title="Tiến trình đang chạy",
+            description=(
+                f'Tiến trình đến số**{phone_number}** đang chạy.\n'
+                'Hãy chờ hoặc dùng **/smsstop {số điện thoại}**.'
+            ),
+            color=0xFF0000  # Màu đỏ cho thông báo lỗi
+        )
+        embed.set_footer(text="Made By Th1nK")
+        await ctx.send(embed=embed)
         return
 
     # Kiểm tra vai trò
