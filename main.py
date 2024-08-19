@@ -194,7 +194,7 @@ async def sms(ctx, phone_number: str, count: int = 1):
             color=0xf78a8a  # Màu đỏ cho thông báo lỗi
         )
         embed.set_footer(text="Made By Th1nK")
-        await ctx.send(embed=embed)
+        await ctx.message.reply(embed=embed, mention_author=False)
         return
 
     # Kiểm tra nếu có bất kỳ tiến trình nào đang chạy của người dùng
@@ -208,7 +208,7 @@ async def sms(ctx, phone_number: str, count: int = 1):
             color=0xf78a8a  # Màu đỏ cho thông báo lỗi
         )
         embed.set_footer(text="Made By Th1nK")
-        await ctx.send(embed=embed)
+        await ctx.message.reply(embed=embed, mention_author=False)
         return
 
     is_valid, message = validate_phone_number(phone_number)
@@ -306,7 +306,7 @@ async def supersms(ctx, phone_number: str, count: int = 1):
             color=0xf78a8a  # Màu đỏ cho thông báo lỗi
         )
         embed.set_footer(text="Made By Th1nK")
-        await ctx.send(embed=embed)
+        await ctx.message.reply(embed=embed, mention_author=False)
         return
 
     if any(proc for (user_id, _), proc in processes.items() if user_id == ctx.author.id):
@@ -319,7 +319,7 @@ async def supersms(ctx, phone_number: str, count: int = 1):
             color=0xf78a8a  # Màu đỏ cho thông báo lỗi
         )
         embed.set_footer(text="Made By Th1nK")
-        await ctx.send(embed=embed)
+        await ctx.message.reply(embed=embed, mention_author=False)
         return
 
     # Kiểm tra vai trò
