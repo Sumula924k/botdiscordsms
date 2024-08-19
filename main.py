@@ -124,7 +124,7 @@ async def add_and_remove_role(member):
             await asyncio.sleep(1)
             await ping_message.delete()
             embed = discord.Embed(
-                title="⏳ Thời chờ tái nhận quà đã hết!",
+                title="⏳ Thời chờ đã hết!",
                 description=f"{member.mention} hãy phát quà tiếp nào!",
                 color=discord.Color.red()
             )
@@ -143,7 +143,7 @@ async def add_and_remove_role_vip(member):
             await asyncio.sleep(1)
             await ping_message.delete()
             embed = discord.Embed(
-                title="⏳ Thời chờ tái nhận quà đã hết!",
+                title="⏳ Thời chờ đã hết!",
                 description=f"{member.mention} hãy phát quà tiếp nào!",
                 color=discord.Color.red()
             )
@@ -202,7 +202,7 @@ async def sms(ctx, phone_number: str, count: int = 1):
         embed = Embed(
             title="Tiến trình đang hoạt động",
             description=(
-                f'💼 Bạn đã có một hoặc nhiều tiến trình SMS đang chạy.\n'
+                f'💼 Tiến trình spam bạn đã trước đó tạo vẫn đang chạy.\n'
                 '⌚ Hãy chờ hoặc dùng **/smsstop {phone_number}** để dừng tiến trình trước đó.'
             ),
             color=0xf78a8a  # Màu đỏ cho thông báo lỗi
@@ -322,7 +322,7 @@ async def supersms(ctx, phone_number: str, count: int = 1):
         embed = Embed(
             title="Tiến trình đang hoạt động",
             description=(
-                f'💼 Bạn đã có một hoặc nhiều tiến trình SMS đang chạy.\n'
+                f'💼 Tiến trình spam bạn đã trước đó tạo vẫn đang chạy.\n'
                 '⌚ Hãy chờ hoặc dùng **/smsstop {phone_number}** để dừng tiến trình trước đó.'
             ),
             color=0xf78a8a  # Màu đỏ cho thông báo lỗi
