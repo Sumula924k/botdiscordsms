@@ -116,7 +116,7 @@ async def add_and_remove_role(member):
     temp_role = discord.utils.get(member.guild.roles, id=TEMP_ROLE_ID)
     if temp_role:
         await member.add_roles(temp_role)
-        await asyncio.sleep(30)
+        await asyncio.sleep(90)
         await member.remove_roles(temp_role)
         channel = bot.get_channel(ALLOWED_CHANNEL_ID)
         if channel:
@@ -124,7 +124,7 @@ async def add_and_remove_role(member):
             await asyncio.sleep(1)
             await ping_message.delete()
             embed = discord.Embed(
-                title="⏳ Thời gian chờ đã hết!",
+                title="⏳ Thời chờ tái nhận quà đã hết!",
                 description=f"{member.mention} hãy phát quà tiếp nào!",
                 color=discord.Color.red()
             )
@@ -135,7 +135,7 @@ async def add_and_remove_role_vip(member):
     temp_role = discord.utils.get(member.guild.roles, id=TEMP_ROLE_ID)
     if temp_role:
         await member.add_roles(temp_role)
-        await asyncio.sleep(15)
+        await asyncio.sleep(180)
         await member.remove_roles(temp_role)
         channel = bot.get_channel(VIP_CHANNEL_ID)
         if channel:
@@ -143,7 +143,7 @@ async def add_and_remove_role_vip(member):
             await asyncio.sleep(1)
             await ping_message.delete()
             embed = discord.Embed(
-                title="⏳ Thời gian chờ đã hết!",
+                title="⏳ Thời chờ tái nhận quà đã hết!",
                 description=f"{member.mention} hãy phát quà tiếp nào!",
                 color=discord.Color.red()
             )
@@ -184,7 +184,10 @@ async def sms(ctx, phone_number: str, count: int = 1):
         await ctx.send(message)
         return
 
-    if (ctx.author.id, phone_number) in processes:
+    user_id = ctx.author.id
+
+    # Kiểm tra nếu có tiến trình nào đang chạy cho số điện thoại cụ thể
+    if (user_id, phone_number) in processes:
         embed = Embed(
             title="Tiến trình đang hoạt động",
             description=(
@@ -198,7 +201,7 @@ async def sms(ctx, phone_number: str, count: int = 1):
         return
 
     # Kiểm tra tất cả các tiến trình đang chạy để xem có số điện thoại nào khác đang được spam không
-    running_phone_numbers = {num for (user_id, num), process in processes.items() if user_id == ctx.author.id}
+    running_phone_numbers = {num for (uid, num) in processes if uid == user_id}
 
     if running_phone_numbers:
         message = ', '.join(running_phone_numbers)
@@ -261,7 +264,7 @@ async def sms(ctx, phone_number: str, count: int = 1):
                     f"⚡ **Tốc độ:** Thường\n"
                     f"🔗 **Số API:** 40\n"
                     f"⛓️ **Số lần lặp:** {count} lần (Mặc Định, MAX 2)\n"
-                    f"⏳ **Thời gian hồi:** 30 giây"
+                    f"⏳ **Thời gian hồi:** 90 giây"
                 ),
                 inline=False
             )
@@ -274,7 +277,7 @@ async def sms(ctx, phone_number: str, count: int = 1):
                     f"⚡ **Tốc độ:** Thường\n"
                     f"🔗 **Số API:** 40\n"
                     f"⛓️ **Số lần lặp:** {count} lần (MAX 2)\n"
-                    f"⏳ **Thời gian hồi:** 30 giây"
+                    f"⏳ **Thời gian hồi:** 90 giây"
                 ),
                 inline=False
             )
@@ -299,7 +302,10 @@ async def supersms(ctx, phone_number: str, count: int = 1):
         await ctx.send(f'Supersms chỉ hoạt động tại kênh <#{VIP_CHANNEL_ID}>.')
         return
 
-    if (ctx.author.id, phone_number) in processes:
+    user_id = ctx.author.id
+
+    # Kiểm tra nếu có tiến trình nào đang chạy cho số điện thoại cụ thể
+    if (user_id, phone_number) in processes:
         embed = Embed(
             title="Tiến trình đang hoạt động",
             description=(
@@ -313,7 +319,7 @@ async def supersms(ctx, phone_number: str, count: int = 1):
         return
 
     # Kiểm tra tất cả các tiến trình đang chạy để xem có số điện thoại nào khác đang được spam không
-    running_phone_numbers = {num for (user_id, num), process in processes.items() if user_id == ctx.author.id}
+    running_phone_numbers = {num for (uid, num) in processes if uid == user_id}
 
     if running_phone_numbers:
         message = ', '.join(running_phone_numbers)
@@ -328,6 +334,8 @@ async def supersms(ctx, phone_number: str, count: int = 1):
         embed.set_footer(text="Made By Th1nK")
         await ctx.send(embed=embed)
         return
+
+
 
     # Kiểm tra vai trò
     if not discord.utils.get(ctx.author.roles, id=VIP_ROLE_ID):
@@ -379,7 +387,7 @@ async def supersms(ctx, phone_number: str, count: int = 1):
                     f"⚡ **Tốc độ:** PLUS\n"
                     f"🔗 **Số API:** 125 (MAX)\n"
                     f"⛓️ **Số lần lặp:** {count} lần (Mặc Định, MAX 200)\n"
-                    f"⏳ **Thời gian hồi:** 15 giây"
+                    f"⏳ **Thời gian hồi:** 180 giây"
                 ),
                 inline=False
             )
@@ -392,7 +400,7 @@ async def supersms(ctx, phone_number: str, count: int = 1):
                     f"⚡ **Tốc độ:** PLUS\n"
                     f"🔗 **Số API:** 125 (MAX)\n"
                     f"⛓️ **Số lần lặp:** {count} lần (MAX 200)\n"
-                    f"⏳ **Thời gian hồi:** 15 giây"
+                    f"⏳ **Thời gian hồi:** 180 giây"
                 ),
                 inline=False
             )
