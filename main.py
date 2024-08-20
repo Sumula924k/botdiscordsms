@@ -184,26 +184,12 @@ async def sms(ctx, phone_number: str, count: int = 1):
         await ctx.send(message)
         return
 
-    if (ctx.author.id, phone_number) in processes:
+    if len([key for key in processes.keys() if key[0] == ctx.author.id]) > 1:
         embed = Embed(
             title="Tiến trình đang hoạt động",
             description=(
-                f'💼 Tiến trình spam bạn đã tạo trước đó vẫn đang chạy.\n'
-                '⌚ Hãy chờ hoặc dùng **/smsstop {số điện thoại trước đó}** để dừng tiến trình đó.'
-            ),
-            color=0xf78a8a  # Màu đỏ cho thông báo lỗi
-        )
-        embed.set_footer(text="Made By Th1nK")
-        await ctx.message.reply(embed=embed, mention_author=False)
-        return
-
-    # Kiểm tra nếu có bất kỳ tiến trình nào đang chạy của người dùng
-    if any(proc for (user_id, _), proc in processes.items() if user_id == ctx.author.id):
-        embed = Embed(
-            title="Tiến trình đang hoạt động",
-            description=(
-                f'💼 Tiến trình spam bạn đã tạo trước đó vẫn đang chạy.\n'
-                '⌚ Hãy chờ hoặc dùng **/smsstop {số điện thoại trước đó}** để dừng tiến trình đó.'
+                f'💼 Bạn đã có một hoặc nhiều tiến trình SMS đang chạy.\n'
+                '⌚ Hãy chờ hoặc dùng **/smsstop {phone_number}** để dừng tiến trình trước đó.'
             ),
             color=0xf78a8a  # Màu đỏ cho thông báo lỗi
         )
@@ -305,25 +291,12 @@ async def supersms(ctx, phone_number: str, count: int = 1):
         await ctx.send(f'Supersms chỉ hoạt động tại kênh <#{VIP_CHANNEL_ID}>.')
         return
 
-    if (ctx.author.id, phone_number) in processes:
+    if len([key for key in processes.keys() if key[0] == ctx.author.id]) > 1:
         embed = Embed(
             title="Tiến trình đang hoạt động",
             description=(
-                f'💼 Tiến trình spam bạn đã tạo trước đó vẫn đang chạy.\n'
-                '⌚ Hãy chờ hoặc dùng **/smsstop {số điện thoại trước đó}** để dừng tiến trình đó.'
-            ),
-            color=0xf78a8a  # Màu đỏ cho thông báo lỗi
-        )
-        embed.set_footer(text="Made By Th1nK")
-        await ctx.message.reply(embed=embed, mention_author=False)
-        return
-
-    if any(proc for (user_id, _), proc in processes.items() if user_id == ctx.author.id):
-        embed = Embed(
-            title="Tiến trình đang hoạt động",
-            description=(
-                f'💼 Tiến trình spam bạn đã tạo trước đó vẫn đang chạy.\n'
-                '⌚ Hãy chờ hoặc dùng **/smsstop {số điện thoại trước đó}** để dừng tiến trình đó.'
+                f'💼 Bạn đã có một hoặc nhiều tiến trình SMS đang chạy.\n'
+                '⌚ Hãy chờ hoặc dùng **/smsstop {phone_number}** để dừng tiến trình trước đó.'
             ),
             color=0xf78a8a  # Màu đỏ cho thông báo lỗi
         )
