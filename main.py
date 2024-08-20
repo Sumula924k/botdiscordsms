@@ -9,8 +9,6 @@ import random
 import collections
 from discord import Embed
 
-#dif
-
 intents = discord.Intents.default()
 intents.message_content = True
 intents.guilds = True
@@ -455,11 +453,35 @@ async def smsstop(ctx, phone_number: str):
         try:
             proc.kill()
             del processes[(ctx.author.id, phone_number)]
-            await ctx.message.reply(f"Đã dừng tiến trình SMS tới số: {masked_number}.", mention_author=False)
+            embed = Embed(
+                title="Dừng tiến trình thành công ✅",
+                description=(
+                    f'Đã dừng tiến trình spam tới số: **{masked_number}**.\n'
+                ),
+                color=0xf78a8a  # Màu đỏ cho thông báo lỗi
+            )
+            embed.set_footer(text="Made By Th1nK")
+            await ctx.message.reply(embed=embed, mention_author=False)
         except Exception:
-            await ctx.message.reply(f"Không tìm thấy tiến trình SMS tới số: {masked_number}.", mention_author=False)
+            embed = Embed(
+                title="Không tìm thấy tiến trình ❓",
+                description=(
+                    f'Không tìm thấy tiến trình spam đến số: **{masked_number}**.\n'
+                ),
+                color=0xf78a8a  # Màu đỏ cho thông báo lỗi
+            )
+            embed.set_footer(text="Made By Th1nK")
+            await ctx.message.reply(embed=embed, mention_author=False)
     else:
-        await ctx.message.reply(f"Không tìm thấy tiến trình SMS tới số: {masked_number}.", mention_author=False)
+        embed = Embed(
+            title="Không tìm thấy tiến trình ❓",
+            description=(
+                f'Không tìm thấy tiến trình spam đến số: **{masked_number}**.\n'
+            ),
+            color=0xf78a8a  # Màu đỏ cho thông báo lỗi
+        )
+        embed.set_footer(text="Made By Th1nK")
+        await ctx.message.reply(embed=embed, mention_author=False)
 
 
 
