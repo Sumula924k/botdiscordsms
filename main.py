@@ -9,6 +9,8 @@ import random
 import collections
 from discord import Embed
 
+#dif
+
 intents = discord.Intents.default()
 intents.message_content = True
 intents.guilds = True
