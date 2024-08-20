@@ -289,7 +289,6 @@ async def sms(ctx, phone_number: str, count: int = 1):
             proc = processes[(ctx.author.id, phone_number)]
             try:
                 await proc.wait()  # Chờ tiến trình kết thúc
-                await update_log_status(ctx.author.name, phone_number, "Kết thúc")
             except Exception as e:
                 print(f"Đã xảy ra lỗi khi dừng tiến trình: {e}")
             finally:
@@ -414,7 +413,6 @@ async def supersms(ctx, phone_number: str, count: int = 1):
             proc = processes[(ctx.author.id, phone_number)]
             try:
                 await proc.wait()  # Chờ tiến trình kết thúc
-                await update_log_status(ctx.author.name, phone_number, "Kết thúc")
             except Exception as e:
                 print(f"Đã xảy ra lỗi khi dừng tiến trình: {e}")
             finally:
