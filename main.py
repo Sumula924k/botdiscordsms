@@ -256,7 +256,7 @@ async def sms(ctx, phone_number: str, count: int = 1):
                     f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
                     f"💸 **Gói:** FREE\n"
                     f"⚡ **Tốc độ:** Thường\n"
-                    f"🔗 **Số API:** 40\n"
+                    f"🔗 **Số API:** 36\n"
                     f"⛓️ **Số lần lặp:** {count} lần (Mặc Định, MAX 2)\n"
                     f"⏳ **Thời gian hồi:** 30 giây"
                 ),
@@ -269,7 +269,7 @@ async def sms(ctx, phone_number: str, count: int = 1):
                     f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
                     f"💸 **Gói:** FREE\n"
                     f"⚡ **Tốc độ:** Thường\n"
-                    f"🔗 **Số API:** 40\n"
+                    f"🔗 **Số API:** 36\n"
                     f"⛓️ **Số lần lặp:** {count} lần (MAX 2)\n"
                     f"⏳ **Thời gian hồi:** 30 giây"
                 ),
@@ -380,7 +380,7 @@ async def supersms(ctx, phone_number: str, count: int = 1):
                     f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
                     f"💸 **Gói:** SUPER\n"
                     f"⚡ **Tốc độ:** PLUS\n"
-                    f"🔗 **Số API:** 125 (MAX)\n"
+                    f"🔗 **Số API:** >100 (MAX)\n"
                     f"⛓️ **Số lần lặp:** {count} lần (Mặc Định, MAX 200)\n"
                     f"⏳ **Thời gian hồi:** 15 giây"
                 ),
@@ -393,7 +393,7 @@ async def supersms(ctx, phone_number: str, count: int = 1):
                     f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
                     f"💸 **Gói:** SUPER\n"
                     f"⚡ **Tốc độ:** PLUS\n"
-                    f"🔗 **Số API:** 125 (MAX)\n"
+                    f"🔗 **Số API:** >100 (MAX)\n"
                     f"⛓️ **Số lần lặp:** {count} lần (MAX 200)\n"
                     f"⏳ **Thời gian hồi:** 15 giây"
                 ),
