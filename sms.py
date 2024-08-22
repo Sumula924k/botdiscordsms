@@ -6,6 +6,7 @@ from colorama import Fore, Style, init
 import random
 import json
 import string
+import concurrent.futures
 def generate_random_email(domain='example.com'):
     # Tạo phần tên email ngẫu nhiên
     length = random.randint(5, 10)  # Độ dài của tên email từ 5 đến 10 ký tự
@@ -4450,84 +4451,18 @@ def xanhsmzl():
     except requests.exceptions.RequestException:
         print("XANHSMZL | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
-for _ in range(count):
-    tv360()
-    time.sleep(0.3)
-    beautybox()
-    time.sleep(2)
-    kingfood()
-    time.sleep(0.3)
-    batdongsan()
-    time.sleep(0.3)
-    futabus()
-    time.sleep(0.3)
-    galaxyplay()
-    time.sleep(0.3)
-    hoangphuc()
-    time.sleep(0.3)
-    gumac()
-    time.sleep(0.3)
-    vinamilk()
-    time.sleep(0.3)
-    speedlotte()
-    time.sleep(0.3)
-    medicare()
-    time.sleep(0.3)
-    tokyolife()
-    time.sleep(0.3)
-    vieon()
-    time.sleep(0.3)
-    winmart()
-    time.sleep(0.3)
-    tgdidong()
-    time.sleep(0.3)
-    dienmayxanh()
-    time.sleep(0.3)
-    meta()
-    time.sleep(0.3)
-    thefaceshop()
-    time.sleep(0.3)
-    bestexpress()
-    time.sleep(0.3)
-    ghnexpress()
-    time.sleep(0.3)
-    myviettel()
-    time.sleep(0.3)
-    fptshop()
-    time.sleep(2)
-    sapo()
-    time.sleep(0.3)
-    paynet()
-    time.sleep(0.3)
-    reebok()
-    time.sleep(0.3)
-    gapowork()
-    time.sleep(0.3)
-    shine()
-    time.sleep(0.3)
-    oreka()
-    time.sleep(0.3)
-    fmstyle()
-    time.sleep(0.3)
-    acfc()
-    time.sleep(0.3)
-    fptlongchauzl()
-    time.sleep(0.3)
-    pantio()
-    time.sleep(0.3)
-    winny()
-    time.sleep(0.3)
-    owen()
-    time.sleep(0.3)
-    befood()
-    time.sleep(0.3)
-    foodhubzl()
-    time.sleep(0.3)
-    heyu()
-    time.sleep(2)
-    pantioresend()
-    time.sleep(0.3)
-    vttelecom()
-    time.sleep(0.3)
-    vinwonders()
-    time.sleep(0.3)
+functions = [
+    tv360, beautybox, kingfood, batdongsan, xanhsmzl, futabus, galaxyplay,
+    hoangphuc, gumac, vinamilk, speedlotte, medicare, tokyolife, vieon,
+    winmart, tgdidong, dienmayxanh, meta, thefaceshop, bestexpress,
+    ghnexpress, myviettel, fptshop, sapo, paynet, reebok, gapowork, shine,
+    oreka, fmstyle, acfc, fptlongchauzl, pantio, winny, owen, befood
+]
+
+with concurrent.futures.ThreadPoolExecutor() as executor:
+    for i in range(count):
+        for func in functions:
+            # Gọi hàm và gửi vào ThreadPoolExecutor
+            executor.submit(func)
+            # Nghỉ giữa các lần gọi hàm
+            time.sleep(0.2)  # Điều chỉnh thời gian nghỉ tùy theo nhu cầu
