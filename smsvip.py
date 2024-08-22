@@ -4454,8 +4454,8 @@ def xanhsmzl():
     except requests.exceptions.RequestException:
         print("XANHSMZL | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
-for i in range(count):
-    with concurrent.futures.ThreadPoolExecutor() as executor:
+with concurrent.futures.ThreadPoolExecutor() as executor:
+    for i in range(count):
         # Gọi hàm bằng cách submit vào ThreadPoolExecutor
         executor.submit(tv360)
         executor.submit(beautybox)
@@ -4552,7 +4552,6 @@ for i in range(count):
         executor.submit(mainguyen)
         executor.submit(phongtro123)
         executor.submit(chothuephongtro)
-        time.sleep(0.5)
         executor.submit(bds123)
         executor.submit(vnsc)
         executor.submit(opes)
