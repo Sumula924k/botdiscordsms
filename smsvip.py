@@ -39,8 +39,8 @@ print("Số lần lặp:", count)
 
 count = int(count)
 
-if count > 50:
-    count = 51
+if count > 198:
+    count = 199
 
 def sdtt(sdt):
     if sdt.startswith("0"):
