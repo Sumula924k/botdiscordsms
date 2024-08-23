@@ -229,8 +229,8 @@ async def sms(ctx, phone_number: str, count: int = 1):
         await ctx.send('Số lần lặp phải >0')
         return
 
-    if count > 2 :
-        await ctx.send('Số lần lặp phải ≤2. Nhiều lần hơn hãy dùng /supersms.')
+    if count > 10 :
+        await ctx.send('Số lần lặp phải ≤10. Nhiều lần hơn hãy dùng /supersms.')
         return
 
     try:
@@ -257,7 +257,7 @@ async def sms(ctx, phone_number: str, count: int = 1):
                     f"💸 **Gói:** FREE\n"
                     f"⚡ **Tốc độ:** Thường\n"
                     f"🔗 **Số API:** 36\n"
-                    f"⛓️ **Số lần lặp:** {count} lần (Mặc Định, MAX 2)\n"
+                    f"⛓️ **Số lần lặp:** {count} lần (Mặc Định, MAX 10)\n"
                     f"⏳ **Thời gian hồi:** 30 giây"
                 ),
                 inline=False
@@ -270,7 +270,7 @@ async def sms(ctx, phone_number: str, count: int = 1):
                     f"💸 **Gói:** FREE\n"
                     f"⚡ **Tốc độ:** Thường\n"
                     f"🔗 **Số API:** 36\n"
-                    f"⛓️ **Số lần lặp:** {count} lần (MAX 2)\n"
+                    f"⛓️ **Số lần lặp:** {count} lần (MAX 10)\n"
                     f"⏳ **Thời gian hồi:** 30 giây"
                 ),
                 inline=False
@@ -352,8 +352,8 @@ async def supersms(ctx, phone_number: str, count: int = 1):
         await ctx.send('Số lần lặp phải >0')
         return
 
-    if count > 200 :
-        await ctx.send('Số lần lặp phải ≤200, không là **nổ** bot bạn yêu ơi.')
+    if count > 1000 :
+        await ctx.send('Số lần lặp phải ≤1000, không là **nổ** bot bạn yêu ơi.')
         return
 
     try:
@@ -381,7 +381,7 @@ async def supersms(ctx, phone_number: str, count: int = 1):
                     f"💸 **Gói:** SUPER\n"
                     f"⚡ **Tốc độ:** PLUS\n"
                     f"🔗 **Số API:** >100 (MAX)\n"
-                    f"⛓️ **Số lần lặp:** {count} lần (Mặc Định, MAX 200)\n"
+                    f"⛓️ **Số lần lặp:** {count} lần (Mặc Định, MAX 1000)\n"
                     f"⏳ **Thời gian hồi:** 15 giây"
                 ),
                 inline=False
@@ -394,7 +394,7 @@ async def supersms(ctx, phone_number: str, count: int = 1):
                     f"💸 **Gói:** SUPER\n"
                     f"⚡ **Tốc độ:** PLUS\n"
                     f"🔗 **Số API:** >100 (MAX)\n"
-                    f"⛓️ **Số lần lặp:** {count} lần (MAX 200)\n"
+                    f"⛓️ **Số lần lặp:** {count} lần (MAX 1000)\n"
                     f"⏳ **Thời gian hồi:** 15 giây"
                 ),
                 inline=False
