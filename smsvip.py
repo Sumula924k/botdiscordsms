@@ -39,8 +39,8 @@ print("Số lần lặp:", count)
 
 count = int(count)
 
-if count > 150:
-    count = 151
+if count > 75:
+    count = 76
 
 def sdtt(sdt):
     if sdt.startswith("0"):
@@ -4471,7 +4471,7 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
         executor.submit(medicare)
         executor.submit(tokyolife)
         executor.submit(vieon)
-        time.sleep(2)
+        time.sleep(1)
         executor.submit(winmart)
         executor.submit(tgdidong)
         executor.submit(dienmayxanh)
@@ -4484,6 +4484,7 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
         executor.submit(sapo)
         executor.submit(paynet)
         executor.submit(reebok)
+        time.sleep(1)
         executor.submit(gapowork)
         executor.submit(shine)
         executor.submit(oreka)
@@ -4497,7 +4498,6 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
         executor.submit(foodhubzl)
         executor.submit(heyu)
         executor.submit(pantioresend)
-        time.sleep(1)
         executor.submit(vttelecom)
         executor.submit(vinwonders)
         executor.submit(vietair)
@@ -4510,6 +4510,7 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
         executor.submit(fahasa)
         executor.submit(vascara)
         executor.submit(sablanca)
+        time.sleep(1)
         executor.submit(routine)
         executor.submit(mioto)
         executor.submit(pharmartsms)
@@ -4526,7 +4527,7 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
         executor.submit(mutosi)
         executor.submit(mocha)
         executor.submit(sigo)
-        time.sleep(2)
+        time.sleep(1)
         executor.submit(pnjzl)
         executor.submit(mamanbebe)
         executor.submit(tatmart)
@@ -4549,6 +4550,7 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
         executor.submit(richvn)
         executor.submit(nativex)
         executor.submit(vuihoc)
+        time.sleep(1)
         executor.submit(mainguyen)
         executor.submit(phongtro123)
         executor.submit(chothuephongtro)
@@ -4560,6 +4562,7 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
         executor.submit(sbiz)
         executor.submit(thieuhoa)
         executor.submit(dchic)
+        time.sleep(1)
         executor.submit(yvesrocher)
         executor.submit(guardian)
         executor.submit(leflair)
