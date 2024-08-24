@@ -4454,120 +4454,28 @@ def xanhsmzl():
     except requests.exceptions.RequestException:
         print("XANHSMZL | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
+functions = [
+    tv360, beautybox, kingfood, batdongsan, xanhsmzl, futabus, galaxyplay,
+    hoangphuc, gumac, vinamilk, speedlotte, medicare, tokyolife, vieon,
+    winmart, tgdidong, dienmayxanh, meta, thefaceshop, bestexpress,
+    ghnexpress, myviettel, fptshop, sapo, paynet, reebok, gapowork, shine,
+    oreka, fmstyle, acfc, fptlongchauzl, pantio, winny, owen, befood,
+    foodhubzl, heyu, pantioresend, vttelecom, vinwonders, vietair, etrip4u,
+    chudu24, sojo, hasaki, emart, ahamove, fahasa, vascara, sablanca,
+    routine, mioto, pharmartsms, medigosms, avakids, giathuoctot, medigozl,
+    ddmevabereg, pnjsms, pharmartzl, jiohealth, ddmevabe, nhathuocankhang,
+    mutosi, mocha, sigo, pnjzl, mamanbebe, tatmart, mrtho, hacom, xanhsmreg,
+    ghtkreg, pcspostreg, book365reg, liena, gofood, pasgo, vietloan,
+    viettelpost, xanhsm, acheckin, ghtk, pcspost, book365, richvn, nativex,
+    vuihoc, mainguyen, phongtro123, chothuephongtro, bds123, vnsc, opes,
+    hoasenhome, bibomart, sbiz, thieuhoa, dchic, yvesrocher, guardian,
+    leflair, vayvnd, bibabo, mocha35, xanhsm2
+]
+
 with concurrent.futures.ThreadPoolExecutor() as executor:
     for i in range(count):
-        # Gọi hàm bằng cách submit vào ThreadPoolExecutor
-        executor.submit(tv360)
-        executor.submit(beautybox)
-        executor.submit(kingfood)
-        executor.submit(batdongsan)
-        executor.submit(xanhsmzl)
-        executor.submit(futabus)
-        executor.submit(galaxyplay)
-        executor.submit(hoangphuc)
-        executor.submit(gumac)
-        executor.submit(vinamilk)
-        executor.submit(speedlotte)
-        executor.submit(medicare)
-        executor.submit(tokyolife)
-        executor.submit(vieon)
-        time.sleep(1)
-        executor.submit(winmart)
-        executor.submit(tgdidong)
-        executor.submit(dienmayxanh)
-        executor.submit(meta)
-        executor.submit(thefaceshop)
-        executor.submit(bestexpress)
-        executor.submit(ghnexpress)
-        executor.submit(myviettel)
-        executor.submit(fptshop)
-        executor.submit(sapo)
-        executor.submit(paynet)
-        executor.submit(reebok)
-        time.sleep(1)
-        executor.submit(gapowork)
-        executor.submit(shine)
-        executor.submit(oreka)
-        executor.submit(fmstyle)
-        executor.submit(acfc)
-        executor.submit(fptlongchauzl)
-        executor.submit(pantio)
-        executor.submit(winny)
-        executor.submit(owen)
-        executor.submit(befood)
-        executor.submit(foodhubzl)
-        executor.submit(heyu)
-        executor.submit(pantioresend)
-        executor.submit(vttelecom)
-        executor.submit(vinwonders)
-        executor.submit(vietair)
-        executor.submit(etrip4u)
-        executor.submit(chudu24)
-        executor.submit(sojo)
-        executor.submit(hasaki)
-        executor.submit(emart)
-        executor.submit(ahamove)
-        executor.submit(fahasa)
-        executor.submit(vascara)
-        executor.submit(sablanca)
-        time.sleep(1)
-        executor.submit(routine)
-        executor.submit(mioto)
-        executor.submit(pharmartsms)
-        executor.submit(medigosms)
-        executor.submit(avakids)
-        executor.submit(giathuoctot)
-        executor.submit(medigozl)
-        executor.submit(ddmevabereg)
-        executor.submit(pnjsms)
-        executor.submit(pharmartzl)
-        executor.submit(jiohealth)
-        executor.submit(ddmevabe)
-        executor.submit(nhathuocankhang)
-        executor.submit(mutosi)
-        executor.submit(mocha)
-        executor.submit(sigo)
-        time.sleep(1)
-        executor.submit(pnjzl)
-        executor.submit(mamanbebe)
-        executor.submit(tatmart)
-        executor.submit(mrtho)
-        executor.submit(hacom)
-        executor.submit(xanhsmreg)
-        executor.submit(ghtkreg)
-        executor.submit(pcspostreg)
-        executor.submit(book365reg)
-        executor.submit(liena)
-        executor.submit(gofood)
-        executor.submit(pasgo)
-        executor.submit(vietloan)
-        executor.submit(viettelpost)
-        executor.submit(xanhsm)
-        executor.submit(acheckin)
-        executor.submit(ghtk)
-        executor.submit(pcspost)
-        executor.submit(book365)
-        executor.submit(richvn)
-        executor.submit(nativex)
-        executor.submit(vuihoc)
-        time.sleep(1)
-        executor.submit(mainguyen)
-        executor.submit(phongtro123)
-        executor.submit(chothuephongtro)
-        executor.submit(bds123)
-        executor.submit(vnsc)
-        executor.submit(opes)
-        executor.submit(hoasenhome)
-        executor.submit(bibomart)
-        executor.submit(sbiz)
-        executor.submit(thieuhoa)
-        executor.submit(dchic)
-        time.sleep(1)
-        executor.submit(yvesrocher)
-        executor.submit(guardian)
-        executor.submit(leflair)
-        executor.submit(vayvnd)
-        executor.submit(bibabo)
-        executor.submit(mocha35)
-        executor.submit(xanhsm2)
-        time.sleep(5)
+        for func in functions:
+            # Gọi hàm và gửi vào ThreadPoolExecutor
+            executor.submit(func)
+            # Nghỉ giữa các lần gọi hàm
+            time.sleep(0.3)  # Điều chỉnh thời gian nghỉ tùy theo nhu cầu
