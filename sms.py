@@ -46,6 +46,9 @@ def sdtt(sdt):
 
 sdt_chuyen_doi = sdtt(sdt)
 
+if count > 5:
+    count = 6
+
 def tv360():
     cookies = {
         'img-ext': 'avif',
