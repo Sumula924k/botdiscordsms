@@ -189,8 +189,9 @@ async def sms(ctx, phone_number: str, count: int = 1):
         await ctx.send(message)
         return
 
-    prev_sdt=phone_number
+    prev_sdt = phone_number  # Initialize prev_sdt with the current phone number
 
+    # Check if the specific phone number already has a running process
     if (ctx.author.id, phone_number) in processes:
         embed = Embed(
             title="Tiến trình đang hoạt động",
@@ -205,7 +206,11 @@ async def sms(ctx, phone_number: str, count: int = 1):
         await ctx.message.reply(embed=embed, mention_author=False)
         return
 
-    if any(proc for (user_id, _), proc in processes.items() if user_id == ctx.author.id):
+    # Check if any other process by the user is still running
+    running_process = next(((user_id, phone) for (user_id, phone), proc in processes.items() if user_id == ctx.author.id), None)
+    if running_process:
+        prev_sdt = running_process[1]  # Update prev_sdt with the phone number of the running process
+        
         embed = Embed(
             title="Tiến trình đang hoạt động",
             description=(
@@ -314,8 +319,9 @@ async def supersms(ctx, phone_number: str, count: int = 1):
         await ctx.send(f'Supersms chỉ hoạt động tại kênh <#{VIP_CHANNEL_ID}>.')
         return
 
-    prev_sdt=phone_number
+    prev_sdt = phone_number  # Initialize prev_sdt with the current phone number
 
+    # Check if the specific phone number already has a running process
     if (ctx.author.id, phone_number) in processes:
         embed = Embed(
             title="Tiến trình đang hoạt động",
@@ -330,7 +336,11 @@ async def supersms(ctx, phone_number: str, count: int = 1):
         await ctx.message.reply(embed=embed, mention_author=False)
         return
 
-    if any(proc for (user_id, _), proc in processes.items() if user_id == ctx.author.id):
+    # Check if any other process by the user is still running
+    running_process = next(((user_id, phone) for (user_id, phone), proc in processes.items() if user_id == ctx.author.id), None)
+    if running_process:
+        prev_sdt = running_process[1]  # Update prev_sdt with the phone number of the running process
+        
         embed = Embed(
             title="Tiến trình đang hoạt động",
             description=(
