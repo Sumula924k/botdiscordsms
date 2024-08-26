@@ -62,6 +62,7 @@ GIF_URLS = [
     "https://c.tenor.com/xD5CN6oj8ysAAAAC/tenor.gif",
     "https://c.tenor.com/6Myx4MF6DjIAAAAC/tenor.gif",
     "https://c.tenor.com/2BmAiarixGAAAAAC/tenor.gif",
+    "https://c.tenor.com/i5r1lXIAJgEAAAAd/tenor.gif",
     "https://c.tenor.com/1nwkeOg8j48AAAAd/tenor.gif",
     "https://c.tenor.com/5wn9MtW_PYUAAAAd/tenor.gif",
     "https://c.tenor.com/L6bKFEaUkp0AAAAC/tenor.gif",
@@ -69,6 +70,10 @@ GIF_URLS = [
     "https://c.tenor.com/QjMLx8tgJ0UAAAAC/tenor.gif",
     "https://c.tenor.com/4a8oLL-3PYAAAAAd/tenor.gif",
     "https://c.tenor.com/rycw44X648oAAAAd/tenor.gif",
+    "https://c.tenor.com/M3BzTbU81uIAAAAd/tenor.gif",
+    "https://c.tenor.com/fi1SSaUNyC8AAAAC/tenor.gif",
+    "https://c.tenor.com/lcJxNSzW8MUAAAAC/tenor.gif",
+    "https://c.tenor.com/PwA7hjm2oVIAAAAd/tenor.gif",
     "https://c.tenor.com/quduIlTKjWwAAAAd/tenor.gif",
     "https://c.tenor.com/9djzdAaY9Z8AAAAd/tenor.gif",
     "https://c.tenor.com/G4OcrlG79AYAAAAC/tenor.gif",
@@ -185,11 +190,13 @@ async def sms(ctx, phone_number: str, count: int = 1):
         return
 
     if (ctx.author.id, phone_number) in processes:
+        prev_sdt=phone_number
         embed = Embed(
             title="Tiến trình đang hoạt động",
             description=(
-                f'💼 Tiến trình spam bạn đã tạo trước đó vẫn đang chạy.\n'
-                '⌚ Hãy chờ hoặc dùng **/smsstop {số điện thoại trước đó}** để dừng tiến trình đó.'
+                f'💼 Tiến trình spam đến số **{prev_sdt}** vẫn đang hoạt động.\n'
+                f'⌚ Hãy chờ tiến trình kết thúc trước khi tạo tiến trình mới.\n'
+                f'🛠️ Hoặc dùng **/smsstop {prev_sdt}** để dừng tiến trình đó.'
             ),
             color=0xf78a8a  # Màu đỏ cho thông báo lỗi
         )
@@ -197,13 +204,13 @@ async def sms(ctx, phone_number: str, count: int = 1):
         await ctx.message.reply(embed=embed, mention_author=False)
         return
 
-    # Kiểm tra nếu có bất kỳ tiến trình nào đang chạy của người dùng
     if any(proc for (user_id, _), proc in processes.items() if user_id == ctx.author.id):
         embed = Embed(
             title="Tiến trình đang hoạt động",
             description=(
-                f'💼 Tiến trình spam bạn đã tạo trước đó vẫn đang chạy.\n'
-                '⌚ Hãy chờ hoặc dùng **/smsstop {số điện thoại trước đó}** để dừng tiến trình đó.'
+                f'💼 Tiến trình spam đến số **{prev_sdt}** vẫn đang hoạt động.\n'
+                f'⌚ Hãy chờ tiến trình kết thúc trước khi tạo tiến trình mới.\n'
+                f'🛠️ Hoặc dùng **/smsstop {prev_sdt}** để dừng tiến trình đó.'
             ),
             color=0xf78a8a  # Màu đỏ cho thông báo lỗi
         )
@@ -307,11 +314,13 @@ async def supersms(ctx, phone_number: str, count: int = 1):
         return
 
     if (ctx.author.id, phone_number) in processes:
+        prev_sdt=phone_number
         embed = Embed(
             title="Tiến trình đang hoạt động",
             description=(
-                f'💼 Tiến trình spam bạn đã tạo trước đó vẫn đang chạy.\n'
-                '⌚ Hãy chờ hoặc dùng **/smsstop {số điện thoại trước đó}** để dừng tiến trình đó.'
+                f'💼 Tiến trình spam đến số **{prev_sdt}** vẫn đang hoạt động.\n'
+                f'⌚ Hãy chờ tiến trình kết thúc trước khi tạo tiến trình mới.\n'
+                f'🛠️ Hoặc dùng **/smsstop {prev_sdt}** để dừng tiến trình đó.'
             ),
             color=0xf78a8a  # Màu đỏ cho thông báo lỗi
         )
@@ -323,8 +332,9 @@ async def supersms(ctx, phone_number: str, count: int = 1):
         embed = Embed(
             title="Tiến trình đang hoạt động",
             description=(
-                f'💼 Tiến trình spam bạn đã tạo trước đó vẫn đang chạy.\n'
-                '⌚ Hãy chờ hoặc dùng **/smsstop {số điện thoại trước đó}** để dừng tiến trình đó.'
+                f'💼 Tiến trình spam đến số **{prev_sdt}** vẫn đang hoạt động.\n'
+                f'⌚ Hãy chờ tiến trình kết thúc trước khi tạo tiến trình mới.\n'
+                f'🛠️ Hoặc dùng **/smsstop {prev_sdt}** để dừng tiến trình đó.'
             ),
             color=0xf78a8a  # Màu đỏ cho thông báo lỗi
         )
