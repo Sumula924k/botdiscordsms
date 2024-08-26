@@ -189,11 +189,9 @@ async def sms(ctx, phone_number: str, count: int = 1):
         await ctx.send(message)
         return
 
-    prev_sdt = None  # Initialize prev_sdt
+    prev_sdt=phone_number
 
-    # Check if the specific phone number already has a running process
     if (ctx.author.id, phone_number) in processes:
-        prev_sdt = phone_number
         embed = Embed(
             title="Tiến trình đang hoạt động",
             description=(
@@ -207,11 +205,7 @@ async def sms(ctx, phone_number: str, count: int = 1):
         await ctx.message.reply(embed=embed, mention_author=False)
         return
 
-    # Check if any other process by the user is still running
-    if any(proc for (user_id, phone), proc in processes.items() if user_id == ctx.author.id):
-        if prev_sdt is None:  # Ensure prev_sdt has a value
-            prev_sdt = next(phone for (user_id, phone), proc in processes.items() if user_id == ctx.author.id)
-        
+    if any(proc for (user_id, _), proc in processes.items() if user_id == ctx.author.id):
         embed = Embed(
             title="Tiến trình đang hoạt động",
             description=(
@@ -320,8 +314,9 @@ async def supersms(ctx, phone_number: str, count: int = 1):
         await ctx.send(f'Supersms chỉ hoạt động tại kênh <#{VIP_CHANNEL_ID}>.')
         return
 
+    prev_sdt=phone_number
+
     if (ctx.author.id, phone_number) in processes:
-        prev_sdt = phone_number
         embed = Embed(
             title="Tiến trình đang hoạt động",
             description=(
@@ -335,11 +330,7 @@ async def supersms(ctx, phone_number: str, count: int = 1):
         await ctx.message.reply(embed=embed, mention_author=False)
         return
 
-    # Check if any other process by the user is still running
-    if any(proc for (user_id, phone), proc in processes.items() if user_id == ctx.author.id):
-        if prev_sdt is None:  # Ensure prev_sdt has a value
-            prev_sdt = next(phone for (user_id, phone), proc in processes.items() if user_id == ctx.author.id)
-        
+    if any(proc for (user_id, _), proc in processes.items() if user_id == ctx.author.id):
         embed = Embed(
             title="Tiến trình đang hoạt động",
             description=(
