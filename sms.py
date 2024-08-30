@@ -4456,10 +4456,11 @@ def xanhsmzl():
 
 functions = [
     tv360, beautybox, kingfood, batdongsan, xanhsmzl, futabus, galaxyplay,
-    hoangphuc, gumac, vinamilk, speedlotte, medicare, tokyolife, vieon,
-    winmart, tgdidong, dienmayxanh, meta, thefaceshop, bestexpress,
+    speedlotte, medicare, tokyolife, vieon,
+    tgdidong, dienmayxanh, meta, thefaceshop, bestexpress,
     ghnexpress, myviettel, fptshop, sapo, paynet, reebok, gapowork, shine,
-    oreka, fmstyle, acfc, fptlongchauzl, pantio, winny, owen, befood
+    oreka, fmstyle, acfc, fptlongchauzl, pantio, winny, owen, befood,
+    foodhubzl, pantioresend, vttelecom, vinwonders, vietair
 ]
 
 with concurrent.futures.ThreadPoolExecutor() as executor:
