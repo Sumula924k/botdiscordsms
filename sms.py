@@ -4460,7 +4460,8 @@ functions = [
     tgdidong, dienmayxanh, meta, thefaceshop, bestexpress,
     ghnexpress, myviettel, fptshop, sapo, paynet, reebok, gapowork, shine,
     oreka, fmstyle, acfc, fptlongchauzl, pantio, winny, owen, befood,
-    foodhubzl, pantioresend, vttelecom, vinwonders, vietair
+    foodhubzl, pantioresend, vttelecom, vinwonders, vietair, etrip4u,
+    hasaki, emart, ahamove, fahasa, vascara, nhathuocankhang, pnjsms
 ]
 
 with concurrent.futures.ThreadPoolExecutor() as executor:
