@@ -544,7 +544,7 @@ async def on_message(message):
     # Kiểm tra nếu tin nhắn bắt đầu bằng lệnh
     if message.content.startswith('/'):
         # Kiểm tra nếu lệnh không phải là /sms hoặc /help
-        if not (message.content.startswith('/sms') or message.content.startswith('/supersms') or message.content.startswith('/help') or message.content.startswith('/smsstop')):
+        if not (message.content.startswith('/sms') or message.content.startswith('/supersms') or message.content.startswith('/help') or message.content.startswith('/smsstop') or message.content.startswith('/stopall')):
             if message.channel.id != ALLOWED_CHANNEL_ID:
                 await message.channel.send(f'Sai cú pháp, /help để xem chi tiết lệnh.')
                 return
