@@ -4269,9 +4269,9 @@ functions = [
     speedlotte, medicare, tokyolife, vieon,
     meta, thefaceshop, bestexpress,
     ghnexpress, myviettel, fptshop, sapo, paynet, reebok, gapowork, shine,
-    oreka, fmstyle, acfc, fptlongchauzl, pantio, winny, owen, befood,
-    foodhubzl, pantioresend, vttelecom, vinwonders, vietair,
-    hasaki, emart, ahamove, fahasa
+    fptlongchauzl, pantio, winny, owen, befood,
+    foodhubzl, vttelecom, vinwonders, vietair,
+    emart, ahamove, fahasa
 ]
 
 with concurrent.futures.ThreadPoolExecutor() as executor:
@@ -4280,4 +4280,4 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
             # Gọi hàm và gửi vào ThreadPoolExecutor
             executor.submit(func)
             # Nghỉ giữa các lần gọi hàm
-            time.sleep(0.7)  # Điều chỉnh thời gian nghỉ tùy theo nhu cầu
+            time.sleep(1.5)  # Điều chỉnh thời gian nghỉ tùy theo nhu cầu
