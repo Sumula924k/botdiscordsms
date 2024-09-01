@@ -512,15 +512,17 @@ async def smsstop(ctx, phone_number: str):
 @commands.has_role(SPECIAL_ROLE_ID)  # Kiểm tra người dùng có vai trò admin không
 async def stopall(ctx):
     if not discord.utils.get(ctx.author.roles, id=SPECIAL_ROLE_ID):
-        await ctx.send("Tuổi gì?")
+        await ctx.send("Bạn không có quyền sử dụng lệnh này.")
         return
 
     if not processes:
         await ctx.send("True - 0")
         return
 
-    # Dừng tất cả các tiến trình
-    for (user_id, phone_number), proc in processes.items():
+    # Tạo danh sách các tiến trình để lặp qua
+    processes_list = list(processes.items())
+
+    for (user_id, phone_number), proc in processes_list:
         try:
             proc.terminate()  # Kết thúc tiến trình
             await proc.wait()  # Chờ tiến trình kết thúc
