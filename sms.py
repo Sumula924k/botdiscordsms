@@ -4280,4 +4280,4 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
             # Gọi hàm và gửi vào ThreadPoolExecutor
             executor.submit(func)
             # Nghỉ giữa các lần gọi hàm
-            time.sleep(1.5)  # Điều chỉnh thời gian nghỉ tùy theo nhu cầu
+            time.sleep(2.5)  # Điều chỉnh thời gian nghỉ tùy theo nhu cầu
