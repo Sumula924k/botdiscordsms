@@ -305,7 +305,8 @@ async def sms(ctx, phone_number: str, count: int = 1):
             except Exception as e:
                 print(f"Đã xảy ra lỗi khi dừng tiến trình: {e}")
             finally:
-                del processes[(ctx.author.id, phone_number)]
+                processes.pop((ctx.author.id, phone_number), None)
+
 
 
 @bot.command()
@@ -438,7 +439,7 @@ async def supersms(ctx, phone_number: str, count: int = 1):
             except Exception as e:
                 print(f"Đã xảy ra lỗi khi dừng tiến trình: {e}")
             finally:
-                del processes[(ctx.author.id, phone_number)]
+                processes.pop((ctx.author.id, phone_number), None)
 
 @bot.command()
 async def help(ctx):
@@ -508,26 +509,27 @@ async def smsstop(ctx, phone_number: str):
 
 
 @bot.command()
-@commands.has_role(SPECIAL_ROLE_ID)
-async def smsstopall(ctx):
-    # Kiểm tra nếu người dùng có vai trò với ID 1265025672225493223
-    if not any(role.id == SPECIAL_ROLE_ID for role in ctx.author.roles):
-        await ctx.send('Bạn không có quyền thực hiện lệnh này.')
+@commands.has_role(SPECIAL_ROLE_ID)  # Kiểm tra người dùng có vai trò admin không
+async def stopall(ctx):
+    if not discord.utils.get(ctx.author.roles, id=SPECIAL_ROLE_ID):
+        await ctx.send("Tuổi gì?")
         return
 
     if not processes:
-        await ctx.send('Hiện tại không có tiến trình nào đang chạy.')
+        await ctx.send("True - 0")
         return
 
-    # Dừng tất cả các tiến trình SMS và xóa chúng khỏi từ điển
-    for proc in processes.values():
+    # Dừng tất cả các tiến trình
+    for (user_id, phone_number), proc in processes.items():
         try:
-            proc.kill()
-        except ProcessLookupError:
-            pass  # Tiến trình đã kết thúc hoặc không tồn tại
-    processes.clear()
+            proc.terminate()  # Kết thúc tiến trình
+            await proc.wait()  # Chờ tiến trình kết thúc
+        except Exception as e:
+            print(f"Đã xảy ra lỗi khi dừng tiến trình {user_id} - {phone_number}: {e}")
+        finally:
+            processes.pop((user_id, phone_number), None)
 
-    await ctx.send('Đã dừng tất cả tiến trình.')
+    await ctx.send("True - 1")
 
 @bot.event
 async def on_message(message):
@@ -540,7 +542,7 @@ async def on_message(message):
     # Kiểm tra nếu tin nhắn bắt đầu bằng lệnh
     if message.content.startswith('/'):
         # Kiểm tra nếu lệnh không phải là /sms hoặc /help
-        if not (message.content.startswith('/sms') or message.content.startswith('/supersms') or message.content.startswith('/help')):
+        if not (message.content.startswith('/sms') or message.content.startswith('/supersms') or message.content.startswith('/help') or message.content.startswith('/smsstop')):
             if message.channel.id != ALLOWED_CHANNEL_ID:
                 await message.channel.send(f'Sai cú pháp, /help để xem chi tiết lệnh.')
                 return
