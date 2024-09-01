@@ -4370,7 +4370,6 @@ def fptlongchausms():
             headers=headers,
             json=json_data,
         )
-        print(response.text)
         response.raise_for_status()  # Raise an exception for HTTP errors
         print("FPTLONGCHAUSMS | TRẠNG THÁI : THÀNH CÔNG")
     except requests.exceptions.RequestException:
