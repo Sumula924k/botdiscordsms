@@ -129,7 +129,7 @@ async def add_and_remove_role(member):
             await asyncio.sleep(1)
             await ping_message.delete()
             embed = discord.Embed(
-                title="⏳ Thời chờ đã hết!",
+                title="⏳ Thời gian chờ đã hết!",
                 description=f"{member.mention} hãy phát quà tiếp nào!",
                 color=discord.Color.red()
             )
@@ -148,7 +148,7 @@ async def add_and_remove_role_vip(member):
             await asyncio.sleep(1)
             await ping_message.delete()
             embed = discord.Embed(
-                title="⏳ Thời chờ đã hết!",
+                title="⏳ Thời gian chờ đã hết!",
                 description=f"{member.mention} hãy phát quà tiếp nào!",
                 color=discord.Color.red()
             )
@@ -269,7 +269,7 @@ async def sms(ctx, phone_number: str, count: int = 1):
                     f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
                     f"💸 **Gói:** FREE\n"
                     f"⚡ **Tốc độ:** Thường\n"
-                    f"🔗 **Số API:** 36\n"
+                    f"🔗 **Số API:** 3X\n"
                     f"⛓️ **Số lần lặp:** {count} lần (Mặc Định, MAX 10)\n"
                     f"⏳ **Thời gian hồi:** 30 giây"
                 ),
@@ -282,7 +282,7 @@ async def sms(ctx, phone_number: str, count: int = 1):
                     f"📞 **Thuê bao thụ thưởng:** {phone_number}\n"
                     f"💸 **Gói:** FREE\n"
                     f"⚡ **Tốc độ:** Thường\n"
-                    f"🔗 **Số API:** 36\n"
+                    f"🔗 **Số API:** 3X\n"
                     f"⛓️ **Số lần lặp:** {count} lần (MAX 10)\n"
                     f"⏳ **Thời gian hồi:** 30 giây"
                 ),
